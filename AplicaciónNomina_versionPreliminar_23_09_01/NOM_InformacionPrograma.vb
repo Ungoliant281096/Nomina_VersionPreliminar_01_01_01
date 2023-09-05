@@ -1,0 +1,5 @@
+﻿Public Class NOM_InformacionPrograma
+    Private Sub NOM_InformacionPrograma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+End Class
