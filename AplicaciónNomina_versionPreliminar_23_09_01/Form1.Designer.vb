@@ -107,12 +107,12 @@ Partial Class Form1
         ' CapturaToolStripMenuItem
         ' 
         CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
-        CapturaToolStripMenuItem.Size = New Size(127, 22)
+        CapturaToolStripMenuItem.Size = New Size(180, 22)
         CapturaToolStripMenuItem.Text = "Captura"' 
         ' ImpresiónToolStripMenuItem1
         ' 
         ImpresiónToolStripMenuItem1.Name = "ImpresiónToolStripMenuItem1"
-        ImpresiónToolStripMenuItem1.Size = New Size(127, 22)
+        ImpresiónToolStripMenuItem1.Size = New Size(180, 22)
         ImpresiónToolStripMenuItem1.Text = "Impresión"' 
         ' EmpresaToolStripMenuItem
         ' 
