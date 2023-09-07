@@ -66,66 +66,72 @@ Partial Class NOM_DatosComplementarios
         ' GuardarToolStripMenuItem
         ' 
         GuardarToolStripMenuItem.Name = "GuardarToolStripMenuItem"
-        GuardarToolStripMenuItem.Size = New Size(224, 26)
+        GuardarToolStripMenuItem.Size = New Size(145, 26)
         GuardarToolStripMenuItem.Text = "Guardar"
         ' 
         ' SalidaToolStripMenuItem
         ' 
         SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        SalidaToolStripMenuItem.Size = New Size(224, 26)
+        SalidaToolStripMenuItem.Size = New Size(145, 26)
         SalidaToolStripMenuItem.Text = "Salida"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.Location = New Point(99, 67)
         Label1.Name = "Label1"
-        Label1.Size = New Size(98, 20)
+        Label1.Size = New Size(104, 20)
         Label1.TabIndex = 1
         Label1.Text = "RFC Empresa:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(122, 125)
         Label2.Name = "Label2"
-        Label2.Size = New Size(75, 20)
+        Label2.Size = New Size(78, 20)
         Label2.TabIndex = 2
         Label2.Text = "Dirección:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(10, 167)
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Location = New Point(31, 167)
         Label3.Name = "Label3"
-        Label3.Size = New Size(187, 40)
+        Label3.Size = New Size(166, 60)
         Label3.TabIndex = 3
-        Label3.Text = "Representate Legal A. " & vbCrLf & "Paterno, Materno, Nombre:"
+        Label3.Text = "Representate Legal A. " & vbCrLf & "       Paterno, Materno," & vbCrLf & "                     Nombre:"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.Location = New Point(81, 244)
         Label4.Name = "Label4"
-        Label4.Size = New Size(110, 20)
+        Label4.Size = New Size(116, 20)
         Label4.TabIndex = 4
         Label4.Text = "RFC Rep. Legal:"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.Location = New Point(75, 300)
         Label5.Name = "Label5"
-        Label5.Size = New Size(116, 20)
+        Label5.Size = New Size(122, 20)
         Label5.TabIndex = 5
         Label5.Text = "Curp Rep. Legal:"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label6.Location = New Point(43, 341)
         Label6.Name = "Label6"
-        Label6.Size = New Size(154, 40)
+        Label6.Size = New Size(164, 40)
         Label6.TabIndex = 6
         Label6.Text = "No. Cta Banamex," & vbCrLf & "Sucursal, No y Cliente."
         ' 
@@ -203,9 +209,10 @@ Partial Class NOM_DatosComplementarios
         ' 
         CheckBox1.AutoSize = True
         CheckBox1.BackColor = Color.Yellow
+        CheckBox1.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic Or FontStyle.Underline, GraphicsUnit.Point)
         CheckBox1.Location = New Point(414, 244)
         CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(216, 24)
+        CheckBox1.Size = New Size(233, 24)
         CheckBox1.TabIndex = 18
         CheckBox1.Text = "Pago 2da. Quincena 16 días."
         CheckBox1.UseVisualStyleBackColor = False

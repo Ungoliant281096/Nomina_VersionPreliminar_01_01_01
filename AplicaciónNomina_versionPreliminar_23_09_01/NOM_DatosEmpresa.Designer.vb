@@ -59,7 +59,7 @@ Partial Class NOM_DatosEmpresa
         ' SalirToolStripMenuItem
         ' 
         SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
+        SalirToolStripMenuItem.Size = New Size(121, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
         ' Label1
@@ -96,20 +96,20 @@ Partial Class NOM_DatosEmpresa
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Label2.Location = New Point(466, 120)
         Label2.Name = "Label2"
-        Label2.Size = New Size(52, 28)
+        Label2.Size = New Size(53, 28)
         Label2.TabIndex = 5
         Label2.Text = "Año:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Label3.Location = New Point(380, 164)
         Label3.Name = "Label3"
-        Label3.Size = New Size(150, 56)
+        Label3.Size = New Size(155, 56)
         Label3.TabIndex = 6
         Label3.Text = "Salario Minímo " & vbCrLf & "            Vigente:"
         ' 
@@ -123,20 +123,20 @@ Partial Class NOM_DatosEmpresa
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Label4.Location = New Point(314, 242)
         Label4.Name = "Label4"
-        Label4.Size = New Size(216, 56)
+        Label4.Size = New Size(218, 56)
         Label4.TabIndex = 8
         Label4.Text = "Porcentaje de Subsidio " & vbCrLf & "                         Vigente:"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Label5.Location = New Point(369, 326)
         Label5.Name = "Label5"
-        Label5.Size = New Size(161, 56)
+        Label5.Size = New Size(166, 56)
         Label5.TabIndex = 9
         Label5.Text = "Fecha del ultimo " & vbCrLf & "               cambio:"
         ' 
@@ -151,12 +151,12 @@ Partial Class NOM_DatosEmpresa
         ' Button1
         ' 
         Button1.FlatStyle = FlatStyle.Popup
-        Button1.Font = New Font("Segoe UI", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
+        Button1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Button1.Location = New Point(186, 402)
         Button1.Name = "Button1"
         Button1.Size = New Size(309, 80)
         Button1.TabIndex = 11
-        Button1.Text = "Archivar"
+        Button1.Text = "ARCHIVAR"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' NOM_DatosEmpresa
