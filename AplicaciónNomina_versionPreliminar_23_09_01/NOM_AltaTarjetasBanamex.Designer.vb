@@ -24,6 +24,7 @@ Partial Class NOM_AltaTarjetasBanamex
     Private Sub InitializeComponent()
         DataGridView1 = New DataGridView()
         Button1 = New Button()
+        VScrollBar1 = New VScrollBar()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -46,11 +47,19 @@ Partial Class NOM_AltaTarjetasBanamex
         Button1.Text = "Button1"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' VScrollBar1
+        ' 
+        VScrollBar1.Location = New Point(785, 1)
+        VScrollBar1.Name = "VScrollBar1"
+        VScrollBar1.Size = New Size(11, 518)
+        VScrollBar1.TabIndex = 2
+        ' 
         ' NOM_AltaTarjetasBanamex
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 517)
+        Controls.Add(VScrollBar1)
         Controls.Add(Button1)
         Controls.Add(DataGridView1)
         Name = "NOM_AltaTarjetasBanamex"
@@ -61,4 +70,5 @@ Partial Class NOM_AltaTarjetasBanamex
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
+    Friend WithEvents VScrollBar1 As VScrollBar
 End Class

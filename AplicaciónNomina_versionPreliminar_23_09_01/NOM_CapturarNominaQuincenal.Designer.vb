@@ -24,31 +24,26 @@ Partial Class NOM_CapturarNominaQuincenal
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        CapturaToolStripMenuItem = New ToolStripMenuItem()
-        ActualizaciónToolStripMenuItem = New ToolStripMenuItem()
-        OrdenarToolStripMenuItem = New ToolStripMenuItem()
-        ImpresiónToolStripMenuItem = New ToolStripMenuItem()
-        ExportarDatosToolStripMenuItem = New ToolStripMenuItem()
-        ImportarDatosToolStripMenuItem = New ToolStripMenuItem()
         ArchivarNóminaToolStripMenuItem = New ToolStripMenuItem()
         SalidaToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         SeleccionarTodoToolStripMenuItem = New ToolStripMenuItem()
         CopiarToolStripMenuItem = New ToolStripMenuItem()
+        CapturaToolStripMenuItem = New ToolStripMenuItem()
         IniciarCapturaToolStripMenuItem = New ToolStripMenuItem()
         ArchivoBanamexToolStripMenuItem = New ToolStripMenuItem()
         DistribuciónNóminaToolStripMenuItem = New ToolStripMenuItem()
         InternetToolStripMenuItem = New ToolStripMenuItem()
         CFDIToolStripMenuItem = New ToolStripMenuItem()
+        ActualizaciónToolStripMenuItem = New ToolStripMenuItem()
         ImpuestosToolStripMenuItem = New ToolStripMenuItem()
         SumaToolStripMenuItem = New ToolStripMenuItem()
+        OrdenarToolStripMenuItem = New ToolStripMenuItem()
         AlfabeticamenteToolStripMenuItem = New ToolStripMenuItem()
         NuméricamenteToolStripMenuItem = New ToolStripMenuItem()
         EliminarToolStripMenuItem = New ToolStripMenuItem()
+        ImpresiónToolStripMenuItem = New ToolStripMenuItem()
         NóminaToolStripMenuItem = New ToolStripMenuItem()
-        RecibosToolStripMenuItem = New ToolStripMenuItem()
-        ChequesToolStripMenuItem = New ToolStripMenuItem()
-        DetalleCalculoImptosToolStripMenuItem = New ToolStripMenuItem()
         Obra0ToolStripMenuItem = New ToolStripMenuItem()
         Obra1ToolStripMenuItem = New ToolStripMenuItem()
         Obra2ToolStripMenuItem = New ToolStripMenuItem()
@@ -66,12 +61,17 @@ Partial Class NOM_CapturarNominaQuincenal
         Obra58ToolStripMenuItem = New ToolStripMenuItem()
         Obra59ToolStripMenuItem = New ToolStripMenuItem()
         Obra60ToolStripMenuItem = New ToolStripMenuItem()
+        RecibosToolStripMenuItem = New ToolStripMenuItem()
         TodosToolStripMenuItem = New ToolStripMenuItem()
         IndividualesToolStripMenuItem = New ToolStripMenuItem()
+        ChequesToolStripMenuItem = New ToolStripMenuItem()
         AjustesToolStripMenuItem = New ToolStripMenuItem()
         IndividualesToolStripMenuItem1 = New ToolStripMenuItem()
         TotalesToolStripMenuItem = New ToolStripMenuItem()
         DirectorioToolStripMenuItem = New ToolStripMenuItem()
+        DetalleCalculoImptosToolStripMenuItem = New ToolStripMenuItem()
+        ExportarDatosToolStripMenuItem = New ToolStripMenuItem()
+        ImportarDatosToolStripMenuItem = New ToolStripMenuItem()
         RadioButton1 = New RadioButton()
         RadioButton2 = New RadioButton()
         RadioButton3 = New RadioButton()
@@ -139,6 +139,18 @@ Partial Class NOM_CapturarNominaQuincenal
         ArchivoToolStripMenuItem.Size = New Size(73, 24)
         ArchivoToolStripMenuItem.Text = "Archivo"
         ' 
+        ' ArchivarNóminaToolStripMenuItem
+        ' 
+        ArchivarNóminaToolStripMenuItem.Name = "ArchivarNóminaToolStripMenuItem"
+        ArchivarNóminaToolStripMenuItem.Size = New Size(203, 26)
+        ArchivarNóminaToolStripMenuItem.Text = "Archivar Nómina"
+        ' 
+        ' SalidaToolStripMenuItem
+        ' 
+        SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
+        SalidaToolStripMenuItem.Size = New Size(203, 26)
+        SalidaToolStripMenuItem.Text = "Salida"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SeleccionarTodoToolStripMenuItem, CopiarToolStripMenuItem})
@@ -146,69 +158,24 @@ Partial Class NOM_CapturarNominaQuincenal
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
         ' 
+        ' SeleccionarTodoToolStripMenuItem
+        ' 
+        SeleccionarTodoToolStripMenuItem.Name = "SeleccionarTodoToolStripMenuItem"
+        SeleccionarTodoToolStripMenuItem.Size = New Size(204, 26)
+        SeleccionarTodoToolStripMenuItem.Text = "Seleccionar todo"
+        ' 
+        ' CopiarToolStripMenuItem
+        ' 
+        CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
+        CopiarToolStripMenuItem.Size = New Size(204, 26)
+        CopiarToolStripMenuItem.Text = "Copiar "
+        ' 
         ' CapturaToolStripMenuItem
         ' 
         CapturaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IniciarCapturaToolStripMenuItem, ArchivoBanamexToolStripMenuItem, DistribuciónNóminaToolStripMenuItem, InternetToolStripMenuItem, CFDIToolStripMenuItem})
         CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
         CapturaToolStripMenuItem.Size = New Size(75, 24)
         CapturaToolStripMenuItem.Text = "Captura"
-        ' 
-        ' ActualizaciónToolStripMenuItem
-        ' 
-        ActualizaciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ImpuestosToolStripMenuItem, SumaToolStripMenuItem})
-        ActualizaciónToolStripMenuItem.Name = "ActualizaciónToolStripMenuItem"
-        ActualizaciónToolStripMenuItem.Size = New Size(112, 24)
-        ActualizaciónToolStripMenuItem.Text = "Actualización"
-        ' 
-        ' OrdenarToolStripMenuItem
-        ' 
-        OrdenarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlfabeticamenteToolStripMenuItem, NuméricamenteToolStripMenuItem, EliminarToolStripMenuItem})
-        OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
-        OrdenarToolStripMenuItem.Size = New Size(77, 24)
-        OrdenarToolStripMenuItem.Text = "Ordenar"
-        ' 
-        ' ImpresiónToolStripMenuItem
-        ' 
-        ImpresiónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NóminaToolStripMenuItem, RecibosToolStripMenuItem, ChequesToolStripMenuItem, DetalleCalculoImptosToolStripMenuItem})
-        ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
-        ImpresiónToolStripMenuItem.Size = New Size(89, 24)
-        ImpresiónToolStripMenuItem.Text = "Impresión"
-        ' 
-        ' ExportarDatosToolStripMenuItem
-        ' 
-        ExportarDatosToolStripMenuItem.Name = "ExportarDatosToolStripMenuItem"
-        ExportarDatosToolStripMenuItem.Size = New Size(122, 24)
-        ExportarDatosToolStripMenuItem.Text = "Exportar Datos"
-        ' 
-        ' ImportarDatosToolStripMenuItem
-        ' 
-        ImportarDatosToolStripMenuItem.Name = "ImportarDatosToolStripMenuItem"
-        ImportarDatosToolStripMenuItem.Size = New Size(124, 24)
-        ImportarDatosToolStripMenuItem.Text = "Importar Datos"
-        ' 
-        ' ArchivarNóminaToolStripMenuItem
-        ' 
-        ArchivarNóminaToolStripMenuItem.Name = "ArchivarNóminaToolStripMenuItem"
-        ArchivarNóminaToolStripMenuItem.Size = New Size(224, 26)
-        ArchivarNóminaToolStripMenuItem.Text = "Archivar Nómina"
-        ' 
-        ' SalidaToolStripMenuItem
-        ' 
-        SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        SalidaToolStripMenuItem.Size = New Size(224, 26)
-        SalidaToolStripMenuItem.Text = "Salida"
-        ' 
-        ' SeleccionarTodoToolStripMenuItem
-        ' 
-        SeleccionarTodoToolStripMenuItem.Name = "SeleccionarTodoToolStripMenuItem"
-        SeleccionarTodoToolStripMenuItem.Size = New Size(224, 26)
-        SeleccionarTodoToolStripMenuItem.Text = "Seleccionar todo"
-        ' 
-        ' CopiarToolStripMenuItem
-        ' 
-        CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
-        CopiarToolStripMenuItem.Size = New Size(224, 26)
-        CopiarToolStripMenuItem.Text = "Copiar "
         ' 
         ' IniciarCapturaToolStripMenuItem
         ' 
@@ -240,35 +207,56 @@ Partial Class NOM_CapturarNominaQuincenal
         CFDIToolStripMenuItem.Size = New Size(229, 26)
         CFDIToolStripMenuItem.Text = "CFDI"
         ' 
+        ' ActualizaciónToolStripMenuItem
+        ' 
+        ActualizaciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ImpuestosToolStripMenuItem, SumaToolStripMenuItem})
+        ActualizaciónToolStripMenuItem.Name = "ActualizaciónToolStripMenuItem"
+        ActualizaciónToolStripMenuItem.Size = New Size(112, 24)
+        ActualizaciónToolStripMenuItem.Text = "Actualización"
+        ' 
         ' ImpuestosToolStripMenuItem
         ' 
         ImpuestosToolStripMenuItem.Name = "ImpuestosToolStripMenuItem"
-        ImpuestosToolStripMenuItem.Size = New Size(224, 26)
+        ImpuestosToolStripMenuItem.Size = New Size(160, 26)
         ImpuestosToolStripMenuItem.Text = "Impuestos"
         ' 
         ' SumaToolStripMenuItem
         ' 
         SumaToolStripMenuItem.Name = "SumaToolStripMenuItem"
-        SumaToolStripMenuItem.Size = New Size(224, 26)
+        SumaToolStripMenuItem.Size = New Size(160, 26)
         SumaToolStripMenuItem.Text = "Suma"
+        ' 
+        ' OrdenarToolStripMenuItem
+        ' 
+        OrdenarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlfabeticamenteToolStripMenuItem, NuméricamenteToolStripMenuItem, EliminarToolStripMenuItem})
+        OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
+        OrdenarToolStripMenuItem.Size = New Size(77, 24)
+        OrdenarToolStripMenuItem.Text = "Ordenar"
         ' 
         ' AlfabeticamenteToolStripMenuItem
         ' 
         AlfabeticamenteToolStripMenuItem.Name = "AlfabeticamenteToolStripMenuItem"
-        AlfabeticamenteToolStripMenuItem.Size = New Size(224, 26)
+        AlfabeticamenteToolStripMenuItem.Size = New Size(202, 26)
         AlfabeticamenteToolStripMenuItem.Text = "Alfabeticamente"
         ' 
         ' NuméricamenteToolStripMenuItem
         ' 
         NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
+        NuméricamenteToolStripMenuItem.Size = New Size(202, 26)
         NuméricamenteToolStripMenuItem.Text = "Numéricamente"
         ' 
         ' EliminarToolStripMenuItem
         ' 
         EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        EliminarToolStripMenuItem.Size = New Size(224, 26)
+        EliminarToolStripMenuItem.Size = New Size(202, 26)
         EliminarToolStripMenuItem.Text = "Eliminar"
+        ' 
+        ' ImpresiónToolStripMenuItem
+        ' 
+        ImpresiónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NóminaToolStripMenuItem, RecibosToolStripMenuItem, ChequesToolStripMenuItem, DetalleCalculoImptosToolStripMenuItem})
+        ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
+        ImpresiónToolStripMenuItem.Size = New Size(89, 24)
+        ImpresiónToolStripMenuItem.Text = "Impresión"
         ' 
         ' NóminaToolStripMenuItem
         ' 
@@ -277,6 +265,108 @@ Partial Class NOM_CapturarNominaQuincenal
         NóminaToolStripMenuItem.Size = New Size(241, 26)
         NóminaToolStripMenuItem.Text = "Nómina"
         ' 
+        ' Obra0ToolStripMenuItem
+        ' 
+        Obra0ToolStripMenuItem.Name = "Obra0ToolStripMenuItem"
+        Obra0ToolStripMenuItem.Size = New Size(149, 26)
+        Obra0ToolStripMenuItem.Text = "Obra 0"
+        ' 
+        ' Obra1ToolStripMenuItem
+        ' 
+        Obra1ToolStripMenuItem.Name = "Obra1ToolStripMenuItem"
+        Obra1ToolStripMenuItem.Size = New Size(149, 26)
+        Obra1ToolStripMenuItem.Text = "Obra 1"
+        ' 
+        ' Obra2ToolStripMenuItem
+        ' 
+        Obra2ToolStripMenuItem.Name = "Obra2ToolStripMenuItem"
+        Obra2ToolStripMenuItem.Size = New Size(149, 26)
+        Obra2ToolStripMenuItem.Text = "Obra 2"
+        ' 
+        ' Obra47ToolStripMenuItem
+        ' 
+        Obra47ToolStripMenuItem.Name = "Obra47ToolStripMenuItem"
+        Obra47ToolStripMenuItem.Size = New Size(149, 26)
+        Obra47ToolStripMenuItem.Text = "Obra 47"
+        ' 
+        ' Obra48ToolStripMenuItem
+        ' 
+        Obra48ToolStripMenuItem.Name = "Obra48ToolStripMenuItem"
+        Obra48ToolStripMenuItem.Size = New Size(149, 26)
+        Obra48ToolStripMenuItem.Text = "Obra 48 "
+        ' 
+        ' Obra49ToolStripMenuItem
+        ' 
+        Obra49ToolStripMenuItem.Name = "Obra49ToolStripMenuItem"
+        Obra49ToolStripMenuItem.Size = New Size(149, 26)
+        Obra49ToolStripMenuItem.Text = "Obra 49"
+        ' 
+        ' Obra50ToolStripMenuItem
+        ' 
+        Obra50ToolStripMenuItem.Name = "Obra50ToolStripMenuItem"
+        Obra50ToolStripMenuItem.Size = New Size(149, 26)
+        Obra50ToolStripMenuItem.Text = "Obra 50"
+        ' 
+        ' Obra51ToolStripMenuItem
+        ' 
+        Obra51ToolStripMenuItem.Name = "Obra51ToolStripMenuItem"
+        Obra51ToolStripMenuItem.Size = New Size(149, 26)
+        Obra51ToolStripMenuItem.Text = "Obra 51"
+        ' 
+        ' Obra52ToolStripMenuItem
+        ' 
+        Obra52ToolStripMenuItem.Name = "Obra52ToolStripMenuItem"
+        Obra52ToolStripMenuItem.Size = New Size(149, 26)
+        Obra52ToolStripMenuItem.Text = "Obra 52"
+        ' 
+        ' Obra53ToolStripMenuItem
+        ' 
+        Obra53ToolStripMenuItem.Name = "Obra53ToolStripMenuItem"
+        Obra53ToolStripMenuItem.Size = New Size(149, 26)
+        Obra53ToolStripMenuItem.Text = "Obra 53"
+        ' 
+        ' Obra54ToolStripMenuItem
+        ' 
+        Obra54ToolStripMenuItem.Name = "Obra54ToolStripMenuItem"
+        Obra54ToolStripMenuItem.Size = New Size(149, 26)
+        Obra54ToolStripMenuItem.Text = "Obra 54"
+        ' 
+        ' Obra55ToolStripMenuItem
+        ' 
+        Obra55ToolStripMenuItem.Name = "Obra55ToolStripMenuItem"
+        Obra55ToolStripMenuItem.Size = New Size(149, 26)
+        Obra55ToolStripMenuItem.Text = "Obra 55"
+        ' 
+        ' Obra56ToolStripMenuItem
+        ' 
+        Obra56ToolStripMenuItem.Name = "Obra56ToolStripMenuItem"
+        Obra56ToolStripMenuItem.Size = New Size(149, 26)
+        Obra56ToolStripMenuItem.Text = "Obra 56"
+        ' 
+        ' Obra57ToolStripMenuItem
+        ' 
+        Obra57ToolStripMenuItem.Name = "Obra57ToolStripMenuItem"
+        Obra57ToolStripMenuItem.Size = New Size(149, 26)
+        Obra57ToolStripMenuItem.Text = "Obra 57"
+        ' 
+        ' Obra58ToolStripMenuItem
+        ' 
+        Obra58ToolStripMenuItem.Name = "Obra58ToolStripMenuItem"
+        Obra58ToolStripMenuItem.Size = New Size(149, 26)
+        Obra58ToolStripMenuItem.Text = "Obra 58"
+        ' 
+        ' Obra59ToolStripMenuItem
+        ' 
+        Obra59ToolStripMenuItem.Name = "Obra59ToolStripMenuItem"
+        Obra59ToolStripMenuItem.Size = New Size(149, 26)
+        Obra59ToolStripMenuItem.Text = "Obra 59"
+        ' 
+        ' Obra60ToolStripMenuItem
+        ' 
+        Obra60ToolStripMenuItem.Name = "Obra60ToolStripMenuItem"
+        Obra60ToolStripMenuItem.Size = New Size(149, 26)
+        Obra60ToolStripMenuItem.Text = "Obra 60"
+        ' 
         ' RecibosToolStripMenuItem
         ' 
         RecibosToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TodosToolStripMenuItem, IndividualesToolStripMenuItem})
@@ -284,132 +374,24 @@ Partial Class NOM_CapturarNominaQuincenal
         RecibosToolStripMenuItem.Size = New Size(241, 26)
         RecibosToolStripMenuItem.Text = "Recibos"
         ' 
+        ' TodosToolStripMenuItem
+        ' 
+        TodosToolStripMenuItem.Name = "TodosToolStripMenuItem"
+        TodosToolStripMenuItem.Size = New Size(171, 26)
+        TodosToolStripMenuItem.Text = "Todos"
+        ' 
+        ' IndividualesToolStripMenuItem
+        ' 
+        IndividualesToolStripMenuItem.Name = "IndividualesToolStripMenuItem"
+        IndividualesToolStripMenuItem.Size = New Size(171, 26)
+        IndividualesToolStripMenuItem.Text = "Individuales"
+        ' 
         ' ChequesToolStripMenuItem
         ' 
         ChequesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AjustesToolStripMenuItem, IndividualesToolStripMenuItem1, TotalesToolStripMenuItem, DirectorioToolStripMenuItem})
         ChequesToolStripMenuItem.Name = "ChequesToolStripMenuItem"
         ChequesToolStripMenuItem.Size = New Size(241, 26)
         ChequesToolStripMenuItem.Text = "Cheques "
-        ' 
-        ' DetalleCalculoImptosToolStripMenuItem
-        ' 
-        DetalleCalculoImptosToolStripMenuItem.Name = "DetalleCalculoImptosToolStripMenuItem"
-        DetalleCalculoImptosToolStripMenuItem.Size = New Size(241, 26)
-        DetalleCalculoImptosToolStripMenuItem.Text = "Detalle calculo imptos"
-        ' 
-        ' Obra0ToolStripMenuItem
-        ' 
-        Obra0ToolStripMenuItem.Name = "Obra0ToolStripMenuItem"
-        Obra0ToolStripMenuItem.Size = New Size(224, 26)
-        Obra0ToolStripMenuItem.Text = "Obra 0"
-        ' 
-        ' Obra1ToolStripMenuItem
-        ' 
-        Obra1ToolStripMenuItem.Name = "Obra1ToolStripMenuItem"
-        Obra1ToolStripMenuItem.Size = New Size(224, 26)
-        Obra1ToolStripMenuItem.Text = "Obra 1"
-        ' 
-        ' Obra2ToolStripMenuItem
-        ' 
-        Obra2ToolStripMenuItem.Name = "Obra2ToolStripMenuItem"
-        Obra2ToolStripMenuItem.Size = New Size(224, 26)
-        Obra2ToolStripMenuItem.Text = "Obra 2"
-        ' 
-        ' Obra47ToolStripMenuItem
-        ' 
-        Obra47ToolStripMenuItem.Name = "Obra47ToolStripMenuItem"
-        Obra47ToolStripMenuItem.Size = New Size(224, 26)
-        Obra47ToolStripMenuItem.Text = "Obra 47"
-        ' 
-        ' Obra48ToolStripMenuItem
-        ' 
-        Obra48ToolStripMenuItem.Name = "Obra48ToolStripMenuItem"
-        Obra48ToolStripMenuItem.Size = New Size(224, 26)
-        Obra48ToolStripMenuItem.Text = "Obra 48 "
-        ' 
-        ' Obra49ToolStripMenuItem
-        ' 
-        Obra49ToolStripMenuItem.Name = "Obra49ToolStripMenuItem"
-        Obra49ToolStripMenuItem.Size = New Size(224, 26)
-        Obra49ToolStripMenuItem.Text = "Obra 49"
-        ' 
-        ' Obra50ToolStripMenuItem
-        ' 
-        Obra50ToolStripMenuItem.Name = "Obra50ToolStripMenuItem"
-        Obra50ToolStripMenuItem.Size = New Size(224, 26)
-        Obra50ToolStripMenuItem.Text = "Obra 50"
-        ' 
-        ' Obra51ToolStripMenuItem
-        ' 
-        Obra51ToolStripMenuItem.Name = "Obra51ToolStripMenuItem"
-        Obra51ToolStripMenuItem.Size = New Size(224, 26)
-        Obra51ToolStripMenuItem.Text = "Obra 51"
-        ' 
-        ' Obra52ToolStripMenuItem
-        ' 
-        Obra52ToolStripMenuItem.Name = "Obra52ToolStripMenuItem"
-        Obra52ToolStripMenuItem.Size = New Size(224, 26)
-        Obra52ToolStripMenuItem.Text = "Obra 52"
-        ' 
-        ' Obra53ToolStripMenuItem
-        ' 
-        Obra53ToolStripMenuItem.Name = "Obra53ToolStripMenuItem"
-        Obra53ToolStripMenuItem.Size = New Size(224, 26)
-        Obra53ToolStripMenuItem.Text = "Obra 53"
-        ' 
-        ' Obra54ToolStripMenuItem
-        ' 
-        Obra54ToolStripMenuItem.Name = "Obra54ToolStripMenuItem"
-        Obra54ToolStripMenuItem.Size = New Size(224, 26)
-        Obra54ToolStripMenuItem.Text = "Obra 54"
-        ' 
-        ' Obra55ToolStripMenuItem
-        ' 
-        Obra55ToolStripMenuItem.Name = "Obra55ToolStripMenuItem"
-        Obra55ToolStripMenuItem.Size = New Size(224, 26)
-        Obra55ToolStripMenuItem.Text = "Obra 55"
-        ' 
-        ' Obra56ToolStripMenuItem
-        ' 
-        Obra56ToolStripMenuItem.Name = "Obra56ToolStripMenuItem"
-        Obra56ToolStripMenuItem.Size = New Size(224, 26)
-        Obra56ToolStripMenuItem.Text = "Obra 56"
-        ' 
-        ' Obra57ToolStripMenuItem
-        ' 
-        Obra57ToolStripMenuItem.Name = "Obra57ToolStripMenuItem"
-        Obra57ToolStripMenuItem.Size = New Size(224, 26)
-        Obra57ToolStripMenuItem.Text = "Obra 57"
-        ' 
-        ' Obra58ToolStripMenuItem
-        ' 
-        Obra58ToolStripMenuItem.Name = "Obra58ToolStripMenuItem"
-        Obra58ToolStripMenuItem.Size = New Size(224, 26)
-        Obra58ToolStripMenuItem.Text = "Obra 58"
-        ' 
-        ' Obra59ToolStripMenuItem
-        ' 
-        Obra59ToolStripMenuItem.Name = "Obra59ToolStripMenuItem"
-        Obra59ToolStripMenuItem.Size = New Size(224, 26)
-        Obra59ToolStripMenuItem.Text = "Obra 59"
-        ' 
-        ' Obra60ToolStripMenuItem
-        ' 
-        Obra60ToolStripMenuItem.Name = "Obra60ToolStripMenuItem"
-        Obra60ToolStripMenuItem.Size = New Size(224, 26)
-        Obra60ToolStripMenuItem.Text = "Obra 60"
-        ' 
-        ' TodosToolStripMenuItem
-        ' 
-        TodosToolStripMenuItem.Name = "TodosToolStripMenuItem"
-        TodosToolStripMenuItem.Size = New Size(224, 26)
-        TodosToolStripMenuItem.Text = "Todos"
-        ' 
-        ' IndividualesToolStripMenuItem
-        ' 
-        IndividualesToolStripMenuItem.Name = "IndividualesToolStripMenuItem"
-        IndividualesToolStripMenuItem.Size = New Size(224, 26)
-        IndividualesToolStripMenuItem.Text = "Individuales"
         ' 
         ' AjustesToolStripMenuItem
         ' 
@@ -434,6 +416,24 @@ Partial Class NOM_CapturarNominaQuincenal
         DirectorioToolStripMenuItem.Name = "DirectorioToolStripMenuItem"
         DirectorioToolStripMenuItem.Size = New Size(230, 26)
         DirectorioToolStripMenuItem.Text = "Directorio de Obra"
+        ' 
+        ' DetalleCalculoImptosToolStripMenuItem
+        ' 
+        DetalleCalculoImptosToolStripMenuItem.Name = "DetalleCalculoImptosToolStripMenuItem"
+        DetalleCalculoImptosToolStripMenuItem.Size = New Size(241, 26)
+        DetalleCalculoImptosToolStripMenuItem.Text = "Detalle calculo imptos"
+        ' 
+        ' ExportarDatosToolStripMenuItem
+        ' 
+        ExportarDatosToolStripMenuItem.Name = "ExportarDatosToolStripMenuItem"
+        ExportarDatosToolStripMenuItem.Size = New Size(122, 24)
+        ExportarDatosToolStripMenuItem.Text = "Exportar Datos"
+        ' 
+        ' ImportarDatosToolStripMenuItem
+        ' 
+        ImportarDatosToolStripMenuItem.Name = "ImportarDatosToolStripMenuItem"
+        ImportarDatosToolStripMenuItem.Size = New Size(124, 24)
+        ImportarDatosToolStripMenuItem.Text = "Importar Datos"
         ' 
         ' RadioButton1
         ' 
