@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NOM_CapturarNominaQuincenal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,793 +20,792 @@ Partial Class NOM_CapturarNominaQuincenal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ArchivarNóminaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EdiciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SeleccionarTodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopiarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CapturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IniciarCapturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ArchivoBanamexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DistribuciónNóminaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InternetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CFDIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ActualizaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImpuestosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SumaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AlfabeticamenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuméricamenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImpresiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NóminaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra0ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra47ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra48ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra49ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra50ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra51ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra52ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra53ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra54ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra55ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra56ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra57ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra58ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra59ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Obra60ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecibosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IndividualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChequesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AjustesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IndividualesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TotalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DirectorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DetalleCalculoImptosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExportarDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImportarDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ColNom = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColDiasT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColSueldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColHsNorm = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColHsDob = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColAguinaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColHsTriples = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColPtu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColViat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColPremioPt = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColPVacac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColOtras = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColPercExe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColTotIng = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColIspt = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColCrSal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColSubP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColImss = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColPrestamos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColFona = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColPenAlimen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColInfona = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColTotDed = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColBanamex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
-        Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.EdiciónToolStripMenuItem, Me.CapturaToolStripMenuItem, Me.ActualizaciónToolStripMenuItem, Me.OrdenarToolStripMenuItem, Me.ImpresiónToolStripMenuItem, Me.ExportarDatosToolStripMenuItem, Me.ImportarDatosToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(972, 28)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivarNóminaToolStripMenuItem, Me.SalidaToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'ArchivarNóminaToolStripMenuItem
-        '
-        Me.ArchivarNóminaToolStripMenuItem.Name = "ArchivarNóminaToolStripMenuItem"
-        Me.ArchivarNóminaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
-        Me.ArchivarNóminaToolStripMenuItem.Text = "Archivar Nómina"
-        '
-        'SalidaToolStripMenuItem
-        '
-        Me.SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
-        Me.SalidaToolStripMenuItem.Text = "Salida"
-        '
-        'EdiciónToolStripMenuItem
-        '
-        Me.EdiciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SeleccionarTodoToolStripMenuItem, Me.CopiarToolStripMenuItem})
-        Me.EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        Me.EdiciónToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
-        Me.EdiciónToolStripMenuItem.Text = "Edición"
-        '
-        'SeleccionarTodoToolStripMenuItem
-        '
-        Me.SeleccionarTodoToolStripMenuItem.Name = "SeleccionarTodoToolStripMenuItem"
-        Me.SeleccionarTodoToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
-        Me.SeleccionarTodoToolStripMenuItem.Text = "Seleccionar todo"
-        '
-        'CopiarToolStripMenuItem
-        '
-        Me.CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
-        Me.CopiarToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
-        Me.CopiarToolStripMenuItem.Text = "Copiar "
-        '
-        'CapturaToolStripMenuItem
-        '
-        Me.CapturaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IniciarCapturaToolStripMenuItem, Me.ArchivoBanamexToolStripMenuItem, Me.DistribuciónNóminaToolStripMenuItem, Me.InternetToolStripMenuItem, Me.CFDIToolStripMenuItem})
-        Me.CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
-        Me.CapturaToolStripMenuItem.Size = New System.Drawing.Size(75, 24)
-        Me.CapturaToolStripMenuItem.Text = "Captura"
-        '
-        'IniciarCapturaToolStripMenuItem
-        '
-        Me.IniciarCapturaToolStripMenuItem.Name = "IniciarCapturaToolStripMenuItem"
-        Me.IniciarCapturaToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.IniciarCapturaToolStripMenuItem.Text = "Iniciar Captura"
-        '
-        'ArchivoBanamexToolStripMenuItem
-        '
-        Me.ArchivoBanamexToolStripMenuItem.Name = "ArchivoBanamexToolStripMenuItem"
-        Me.ArchivoBanamexToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.ArchivoBanamexToolStripMenuItem.Text = "Archivo Banamex"
-        '
-        'DistribuciónNóminaToolStripMenuItem
-        '
-        Me.DistribuciónNóminaToolStripMenuItem.Name = "DistribuciónNóminaToolStripMenuItem"
-        Me.DistribuciónNóminaToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.DistribuciónNóminaToolStripMenuItem.Text = "Distribución Nómina"
-        '
-        'InternetToolStripMenuItem
-        '
-        Me.InternetToolStripMenuItem.Name = "InternetToolStripMenuItem"
-        Me.InternetToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.InternetToolStripMenuItem.Text = "Internet"
-        '
-        'CFDIToolStripMenuItem
-        '
-        Me.CFDIToolStripMenuItem.Name = "CFDIToolStripMenuItem"
-        Me.CFDIToolStripMenuItem.Size = New System.Drawing.Size(229, 26)
-        Me.CFDIToolStripMenuItem.Text = "CFDI"
-        '
-        'ActualizaciónToolStripMenuItem
-        '
-        Me.ActualizaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImpuestosToolStripMenuItem, Me.SumaToolStripMenuItem})
-        Me.ActualizaciónToolStripMenuItem.Name = "ActualizaciónToolStripMenuItem"
-        Me.ActualizaciónToolStripMenuItem.Size = New System.Drawing.Size(112, 24)
-        Me.ActualizaciónToolStripMenuItem.Text = "Actualización"
-        '
-        'ImpuestosToolStripMenuItem
-        '
-        Me.ImpuestosToolStripMenuItem.Name = "ImpuestosToolStripMenuItem"
-        Me.ImpuestosToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
-        Me.ImpuestosToolStripMenuItem.Text = "Impuestos"
-        '
-        'SumaToolStripMenuItem
-        '
-        Me.SumaToolStripMenuItem.Name = "SumaToolStripMenuItem"
-        Me.SumaToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
-        Me.SumaToolStripMenuItem.Text = "Suma"
-        '
-        'OrdenarToolStripMenuItem
-        '
-        Me.OrdenarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlfabeticamenteToolStripMenuItem, Me.NuméricamenteToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
-        Me.OrdenarToolStripMenuItem.Size = New System.Drawing.Size(77, 24)
-        Me.OrdenarToolStripMenuItem.Text = "Ordenar"
-        '
-        'AlfabeticamenteToolStripMenuItem
-        '
-        Me.AlfabeticamenteToolStripMenuItem.Name = "AlfabeticamenteToolStripMenuItem"
-        Me.AlfabeticamenteToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
-        Me.AlfabeticamenteToolStripMenuItem.Text = "Alfabeticamente"
-        '
-        'NuméricamenteToolStripMenuItem
-        '
-        Me.NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        Me.NuméricamenteToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
-        Me.NuméricamenteToolStripMenuItem.Text = "Numéricamente"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'ImpresiónToolStripMenuItem
-        '
-        Me.ImpresiónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NóminaToolStripMenuItem, Me.RecibosToolStripMenuItem, Me.ChequesToolStripMenuItem, Me.DetalleCalculoImptosToolStripMenuItem})
-        Me.ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
-        Me.ImpresiónToolStripMenuItem.Size = New System.Drawing.Size(89, 24)
-        Me.ImpresiónToolStripMenuItem.Text = "Impresión"
-        '
-        'NóminaToolStripMenuItem
-        '
-        Me.NóminaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Obra0ToolStripMenuItem, Me.Obra1ToolStripMenuItem, Me.Obra2ToolStripMenuItem, Me.Obra47ToolStripMenuItem, Me.Obra48ToolStripMenuItem, Me.Obra49ToolStripMenuItem, Me.Obra50ToolStripMenuItem, Me.Obra51ToolStripMenuItem, Me.Obra52ToolStripMenuItem, Me.Obra53ToolStripMenuItem, Me.Obra54ToolStripMenuItem, Me.Obra55ToolStripMenuItem, Me.Obra56ToolStripMenuItem, Me.Obra57ToolStripMenuItem, Me.Obra58ToolStripMenuItem, Me.Obra59ToolStripMenuItem, Me.Obra60ToolStripMenuItem})
-        Me.NóminaToolStripMenuItem.Name = "NóminaToolStripMenuItem"
-        Me.NóminaToolStripMenuItem.Size = New System.Drawing.Size(241, 26)
-        Me.NóminaToolStripMenuItem.Text = "Nómina"
-        '
-        'Obra0ToolStripMenuItem
-        '
-        Me.Obra0ToolStripMenuItem.Name = "Obra0ToolStripMenuItem"
-        Me.Obra0ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra0ToolStripMenuItem.Text = "Obra 0"
-        '
-        'Obra1ToolStripMenuItem
-        '
-        Me.Obra1ToolStripMenuItem.Name = "Obra1ToolStripMenuItem"
-        Me.Obra1ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra1ToolStripMenuItem.Text = "Obra 1"
-        '
-        'Obra2ToolStripMenuItem
-        '
-        Me.Obra2ToolStripMenuItem.Name = "Obra2ToolStripMenuItem"
-        Me.Obra2ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra2ToolStripMenuItem.Text = "Obra 2"
-        '
-        'Obra47ToolStripMenuItem
-        '
-        Me.Obra47ToolStripMenuItem.Name = "Obra47ToolStripMenuItem"
-        Me.Obra47ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra47ToolStripMenuItem.Text = "Obra 47"
-        '
-        'Obra48ToolStripMenuItem
-        '
-        Me.Obra48ToolStripMenuItem.Name = "Obra48ToolStripMenuItem"
-        Me.Obra48ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra48ToolStripMenuItem.Text = "Obra 48 "
-        '
-        'Obra49ToolStripMenuItem
-        '
-        Me.Obra49ToolStripMenuItem.Name = "Obra49ToolStripMenuItem"
-        Me.Obra49ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra49ToolStripMenuItem.Text = "Obra 49"
-        '
-        'Obra50ToolStripMenuItem
-        '
-        Me.Obra50ToolStripMenuItem.Name = "Obra50ToolStripMenuItem"
-        Me.Obra50ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra50ToolStripMenuItem.Text = "Obra 50"
-        '
-        'Obra51ToolStripMenuItem
-        '
-        Me.Obra51ToolStripMenuItem.Name = "Obra51ToolStripMenuItem"
-        Me.Obra51ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra51ToolStripMenuItem.Text = "Obra 51"
-        '
-        'Obra52ToolStripMenuItem
-        '
-        Me.Obra52ToolStripMenuItem.Name = "Obra52ToolStripMenuItem"
-        Me.Obra52ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra52ToolStripMenuItem.Text = "Obra 52"
-        '
-        'Obra53ToolStripMenuItem
-        '
-        Me.Obra53ToolStripMenuItem.Name = "Obra53ToolStripMenuItem"
-        Me.Obra53ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra53ToolStripMenuItem.Text = "Obra 53"
-        '
-        'Obra54ToolStripMenuItem
-        '
-        Me.Obra54ToolStripMenuItem.Name = "Obra54ToolStripMenuItem"
-        Me.Obra54ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra54ToolStripMenuItem.Text = "Obra 54"
-        '
-        'Obra55ToolStripMenuItem
-        '
-        Me.Obra55ToolStripMenuItem.Name = "Obra55ToolStripMenuItem"
-        Me.Obra55ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra55ToolStripMenuItem.Text = "Obra 55"
-        '
-        'Obra56ToolStripMenuItem
-        '
-        Me.Obra56ToolStripMenuItem.Name = "Obra56ToolStripMenuItem"
-        Me.Obra56ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra56ToolStripMenuItem.Text = "Obra 56"
-        '
-        'Obra57ToolStripMenuItem
-        '
-        Me.Obra57ToolStripMenuItem.Name = "Obra57ToolStripMenuItem"
-        Me.Obra57ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra57ToolStripMenuItem.Text = "Obra 57"
-        '
-        'Obra58ToolStripMenuItem
-        '
-        Me.Obra58ToolStripMenuItem.Name = "Obra58ToolStripMenuItem"
-        Me.Obra58ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra58ToolStripMenuItem.Text = "Obra 58"
-        '
-        'Obra59ToolStripMenuItem
-        '
-        Me.Obra59ToolStripMenuItem.Name = "Obra59ToolStripMenuItem"
-        Me.Obra59ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra59ToolStripMenuItem.Text = "Obra 59"
-        '
-        'Obra60ToolStripMenuItem
-        '
-        Me.Obra60ToolStripMenuItem.Name = "Obra60ToolStripMenuItem"
-        Me.Obra60ToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
-        Me.Obra60ToolStripMenuItem.Text = "Obra 60"
-        '
-        'RecibosToolStripMenuItem
-        '
-        Me.RecibosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TodosToolStripMenuItem, Me.IndividualesToolStripMenuItem})
-        Me.RecibosToolStripMenuItem.Name = "RecibosToolStripMenuItem"
-        Me.RecibosToolStripMenuItem.Size = New System.Drawing.Size(241, 26)
-        Me.RecibosToolStripMenuItem.Text = "Recibos"
-        '
-        'TodosToolStripMenuItem
-        '
-        Me.TodosToolStripMenuItem.Name = "TodosToolStripMenuItem"
-        Me.TodosToolStripMenuItem.Size = New System.Drawing.Size(171, 26)
-        Me.TodosToolStripMenuItem.Text = "Todos"
-        '
-        'IndividualesToolStripMenuItem
-        '
-        Me.IndividualesToolStripMenuItem.Name = "IndividualesToolStripMenuItem"
-        Me.IndividualesToolStripMenuItem.Size = New System.Drawing.Size(171, 26)
-        Me.IndividualesToolStripMenuItem.Text = "Individuales"
-        '
-        'ChequesToolStripMenuItem
-        '
-        Me.ChequesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AjustesToolStripMenuItem, Me.IndividualesToolStripMenuItem1, Me.TotalesToolStripMenuItem, Me.DirectorioToolStripMenuItem})
-        Me.ChequesToolStripMenuItem.Name = "ChequesToolStripMenuItem"
-        Me.ChequesToolStripMenuItem.Size = New System.Drawing.Size(241, 26)
-        Me.ChequesToolStripMenuItem.Text = "Cheques "
-        '
-        'AjustesToolStripMenuItem
-        '
-        Me.AjustesToolStripMenuItem.Name = "AjustesToolStripMenuItem"
-        Me.AjustesToolStripMenuItem.Size = New System.Drawing.Size(230, 26)
-        Me.AjustesToolStripMenuItem.Text = "Ajustes de impresión"
-        '
-        'IndividualesToolStripMenuItem1
-        '
-        Me.IndividualesToolStripMenuItem1.Name = "IndividualesToolStripMenuItem1"
-        Me.IndividualesToolStripMenuItem1.Size = New System.Drawing.Size(230, 26)
-        Me.IndividualesToolStripMenuItem1.Text = "Individuales"
-        '
-        'TotalesToolStripMenuItem
-        '
-        Me.TotalesToolStripMenuItem.Name = "TotalesToolStripMenuItem"
-        Me.TotalesToolStripMenuItem.Size = New System.Drawing.Size(230, 26)
-        Me.TotalesToolStripMenuItem.Text = "Totales"
-        '
-        'DirectorioToolStripMenuItem
-        '
-        Me.DirectorioToolStripMenuItem.Name = "DirectorioToolStripMenuItem"
-        Me.DirectorioToolStripMenuItem.Size = New System.Drawing.Size(230, 26)
-        Me.DirectorioToolStripMenuItem.Text = "Directorio de Obra"
-        '
-        'DetalleCalculoImptosToolStripMenuItem
-        '
-        Me.DetalleCalculoImptosToolStripMenuItem.Name = "DetalleCalculoImptosToolStripMenuItem"
-        Me.DetalleCalculoImptosToolStripMenuItem.Size = New System.Drawing.Size(241, 26)
-        Me.DetalleCalculoImptosToolStripMenuItem.Text = "Detalle calculo imptos"
-        '
-        'ExportarDatosToolStripMenuItem
-        '
-        Me.ExportarDatosToolStripMenuItem.Name = "ExportarDatosToolStripMenuItem"
-        Me.ExportarDatosToolStripMenuItem.Size = New System.Drawing.Size(122, 24)
-        Me.ExportarDatosToolStripMenuItem.Text = "Exportar Datos"
-        '
-        'ImportarDatosToolStripMenuItem
-        '
-        Me.ImportarDatosToolStripMenuItem.Name = "ImportarDatosToolStripMenuItem"
-        Me.ImportarDatosToolStripMenuItem.Size = New System.Drawing.Size(124, 24)
-        Me.ImportarDatosToolStripMenuItem.Text = "Importar Datos"
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(31, 37)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(80, 24)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Normal"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(31, 78)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(84, 24)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Especial"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(28, 37)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(81, 24)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Primera"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(28, 78)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(88, 24)
-        Me.RadioButton4.TabIndex = 4
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Segunda"
-        Me.RadioButton4.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(50, 61)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(146, 142)
-        Me.GroupBox1.TabIndex = 5
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Nómina"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
-        Me.GroupBox2.Location = New System.Drawing.Point(222, 61)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(155, 142)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Quincena"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(383, 97)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(156, 27)
-        Me.TextBox1.TabIndex = 7
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(383, 157)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(156, 28)
-        Me.ComboBox1.TabIndex = 8
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(545, 97)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(117, 40)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Nombre de la" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "nómina especial"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(545, 160)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 20)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Mes"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(693, 117)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 20)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Cantidad exenta:"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(693, 157)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(125, 27)
-        Me.TextBox2.TabIndex = 12
-        '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label4.Location = New System.Drawing.Point(12, 223)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(928, 25)
-        Me.Label4.TabIndex = 13
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(22, 273)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(221, 27)
-        Me.TextBox3.TabIndex = 14
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(462, 276)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(200, 20)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Usando tarifas de impuestos:"
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'OpenFileDialog2
-        '
-        Me.OpenFileDialog2.FileName = "OpenFileDialog2"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColNom, Me.ColDiasT, Me.ColSueldo, Me.ColHsNorm, Me.ColHsDob, Me.ColAguinaldo, Me.ColHsTriples, Me.ColPtu, Me.ColViat, Me.ColPremioPt, Me.ColPVacac, Me.ColOtras, Me.ColPercExe, Me.ColTotIng, Me.ColIspt, Me.ColCrSal, Me.ColSubP, Me.ColImss, Me.ColPrestamos, Me.ColFona, Me.ColPenAlimen, Me.ColInfona, Me.ColTotDed, Me.ColNeto, Me.ColBanamex})
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 307)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(953, 244)
-        Me.DataGridView1.TabIndex = 16
-        '
-        'ColNom
-        '
-        Me.ColNom.HeaderText = "Nombre"
-        Me.ColNom.MinimumWidth = 6
-        Me.ColNom.Name = "ColNom"
-        Me.ColNom.Width = 125
-        '
-        'ColDiasT
-        '
-        Me.ColDiasT.HeaderText = "Días Trab."
-        Me.ColDiasT.MinimumWidth = 6
-        Me.ColDiasT.Name = "ColDiasT"
-        Me.ColDiasT.Width = 125
-        '
-        'ColSueldo
-        '
-        Me.ColSueldo.HeaderText = "Sueldo"
-        Me.ColSueldo.MinimumWidth = 6
-        Me.ColSueldo.Name = "ColSueldo"
-        Me.ColSueldo.Width = 125
-        '
-        'ColHsNorm
-        '
-        Me.ColHsNorm.HeaderText = "Hrs. Norm"
-        Me.ColHsNorm.MinimumWidth = 6
-        Me.ColHsNorm.Name = "ColHsNorm"
-        Me.ColHsNorm.Width = 125
-        '
-        'ColHsDob
-        '
-        Me.ColHsDob.HeaderText = "Hrs. Dobles"
-        Me.ColHsDob.MinimumWidth = 6
-        Me.ColHsDob.Name = "ColHsDob"
-        Me.ColHsDob.Width = 125
-        '
-        'ColAguinaldo
-        '
-        Me.ColAguinaldo.HeaderText = "Aguinaldo"
-        Me.ColAguinaldo.MinimumWidth = 6
-        Me.ColAguinaldo.Name = "ColAguinaldo"
-        Me.ColAguinaldo.Width = 125
-        '
-        'ColHsTriples
-        '
-        Me.ColHsTriples.HeaderText = "Hrs. Triples"
-        Me.ColHsTriples.MinimumWidth = 6
-        Me.ColHsTriples.Name = "ColHsTriples"
-        Me.ColHsTriples.Width = 125
-        '
-        'ColPtu
-        '
-        Me.ColPtu.HeaderText = "Ptu"
-        Me.ColPtu.MinimumWidth = 6
-        Me.ColPtu.Name = "ColPtu"
-        Me.ColPtu.Width = 125
-        '
-        'ColViat
-        '
-        Me.ColViat.HeaderText = "Viáticos"
-        Me.ColViat.MinimumWidth = 6
-        Me.ColViat.Name = "ColViat"
-        Me.ColViat.Width = 125
-        '
-        'ColPremioPt
-        '
-        Me.ColPremioPt.HeaderText = "Premip Punt"
-        Me.ColPremioPt.MinimumWidth = 6
-        Me.ColPremioPt.Name = "ColPremioPt"
-        Me.ColPremioPt.Width = 125
-        '
-        'ColPVacac
-        '
-        Me.ColPVacac.HeaderText = "P. Vacac"
-        Me.ColPVacac.MinimumWidth = 6
-        Me.ColPVacac.Name = "ColPVacac"
-        Me.ColPVacac.Width = 125
-        '
-        'ColOtras
-        '
-        Me.ColOtras.HeaderText = "Otras"
-        Me.ColOtras.MinimumWidth = 6
-        Me.ColOtras.Name = "ColOtras"
-        Me.ColOtras.Width = 125
-        '
-        'ColPercExe
-        '
-        Me.ColPercExe.HeaderText = "Perc. Exenta"
-        Me.ColPercExe.MinimumWidth = 6
-        Me.ColPercExe.Name = "ColPercExe"
-        Me.ColPercExe.Width = 125
-        '
-        'ColTotIng
-        '
-        Me.ColTotIng.HeaderText = "Tot. Ingr."
-        Me.ColTotIng.MinimumWidth = 6
-        Me.ColTotIng.Name = "ColTotIng"
-        Me.ColTotIng.Width = 125
-        '
-        'ColIspt
-        '
-        Me.ColIspt.HeaderText = "Ispt"
-        Me.ColIspt.MinimumWidth = 6
-        Me.ColIspt.Name = "ColIspt"
-        Me.ColIspt.Width = 125
-        '
-        'ColCrSal
-        '
-        Me.ColCrSal.HeaderText = "Crs. Salario"
-        Me.ColCrSal.MinimumWidth = 6
-        Me.ColCrSal.Name = "ColCrSal"
-        Me.ColCrSal.Width = 125
-        '
-        'ColSubP
-        '
-        Me.ColSubP.HeaderText = "Sub. P/Empl"
-        Me.ColSubP.MinimumWidth = 6
-        Me.ColSubP.Name = "ColSubP"
-        Me.ColSubP.Width = 125
-        '
-        'ColImss
-        '
-        Me.ColImss.HeaderText = "Imss"
-        Me.ColImss.MinimumWidth = 6
-        Me.ColImss.Name = "ColImss"
-        Me.ColImss.Width = 125
-        '
-        'ColPrestamos
-        '
-        Me.ColPrestamos.HeaderText = "Prestamos"
-        Me.ColPrestamos.MinimumWidth = 6
-        Me.ColPrestamos.Name = "ColPrestamos"
-        Me.ColPrestamos.Width = 125
-        '
-        'ColFona
-        '
-        Me.ColFona.HeaderText = "Fonacot"
-        Me.ColFona.MinimumWidth = 6
-        Me.ColFona.Name = "ColFona"
-        Me.ColFona.Width = 125
-        '
-        'ColPenAlimen
-        '
-        Me.ColPenAlimen.HeaderText = "Pensión Alimentica"
-        Me.ColPenAlimen.MinimumWidth = 6
-        Me.ColPenAlimen.Name = "ColPenAlimen"
-        Me.ColPenAlimen.Width = 125
-        '
-        'ColInfona
-        '
-        Me.ColInfona.HeaderText = "Infonavit"
-        Me.ColInfona.MinimumWidth = 6
-        Me.ColInfona.Name = "ColInfona"
-        Me.ColInfona.Width = 125
-        '
-        'ColTotDed
-        '
-        Me.ColTotDed.HeaderText = "Tot. Deduac"
-        Me.ColTotDed.MinimumWidth = 6
-        Me.ColTotDed.Name = "ColTotDed"
-        Me.ColTotDed.Width = 125
-        '
-        'ColNeto
-        '
-        Me.ColNeto.HeaderText = "Neto"
-        Me.ColNeto.MinimumWidth = 6
-        Me.ColNeto.Name = "ColNeto"
-        Me.ColNeto.Width = 125
-        '
-        'ColBanamex
-        '
-        Me.ColBanamex.HeaderText = "Banamex"
-        Me.ColBanamex.MinimumWidth = 6
-        Me.ColBanamex.Name = "ColBanamex"
-        Me.ColBanamex.Width = 125
-        '
-        'VScrollBar1
-        '
-        Me.VScrollBar1.Location = New System.Drawing.Point(941, 30)
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(10, 503)
-        Me.VScrollBar1.TabIndex = 17
-        '
-        'NOM_CapturarNominaQuincenal
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(972, 568)
-        Me.Controls.Add(Me.VScrollBar1)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "NOM_CapturarNominaQuincenal"
-        Me.Text = "NOM_CapturarNominaQuincenal"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        MenuStrip1 = New MenuStrip()
+        ArchivoToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
+        CapturaToolStripMenuItem = New ToolStripMenuItem()
+        ActualizaciónToolStripMenuItem = New ToolStripMenuItem()
+        OrdenarToolStripMenuItem = New ToolStripMenuItem()
+        ImpresiónToolStripMenuItem = New ToolStripMenuItem()
+        ExportarDatosToolStripMenuItem = New ToolStripMenuItem()
+        ImportarDatosToolStripMenuItem = New ToolStripMenuItem()
+        ArchivarNóminaToolStripMenuItem = New ToolStripMenuItem()
+        SalidaToolStripMenuItem = New ToolStripMenuItem()
+        SeleccionarTodoToolStripMenuItem = New ToolStripMenuItem()
+        CopiarToolStripMenuItem = New ToolStripMenuItem()
+        IniciarCapturaToolStripMenuItem = New ToolStripMenuItem()
+        ArchivoBanamexToolStripMenuItem = New ToolStripMenuItem()
+        DistribuciónNóminaToolStripMenuItem = New ToolStripMenuItem()
+        InternetToolStripMenuItem = New ToolStripMenuItem()
+        CFDIToolStripMenuItem = New ToolStripMenuItem()
+        ImpuestosToolStripMenuItem = New ToolStripMenuItem()
+        SumaToolStripMenuItem = New ToolStripMenuItem()
+        AlfabeticamenteToolStripMenuItem = New ToolStripMenuItem()
+        NuméricamenteToolStripMenuItem = New ToolStripMenuItem()
+        EliminarToolStripMenuItem = New ToolStripMenuItem()
+        NóminaToolStripMenuItem = New ToolStripMenuItem()
+        RecibosToolStripMenuItem = New ToolStripMenuItem()
+        ChequesToolStripMenuItem = New ToolStripMenuItem()
+        DetalleCalculoImptosToolStripMenuItem = New ToolStripMenuItem()
+        Obra0ToolStripMenuItem = New ToolStripMenuItem()
+        Obra1ToolStripMenuItem = New ToolStripMenuItem()
+        Obra2ToolStripMenuItem = New ToolStripMenuItem()
+        Obra47ToolStripMenuItem = New ToolStripMenuItem()
+        Obra48ToolStripMenuItem = New ToolStripMenuItem()
+        Obra49ToolStripMenuItem = New ToolStripMenuItem()
+        Obra50ToolStripMenuItem = New ToolStripMenuItem()
+        Obra51ToolStripMenuItem = New ToolStripMenuItem()
+        Obra52ToolStripMenuItem = New ToolStripMenuItem()
+        Obra53ToolStripMenuItem = New ToolStripMenuItem()
+        Obra54ToolStripMenuItem = New ToolStripMenuItem()
+        Obra55ToolStripMenuItem = New ToolStripMenuItem()
+        Obra56ToolStripMenuItem = New ToolStripMenuItem()
+        Obra57ToolStripMenuItem = New ToolStripMenuItem()
+        Obra58ToolStripMenuItem = New ToolStripMenuItem()
+        Obra59ToolStripMenuItem = New ToolStripMenuItem()
+        Obra60ToolStripMenuItem = New ToolStripMenuItem()
+        TodosToolStripMenuItem = New ToolStripMenuItem()
+        IndividualesToolStripMenuItem = New ToolStripMenuItem()
+        AjustesToolStripMenuItem = New ToolStripMenuItem()
+        IndividualesToolStripMenuItem1 = New ToolStripMenuItem()
+        TotalesToolStripMenuItem = New ToolStripMenuItem()
+        DirectorioToolStripMenuItem = New ToolStripMenuItem()
+        RadioButton1 = New RadioButton()
+        RadioButton2 = New RadioButton()
+        RadioButton3 = New RadioButton()
+        RadioButton4 = New RadioButton()
+        GroupBox1 = New GroupBox()
+        GroupBox2 = New GroupBox()
+        TextBox1 = New TextBox()
+        ComboBox1 = New ComboBox()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
+        TextBox2 = New TextBox()
+        Label4 = New Label()
+        TextBox3 = New TextBox()
+        Label5 = New Label()
+        OpenFileDialog1 = New OpenFileDialog()
+        OpenFileDialog2 = New OpenFileDialog()
+        DataGridView1 = New DataGridView()
+        ColNom = New DataGridViewTextBoxColumn()
+        ColDiasT = New DataGridViewTextBoxColumn()
+        ColSueldo = New DataGridViewTextBoxColumn()
+        ColHsNorm = New DataGridViewTextBoxColumn()
+        ColHsDob = New DataGridViewTextBoxColumn()
+        ColAguinaldo = New DataGridViewTextBoxColumn()
+        ColHsTriples = New DataGridViewTextBoxColumn()
+        ColPtu = New DataGridViewTextBoxColumn()
+        ColViat = New DataGridViewTextBoxColumn()
+        ColPremioPt = New DataGridViewTextBoxColumn()
+        ColPVacac = New DataGridViewTextBoxColumn()
+        ColOtras = New DataGridViewTextBoxColumn()
+        ColPercExe = New DataGridViewTextBoxColumn()
+        ColTotIng = New DataGridViewTextBoxColumn()
+        ColIspt = New DataGridViewTextBoxColumn()
+        ColCrSal = New DataGridViewTextBoxColumn()
+        ColSubP = New DataGridViewTextBoxColumn()
+        ColImss = New DataGridViewTextBoxColumn()
+        ColPrestamos = New DataGridViewTextBoxColumn()
+        ColFona = New DataGridViewTextBoxColumn()
+        ColPenAlimen = New DataGridViewTextBoxColumn()
+        ColInfona = New DataGridViewTextBoxColumn()
+        ColTotDed = New DataGridViewTextBoxColumn()
+        ColNeto = New DataGridViewTextBoxColumn()
+        ColBanamex = New DataGridViewTextBoxColumn()
+        VScrollBar1 = New VScrollBar()
+        MenuStrip1.SuspendLayout()
+        GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.ImageScalingSize = New Size(20, 20)
+        MenuStrip1.Items.AddRange(New ToolStripItem() {ArchivoToolStripMenuItem, EdiciónToolStripMenuItem, CapturaToolStripMenuItem, ActualizaciónToolStripMenuItem, OrdenarToolStripMenuItem, ImpresiónToolStripMenuItem, ExportarDatosToolStripMenuItem, ImportarDatosToolStripMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(952, 28)
+        MenuStrip1.TabIndex = 0
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
+        ' ArchivoToolStripMenuItem
+        ' 
+        ArchivoToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ArchivarNóminaToolStripMenuItem, SalidaToolStripMenuItem})
+        ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
+        ArchivoToolStripMenuItem.Size = New Size(73, 24)
+        ArchivoToolStripMenuItem.Text = "Archivo"
+        ' 
+        ' EdiciónToolStripMenuItem
+        ' 
+        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SeleccionarTodoToolStripMenuItem, CopiarToolStripMenuItem})
+        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
+        EdiciónToolStripMenuItem.Size = New Size(72, 24)
+        EdiciónToolStripMenuItem.Text = "Edición"
+        ' 
+        ' CapturaToolStripMenuItem
+        ' 
+        CapturaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IniciarCapturaToolStripMenuItem, ArchivoBanamexToolStripMenuItem, DistribuciónNóminaToolStripMenuItem, InternetToolStripMenuItem, CFDIToolStripMenuItem})
+        CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
+        CapturaToolStripMenuItem.Size = New Size(75, 24)
+        CapturaToolStripMenuItem.Text = "Captura"
+        ' 
+        ' ActualizaciónToolStripMenuItem
+        ' 
+        ActualizaciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ImpuestosToolStripMenuItem, SumaToolStripMenuItem})
+        ActualizaciónToolStripMenuItem.Name = "ActualizaciónToolStripMenuItem"
+        ActualizaciónToolStripMenuItem.Size = New Size(112, 24)
+        ActualizaciónToolStripMenuItem.Text = "Actualización"
+        ' 
+        ' OrdenarToolStripMenuItem
+        ' 
+        OrdenarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlfabeticamenteToolStripMenuItem, NuméricamenteToolStripMenuItem, EliminarToolStripMenuItem})
+        OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
+        OrdenarToolStripMenuItem.Size = New Size(77, 24)
+        OrdenarToolStripMenuItem.Text = "Ordenar"
+        ' 
+        ' ImpresiónToolStripMenuItem
+        ' 
+        ImpresiónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NóminaToolStripMenuItem, RecibosToolStripMenuItem, ChequesToolStripMenuItem, DetalleCalculoImptosToolStripMenuItem})
+        ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
+        ImpresiónToolStripMenuItem.Size = New Size(89, 24)
+        ImpresiónToolStripMenuItem.Text = "Impresión"
+        ' 
+        ' ExportarDatosToolStripMenuItem
+        ' 
+        ExportarDatosToolStripMenuItem.Name = "ExportarDatosToolStripMenuItem"
+        ExportarDatosToolStripMenuItem.Size = New Size(122, 24)
+        ExportarDatosToolStripMenuItem.Text = "Exportar Datos"
+        ' 
+        ' ImportarDatosToolStripMenuItem
+        ' 
+        ImportarDatosToolStripMenuItem.Name = "ImportarDatosToolStripMenuItem"
+        ImportarDatosToolStripMenuItem.Size = New Size(124, 24)
+        ImportarDatosToolStripMenuItem.Text = "Importar Datos"
+        ' 
+        ' ArchivarNóminaToolStripMenuItem
+        ' 
+        ArchivarNóminaToolStripMenuItem.Name = "ArchivarNóminaToolStripMenuItem"
+        ArchivarNóminaToolStripMenuItem.Size = New Size(224, 26)
+        ArchivarNóminaToolStripMenuItem.Text = "Archivar Nómina"
+        ' 
+        ' SalidaToolStripMenuItem
+        ' 
+        SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
+        SalidaToolStripMenuItem.Size = New Size(224, 26)
+        SalidaToolStripMenuItem.Text = "Salida"
+        ' 
+        ' SeleccionarTodoToolStripMenuItem
+        ' 
+        SeleccionarTodoToolStripMenuItem.Name = "SeleccionarTodoToolStripMenuItem"
+        SeleccionarTodoToolStripMenuItem.Size = New Size(224, 26)
+        SeleccionarTodoToolStripMenuItem.Text = "Seleccionar todo"
+        ' 
+        ' CopiarToolStripMenuItem
+        ' 
+        CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
+        CopiarToolStripMenuItem.Size = New Size(224, 26)
+        CopiarToolStripMenuItem.Text = "Copiar "
+        ' 
+        ' IniciarCapturaToolStripMenuItem
+        ' 
+        IniciarCapturaToolStripMenuItem.Name = "IniciarCapturaToolStripMenuItem"
+        IniciarCapturaToolStripMenuItem.Size = New Size(229, 26)
+        IniciarCapturaToolStripMenuItem.Text = "Iniciar Captura"
+        ' 
+        ' ArchivoBanamexToolStripMenuItem
+        ' 
+        ArchivoBanamexToolStripMenuItem.Name = "ArchivoBanamexToolStripMenuItem"
+        ArchivoBanamexToolStripMenuItem.Size = New Size(229, 26)
+        ArchivoBanamexToolStripMenuItem.Text = "Archivo Banamex"
+        ' 
+        ' DistribuciónNóminaToolStripMenuItem
+        ' 
+        DistribuciónNóminaToolStripMenuItem.Name = "DistribuciónNóminaToolStripMenuItem"
+        DistribuciónNóminaToolStripMenuItem.Size = New Size(229, 26)
+        DistribuciónNóminaToolStripMenuItem.Text = "Distribución Nómina"
+        ' 
+        ' InternetToolStripMenuItem
+        ' 
+        InternetToolStripMenuItem.Name = "InternetToolStripMenuItem"
+        InternetToolStripMenuItem.Size = New Size(229, 26)
+        InternetToolStripMenuItem.Text = "Internet"
+        ' 
+        ' CFDIToolStripMenuItem
+        ' 
+        CFDIToolStripMenuItem.Name = "CFDIToolStripMenuItem"
+        CFDIToolStripMenuItem.Size = New Size(229, 26)
+        CFDIToolStripMenuItem.Text = "CFDI"
+        ' 
+        ' ImpuestosToolStripMenuItem
+        ' 
+        ImpuestosToolStripMenuItem.Name = "ImpuestosToolStripMenuItem"
+        ImpuestosToolStripMenuItem.Size = New Size(224, 26)
+        ImpuestosToolStripMenuItem.Text = "Impuestos"
+        ' 
+        ' SumaToolStripMenuItem
+        ' 
+        SumaToolStripMenuItem.Name = "SumaToolStripMenuItem"
+        SumaToolStripMenuItem.Size = New Size(224, 26)
+        SumaToolStripMenuItem.Text = "Suma"
+        ' 
+        ' AlfabeticamenteToolStripMenuItem
+        ' 
+        AlfabeticamenteToolStripMenuItem.Name = "AlfabeticamenteToolStripMenuItem"
+        AlfabeticamenteToolStripMenuItem.Size = New Size(224, 26)
+        AlfabeticamenteToolStripMenuItem.Text = "Alfabeticamente"
+        ' 
+        ' NuméricamenteToolStripMenuItem
+        ' 
+        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
+        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
+        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
+        ' 
+        ' EliminarToolStripMenuItem
+        ' 
+        EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        EliminarToolStripMenuItem.Size = New Size(224, 26)
+        EliminarToolStripMenuItem.Text = "Eliminar"
+        ' 
+        ' NóminaToolStripMenuItem
+        ' 
+        NóminaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {Obra0ToolStripMenuItem, Obra1ToolStripMenuItem, Obra2ToolStripMenuItem, Obra47ToolStripMenuItem, Obra48ToolStripMenuItem, Obra49ToolStripMenuItem, Obra50ToolStripMenuItem, Obra51ToolStripMenuItem, Obra52ToolStripMenuItem, Obra53ToolStripMenuItem, Obra54ToolStripMenuItem, Obra55ToolStripMenuItem, Obra56ToolStripMenuItem, Obra57ToolStripMenuItem, Obra58ToolStripMenuItem, Obra59ToolStripMenuItem, Obra60ToolStripMenuItem})
+        NóminaToolStripMenuItem.Name = "NóminaToolStripMenuItem"
+        NóminaToolStripMenuItem.Size = New Size(241, 26)
+        NóminaToolStripMenuItem.Text = "Nómina"
+        ' 
+        ' RecibosToolStripMenuItem
+        ' 
+        RecibosToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TodosToolStripMenuItem, IndividualesToolStripMenuItem})
+        RecibosToolStripMenuItem.Name = "RecibosToolStripMenuItem"
+        RecibosToolStripMenuItem.Size = New Size(241, 26)
+        RecibosToolStripMenuItem.Text = "Recibos"
+        ' 
+        ' ChequesToolStripMenuItem
+        ' 
+        ChequesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AjustesToolStripMenuItem, IndividualesToolStripMenuItem1, TotalesToolStripMenuItem, DirectorioToolStripMenuItem})
+        ChequesToolStripMenuItem.Name = "ChequesToolStripMenuItem"
+        ChequesToolStripMenuItem.Size = New Size(241, 26)
+        ChequesToolStripMenuItem.Text = "Cheques "
+        ' 
+        ' DetalleCalculoImptosToolStripMenuItem
+        ' 
+        DetalleCalculoImptosToolStripMenuItem.Name = "DetalleCalculoImptosToolStripMenuItem"
+        DetalleCalculoImptosToolStripMenuItem.Size = New Size(241, 26)
+        DetalleCalculoImptosToolStripMenuItem.Text = "Detalle calculo imptos"
+        ' 
+        ' Obra0ToolStripMenuItem
+        ' 
+        Obra0ToolStripMenuItem.Name = "Obra0ToolStripMenuItem"
+        Obra0ToolStripMenuItem.Size = New Size(224, 26)
+        Obra0ToolStripMenuItem.Text = "Obra 0"
+        ' 
+        ' Obra1ToolStripMenuItem
+        ' 
+        Obra1ToolStripMenuItem.Name = "Obra1ToolStripMenuItem"
+        Obra1ToolStripMenuItem.Size = New Size(224, 26)
+        Obra1ToolStripMenuItem.Text = "Obra 1"
+        ' 
+        ' Obra2ToolStripMenuItem
+        ' 
+        Obra2ToolStripMenuItem.Name = "Obra2ToolStripMenuItem"
+        Obra2ToolStripMenuItem.Size = New Size(224, 26)
+        Obra2ToolStripMenuItem.Text = "Obra 2"
+        ' 
+        ' Obra47ToolStripMenuItem
+        ' 
+        Obra47ToolStripMenuItem.Name = "Obra47ToolStripMenuItem"
+        Obra47ToolStripMenuItem.Size = New Size(224, 26)
+        Obra47ToolStripMenuItem.Text = "Obra 47"
+        ' 
+        ' Obra48ToolStripMenuItem
+        ' 
+        Obra48ToolStripMenuItem.Name = "Obra48ToolStripMenuItem"
+        Obra48ToolStripMenuItem.Size = New Size(224, 26)
+        Obra48ToolStripMenuItem.Text = "Obra 48 "
+        ' 
+        ' Obra49ToolStripMenuItem
+        ' 
+        Obra49ToolStripMenuItem.Name = "Obra49ToolStripMenuItem"
+        Obra49ToolStripMenuItem.Size = New Size(224, 26)
+        Obra49ToolStripMenuItem.Text = "Obra 49"
+        ' 
+        ' Obra50ToolStripMenuItem
+        ' 
+        Obra50ToolStripMenuItem.Name = "Obra50ToolStripMenuItem"
+        Obra50ToolStripMenuItem.Size = New Size(224, 26)
+        Obra50ToolStripMenuItem.Text = "Obra 50"
+        ' 
+        ' Obra51ToolStripMenuItem
+        ' 
+        Obra51ToolStripMenuItem.Name = "Obra51ToolStripMenuItem"
+        Obra51ToolStripMenuItem.Size = New Size(224, 26)
+        Obra51ToolStripMenuItem.Text = "Obra 51"
+        ' 
+        ' Obra52ToolStripMenuItem
+        ' 
+        Obra52ToolStripMenuItem.Name = "Obra52ToolStripMenuItem"
+        Obra52ToolStripMenuItem.Size = New Size(224, 26)
+        Obra52ToolStripMenuItem.Text = "Obra 52"
+        ' 
+        ' Obra53ToolStripMenuItem
+        ' 
+        Obra53ToolStripMenuItem.Name = "Obra53ToolStripMenuItem"
+        Obra53ToolStripMenuItem.Size = New Size(224, 26)
+        Obra53ToolStripMenuItem.Text = "Obra 53"
+        ' 
+        ' Obra54ToolStripMenuItem
+        ' 
+        Obra54ToolStripMenuItem.Name = "Obra54ToolStripMenuItem"
+        Obra54ToolStripMenuItem.Size = New Size(224, 26)
+        Obra54ToolStripMenuItem.Text = "Obra 54"
+        ' 
+        ' Obra55ToolStripMenuItem
+        ' 
+        Obra55ToolStripMenuItem.Name = "Obra55ToolStripMenuItem"
+        Obra55ToolStripMenuItem.Size = New Size(224, 26)
+        Obra55ToolStripMenuItem.Text = "Obra 55"
+        ' 
+        ' Obra56ToolStripMenuItem
+        ' 
+        Obra56ToolStripMenuItem.Name = "Obra56ToolStripMenuItem"
+        Obra56ToolStripMenuItem.Size = New Size(224, 26)
+        Obra56ToolStripMenuItem.Text = "Obra 56"
+        ' 
+        ' Obra57ToolStripMenuItem
+        ' 
+        Obra57ToolStripMenuItem.Name = "Obra57ToolStripMenuItem"
+        Obra57ToolStripMenuItem.Size = New Size(224, 26)
+        Obra57ToolStripMenuItem.Text = "Obra 57"
+        ' 
+        ' Obra58ToolStripMenuItem
+        ' 
+        Obra58ToolStripMenuItem.Name = "Obra58ToolStripMenuItem"
+        Obra58ToolStripMenuItem.Size = New Size(224, 26)
+        Obra58ToolStripMenuItem.Text = "Obra 58"
+        ' 
+        ' Obra59ToolStripMenuItem
+        ' 
+        Obra59ToolStripMenuItem.Name = "Obra59ToolStripMenuItem"
+        Obra59ToolStripMenuItem.Size = New Size(224, 26)
+        Obra59ToolStripMenuItem.Text = "Obra 59"
+        ' 
+        ' Obra60ToolStripMenuItem
+        ' 
+        Obra60ToolStripMenuItem.Name = "Obra60ToolStripMenuItem"
+        Obra60ToolStripMenuItem.Size = New Size(224, 26)
+        Obra60ToolStripMenuItem.Text = "Obra 60"
+        ' 
+        ' TodosToolStripMenuItem
+        ' 
+        TodosToolStripMenuItem.Name = "TodosToolStripMenuItem"
+        TodosToolStripMenuItem.Size = New Size(224, 26)
+        TodosToolStripMenuItem.Text = "Todos"
+        ' 
+        ' IndividualesToolStripMenuItem
+        ' 
+        IndividualesToolStripMenuItem.Name = "IndividualesToolStripMenuItem"
+        IndividualesToolStripMenuItem.Size = New Size(224, 26)
+        IndividualesToolStripMenuItem.Text = "Individuales"
+        ' 
+        ' AjustesToolStripMenuItem
+        ' 
+        AjustesToolStripMenuItem.Name = "AjustesToolStripMenuItem"
+        AjustesToolStripMenuItem.Size = New Size(230, 26)
+        AjustesToolStripMenuItem.Text = "Ajustes de impresión"
+        ' 
+        ' IndividualesToolStripMenuItem1
+        ' 
+        IndividualesToolStripMenuItem1.Name = "IndividualesToolStripMenuItem1"
+        IndividualesToolStripMenuItem1.Size = New Size(230, 26)
+        IndividualesToolStripMenuItem1.Text = "Individuales"
+        ' 
+        ' TotalesToolStripMenuItem
+        ' 
+        TotalesToolStripMenuItem.Name = "TotalesToolStripMenuItem"
+        TotalesToolStripMenuItem.Size = New Size(230, 26)
+        TotalesToolStripMenuItem.Text = "Totales"
+        ' 
+        ' DirectorioToolStripMenuItem
+        ' 
+        DirectorioToolStripMenuItem.Name = "DirectorioToolStripMenuItem"
+        DirectorioToolStripMenuItem.Size = New Size(230, 26)
+        DirectorioToolStripMenuItem.Text = "Directorio de Obra"
+        ' 
+        ' RadioButton1
+        ' 
+        RadioButton1.AutoSize = True
+        RadioButton1.Location = New Point(31, 37)
+        RadioButton1.Name = "RadioButton1"
+        RadioButton1.Size = New Size(80, 24)
+        RadioButton1.TabIndex = 1
+        RadioButton1.TabStop = True
+        RadioButton1.Text = "Normal"
+        RadioButton1.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton2
+        ' 
+        RadioButton2.AutoSize = True
+        RadioButton2.Location = New Point(31, 78)
+        RadioButton2.Name = "RadioButton2"
+        RadioButton2.Size = New Size(84, 24)
+        RadioButton2.TabIndex = 2
+        RadioButton2.TabStop = True
+        RadioButton2.Text = "Especial"
+        RadioButton2.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton3
+        ' 
+        RadioButton3.AutoSize = True
+        RadioButton3.Location = New Point(28, 37)
+        RadioButton3.Name = "RadioButton3"
+        RadioButton3.Size = New Size(81, 24)
+        RadioButton3.TabIndex = 3
+        RadioButton3.TabStop = True
+        RadioButton3.Text = "Primera"
+        RadioButton3.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton4
+        ' 
+        RadioButton4.AutoSize = True
+        RadioButton4.Location = New Point(28, 78)
+        RadioButton4.Name = "RadioButton4"
+        RadioButton4.Size = New Size(88, 24)
+        RadioButton4.TabIndex = 4
+        RadioButton4.TabStop = True
+        RadioButton4.Text = "Segunda"
+        RadioButton4.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(RadioButton2)
+        GroupBox1.Controls.Add(RadioButton1)
+        GroupBox1.Location = New Point(50, 61)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(146, 142)
+        GroupBox1.TabIndex = 5
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Nómina"
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(RadioButton4)
+        GroupBox2.Controls.Add(RadioButton3)
+        GroupBox2.Location = New Point(222, 61)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(155, 142)
+        GroupBox2.TabIndex = 6
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Quincena"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(383, 97)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(156, 27)
+        TextBox1.TabIndex = 7
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(383, 157)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(156, 28)
+        ComboBox1.TabIndex = 8
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(545, 97)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(117, 40)
+        Label1.TabIndex = 9
+        Label1.Text = "Nombre de la" & vbCrLf & "nómina especial"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(545, 160)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(36, 20)
+        Label2.TabIndex = 10
+        Label2.Text = "Mes"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(693, 117)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(120, 20)
+        Label3.TabIndex = 11
+        Label3.Text = "Cantidad exenta:"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(693, 157)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(125, 27)
+        TextBox2.TabIndex = 12
+        ' 
+        ' Label4
+        ' 
+        Label4.BackColor = SystemColors.ActiveCaption
+        Label4.Location = New Point(12, 223)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(928, 25)
+        Label4.TabIndex = 13
+        ' 
+        ' TextBox3
+        ' 
+        TextBox3.Location = New Point(22, 273)
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(221, 27)
+        TextBox3.TabIndex = 14
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(462, 276)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(200, 20)
+        Label5.TabIndex = 15
+        Label5.Text = "Usando tarifas de impuestos:"
+        ' 
+        ' OpenFileDialog1
+        ' 
+        OpenFileDialog1.FileName = "OpenFileDialog1"
+        ' 
+        ' OpenFileDialog2
+        ' 
+        OpenFileDialog2.FileName = "OpenFileDialog2"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColNom, ColDiasT, ColSueldo, ColHsNorm, ColHsDob, ColAguinaldo, ColHsTriples, ColPtu, ColViat, ColPremioPt, ColPVacac, ColOtras, ColPercExe, ColTotIng, ColIspt, ColCrSal, ColSubP, ColImss, ColPrestamos, ColFona, ColPenAlimen, ColInfona, ColTotDed, ColNeto, ColBanamex})
+        DataGridView1.Location = New Point(0, 307)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.RowTemplate.Height = 29
+        DataGridView1.Size = New Size(953, 244)
+        DataGridView1.TabIndex = 16
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
+        ' 
+        ' ColDiasT
+        ' 
+        ColDiasT.HeaderText = "Días Trab."
+        ColDiasT.MinimumWidth = 6
+        ColDiasT.Name = "ColDiasT"
+        ColDiasT.Width = 125
+        ' 
+        ' ColSueldo
+        ' 
+        ColSueldo.HeaderText = "Sueldo"
+        ColSueldo.MinimumWidth = 6
+        ColSueldo.Name = "ColSueldo"
+        ColSueldo.Width = 125
+        ' 
+        ' ColHsNorm
+        ' 
+        ColHsNorm.HeaderText = "Hrs. Norm"
+        ColHsNorm.MinimumWidth = 6
+        ColHsNorm.Name = "ColHsNorm"
+        ColHsNorm.Width = 125
+        ' 
+        ' ColHsDob
+        ' 
+        ColHsDob.HeaderText = "Hrs. Dobles"
+        ColHsDob.MinimumWidth = 6
+        ColHsDob.Name = "ColHsDob"
+        ColHsDob.Width = 125
+        ' 
+        ' ColAguinaldo
+        ' 
+        ColAguinaldo.HeaderText = "Aguinaldo"
+        ColAguinaldo.MinimumWidth = 6
+        ColAguinaldo.Name = "ColAguinaldo"
+        ColAguinaldo.Width = 125
+        ' 
+        ' ColHsTriples
+        ' 
+        ColHsTriples.HeaderText = "Hrs. Triples"
+        ColHsTriples.MinimumWidth = 6
+        ColHsTriples.Name = "ColHsTriples"
+        ColHsTriples.Width = 125
+        ' 
+        ' ColPtu
+        ' 
+        ColPtu.HeaderText = "Ptu"
+        ColPtu.MinimumWidth = 6
+        ColPtu.Name = "ColPtu"
+        ColPtu.Width = 125
+        ' 
+        ' ColViat
+        ' 
+        ColViat.HeaderText = "Viáticos"
+        ColViat.MinimumWidth = 6
+        ColViat.Name = "ColViat"
+        ColViat.Width = 125
+        ' 
+        ' ColPremioPt
+        ' 
+        ColPremioPt.HeaderText = "Premip Punt"
+        ColPremioPt.MinimumWidth = 6
+        ColPremioPt.Name = "ColPremioPt"
+        ColPremioPt.Width = 125
+        ' 
+        ' ColPVacac
+        ' 
+        ColPVacac.HeaderText = "P. Vacac"
+        ColPVacac.MinimumWidth = 6
+        ColPVacac.Name = "ColPVacac"
+        ColPVacac.Width = 125
+        ' 
+        ' ColOtras
+        ' 
+        ColOtras.HeaderText = "Otras"
+        ColOtras.MinimumWidth = 6
+        ColOtras.Name = "ColOtras"
+        ColOtras.Width = 125
+        ' 
+        ' ColPercExe
+        ' 
+        ColPercExe.HeaderText = "Perc. Exenta"
+        ColPercExe.MinimumWidth = 6
+        ColPercExe.Name = "ColPercExe"
+        ColPercExe.Width = 125
+        ' 
+        ' ColTotIng
+        ' 
+        ColTotIng.HeaderText = "Tot. Ingr."
+        ColTotIng.MinimumWidth = 6
+        ColTotIng.Name = "ColTotIng"
+        ColTotIng.Width = 125
+        ' 
+        ' ColIspt
+        ' 
+        ColIspt.HeaderText = "Ispt"
+        ColIspt.MinimumWidth = 6
+        ColIspt.Name = "ColIspt"
+        ColIspt.Width = 125
+        ' 
+        ' ColCrSal
+        ' 
+        ColCrSal.HeaderText = "Crs. Salario"
+        ColCrSal.MinimumWidth = 6
+        ColCrSal.Name = "ColCrSal"
+        ColCrSal.Width = 125
+        ' 
+        ' ColSubP
+        ' 
+        ColSubP.HeaderText = "Sub. P/Empl"
+        ColSubP.MinimumWidth = 6
+        ColSubP.Name = "ColSubP"
+        ColSubP.Width = 125
+        ' 
+        ' ColImss
+        ' 
+        ColImss.HeaderText = "Imss"
+        ColImss.MinimumWidth = 6
+        ColImss.Name = "ColImss"
+        ColImss.Width = 125
+        ' 
+        ' ColPrestamos
+        ' 
+        ColPrestamos.HeaderText = "Prestamos"
+        ColPrestamos.MinimumWidth = 6
+        ColPrestamos.Name = "ColPrestamos"
+        ColPrestamos.Width = 125
+        ' 
+        ' ColFona
+        ' 
+        ColFona.HeaderText = "Fonacot"
+        ColFona.MinimumWidth = 6
+        ColFona.Name = "ColFona"
+        ColFona.Width = 125
+        ' 
+        ' ColPenAlimen
+        ' 
+        ColPenAlimen.HeaderText = "Pensión Alimentica"
+        ColPenAlimen.MinimumWidth = 6
+        ColPenAlimen.Name = "ColPenAlimen"
+        ColPenAlimen.Width = 125
+        ' 
+        ' ColInfona
+        ' 
+        ColInfona.HeaderText = "Infonavit"
+        ColInfona.MinimumWidth = 6
+        ColInfona.Name = "ColInfona"
+        ColInfona.Width = 125
+        ' 
+        ' ColTotDed
+        ' 
+        ColTotDed.HeaderText = "Tot. Deduac"
+        ColTotDed.MinimumWidth = 6
+        ColTotDed.Name = "ColTotDed"
+        ColTotDed.Width = 125
+        ' 
+        ' ColNeto
+        ' 
+        ColNeto.HeaderText = "Neto"
+        ColNeto.MinimumWidth = 6
+        ColNeto.Name = "ColNeto"
+        ColNeto.Width = 125
+        ' 
+        ' ColBanamex
+        ' 
+        ColBanamex.HeaderText = "Banamex"
+        ColBanamex.MinimumWidth = 6
+        ColBanamex.Name = "ColBanamex"
+        ColBanamex.Width = 125
+        ' 
+        ' VScrollBar1
+        ' 
+        VScrollBar1.Location = New Point(941, 30)
+        VScrollBar1.Name = "VScrollBar1"
+        VScrollBar1.Size = New Size(10, 503)
+        VScrollBar1.TabIndex = 17
+        ' 
+        ' NOM_CapturarNominaQuincenal
+        ' 
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(952, 548)
+        Controls.Add(VScrollBar1)
+        Controls.Add(DataGridView1)
+        Controls.Add(Label5)
+        Controls.Add(TextBox3)
+        Controls.Add(Label4)
+        Controls.Add(TextBox2)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
+        Controls.Add(ComboBox1)
+        Controls.Add(TextBox1)
+        Controls.Add(GroupBox2)
+        Controls.Add(GroupBox1)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
+        Name = "NOM_CapturarNominaQuincenal"
+        Text = "NOM_CapturarNominaQuincenal"
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
+        GroupBox2.ResumeLayout(False)
+        GroupBox2.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
