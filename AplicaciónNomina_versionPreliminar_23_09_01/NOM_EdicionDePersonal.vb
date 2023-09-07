@@ -1,3 +1,5 @@
-﻿Public Class NOM_EdicionDePersonal
+﻿
+Public Class NOM_EdicionDePersonal
+
 
 End Class
