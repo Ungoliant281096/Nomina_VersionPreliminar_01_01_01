@@ -54,6 +54,7 @@ Partial Class Form1
         Label5 = New Label()
         TextBox1 = New TextBox()
         Label6 = New Label()
+        FolderBrowserDialog1 = New FolderBrowserDialog()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -63,197 +64,225 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {PersonalToolStripMenuItem, NominaToolStripMenuItem, EmpresaToolStripMenuItem, CrearSubdirectorioToolStripMenuItem, TarifasImpuestosToolStripMenuItem, VersiónToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(5, 2, 0, 2)
-        MenuStrip1.Size = New Size(700, 24)
+        MenuStrip1.Padding = New Padding(6, 3, 0, 3)
+        MenuStrip1.Size = New Size(800, 30)
         MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"' 
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
         ' PersonalToolStripMenuItem
         ' 
         PersonalToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CapturaPersonalToolStripMenuItem, CFDIComplementoToolStripMenuItem, EdiciónToolStripMenuItem, ImpresiónToolStripMenuItem, SalirToolStripMenuItem})
         PersonalToolStripMenuItem.Name = "PersonalToolStripMenuItem"
-        PersonalToolStripMenuItem.Size = New Size(64, 20)
-        PersonalToolStripMenuItem.Text = "Personal"' 
+        PersonalToolStripMenuItem.Size = New Size(78, 24)
+        PersonalToolStripMenuItem.Text = "Personal"
+        ' 
         ' CapturaPersonalToolStripMenuItem
         ' 
         CapturaPersonalToolStripMenuItem.Name = "CapturaPersonalToolStripMenuItem"
-        CapturaPersonalToolStripMenuItem.Size = New Size(180, 22)
-        CapturaPersonalToolStripMenuItem.Text = "Captura personal"' 
+        CapturaPersonalToolStripMenuItem.Size = New Size(220, 26)
+        CapturaPersonalToolStripMenuItem.Text = "Captura personal"
+        ' 
         ' CFDIComplementoToolStripMenuItem
         ' 
         CFDIComplementoToolStripMenuItem.Name = "CFDIComplementoToolStripMenuItem"
-        CFDIComplementoToolStripMenuItem.Size = New Size(180, 22)
-        CFDIComplementoToolStripMenuItem.Text = "CFDI complemento"' 
+        CFDIComplementoToolStripMenuItem.Size = New Size(220, 26)
+        CFDIComplementoToolStripMenuItem.Text = "CFDI complemento"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        EdiciónToolStripMenuItem.Size = New Size(180, 22)
-        EdiciónToolStripMenuItem.Text = "Edición"' 
+        EdiciónToolStripMenuItem.Size = New Size(220, 26)
+        EdiciónToolStripMenuItem.Text = "Edición"
+        ' 
         ' ImpresiónToolStripMenuItem
         ' 
         ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
-        ImpresiónToolStripMenuItem.Size = New Size(180, 22)
-        ImpresiónToolStripMenuItem.Text = "Impresión"' 
+        ImpresiónToolStripMenuItem.Size = New Size(220, 26)
+        ImpresiónToolStripMenuItem.Text = "Impresión"
+        ' 
         ' SalirToolStripMenuItem
         ' 
         SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(180, 22)
-        SalirToolStripMenuItem.Text = "Salir"' 
+        SalirToolStripMenuItem.Size = New Size(220, 26)
+        SalirToolStripMenuItem.Text = "Salir"
+        ' 
         ' NominaToolStripMenuItem
         ' 
         NominaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CapturaToolStripMenuItem, ImpresiónToolStripMenuItem1})
         NominaToolStripMenuItem.Name = "NominaToolStripMenuItem"
-        NominaToolStripMenuItem.Size = New Size(62, 20)
-        NominaToolStripMenuItem.Text = "Nomina"' 
+        NominaToolStripMenuItem.Size = New Size(76, 24)
+        NominaToolStripMenuItem.Text = "Nomina"
+        ' 
         ' CapturaToolStripMenuItem
         ' 
         CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
-        CapturaToolStripMenuItem.Size = New Size(180, 22)
-        CapturaToolStripMenuItem.Text = "Captura"' 
+        CapturaToolStripMenuItem.Size = New Size(158, 26)
+        CapturaToolStripMenuItem.Text = "Captura"
+        ' 
         ' ImpresiónToolStripMenuItem1
         ' 
         ImpresiónToolStripMenuItem1.Name = "ImpresiónToolStripMenuItem1"
-        ImpresiónToolStripMenuItem1.Size = New Size(180, 22)
-        ImpresiónToolStripMenuItem1.Text = "Impresión"' 
+        ImpresiónToolStripMenuItem1.Size = New Size(158, 26)
+        ImpresiónToolStripMenuItem1.Text = "Impresión"
+        ' 
         ' EmpresaToolStripMenuItem
         ' 
         EmpresaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DatosToolStripMenuItem, ComplementariosToolStripMenuItem, DirectorioDeTarifasToolStripMenuItem})
         EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        EmpresaToolStripMenuItem.Size = New Size(64, 20)
-        EmpresaToolStripMenuItem.Text = "Empresa"' 
+        EmpresaToolStripMenuItem.Size = New Size(80, 24)
+        EmpresaToolStripMenuItem.Text = "Empresa"
+        ' 
         ' DatosToolStripMenuItem
         ' 
         DatosToolStripMenuItem.Name = "DatosToolStripMenuItem"
-        DatosToolStripMenuItem.Size = New Size(177, 22)
-        DatosToolStripMenuItem.Text = "Datos"' 
+        DatosToolStripMenuItem.Size = New Size(225, 26)
+        DatosToolStripMenuItem.Text = "Datos"
+        ' 
         ' ComplementariosToolStripMenuItem
         ' 
         ComplementariosToolStripMenuItem.Name = "ComplementariosToolStripMenuItem"
-        ComplementariosToolStripMenuItem.Size = New Size(177, 22)
-        ComplementariosToolStripMenuItem.Text = "Complementarios"' 
+        ComplementariosToolStripMenuItem.Size = New Size(225, 26)
+        ComplementariosToolStripMenuItem.Text = "Complementarios"
+        ' 
         ' DirectorioDeTarifasToolStripMenuItem
         ' 
         DirectorioDeTarifasToolStripMenuItem.Name = "DirectorioDeTarifasToolStripMenuItem"
-        DirectorioDeTarifasToolStripMenuItem.Size = New Size(177, 22)
-        DirectorioDeTarifasToolStripMenuItem.Text = "Directorio de tarifas"' 
+        DirectorioDeTarifasToolStripMenuItem.Size = New Size(225, 26)
+        DirectorioDeTarifasToolStripMenuItem.Text = "Directorio de tarifas"
+        ' 
         ' CrearSubdirectorioToolStripMenuItem
         ' 
         CrearSubdirectorioToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SubdirectorioToolStripMenuItem})
         CrearSubdirectorioToolStripMenuItem.Name = "CrearSubdirectorioToolStripMenuItem"
-        CrearSubdirectorioToolStripMenuItem.Size = New Size(121, 20)
-        CrearSubdirectorioToolStripMenuItem.Text = "Crear Subdirectorio"' 
+        CrearSubdirectorioToolStripMenuItem.Size = New Size(152, 24)
+        CrearSubdirectorioToolStripMenuItem.Text = "Crear Subdirectorio"
+        ' 
         ' SubdirectorioToolStripMenuItem
         ' 
         SubdirectorioToolStripMenuItem.Name = "SubdirectorioToolStripMenuItem"
-        SubdirectorioToolStripMenuItem.Size = New Size(145, 22)
-        SubdirectorioToolStripMenuItem.Text = "Subdirectorio"' 
+        SubdirectorioToolStripMenuItem.Size = New Size(182, 26)
+        SubdirectorioToolStripMenuItem.Text = "Subdirectorio"
+        ' 
         ' TarifasImpuestosToolStripMenuItem
         ' 
         TarifasImpuestosToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {Articulo113ToolStripMenuItem, Arítuclo114ToolStripMenuItem, CréditoSalarioToolStripMenuItem, AnualToolStripMenuItem})
         TarifasImpuestosToolStripMenuItem.Name = "TarifasImpuestosToolStripMenuItem"
-        TarifasImpuestosToolStripMenuItem.Size = New Size(110, 20)
-        TarifasImpuestosToolStripMenuItem.Text = "Tarifas Impuestos"' 
+        TarifasImpuestosToolStripMenuItem.Size = New Size(137, 24)
+        TarifasImpuestosToolStripMenuItem.Text = "Tarifas Impuestos"
+        ' 
         ' Articulo113ToolStripMenuItem
         ' 
         Articulo113ToolStripMenuItem.Name = "Articulo113ToolStripMenuItem"
-        Articulo113ToolStripMenuItem.Size = New Size(150, 22)
-        Articulo113ToolStripMenuItem.Text = "Articulo 113"' 
+        Articulo113ToolStripMenuItem.Size = New Size(189, 26)
+        Articulo113ToolStripMenuItem.Text = "Articulo 113"
+        ' 
         ' Arítuclo114ToolStripMenuItem
         ' 
         Arítuclo114ToolStripMenuItem.Name = "Arítuclo114ToolStripMenuItem"
-        Arítuclo114ToolStripMenuItem.Size = New Size(150, 22)
-        Arítuclo114ToolStripMenuItem.Text = "Arítuclo 114"' 
+        Arítuclo114ToolStripMenuItem.Size = New Size(189, 26)
+        Arítuclo114ToolStripMenuItem.Text = "Arítuclo 114"
+        ' 
         ' CréditoSalarioToolStripMenuItem
         ' 
         CréditoSalarioToolStripMenuItem.Name = "CréditoSalarioToolStripMenuItem"
-        CréditoSalarioToolStripMenuItem.Size = New Size(150, 22)
-        CréditoSalarioToolStripMenuItem.Text = "Crédito salario"' 
+        CréditoSalarioToolStripMenuItem.Size = New Size(189, 26)
+        CréditoSalarioToolStripMenuItem.Text = "Crédito salario"
+        ' 
         ' AnualToolStripMenuItem
         ' 
         AnualToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ISRAnual177ToolStripMenuItem, SubsudioAnual178ToolStripMenuItem, CreditoSalarioToolStripMenuItem})
         AnualToolStripMenuItem.Name = "AnualToolStripMenuItem"
-        AnualToolStripMenuItem.Size = New Size(150, 22)
-        AnualToolStripMenuItem.Text = "Anual"' 
+        AnualToolStripMenuItem.Size = New Size(189, 26)
+        AnualToolStripMenuItem.Text = "Anual"
+        ' 
         ' ISRAnual177ToolStripMenuItem
         ' 
         ISRAnual177ToolStripMenuItem.Name = "ISRAnual177ToolStripMenuItem"
-        ISRAnual177ToolStripMenuItem.Size = New Size(176, 22)
-        ISRAnual177ToolStripMenuItem.Text = "ISR Anual 177"' 
+        ISRAnual177ToolStripMenuItem.Size = New Size(221, 26)
+        ISRAnual177ToolStripMenuItem.Text = "ISR Anual 177"
+        ' 
         ' SubsudioAnual178ToolStripMenuItem
         ' 
         SubsudioAnual178ToolStripMenuItem.Name = "SubsudioAnual178ToolStripMenuItem"
-        SubsudioAnual178ToolStripMenuItem.Size = New Size(176, 22)
-        SubsudioAnual178ToolStripMenuItem.Text = "Subsudio anual 178"' 
+        SubsudioAnual178ToolStripMenuItem.Size = New Size(221, 26)
+        SubsudioAnual178ToolStripMenuItem.Text = "Subsudio anual 178"
+        ' 
         ' CreditoSalarioToolStripMenuItem
         ' 
         CreditoSalarioToolStripMenuItem.Name = "CreditoSalarioToolStripMenuItem"
-        CreditoSalarioToolStripMenuItem.Size = New Size(176, 22)
-        CreditoSalarioToolStripMenuItem.Text = "Credito salario"' 
+        CreditoSalarioToolStripMenuItem.Size = New Size(221, 26)
+        CreditoSalarioToolStripMenuItem.Text = "Credito salario"
+        ' 
         ' VersiónToolStripMenuItem
         ' 
         VersiónToolStripMenuItem.Name = "VersiónToolStripMenuItem"
-        VersiónToolStripMenuItem.Size = New Size(57, 20)
-        VersiónToolStripMenuItem.Text = "Versión"' 
+        VersiónToolStripMenuItem.Size = New Size(71, 24)
+        VersiónToolStripMenuItem.Text = "Versión"
+        ' 
         ' Label1
         ' 
         Label1.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Label1.Location = New Point(10, 31)
+        Label1.Location = New Point(11, 41)
         Label1.Name = "Label1"
-        Label1.Size = New Size(428, 115)
+        Label1.Size = New Size(489, 153)
         Label1.TabIndex = 1
         ' 
         ' Label2
         ' 
         Label2.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Label2.Location = New Point(448, 31)
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point)
+        Label2.Location = New Point(512, 41)
         Label2.Name = "Label2"
-        Label2.Size = New Size(242, 19)
+        Label2.Size = New Size(277, 25)
         Label2.TabIndex = 2
-        Label2.Text = "Directorio"' 
+        Label2.Text = "Directorio:"
+        ' 
         ' Label3
         ' 
         Label3.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Label3.Location = New Point(448, 68)
+        Label3.Location = New Point(512, 91)
         Label3.Name = "Label3"
-        Label3.Size = New Size(242, 78)
+        Label3.Size = New Size(277, 104)
         Label3.TabIndex = 3
         ' 
         ' Label4
         ' 
         Label4.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Label4.Location = New Point(10, 159)
+        Label4.Location = New Point(11, 212)
         Label4.Name = "Label4"
-        Label4.Size = New Size(428, 122)
+        Label4.Size = New Size(489, 163)
         Label4.TabIndex = 4
         ' 
         ' Label5
         ' 
         Label5.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Label5.Location = New Point(10, 295)
+        Label5.Location = New Point(11, 393)
         Label5.Name = "Label5"
-        Label5.Size = New Size(220, 19)
+        Label5.Size = New Size(251, 25)
         Label5.TabIndex = 5
-        Label5.Text = "Nombre dierctorio nuevo"' 
+        Label5.Text = "Nombre dierctorio nuevo"
+        ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(243, 295)
-        TextBox1.Margin = New Padding(3, 2, 3, 2)
+        TextBox1.Location = New Point(278, 393)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(196, 23)
+        TextBox1.Size = New Size(223, 27)
         TextBox1.TabIndex = 6
         ' 
         ' Label6
         ' 
         Label6.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Label6.Location = New Point(448, 259)
+        Label6.Location = New Point(512, 345)
         Label6.Name = "Label6"
-        Label6.Size = New Size(242, 22)
+        Label6.Size = New Size(277, 29)
         Label6.TabIndex = 7
-        Label6.Text = "Archivos"' 
+        Label6.Text = "Archivos"
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(700, 338)
+        ClientSize = New Size(800, 451)
         Controls.Add(Label6)
         Controls.Add(TextBox1)
         Controls.Add(Label5)
@@ -263,7 +292,6 @@ Partial Class Form1
         Controls.Add(Label1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
-        Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "Form1"
         MenuStrip1.ResumeLayout(False)
@@ -304,4 +332,5 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class
