@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CAP_AjusteImpresionCheques
+Partial Class CAP_ArchivosActualizados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,11 +24,8 @@ Partial Class CAP_AjusteImpresionCheques
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
-        ArchivarToolStripMenuItem = New ToolStripMenuItem()
-        ImpresiónDatosToolStripMenuItem = New ToolStripMenuItem()
-        PruebaImpresiónToolStripMenuItem = New ToolStripMenuItem()
-        SalirToolStripMenuItem = New ToolStripMenuItem()
-        TextBox1 = New TextBox()
+        CopiarSelecciónCtrlTToolStripMenuItem = New ToolStripMenuItem()
+        CopiarToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -40,69 +37,49 @@ Partial Class CAP_AjusteImpresionCheques
         MenuStrip1.Items.AddRange(New ToolStripItem() {ArchivoToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(460, 28)
+        MenuStrip1.Size = New Size(417, 28)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
         ' ArchivoToolStripMenuItem
         ' 
-        ArchivoToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ArchivarToolStripMenuItem, ImpresiónDatosToolStripMenuItem, PruebaImpresiónToolStripMenuItem, SalirToolStripMenuItem})
+        ArchivoToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónCtrlTToolStripMenuItem, CopiarToolStripMenuItem})
         ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        ArchivoToolStripMenuItem.Size = New Size(73, 24)
-        ArchivoToolStripMenuItem.Text = "Archivo"
+        ArchivoToolStripMenuItem.Size = New Size(62, 24)
+        ArchivoToolStripMenuItem.Text = "Editar"
         ' 
-        ' ArchivarToolStripMenuItem
+        ' CopiarSelecciónCtrlTToolStripMenuItem
         ' 
-        ArchivarToolStripMenuItem.Name = "ArchivarToolStripMenuItem"
-        ArchivarToolStripMenuItem.Size = New Size(224, 26)
-        ArchivarToolStripMenuItem.Text = "Archivar"
+        CopiarSelecciónCtrlTToolStripMenuItem.Name = "CopiarSelecciónCtrlTToolStripMenuItem"
+        CopiarSelecciónCtrlTToolStripMenuItem.Size = New Size(267, 26)
+        CopiarSelecciónCtrlTToolStripMenuItem.Text = "Copiar selección    Ctrl + C"
         ' 
-        ' ImpresiónDatosToolStripMenuItem
+        ' CopiarToolStripMenuItem
         ' 
-        ImpresiónDatosToolStripMenuItem.Name = "ImpresiónDatosToolStripMenuItem"
-        ImpresiónDatosToolStripMenuItem.Size = New Size(224, 26)
-        ImpresiónDatosToolStripMenuItem.Text = "Impresión datos"
-        ' 
-        ' PruebaImpresiónToolStripMenuItem
-        ' 
-        PruebaImpresiónToolStripMenuItem.Name = "PruebaImpresiónToolStripMenuItem"
-        PruebaImpresiónToolStripMenuItem.Size = New Size(224, 26)
-        PruebaImpresiónToolStripMenuItem.Text = "Prueba impresión"
-        ' 
-        ' SalirToolStripMenuItem
-        ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
-        SalirToolStripMenuItem.Text = "Salir"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(12, 40)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(125, 27)
-        TextBox1.TabIndex = 1
+        CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
+        CopiarToolStripMenuItem.Size = New Size(267, 26)
+        CopiarToolStripMenuItem.Text = "Copiar todo           Ctrl + S"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(24, 95)
+        DataGridView1.Location = New Point(17, 50)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(408, 452)
-        DataGridView1.TabIndex = 2
+        DataGridView1.Size = New Size(379, 364)
+        DataGridView1.TabIndex = 1
         ' 
-        ' CAP_AjusteImpresionCheques
+        ' CAP_ArchivosActualizados
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(460, 579)
+        ClientSize = New Size(417, 457)
         Controls.Add(DataGridView1)
-        Controls.Add(TextBox1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
-        Name = "CAP_AjusteImpresionCheques"
-        Text = "CAP_AjusteImpresionCheques"
+        Name = "CAP_ArchivosActualizados"
+        Text = "CAP_ArchivosActualizados"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
@@ -112,10 +89,7 @@ Partial Class CAP_AjusteImpresionCheques
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ArchivarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ImpresiónDatosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PruebaImpresiónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CopiarSelecciónCtrlTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CopiarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridView1 As DataGridView
 End Class
