@@ -34,6 +34,10 @@ Partial Class CAP_EstadoResultados
         VScrollBar1 = New VScrollBar()
         HScrollBar1 = New HScrollBar()
         OpenFileDialog1 = New OpenFileDialog()
+        ColCta = New DataGridViewTextBoxColumn()
+        ColPar = New DataGridViewTextBoxColumn()
+        ColImpte = New DataGridViewTextBoxColumn()
+        ColDin = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -101,6 +105,7 @@ Partial Class CAP_EstadoResultados
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColPar, ColImpte, ColDin})
         DataGridView1.Location = New Point(58, 165)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
@@ -125,6 +130,34 @@ Partial Class CAP_EstadoResultados
         ' OpenFileDialog1
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
+        ' 
+        ' ColCta
+        ' 
+        ColCta.HeaderText = "CUENTA"
+        ColCta.MinimumWidth = 6
+        ColCta.Name = "ColCta"
+        ColCta.Width = 125
+        ' 
+        ' ColPar
+        ' 
+        ColPar.HeaderText = "PARCIAL"
+        ColPar.MinimumWidth = 6
+        ColPar.Name = "ColPar"
+        ColPar.Width = 125
+        ' 
+        ' ColImpte
+        ' 
+        ColImpte.HeaderText = "IMPORTE"
+        ColImpte.MinimumWidth = 6
+        ColImpte.Name = "ColImpte"
+        ColImpte.Width = 125
+        ' 
+        ' ColDin
+        ' 
+        ColDin.HeaderText = "$"
+        ColDin.MinimumWidth = 6
+        ColDin.Name = "ColDin"
+        ColDin.Width = 125
         ' 
         ' CAP_EstadoResultados
         ' 
@@ -159,4 +192,8 @@ Partial Class CAP_EstadoResultados
     Friend WithEvents VScrollBar1 As VScrollBar
     Friend WithEvents HScrollBar1 As HScrollBar
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents ColCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColPar As DataGridViewTextBoxColumn
+    Friend WithEvents ColImpte As DataGridViewTextBoxColumn
+    Friend WithEvents ColDin As DataGridViewTextBoxColumn
 End Class
