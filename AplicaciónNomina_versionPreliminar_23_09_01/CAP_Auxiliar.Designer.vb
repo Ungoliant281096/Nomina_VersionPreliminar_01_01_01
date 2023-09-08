@@ -32,6 +32,12 @@ Partial Class CAP_Auxiliar
         Label1 = New Label()
         Label2 = New Label()
         DataGridView1 = New DataGridView()
+        ColFecha = New DataGridViewTextBoxColumn()
+        ColPol = New DataGridViewTextBoxColumn()
+        ColDesc = New DataGridViewTextBoxColumn()
+        ColDebe = New DataGridViewTextBoxColumn()
+        ColHaber = New DataGridViewTextBoxColumn()
+        ColSaldo = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -56,7 +62,7 @@ Partial Class CAP_Auxiliar
         ' ImprimirToolStripMenuItem
         ' 
         ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
-        ImprimirToolStripMenuItem.Size = New Size(224, 26)
+        ImprimirToolStripMenuItem.Size = New Size(149, 26)
         ImprimirToolStripMenuItem.Text = "Imprimir"
         ' 
         ' EdiciónToolStripMenuItem
@@ -103,12 +109,55 @@ Partial Class CAP_Auxiliar
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColFecha, ColPol, ColDesc, ColDebe, ColHaber, ColSaldo})
         DataGridView1.Location = New Point(30, 138)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
         DataGridView1.Size = New Size(744, 423)
         DataGridView1.TabIndex = 3
+        ' 
+        ' ColFecha
+        ' 
+        ColFecha.HeaderText = "Fecha"
+        ColFecha.MinimumWidth = 6
+        ColFecha.Name = "ColFecha"
+        ColFecha.Width = 125
+        ' 
+        ' ColPol
+        ' 
+        ColPol.HeaderText = "Póliza"
+        ColPol.MinimumWidth = 6
+        ColPol.Name = "ColPol"
+        ColPol.Width = 125
+        ' 
+        ' ColDesc
+        ' 
+        ColDesc.HeaderText = "Descripción"
+        ColDesc.MinimumWidth = 6
+        ColDesc.Name = "ColDesc"
+        ColDesc.Width = 125
+        ' 
+        ' ColDebe
+        ' 
+        ColDebe.HeaderText = "Debe"
+        ColDebe.MinimumWidth = 6
+        ColDebe.Name = "ColDebe"
+        ColDebe.Width = 125
+        ' 
+        ' ColHaber
+        ' 
+        ColHaber.HeaderText = "Haber"
+        ColHaber.MinimumWidth = 6
+        ColHaber.Name = "ColHaber"
+        ColHaber.Width = 125
+        ' 
+        ' ColSaldo
+        ' 
+        ColSaldo.HeaderText = "Saldo"
+        ColSaldo.MinimumWidth = 6
+        ColSaldo.Name = "ColSaldo"
+        ColSaldo.Width = 125
         ' 
         ' CAP_Auxiliar
         ' 
@@ -139,4 +188,10 @@ Partial Class CAP_Auxiliar
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ColFecha As DataGridViewTextBoxColumn
+    Friend WithEvents ColPol As DataGridViewTextBoxColumn
+    Friend WithEvents ColDesc As DataGridViewTextBoxColumn
+    Friend WithEvents ColDebe As DataGridViewTextBoxColumn
+    Friend WithEvents ColHaber As DataGridViewTextBoxColumn
+    Friend WithEvents ColSaldo As DataGridViewTextBoxColumn
 End Class
