@@ -24,15 +24,17 @@ Partial Class CAP_CatCuentasMayor
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         VerToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         AlfabéticamenteToolStripMenuItem = New ToolStripMenuItem()
         NuméricamenteToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarTodoToolStripMenuItem = New ToolStripMenuItem()
         EditarCuentasToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
         HScrollBar1 = New HScrollBar()
+        ColCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -54,6 +56,24 @@ Partial Class CAP_CatCuentasMayor
         VerToolStripMenuItem.Size = New Size(44, 24)
         VerToolStripMenuItem.Text = "Ver"
         ' 
+        ' AlfabéticamenteToolStripMenuItem
+        ' 
+        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
+        AlfabéticamenteToolStripMenuItem.Size = New Size(202, 26)
+        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
+        ' 
+        ' NuméricamenteToolStripMenuItem
+        ' 
+        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
+        NuméricamenteToolStripMenuItem.Size = New Size(202, 26)
+        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
+        ' 
+        ' SalirToolStripMenuItem
+        ' 
+        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        SalirToolStripMenuItem.Size = New Size(202, 26)
+        SalirToolStripMenuItem.Text = "Salir"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónToolStripMenuItem, CopiarTodoToolStripMenuItem, EditarCuentasToolStripMenuItem})
@@ -61,45 +81,28 @@ Partial Class CAP_CatCuentasMayor
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
         ' 
-        ' AlfabéticamenteToolStripMenuItem
-        ' 
-        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
-        AlfabéticamenteToolStripMenuItem.Size = New Size(224, 26)
-        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
-        ' 
-        ' NuméricamenteToolStripMenuItem
-        ' 
-        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
-        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
-        ' 
-        ' SalirToolStripMenuItem
-        ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
-        SalirToolStripMenuItem.Text = "Salir"
-        ' 
         ' CopiarSelecciónToolStripMenuItem
         ' 
         CopiarSelecciónToolStripMenuItem.Name = "CopiarSelecciónToolStripMenuItem"
-        CopiarSelecciónToolStripMenuItem.Size = New Size(224, 26)
+        CopiarSelecciónToolStripMenuItem.Size = New Size(201, 26)
         CopiarSelecciónToolStripMenuItem.Text = "Copiar selección"
         ' 
         ' CopiarTodoToolStripMenuItem
         ' 
         CopiarTodoToolStripMenuItem.Name = "CopiarTodoToolStripMenuItem"
-        CopiarTodoToolStripMenuItem.Size = New Size(224, 26)
+        CopiarTodoToolStripMenuItem.Size = New Size(201, 26)
         CopiarTodoToolStripMenuItem.Text = "Copiar todo "
         ' 
         ' EditarCuentasToolStripMenuItem
         ' 
         EditarCuentasToolStripMenuItem.Name = "EditarCuentasToolStripMenuItem"
-        EditarCuentasToolStripMenuItem.Size = New Size(224, 26)
+        EditarCuentasToolStripMenuItem.Size = New Size(201, 26)
         EditarCuentasToolStripMenuItem.Text = "Editar cuentas"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColNom})
         DataGridView1.Location = New Point(25, 58)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
@@ -113,6 +116,20 @@ Partial Class CAP_CatCuentasMayor
         HScrollBar1.Name = "HScrollBar1"
         HScrollBar1.Size = New Size(618, 18)
         HScrollBar1.TabIndex = 2
+        ' 
+        ' ColCta
+        ' 
+        ColCta.HeaderText = "Cuenta"
+        ColCta.MinimumWidth = 6
+        ColCta.Name = "ColCta"
+        ColCta.Width = 125
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
         ' 
         ' CAP_CatCuentasMayor
         ' 
@@ -143,4 +160,6 @@ Partial Class CAP_CatCuentasMayor
     Friend WithEvents EditarCuentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents HScrollBar1 As HScrollBar
+    Friend WithEvents ColCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColNom As DataGridViewTextBoxColumn
 End Class
