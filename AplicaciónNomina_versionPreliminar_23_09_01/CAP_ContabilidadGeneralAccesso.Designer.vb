@@ -24,14 +24,17 @@ Partial Class CAP_ContabilidadGeneralAccesso
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         AnexoToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         OrdenarToolStripMenuItem = New ToolStripMenuItem()
-        ImprimirToolStripMenuItem = New ToolStripMenuItem()
-        CopiarTodoToolStripMenuItem = New ToolStripMenuItem()
-        SeleccionarTodoToolStripMenuItem = New ToolStripMenuItem()
         AlfabéticamenteToolStripMenuItem = New ToolStripMenuItem()
         NuméricamenteToolStripMenuItem = New ToolStripMenuItem()
+        ImprimirToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
+        CopiarTodoToolStripMenuItem = New ToolStripMenuItem()
+        SeleccionarTodoToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
+        ColSubCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
+        ColImpte = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -53,25 +56,37 @@ Partial Class CAP_ContabilidadGeneralAccesso
         AnexoToolStripMenuItem.Size = New Size(65, 24)
         AnexoToolStripMenuItem.Text = "Anexo"
         ' 
+        ' OrdenarToolStripMenuItem
+        ' 
+        OrdenarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlfabéticamenteToolStripMenuItem, NuméricamenteToolStripMenuItem})
+        OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
+        OrdenarToolStripMenuItem.Size = New Size(149, 26)
+        OrdenarToolStripMenuItem.Text = "Ordenar"
+        ' 
+        ' AlfabéticamenteToolStripMenuItem
+        ' 
+        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
+        AlfabéticamenteToolStripMenuItem.Size = New Size(202, 26)
+        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
+        ' 
+        ' NuméricamenteToolStripMenuItem
+        ' 
+        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
+        NuméricamenteToolStripMenuItem.Size = New Size(202, 26)
+        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
+        ' 
+        ' ImprimirToolStripMenuItem
+        ' 
+        ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
+        ImprimirToolStripMenuItem.Size = New Size(149, 26)
+        ImprimirToolStripMenuItem.Text = "Imprimir"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarTodoToolStripMenuItem, SeleccionarTodoToolStripMenuItem})
         EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' OrdenarToolStripMenuItem
-        ' 
-        OrdenarToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlfabéticamenteToolStripMenuItem, NuméricamenteToolStripMenuItem})
-        OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
-        OrdenarToolStripMenuItem.Size = New Size(224, 26)
-        OrdenarToolStripMenuItem.Text = "Ordenar"
-        ' 
-        ' ImprimirToolStripMenuItem
-        ' 
-        ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
-        ImprimirToolStripMenuItem.Size = New Size(224, 26)
-        ImprimirToolStripMenuItem.Text = "Imprimir"
         ' 
         ' CopiarTodoToolStripMenuItem
         ' 
@@ -85,27 +100,37 @@ Partial Class CAP_ContabilidadGeneralAccesso
         SeleccionarTodoToolStripMenuItem.Size = New Size(291, 26)
         SeleccionarTodoToolStripMenuItem.Text = "Copiar selección          Ctrl + C"
         ' 
-        ' AlfabéticamenteToolStripMenuItem
-        ' 
-        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
-        AlfabéticamenteToolStripMenuItem.Size = New Size(224, 26)
-        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
-        ' 
-        ' NuméricamenteToolStripMenuItem
-        ' 
-        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
-        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
-        ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColSubCta, ColNom, ColImpte})
         DataGridView1.Location = New Point(33, 54)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
         DataGridView1.Size = New Size(543, 437)
         DataGridView1.TabIndex = 1
+        ' 
+        ' ColSubCta
+        ' 
+        ColSubCta.HeaderText = "SubCta"
+        ColSubCta.MinimumWidth = 6
+        ColSubCta.Name = "ColSubCta"
+        ColSubCta.Width = 125
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
+        ' 
+        ' ColImpte
+        ' 
+        ColImpte.HeaderText = "Importe"
+        ColImpte.MinimumWidth = 6
+        ColImpte.Name = "ColImpte"
+        ColImpte.Width = 125
         ' 
         ' CAP_ContabilidadGeneralAccesso
         ' 
@@ -134,4 +159,7 @@ Partial Class CAP_ContabilidadGeneralAccesso
     Friend WithEvents AlfabéticamenteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NuméricamenteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ColSubCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColNom As DataGridViewTextBoxColumn
+    Friend WithEvents ColImpte As DataGridViewTextBoxColumn
 End Class
