@@ -24,10 +24,6 @@ Partial Class CAP_Cheques
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
-        CapturaToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        MesToolStripMenuItem = New ToolStripMenuItem()
-        AyudaToolStripMenuItem = New ToolStripMenuItem()
         CambioSubdirectorioToolStripMenuItem = New ToolStripMenuItem()
         GuardarAplicaciónCtrlGToolStripMenuItem = New ToolStripMenuItem()
         DirectorioDeCostosToolStripMenuItem = New ToolStripMenuItem()
@@ -39,10 +35,12 @@ Partial Class CAP_Cheques
         DesactualizarToolStripMenuItem = New ToolStripMenuItem()
         ReiniciarToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
+        CapturaToolStripMenuItem = New ToolStripMenuItem()
         DatosToolStripMenuItem = New ToolStripMenuItem()
         PólizaToolStripMenuItem = New ToolStripMenuItem()
         ChequeToolStripMenuItem1 = New ToolStripMenuItem()
         OtrosProgramasCtrlOToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         PegarCtrlVToolStripMenuItem = New ToolStripMenuItem()
         CopiarCtrlCToolStripMenuItem = New ToolStripMenuItem()
         CopiarTodoCtrlSToolStripMenuItem = New ToolStripMenuItem()
@@ -54,12 +52,14 @@ Partial Class CAP_Cheques
         BorrarAplicaciónCtrlBToolStripMenuItem = New ToolStripMenuItem()
         BorrarChequeToolStripMenuItem = New ToolStripMenuItem()
         SumaDebeYHaberCtrlLToolStripMenuItem = New ToolStripMenuItem()
+        MesToolStripMenuItem = New ToolStripMenuItem()
         CuentasCtrlMToolStripMenuItem = New ToolStripMenuItem()
         SubcuentasCtrlToolStripMenuItem = New ToolStripMenuItem()
         SumasToolStripMenuItem = New ToolStripMenuItem()
         PólizasCtrlFToolStripMenuItem = New ToolStripMenuItem()
         AuxiliarDeMayorCtrlAToolStripMenuItem = New ToolStripMenuItem()
         EstadosFinancierosCtrlToolStripMenuItem = New ToolStripMenuItem()
+        AyudaToolStripMenuItem = New ToolStripMenuItem()
         IncorporaciónToolStripMenuItem = New ToolStripMenuItem()
         EneroToolStripMenuItem = New ToolStripMenuItem()
         FebreroToolStripMenuItem = New ToolStripMenuItem()
@@ -108,6 +108,13 @@ Partial Class CAP_Cheques
         CheckBox2 = New CheckBox()
         OpenFileDialog3 = New OpenFileDialog()
         OpenFileDialog4 = New OpenFileDialog()
+        ColCuenta = New DataGridViewTextBoxColumn()
+        ColSubCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
+        ColParcial = New DataGridViewTextBoxColumn()
+        ColDebe = New DataGridViewTextBoxColumn()
+        ColHaber = New DataGridViewTextBoxColumn()
+        ColFolioFis = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -130,34 +137,6 @@ Partial Class CAP_Cheques
         ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         ArchivoToolStripMenuItem.Size = New Size(73, 24)
         ArchivoToolStripMenuItem.Text = "Archivo"
-        ' 
-        ' CapturaToolStripMenuItem
-        ' 
-        CapturaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DatosToolStripMenuItem, PólizaToolStripMenuItem, ChequeToolStripMenuItem1, OtrosProgramasCtrlOToolStripMenuItem})
-        CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
-        CapturaToolStripMenuItem.Size = New Size(75, 24)
-        CapturaToolStripMenuItem.Text = "Captura"
-        ' 
-        ' EdiciónToolStripMenuItem
-        ' 
-        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {PegarCtrlVToolStripMenuItem, CopiarCtrlCToolStripMenuItem, CopiarTodoCtrlSToolStripMenuItem, AgregarSubctaToolStripMenuItem, EliminarSubctaToolStripMenuItem, BorrarCuentaToolStripMenuItem, ValidarMovimientoCtrlGToolStripMenuItem, VerificarSumasF6ToolStripMenuItem, BorrarAplicaciónCtrlBToolStripMenuItem, BorrarChequeToolStripMenuItem, SumaDebeYHaberCtrlLToolStripMenuItem})
-        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        EdiciónToolStripMenuItem.Size = New Size(72, 24)
-        EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' MesToolStripMenuItem
-        ' 
-        MesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CuentasCtrlMToolStripMenuItem, SubcuentasCtrlToolStripMenuItem, SumasToolStripMenuItem, PólizasCtrlFToolStripMenuItem, AuxiliarDeMayorCtrlAToolStripMenuItem, EstadosFinancierosCtrlToolStripMenuItem})
-        MesToolStripMenuItem.Name = "MesToolStripMenuItem"
-        MesToolStripMenuItem.Size = New Size(44, 24)
-        MesToolStripMenuItem.Text = "Ver"
-        ' 
-        ' AyudaToolStripMenuItem
-        ' 
-        AyudaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IncorporaciónToolStripMenuItem, EneroToolStripMenuItem, FebreroToolStripMenuItem, MarzoToolStripMenuItem, AbrilToolStripMenuItem, MayoToolStripMenuItem, JunioToolStripMenuItem, JulioToolStripMenuItem, AgostoToolStripMenuItem, SeptiembreToolStripMenuItem, OctubreToolStripMenuItem, NoviembreToolStripMenuItem, DiciembreToolStripMenuItem})
-        AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        AyudaToolStripMenuItem.Size = New Size(50, 24)
-        AyudaToolStripMenuItem.Text = "Mes"
         ' 
         ' CambioSubdirectorioToolStripMenuItem
         ' 
@@ -187,13 +166,13 @@ Partial Class CAP_Cheques
         ' ChequeToolStripMenuItem
         ' 
         ChequeToolStripMenuItem.Name = "ChequeToolStripMenuItem"
-        ChequeToolStripMenuItem.Size = New Size(224, 26)
+        ChequeToolStripMenuItem.Size = New Size(190, 26)
         ChequeToolStripMenuItem.Text = "Cheque"
         ' 
         ' AjustarChequeToolStripMenuItem
         ' 
         AjustarChequeToolStripMenuItem.Name = "AjustarChequeToolStripMenuItem"
-        AjustarChequeToolStripMenuItem.Size = New Size(224, 26)
+        AjustarChequeToolStripMenuItem.Size = New Size(190, 26)
         AjustarChequeToolStripMenuItem.Text = "Ajustar cheque"
         ' 
         ' VerificarActualizacionesToolStripMenuItem
@@ -226,6 +205,13 @@ Partial Class CAP_Cheques
         SalirToolStripMenuItem.Size = New Size(292, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
+        ' CapturaToolStripMenuItem
+        ' 
+        CapturaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DatosToolStripMenuItem, PólizaToolStripMenuItem, ChequeToolStripMenuItem1, OtrosProgramasCtrlOToolStripMenuItem})
+        CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
+        CapturaToolStripMenuItem.Size = New Size(75, 24)
+        CapturaToolStripMenuItem.Text = "Captura"
+        ' 
         ' DatosToolStripMenuItem
         ' 
         DatosToolStripMenuItem.Name = "DatosToolStripMenuItem"
@@ -249,6 +235,13 @@ Partial Class CAP_Cheques
         OtrosProgramasCtrlOToolStripMenuItem.Name = "OtrosProgramasCtrlOToolStripMenuItem"
         OtrosProgramasCtrlOToolStripMenuItem.Size = New Size(287, 26)
         OtrosProgramasCtrlOToolStripMenuItem.Text = "Otros programas       Ctrl + O"
+        ' 
+        ' EdiciónToolStripMenuItem
+        ' 
+        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {PegarCtrlVToolStripMenuItem, CopiarCtrlCToolStripMenuItem, CopiarTodoCtrlSToolStripMenuItem, AgregarSubctaToolStripMenuItem, EliminarSubctaToolStripMenuItem, BorrarCuentaToolStripMenuItem, ValidarMovimientoCtrlGToolStripMenuItem, VerificarSumasF6ToolStripMenuItem, BorrarAplicaciónCtrlBToolStripMenuItem, BorrarChequeToolStripMenuItem, SumaDebeYHaberCtrlLToolStripMenuItem})
+        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
+        EdiciónToolStripMenuItem.Size = New Size(72, 24)
+        EdiciónToolStripMenuItem.Text = "Edición"
         ' 
         ' PegarCtrlVToolStripMenuItem
         ' 
@@ -316,6 +309,13 @@ Partial Class CAP_Cheques
         SumaDebeYHaberCtrlLToolStripMenuItem.Size = New Size(320, 26)
         SumaDebeYHaberCtrlLToolStripMenuItem.Text = "Suma debe y haber             Ctrl + L"
         ' 
+        ' MesToolStripMenuItem
+        ' 
+        MesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CuentasCtrlMToolStripMenuItem, SubcuentasCtrlToolStripMenuItem, SumasToolStripMenuItem, PólizasCtrlFToolStripMenuItem, AuxiliarDeMayorCtrlAToolStripMenuItem, EstadosFinancierosCtrlToolStripMenuItem})
+        MesToolStripMenuItem.Name = "MesToolStripMenuItem"
+        MesToolStripMenuItem.Size = New Size(44, 24)
+        MesToolStripMenuItem.Text = "Ver"
+        ' 
         ' CuentasCtrlMToolStripMenuItem
         ' 
         CuentasCtrlMToolStripMenuItem.Name = "CuentasCtrlMToolStripMenuItem"
@@ -352,82 +352,89 @@ Partial Class CAP_Cheques
         EstadosFinancierosCtrlToolStripMenuItem.Size = New Size(314, 26)
         EstadosFinancierosCtrlToolStripMenuItem.Text = "Estados financieros          Ctrl + E"
         ' 
+        ' AyudaToolStripMenuItem
+        ' 
+        AyudaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IncorporaciónToolStripMenuItem, EneroToolStripMenuItem, FebreroToolStripMenuItem, MarzoToolStripMenuItem, AbrilToolStripMenuItem, MayoToolStripMenuItem, JunioToolStripMenuItem, JulioToolStripMenuItem, AgostoToolStripMenuItem, SeptiembreToolStripMenuItem, OctubreToolStripMenuItem, NoviembreToolStripMenuItem, DiciembreToolStripMenuItem})
+        AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        AyudaToolStripMenuItem.Size = New Size(50, 24)
+        AyudaToolStripMenuItem.Text = "Mes"
+        ' 
         ' IncorporaciónToolStripMenuItem
         ' 
         IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
+        IncorporaciónToolStripMenuItem.Size = New Size(184, 26)
         IncorporaciónToolStripMenuItem.Text = "Incorporación"
         ' 
         ' EneroToolStripMenuItem
         ' 
         EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(224, 26)
+        EneroToolStripMenuItem.Size = New Size(184, 26)
         EneroToolStripMenuItem.Text = "Enero"
         ' 
         ' FebreroToolStripMenuItem
         ' 
         FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
-        FebreroToolStripMenuItem.Size = New Size(224, 26)
+        FebreroToolStripMenuItem.Size = New Size(184, 26)
         FebreroToolStripMenuItem.Text = "Febrero "
         ' 
         ' MarzoToolStripMenuItem
         ' 
         MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
-        MarzoToolStripMenuItem.Size = New Size(224, 26)
+        MarzoToolStripMenuItem.Size = New Size(184, 26)
         MarzoToolStripMenuItem.Text = "Marzo"
         ' 
         ' AbrilToolStripMenuItem
         ' 
         AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
-        AbrilToolStripMenuItem.Size = New Size(224, 26)
+        AbrilToolStripMenuItem.Size = New Size(184, 26)
         AbrilToolStripMenuItem.Text = "Abril"
         ' 
         ' MayoToolStripMenuItem
         ' 
         MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
-        MayoToolStripMenuItem.Size = New Size(224, 26)
+        MayoToolStripMenuItem.Size = New Size(184, 26)
         MayoToolStripMenuItem.Text = "Mayo"
         ' 
         ' JunioToolStripMenuItem
         ' 
         JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
-        JunioToolStripMenuItem.Size = New Size(224, 26)
+        JunioToolStripMenuItem.Size = New Size(184, 26)
         JunioToolStripMenuItem.Text = "Junio"
         ' 
         ' JulioToolStripMenuItem
         ' 
         JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
-        JulioToolStripMenuItem.Size = New Size(224, 26)
+        JulioToolStripMenuItem.Size = New Size(184, 26)
         JulioToolStripMenuItem.Text = "Julio"
         ' 
         ' AgostoToolStripMenuItem
         ' 
         AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
-        AgostoToolStripMenuItem.Size = New Size(224, 26)
+        AgostoToolStripMenuItem.Size = New Size(184, 26)
         AgostoToolStripMenuItem.Text = "Agosto"
         ' 
         ' SeptiembreToolStripMenuItem
         ' 
         SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
-        SeptiembreToolStripMenuItem.Size = New Size(224, 26)
+        SeptiembreToolStripMenuItem.Size = New Size(184, 26)
         SeptiembreToolStripMenuItem.Text = "Septiembre"
         ' 
         ' OctubreToolStripMenuItem
         ' 
         OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
-        OctubreToolStripMenuItem.Size = New Size(224, 26)
+        OctubreToolStripMenuItem.Size = New Size(184, 26)
         OctubreToolStripMenuItem.Text = "Octubre"
         ' 
         ' NoviembreToolStripMenuItem
         ' 
         NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
-        NoviembreToolStripMenuItem.Size = New Size(224, 26)
+        NoviembreToolStripMenuItem.Size = New Size(184, 26)
         NoviembreToolStripMenuItem.Text = "Noviembre"
         ' 
         ' DiciembreToolStripMenuItem
         ' 
         DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
-        DiciembreToolStripMenuItem.Size = New Size(224, 26)
+        DiciembreToolStripMenuItem.Size = New Size(184, 26)
         DiciembreToolStripMenuItem.Text = "Diciembre"
         ' 
         ' AyudaToolStripMenuItem1
@@ -440,13 +447,13 @@ Partial Class CAP_Cheques
         ' ÍndiceToolStripMenuItem
         ' 
         ÍndiceToolStripMenuItem.Name = "ÍndiceToolStripMenuItem"
-        ÍndiceToolStripMenuItem.Size = New Size(224, 26)
+        ÍndiceToolStripMenuItem.Size = New Size(140, 26)
         ÍndiceToolStripMenuItem.Text = "Índice"
         ' 
         ' VersiónToolStripMenuItem
         ' 
         VersiónToolStripMenuItem.Name = "VersiónToolStripMenuItem"
-        VersiónToolStripMenuItem.Size = New Size(224, 26)
+        VersiónToolStripMenuItem.Size = New Size(140, 26)
         VersiónToolStripMenuItem.Text = "Versión"
         ' 
         ' Label1
@@ -564,6 +571,7 @@ Partial Class CAP_Cheques
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCuenta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColFolioFis})
         DataGridView1.Location = New Point(39, 240)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
@@ -721,6 +729,55 @@ Partial Class CAP_Cheques
         ' 
         OpenFileDialog4.FileName = "OpenFileDialog4"
         ' 
+        ' ColCuenta
+        ' 
+        ColCuenta.HeaderText = "Cuenta"
+        ColCuenta.MinimumWidth = 6
+        ColCuenta.Name = "ColCuenta"
+        ColCuenta.Width = 125
+        ' 
+        ' ColSubCta
+        ' 
+        ColSubCta.HeaderText = "SubCuenta"
+        ColSubCta.MinimumWidth = 6
+        ColSubCta.Name = "ColSubCta"
+        ColSubCta.Width = 125
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
+        ' 
+        ' ColParcial
+        ' 
+        ColParcial.HeaderText = "Parcial"
+        ColParcial.MinimumWidth = 6
+        ColParcial.Name = "ColParcial"
+        ColParcial.Width = 125
+        ' 
+        ' ColDebe
+        ' 
+        ColDebe.HeaderText = "Debe"
+        ColDebe.MinimumWidth = 6
+        ColDebe.Name = "ColDebe"
+        ColDebe.Width = 125
+        ' 
+        ' ColHaber
+        ' 
+        ColHaber.HeaderText = "Haber"
+        ColHaber.MinimumWidth = 6
+        ColHaber.Name = "ColHaber"
+        ColHaber.Width = 125
+        ' 
+        ' ColFolioFis
+        ' 
+        ColFolioFis.HeaderText = "Folio Fiscal"
+        ColFolioFis.MinimumWidth = 6
+        ColFolioFis.Name = "ColFolioFis"
+        ColFolioFis.Width = 125
+        ' 
         ' CAP_Cheques
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -842,4 +899,11 @@ Partial Class CAP_Cheques
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents OpenFileDialog3 As OpenFileDialog
     Friend WithEvents OpenFileDialog4 As OpenFileDialog
+    Friend WithEvents ColCuenta As DataGridViewTextBoxColumn
+    Friend WithEvents ColSubCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColNom As DataGridViewTextBoxColumn
+    Friend WithEvents ColParcial As DataGridViewTextBoxColumn
+    Friend WithEvents ColDebe As DataGridViewTextBoxColumn
+    Friend WithEvents ColHaber As DataGridViewTextBoxColumn
+    Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
 End Class
