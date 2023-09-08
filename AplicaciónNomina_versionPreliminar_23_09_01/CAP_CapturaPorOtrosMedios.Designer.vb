@@ -24,11 +24,33 @@ Partial Class CAP_CapturaPorOtrosMedios
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
+        GuardarPólizaToolStripMenuItem = New ToolStripMenuItem()
+        SalirToolStripMenuItem = New ToolStripMenuItem()
         EdiciónToolStripMenuItem = New ToolStripMenuItem()
+        DeshacerToolStripMenuItem = New ToolStripMenuItem()
+        CopiarToolStripMenuItem = New ToolStripMenuItem()
+        CopiarToolStripMenuItem1 = New ToolStripMenuItem()
+        CopiarTodoCtrlSToolStripMenuItem = New ToolStripMenuItem()
+        EliminarToolStripMenuItem = New ToolStripMenuItem()
         ValidaciónToolStripMenuItem = New ToolStripMenuItem()
         SumarPólizaToolStripMenuItem = New ToolStripMenuItem()
         MesesToolStripMenuItem = New ToolStripMenuItem()
+        IncorporaciónToolStripMenuItem = New ToolStripMenuItem()
+        EneroToolStripMenuItem = New ToolStripMenuItem()
+        FebreroToolStripMenuItem = New ToolStripMenuItem()
+        MarzoToolStripMenuItem = New ToolStripMenuItem()
+        AbrilToolStripMenuItem = New ToolStripMenuItem()
+        MayoToolStripMenuItem = New ToolStripMenuItem()
+        JunioToolStripMenuItem = New ToolStripMenuItem()
+        JulioToolStripMenuItem = New ToolStripMenuItem()
+        AgostoToolStripMenuItem = New ToolStripMenuItem()
+        SeptiembreToolStripMenuItem = New ToolStripMenuItem()
+        OctubreToolStripMenuItem = New ToolStripMenuItem()
+        NoviembreToolStripMenuItem = New ToolStripMenuItem()
+        DiciembreToolStripMenuItem = New ToolStripMenuItem()
         VerToolStripMenuItem = New ToolStripMenuItem()
+        CuentasToolStripMenuItem = New ToolStripMenuItem()
+        SubCuentasToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         TextBox1 = New TextBox()
         Label2 = New Label()
@@ -44,28 +66,12 @@ Partial Class CAP_CapturaPorOtrosMedios
         TextBox5 = New TextBox()
         Label6 = New Label()
         DataGridView1 = New DataGridView()
-        GuardarPólizaToolStripMenuItem = New ToolStripMenuItem()
-        SalirToolStripMenuItem = New ToolStripMenuItem()
-        DeshacerToolStripMenuItem = New ToolStripMenuItem()
-        CopiarToolStripMenuItem = New ToolStripMenuItem()
-        CopiarToolStripMenuItem1 = New ToolStripMenuItem()
-        CopiarTodoCtrlSToolStripMenuItem = New ToolStripMenuItem()
-        EliminarToolStripMenuItem = New ToolStripMenuItem()
-        IncorporaciónToolStripMenuItem = New ToolStripMenuItem()
-        EneroToolStripMenuItem = New ToolStripMenuItem()
-        FebreroToolStripMenuItem = New ToolStripMenuItem()
-        MarzoToolStripMenuItem = New ToolStripMenuItem()
-        AbrilToolStripMenuItem = New ToolStripMenuItem()
-        MayoToolStripMenuItem = New ToolStripMenuItem()
-        JunioToolStripMenuItem = New ToolStripMenuItem()
-        JulioToolStripMenuItem = New ToolStripMenuItem()
-        AgostoToolStripMenuItem = New ToolStripMenuItem()
-        SeptiembreToolStripMenuItem = New ToolStripMenuItem()
-        OctubreToolStripMenuItem = New ToolStripMenuItem()
-        NoviembreToolStripMenuItem = New ToolStripMenuItem()
-        DiciembreToolStripMenuItem = New ToolStripMenuItem()
-        CuentasToolStripMenuItem = New ToolStripMenuItem()
-        SubCuentasToolStripMenuItem = New ToolStripMenuItem()
+        ColCta = New DataGridViewTextBoxColumn()
+        ColSubCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
+        ColParcial = New DataGridViewTextBoxColumn()
+        ColDebe = New DataGridViewTextBoxColumn()
+        ColHaber = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -87,12 +93,54 @@ Partial Class CAP_CapturaPorOtrosMedios
         ArchivoToolStripMenuItem.Size = New Size(73, 24)
         ArchivoToolStripMenuItem.Text = "Archivo"
         ' 
+        ' GuardarPólizaToolStripMenuItem
+        ' 
+        GuardarPólizaToolStripMenuItem.Name = "GuardarPólizaToolStripMenuItem"
+        GuardarPólizaToolStripMenuItem.Size = New Size(188, 26)
+        GuardarPólizaToolStripMenuItem.Text = "Guardar Póliza"
+        ' 
+        ' SalirToolStripMenuItem
+        ' 
+        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        SalirToolStripMenuItem.Size = New Size(188, 26)
+        SalirToolStripMenuItem.Text = "Salir"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DeshacerToolStripMenuItem, CopiarToolStripMenuItem, CopiarToolStripMenuItem1, CopiarTodoCtrlSToolStripMenuItem, EliminarToolStripMenuItem})
         EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
         EdiciónToolStripMenuItem.Size = New Size(76, 24)
         EdiciónToolStripMenuItem.Text = "Edición "
+        ' 
+        ' DeshacerToolStripMenuItem
+        ' 
+        DeshacerToolStripMenuItem.Name = "DeshacerToolStripMenuItem"
+        DeshacerToolStripMenuItem.Size = New Size(301, 26)
+        DeshacerToolStripMenuItem.Text = "Deshacer"
+        ' 
+        ' CopiarToolStripMenuItem
+        ' 
+        CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
+        CopiarToolStripMenuItem.Size = New Size(301, 26)
+        CopiarToolStripMenuItem.Text = "Pegar                              Ctrl + V"
+        ' 
+        ' CopiarToolStripMenuItem1
+        ' 
+        CopiarToolStripMenuItem1.Name = "CopiarToolStripMenuItem1"
+        CopiarToolStripMenuItem1.Size = New Size(301, 26)
+        CopiarToolStripMenuItem1.Text = "Copiar Selección            Ctrl + C"
+        ' 
+        ' CopiarTodoCtrlSToolStripMenuItem
+        ' 
+        CopiarTodoCtrlSToolStripMenuItem.Name = "CopiarTodoCtrlSToolStripMenuItem"
+        CopiarTodoCtrlSToolStripMenuItem.Size = New Size(301, 26)
+        CopiarTodoCtrlSToolStripMenuItem.Text = "Copiar todo                    Ctrl + S"
+        ' 
+        ' EliminarToolStripMenuItem
+        ' 
+        EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        EliminarToolStripMenuItem.Size = New Size(301, 26)
+        EliminarToolStripMenuItem.Text = "Eliminar"
         ' 
         ' ValidaciónToolStripMenuItem
         ' 
@@ -113,12 +161,102 @@ Partial Class CAP_CapturaPorOtrosMedios
         MesesToolStripMenuItem.Size = New Size(64, 24)
         MesesToolStripMenuItem.Text = "Meses"
         ' 
+        ' IncorporaciónToolStripMenuItem
+        ' 
+        IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
+        IncorporaciónToolStripMenuItem.Size = New Size(184, 26)
+        IncorporaciónToolStripMenuItem.Text = "Incorporación"
+        ' 
+        ' EneroToolStripMenuItem
+        ' 
+        EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
+        EneroToolStripMenuItem.Size = New Size(184, 26)
+        EneroToolStripMenuItem.Text = "Enero"
+        ' 
+        ' FebreroToolStripMenuItem
+        ' 
+        FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
+        FebreroToolStripMenuItem.Size = New Size(184, 26)
+        FebreroToolStripMenuItem.Text = "Febrero"
+        ' 
+        ' MarzoToolStripMenuItem
+        ' 
+        MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
+        MarzoToolStripMenuItem.Size = New Size(184, 26)
+        MarzoToolStripMenuItem.Text = "Marzo"
+        ' 
+        ' AbrilToolStripMenuItem
+        ' 
+        AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
+        AbrilToolStripMenuItem.Size = New Size(184, 26)
+        AbrilToolStripMenuItem.Text = "Abril"
+        ' 
+        ' MayoToolStripMenuItem
+        ' 
+        MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
+        MayoToolStripMenuItem.Size = New Size(184, 26)
+        MayoToolStripMenuItem.Text = "Mayo"
+        ' 
+        ' JunioToolStripMenuItem
+        ' 
+        JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
+        JunioToolStripMenuItem.Size = New Size(184, 26)
+        JunioToolStripMenuItem.Text = "Junio"
+        ' 
+        ' JulioToolStripMenuItem
+        ' 
+        JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
+        JulioToolStripMenuItem.Size = New Size(184, 26)
+        JulioToolStripMenuItem.Text = "Julio"
+        ' 
+        ' AgostoToolStripMenuItem
+        ' 
+        AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
+        AgostoToolStripMenuItem.Size = New Size(184, 26)
+        AgostoToolStripMenuItem.Text = "Agosto"
+        ' 
+        ' SeptiembreToolStripMenuItem
+        ' 
+        SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
+        SeptiembreToolStripMenuItem.Size = New Size(184, 26)
+        SeptiembreToolStripMenuItem.Text = "Septiembre"
+        ' 
+        ' OctubreToolStripMenuItem
+        ' 
+        OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
+        OctubreToolStripMenuItem.Size = New Size(184, 26)
+        OctubreToolStripMenuItem.Text = "Octubre"
+        ' 
+        ' NoviembreToolStripMenuItem
+        ' 
+        NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
+        NoviembreToolStripMenuItem.Size = New Size(184, 26)
+        NoviembreToolStripMenuItem.Text = "Noviembre"
+        ' 
+        ' DiciembreToolStripMenuItem
+        ' 
+        DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
+        DiciembreToolStripMenuItem.Size = New Size(184, 26)
+        DiciembreToolStripMenuItem.Text = "Diciembre"
+        ' 
         ' VerToolStripMenuItem
         ' 
         VerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CuentasToolStripMenuItem, SubCuentasToolStripMenuItem})
         VerToolStripMenuItem.Name = "VerToolStripMenuItem"
         VerToolStripMenuItem.Size = New Size(44, 24)
         VerToolStripMenuItem.Text = "Ver"
+        ' 
+        ' CuentasToolStripMenuItem
+        ' 
+        CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
+        CuentasToolStripMenuItem.Size = New Size(169, 26)
+        CuentasToolStripMenuItem.Text = "Cuentas"
+        ' 
+        ' SubCuentasToolStripMenuItem
+        ' 
+        SubCuentasToolStripMenuItem.Name = "SubCuentasToolStripMenuItem"
+        SubCuentasToolStripMenuItem.Size = New Size(169, 26)
+        SubCuentasToolStripMenuItem.Text = "SubCuentas"
         ' 
         ' Label1
         ' 
@@ -226,6 +364,7 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber})
         DataGridView1.Location = New Point(29, 163)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
@@ -233,137 +372,47 @@ Partial Class CAP_CapturaPorOtrosMedios
         DataGridView1.Size = New Size(609, 450)
         DataGridView1.TabIndex = 12
         ' 
-        ' GuardarPólizaToolStripMenuItem
+        ' ColCta
         ' 
-        GuardarPólizaToolStripMenuItem.Name = "GuardarPólizaToolStripMenuItem"
-        GuardarPólizaToolStripMenuItem.Size = New Size(224, 26)
-        GuardarPólizaToolStripMenuItem.Text = "Guardar Póliza"
+        ColCta.HeaderText = "Cuenta"
+        ColCta.MinimumWidth = 6
+        ColCta.Name = "ColCta"
+        ColCta.Width = 125
         ' 
-        ' SalirToolStripMenuItem
+        ' ColSubCta
         ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
-        SalirToolStripMenuItem.Text = "Salir"
+        ColSubCta.HeaderText = "SubCuenta"
+        ColSubCta.MinimumWidth = 6
+        ColSubCta.Name = "ColSubCta"
+        ColSubCta.Width = 125
         ' 
-        ' DeshacerToolStripMenuItem
+        ' ColNom
         ' 
-        DeshacerToolStripMenuItem.Name = "DeshacerToolStripMenuItem"
-        DeshacerToolStripMenuItem.Size = New Size(301, 26)
-        DeshacerToolStripMenuItem.Text = "Deshacer"
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
         ' 
-        ' CopiarToolStripMenuItem
+        ' ColParcial
         ' 
-        CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
-        CopiarToolStripMenuItem.Size = New Size(301, 26)
-        CopiarToolStripMenuItem.Text = "Pegar                              Ctrl + V"
+        ColParcial.HeaderText = "Parcial"
+        ColParcial.MinimumWidth = 6
+        ColParcial.Name = "ColParcial"
+        ColParcial.Width = 125
         ' 
-        ' CopiarToolStripMenuItem1
+        ' ColDebe
         ' 
-        CopiarToolStripMenuItem1.Name = "CopiarToolStripMenuItem1"
-        CopiarToolStripMenuItem1.Size = New Size(301, 26)
-        CopiarToolStripMenuItem1.Text = "Copiar Selección            Ctrl + C"
+        ColDebe.HeaderText = "Debe"
+        ColDebe.MinimumWidth = 6
+        ColDebe.Name = "ColDebe"
+        ColDebe.Width = 125
         ' 
-        ' CopiarTodoCtrlSToolStripMenuItem
+        ' ColHaber
         ' 
-        CopiarTodoCtrlSToolStripMenuItem.Name = "CopiarTodoCtrlSToolStripMenuItem"
-        CopiarTodoCtrlSToolStripMenuItem.Size = New Size(301, 26)
-        CopiarTodoCtrlSToolStripMenuItem.Text = "Copiar todo                    Ctrl + S"
-        ' 
-        ' EliminarToolStripMenuItem
-        ' 
-        EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        EliminarToolStripMenuItem.Size = New Size(301, 26)
-        EliminarToolStripMenuItem.Text = "Eliminar"
-        ' 
-        ' IncorporaciónToolStripMenuItem
-        ' 
-        IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
-        IncorporaciónToolStripMenuItem.Text = "Incorporación"
-        ' 
-        ' EneroToolStripMenuItem
-        ' 
-        EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(224, 26)
-        EneroToolStripMenuItem.Text = "Enero"
-        ' 
-        ' FebreroToolStripMenuItem
-        ' 
-        FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
-        FebreroToolStripMenuItem.Size = New Size(224, 26)
-        FebreroToolStripMenuItem.Text = "Febrero"
-        ' 
-        ' MarzoToolStripMenuItem
-        ' 
-        MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
-        MarzoToolStripMenuItem.Size = New Size(224, 26)
-        MarzoToolStripMenuItem.Text = "Marzo"
-        ' 
-        ' AbrilToolStripMenuItem
-        ' 
-        AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
-        AbrilToolStripMenuItem.Size = New Size(224, 26)
-        AbrilToolStripMenuItem.Text = "Abril"
-        ' 
-        ' MayoToolStripMenuItem
-        ' 
-        MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
-        MayoToolStripMenuItem.Size = New Size(224, 26)
-        MayoToolStripMenuItem.Text = "Mayo"
-        ' 
-        ' JunioToolStripMenuItem
-        ' 
-        JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
-        JunioToolStripMenuItem.Size = New Size(224, 26)
-        JunioToolStripMenuItem.Text = "Junio"
-        ' 
-        ' JulioToolStripMenuItem
-        ' 
-        JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
-        JulioToolStripMenuItem.Size = New Size(224, 26)
-        JulioToolStripMenuItem.Text = "Julio"
-        ' 
-        ' AgostoToolStripMenuItem
-        ' 
-        AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
-        AgostoToolStripMenuItem.Size = New Size(224, 26)
-        AgostoToolStripMenuItem.Text = "Agosto"
-        ' 
-        ' SeptiembreToolStripMenuItem
-        ' 
-        SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
-        SeptiembreToolStripMenuItem.Size = New Size(224, 26)
-        SeptiembreToolStripMenuItem.Text = "Septiembre"
-        ' 
-        ' OctubreToolStripMenuItem
-        ' 
-        OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
-        OctubreToolStripMenuItem.Size = New Size(224, 26)
-        OctubreToolStripMenuItem.Text = "Octubre"
-        ' 
-        ' NoviembreToolStripMenuItem
-        ' 
-        NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
-        NoviembreToolStripMenuItem.Size = New Size(224, 26)
-        NoviembreToolStripMenuItem.Text = "Noviembre"
-        ' 
-        ' DiciembreToolStripMenuItem
-        ' 
-        DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
-        DiciembreToolStripMenuItem.Size = New Size(224, 26)
-        DiciembreToolStripMenuItem.Text = "Diciembre"
-        ' 
-        ' CuentasToolStripMenuItem
-        ' 
-        CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
-        CuentasToolStripMenuItem.Size = New Size(224, 26)
-        CuentasToolStripMenuItem.Text = "Cuentas"
-        ' 
-        ' SubCuentasToolStripMenuItem
-        ' 
-        SubCuentasToolStripMenuItem.Name = "SubCuentasToolStripMenuItem"
-        SubCuentasToolStripMenuItem.Size = New Size(224, 26)
-        SubCuentasToolStripMenuItem.Text = "SubCuentas"
+        ColHaber.HeaderText = "Haber"
+        ColHaber.MinimumWidth = 6
+        ColHaber.Name = "ColHaber"
+        ColHaber.Width = 125
         ' 
         ' CAP_CapturaPorOtrosMedios
         ' 
@@ -437,4 +486,10 @@ Partial Class CAP_CapturaPorOtrosMedios
     Friend WithEvents DiciembreToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CuentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SubCuentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ColCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColSubCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColNom As DataGridViewTextBoxColumn
+    Friend WithEvents ColParcial As DataGridViewTextBoxColumn
+    Friend WithEvents ColDebe As DataGridViewTextBoxColumn
+    Friend WithEvents ColHaber As DataGridViewTextBoxColumn
 End Class
