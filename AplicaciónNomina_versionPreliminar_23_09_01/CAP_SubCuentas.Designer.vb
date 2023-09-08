@@ -24,14 +24,16 @@ Partial Class CAP_SubCuentas
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         VerToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         AlfabéticamenteToolStripMenuItem = New ToolStripMenuItem()
         NuméricamenteToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónCtrlCToolStripMenuItem = New ToolStripMenuItem()
         CopiarTodoCtrlSToolStripMenuItem = New ToolStripMenuItem()
         TextBox1 = New TextBox()
         DataGridView1 = New DataGridView()
+        ColSubCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -53,30 +55,30 @@ Partial Class CAP_SubCuentas
         VerToolStripMenuItem.Size = New Size(44, 24)
         VerToolStripMenuItem.Text = "Ver"
         ' 
+        ' AlfabéticamenteToolStripMenuItem
+        ' 
+        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
+        AlfabéticamenteToolStripMenuItem.Size = New Size(202, 26)
+        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
+        ' 
+        ' NuméricamenteToolStripMenuItem
+        ' 
+        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
+        NuméricamenteToolStripMenuItem.Size = New Size(202, 26)
+        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
+        ' 
+        ' SalirToolStripMenuItem
+        ' 
+        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        SalirToolStripMenuItem.Size = New Size(202, 26)
+        SalirToolStripMenuItem.Text = "Salir"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónCtrlCToolStripMenuItem, CopiarTodoCtrlSToolStripMenuItem})
         EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' AlfabéticamenteToolStripMenuItem
-        ' 
-        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
-        AlfabéticamenteToolStripMenuItem.Size = New Size(224, 26)
-        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
-        ' 
-        ' NuméricamenteToolStripMenuItem
-        ' 
-        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
-        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
-        ' 
-        ' SalirToolStripMenuItem
-        ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
-        SalirToolStripMenuItem.Text = "Salir"
         ' 
         ' CopiarSelecciónCtrlCToolStripMenuItem
         ' 
@@ -100,12 +102,27 @@ Partial Class CAP_SubCuentas
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColSubCta, ColNom})
         DataGridView1.Location = New Point(12, 92)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
         DataGridView1.Size = New Size(416, 315)
         DataGridView1.TabIndex = 2
+        ' 
+        ' ColSubCta
+        ' 
+        ColSubCta.HeaderText = "SubCuenta"
+        ColSubCta.MinimumWidth = 6
+        ColSubCta.Name = "ColSubCta"
+        ColSubCta.Width = 125
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
         ' 
         ' CAP_SubCuentas
         ' 
@@ -135,4 +152,6 @@ Partial Class CAP_SubCuentas
     Friend WithEvents CopiarTodoCtrlSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ColSubCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColNom As DataGridViewTextBoxColumn
 End Class
