@@ -27,6 +27,10 @@ Partial Class CAP_ArchivosActualizados
         CopiarSelecciónCtrlTToolStripMenuItem = New ToolStripMenuItem()
         CopiarToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
+        ColMes = New DataGridViewTextBoxColumn()
+        ColRegistros = New DataGridViewTextBoxColumn()
+        ColPoliza = New DataGridViewTextBoxColumn()
+        ColEstado = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -63,12 +67,41 @@ Partial Class CAP_ArchivosActualizados
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColMes, ColRegistros, ColPoliza, ColEstado})
         DataGridView1.Location = New Point(17, 50)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
         DataGridView1.Size = New Size(379, 364)
         DataGridView1.TabIndex = 1
+        ' 
+        ' ColMes
+        ' 
+        ColMes.HeaderText = "Mes"
+        ColMes.MinimumWidth = 6
+        ColMes.Name = "ColMes"
+        ColMes.Width = 125
+        ' 
+        ' ColRegistros
+        ' 
+        ColRegistros.HeaderText = "Registros"
+        ColRegistros.MinimumWidth = 6
+        ColRegistros.Name = "ColRegistros"
+        ColRegistros.Width = 125
+        ' 
+        ' ColPoliza
+        ' 
+        ColPoliza.HeaderText = "Póliza"
+        ColPoliza.MinimumWidth = 6
+        ColPoliza.Name = "ColPoliza"
+        ColPoliza.Width = 125
+        ' 
+        ' ColEstado
+        ' 
+        ColEstado.HeaderText = "Estado"
+        ColEstado.MinimumWidth = 6
+        ColEstado.Name = "ColEstado"
+        ColEstado.Width = 125
         ' 
         ' CAP_ArchivosActualizados
         ' 
@@ -92,4 +125,8 @@ Partial Class CAP_ArchivosActualizados
     Friend WithEvents CopiarSelecciónCtrlTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CopiarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ColMes As DataGridViewTextBoxColumn
+    Friend WithEvents ColRegistros As DataGridViewTextBoxColumn
+    Friend WithEvents ColPoliza As DataGridViewTextBoxColumn
+    Friend WithEvents ColEstado As DataGridViewTextBoxColumn
 End Class
