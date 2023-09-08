@@ -78,7 +78,7 @@ Partial Class CAP_LocalizarPolizas
         Label1.Name = "Label1"
         Label1.Size = New Size(193, 32)
         Label1.TabIndex = 1
-        Label1.Text = "Label1"
+        Label1.Text = "Label"
         ' 
         ' DataGridView1
         ' 
