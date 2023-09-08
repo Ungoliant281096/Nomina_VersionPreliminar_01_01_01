@@ -249,13 +249,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' CuentasToolStripMenuItem
         ' 
         CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
-        CuentasToolStripMenuItem.Size = New Size(169, 26)
+        CuentasToolStripMenuItem.Size = New Size(224, 26)
         CuentasToolStripMenuItem.Text = "Cuentas"
         ' 
         ' SubCuentasToolStripMenuItem
         ' 
         SubCuentasToolStripMenuItem.Name = "SubCuentasToolStripMenuItem"
-        SubCuentasToolStripMenuItem.Size = New Size(169, 26)
+        SubCuentasToolStripMenuItem.Size = New Size(224, 26)
         SubCuentasToolStripMenuItem.Text = "SubCuentas"
         ' 
         ' Label1

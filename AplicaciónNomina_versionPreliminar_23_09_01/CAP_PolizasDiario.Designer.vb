@@ -24,23 +24,20 @@ Partial Class CAP_PolizasDiario
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        ImprimirToolStripMenuItem = New ToolStripMenuItem()
         CambioDirectorioToolStripMenuItem = New ToolStripMenuItem()
         VerListasDePólizasCtrlZToolStripMenuItem = New ToolStripMenuItem()
         AbrirCtrlRToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónCtrlCToolStripMenuItem = New ToolStripMenuItem()
         CopiarCtrlCToolStripMenuItem = New ToolStripMenuItem()
+        ImprimirToolStripMenuItem = New ToolStripMenuItem()
         RangoToolStripMenuItem = New ToolStripMenuItem()
         TodasToolStripMenuItem = New ToolStripMenuItem()
         GroupBox1 = New GroupBox()
         ComboBox1 = New ComboBox()
         Label1 = New Label()
         DataGridView1 = New DataGridView()
-        VScrollBar1 = New VScrollBar()
-        OpenFileDialog1 = New OpenFileDialog()
-        OpenFileDialog2 = New OpenFileDialog()
         ColCta = New DataGridViewTextBoxColumn()
         ColSubCta = New DataGridViewTextBoxColumn()
         ColNom = New DataGridViewTextBoxColumn()
@@ -49,6 +46,9 @@ Partial Class CAP_PolizasDiario
         ColHaber = New DataGridViewTextBoxColumn()
         ColRedac = New DataGridViewTextBoxColumn()
         ColFolioFis = New DataGridViewTextBoxColumn()
+        VScrollBar1 = New VScrollBar()
+        OpenFileDialog1 = New OpenFileDialog()
+        OpenFileDialog2 = New OpenFileDialog()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -69,20 +69,6 @@ Partial Class CAP_PolizasDiario
         ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         ArchivoToolStripMenuItem.Size = New Size(73, 24)
         ArchivoToolStripMenuItem.Text = "Archivo"
-        ' 
-        ' EdiciónToolStripMenuItem
-        ' 
-        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónCtrlCToolStripMenuItem, CopiarCtrlCToolStripMenuItem})
-        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        EdiciónToolStripMenuItem.Size = New Size(72, 24)
-        EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' ImprimirToolStripMenuItem
-        ' 
-        ImprimirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {RangoToolStripMenuItem, TodasToolStripMenuItem})
-        ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
-        ImprimirToolStripMenuItem.Size = New Size(80, 24)
-        ImprimirToolStripMenuItem.Text = "Imprimir"
         ' 
         ' CambioDirectorioToolStripMenuItem
         ' 
@@ -108,6 +94,13 @@ Partial Class CAP_PolizasDiario
         SalirToolStripMenuItem.Size = New Size(319, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
+        ' EdiciónToolStripMenuItem
+        ' 
+        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónCtrlCToolStripMenuItem, CopiarCtrlCToolStripMenuItem})
+        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
+        EdiciónToolStripMenuItem.Size = New Size(72, 24)
+        EdiciónToolStripMenuItem.Text = "Edición"
+        ' 
         ' CopiarSelecciónCtrlCToolStripMenuItem
         ' 
         CopiarSelecciónCtrlCToolStripMenuItem.Name = "CopiarSelecciónCtrlCToolStripMenuItem"
@@ -120,16 +113,23 @@ Partial Class CAP_PolizasDiario
         CopiarCtrlCToolStripMenuItem.Size = New Size(274, 26)
         CopiarCtrlCToolStripMenuItem.Text = "Copiar                      Ctrl + C"
         ' 
+        ' ImprimirToolStripMenuItem
+        ' 
+        ImprimirToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {RangoToolStripMenuItem, TodasToolStripMenuItem})
+        ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
+        ImprimirToolStripMenuItem.Size = New Size(80, 24)
+        ImprimirToolStripMenuItem.Text = "Imprimir"
+        ' 
         ' RangoToolStripMenuItem
         ' 
         RangoToolStripMenuItem.Name = "RangoToolStripMenuItem"
-        RangoToolStripMenuItem.Size = New Size(224, 26)
+        RangoToolStripMenuItem.Size = New Size(135, 26)
         RangoToolStripMenuItem.Text = "Rango"
         ' 
         ' TodasToolStripMenuItem
         ' 
         TodasToolStripMenuItem.Name = "TodasToolStripMenuItem"
-        TodasToolStripMenuItem.Size = New Size(224, 26)
+        TodasToolStripMenuItem.Size = New Size(135, 26)
         TodasToolStripMenuItem.Text = "Todas"
         ' 
         ' GroupBox1
@@ -169,21 +169,6 @@ Partial Class CAP_PolizasDiario
         DataGridView1.RowTemplate.Height = 29
         DataGridView1.Size = New Size(902, 719)
         DataGridView1.TabIndex = 4
-        ' 
-        ' VScrollBar1
-        ' 
-        VScrollBar1.Location = New Point(1011, 32)
-        VScrollBar1.Name = "VScrollBar1"
-        VScrollBar1.Size = New Size(12, 635)
-        VScrollBar1.TabIndex = 5
-        ' 
-        ' OpenFileDialog1
-        ' 
-        OpenFileDialog1.FileName = "OpenFileDialog1"
-        ' 
-        ' OpenFileDialog2
-        ' 
-        OpenFileDialog2.FileName = "OpenFileDialog2"
         ' 
         ' ColCta
         ' 
@@ -240,6 +225,21 @@ Partial Class CAP_PolizasDiario
         ColFolioFis.MinimumWidth = 6
         ColFolioFis.Name = "ColFolioFis"
         ColFolioFis.Width = 125
+        ' 
+        ' VScrollBar1
+        ' 
+        VScrollBar1.Location = New Point(1011, 32)
+        VScrollBar1.Name = "VScrollBar1"
+        VScrollBar1.Size = New Size(12, 635)
+        VScrollBar1.TabIndex = 5
+        ' 
+        ' OpenFileDialog1
+        ' 
+        OpenFileDialog1.FileName = "OpenFileDialog1"
+        ' 
+        ' OpenFileDialog2
+        ' 
+        OpenFileDialog2.FileName = "OpenFileDialog2"
         ' 
         ' CAP_PolizasDiario
         ' 
