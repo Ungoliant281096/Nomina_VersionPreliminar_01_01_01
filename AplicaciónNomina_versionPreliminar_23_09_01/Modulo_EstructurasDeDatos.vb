@@ -110,7 +110,7 @@
 	End Structure
 
 	Structure Clabnx
-		Public Q1 As String
+		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
 	End Structure
 
 	Structure OtrasCh
@@ -194,5 +194,24 @@
 
 	End Sub
 
+	Public Sub ImprimirCtasBanco(grillaDat As DataGridView)
+		Dim file1 As Integer = FreeFile()
+		Dim largoDelRandom As Integer
+		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+		FileOpen(file1, rutaDelEjecutable + "\Bnxcla.dno", OpenMode.Random,,, Len(cuentasDeBanco))
+		largoDelRandom = LOF(file1) \ Len(cuentasDeBanco)
+
+		grillaDat.ColumnCount = 2
+
+		For i As Integer = 1 To largoDelRandom
+			FileGet(file1, cuentasDeBanco, i)
+			grillaDat.Rows.Add(cuentasDeBanco.Q1)
+		Next i
+
+		grillaDat.Focus()
+		FileClose(file1)
+
+	End Sub
 
 End Module
