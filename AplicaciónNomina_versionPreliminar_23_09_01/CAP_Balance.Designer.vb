@@ -22,14 +22,15 @@ Partial Class CAP_Balance
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Balance))
         MenuStrip1 = New MenuStrip()
         ImprimirToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        FormatoToolStripMenuItem = New ToolStripMenuItem()
         BalanceToolStripMenuItem = New ToolStripMenuItem()
         GeneraArchivoToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarTodoCtrlTToolStripMenuItem = New ToolStripMenuItem()
+        FormatoToolStripMenuItem = New ToolStripMenuItem()
         FormatoYTipoDeLetraToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Label2 = New Label()
@@ -58,31 +59,24 @@ Partial Class CAP_Balance
         ImprimirToolStripMenuItem.Size = New Size(80, 24)
         ImprimirToolStripMenuItem.Text = "Imprimir"
         ' 
+        ' BalanceToolStripMenuItem
+        ' 
+        BalanceToolStripMenuItem.Name = "BalanceToolStripMenuItem"
+        BalanceToolStripMenuItem.Size = New Size(191, 26)
+        BalanceToolStripMenuItem.Text = "Balance"
+        ' 
+        ' GeneraArchivoToolStripMenuItem
+        ' 
+        GeneraArchivoToolStripMenuItem.Name = "GeneraArchivoToolStripMenuItem"
+        GeneraArchivoToolStripMenuItem.Size = New Size(191, 26)
+        GeneraArchivoToolStripMenuItem.Text = "Genera archivo"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónToolStripMenuItem, CopiarTodoCtrlTToolStripMenuItem})
         EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' FormatoToolStripMenuItem
-        ' 
-        FormatoToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FormatoYTipoDeLetraToolStripMenuItem})
-        FormatoToolStripMenuItem.Name = "FormatoToolStripMenuItem"
-        FormatoToolStripMenuItem.Size = New Size(79, 24)
-        FormatoToolStripMenuItem.Text = "Formato"
-        ' 
-        ' BalanceToolStripMenuItem
-        ' 
-        BalanceToolStripMenuItem.Name = "BalanceToolStripMenuItem"
-        BalanceToolStripMenuItem.Size = New Size(224, 26)
-        BalanceToolStripMenuItem.Text = "Balance"
-        ' 
-        ' GeneraArchivoToolStripMenuItem
-        ' 
-        GeneraArchivoToolStripMenuItem.Name = "GeneraArchivoToolStripMenuItem"
-        GeneraArchivoToolStripMenuItem.Size = New Size(224, 26)
-        GeneraArchivoToolStripMenuItem.Text = "Genera archivo"
         ' 
         ' CopiarSelecciónToolStripMenuItem
         ' 
@@ -95,6 +89,13 @@ Partial Class CAP_Balance
         CopiarTodoCtrlTToolStripMenuItem.Name = "CopiarTodoCtrlTToolStripMenuItem"
         CopiarTodoCtrlTToolStripMenuItem.Size = New Size(283, 26)
         CopiarTodoCtrlTToolStripMenuItem.Text = "Copiar todo               Ctrl + S"
+        ' 
+        ' FormatoToolStripMenuItem
+        ' 
+        FormatoToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FormatoYTipoDeLetraToolStripMenuItem})
+        FormatoToolStripMenuItem.Name = "FormatoToolStripMenuItem"
+        FormatoToolStripMenuItem.Size = New Size(79, 24)
+        FormatoToolStripMenuItem.Text = "Formato"
         ' 
         ' FormatoYTipoDeLetraToolStripMenuItem
         ' 
@@ -157,6 +158,7 @@ Partial Class CAP_Balance
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_Balance"
         Text = "CAP_Balance"

@@ -22,6 +22,7 @@ Partial Class CAP_CapturaPorOtrosMedios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_CapturaPorOtrosMedios))
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
         GuardarPólizaToolStripMenuItem = New ToolStripMenuItem()
@@ -249,13 +250,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' CuentasToolStripMenuItem
         ' 
         CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
-        CuentasToolStripMenuItem.Size = New Size(224, 26)
+        CuentasToolStripMenuItem.Size = New Size(169, 26)
         CuentasToolStripMenuItem.Text = "Cuentas"
         ' 
         ' SubCuentasToolStripMenuItem
         ' 
         SubCuentasToolStripMenuItem.Name = "SubCuentasToolStripMenuItem"
-        SubCuentasToolStripMenuItem.Size = New Size(224, 26)
+        SubCuentasToolStripMenuItem.Size = New Size(169, 26)
         SubCuentasToolStripMenuItem.Text = "SubCuentas"
         ' 
         ' Label1
@@ -432,6 +433,7 @@ Partial Class CAP_CapturaPorOtrosMedios
         Controls.Add(TextBox1)
         Controls.Add(Label1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_CapturaPorOtrosMedios"
         Text = "CAP_CapturaPorOtrosMedios"

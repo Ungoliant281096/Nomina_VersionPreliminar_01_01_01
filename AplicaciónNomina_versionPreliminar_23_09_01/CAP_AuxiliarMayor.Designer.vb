@@ -22,17 +22,18 @@ Partial Class CAP_AuxiliarMayor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_AuxiliarMayor))
         MenuStrip1 = New MenuStrip()
         AToolStripMenuItem = New ToolStripMenuItem()
-        MenúToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         EligirCtrlMToolStripMenuItem = New ToolStripMenuItem()
         ImprimirCtrlPToolStripMenuItem = New ToolStripMenuItem()
         SalirToolStripMenuItem = New ToolStripMenuItem()
+        MenúToolStripMenuItem = New ToolStripMenuItem()
         InicioToolStripMenuItem = New ToolStripMenuItem()
-        FinalToolStripMenuItem = New ToolStripMenuItem()
         IncorporaciónToolStripMenuItem = New ToolStripMenuItem()
+        FinalToolStripMenuItem = New ToolStripMenuItem()
         EneroToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónCtrlCToolStripMenuItem = New ToolStripMenuItem()
         CopiarToolStripMenuItem = New ToolStripMenuItem()
         CopiarTodoCtrlSToolStripMenuItem = New ToolStripMenuItem()
@@ -67,20 +68,6 @@ Partial Class CAP_AuxiliarMayor
         AToolStripMenuItem.Size = New Size(69, 24)
         AToolStripMenuItem.Text = "Cuenta"
         ' 
-        ' MenúToolStripMenuItem
-        ' 
-        MenúToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {InicioToolStripMenuItem, FinalToolStripMenuItem})
-        MenúToolStripMenuItem.Name = "MenúToolStripMenuItem"
-        MenúToolStripMenuItem.Size = New Size(50, 24)
-        MenúToolStripMenuItem.Text = "Mes"
-        ' 
-        ' EdiciónToolStripMenuItem
-        ' 
-        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónCtrlCToolStripMenuItem, CopiarToolStripMenuItem, CopiarTodoCtrlSToolStripMenuItem})
-        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        EdiciónToolStripMenuItem.Size = New Size(72, 24)
-        EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
         ' EligirCtrlMToolStripMenuItem
         ' 
         EligirCtrlMToolStripMenuItem.Name = "EligirCtrlMToolStripMenuItem"
@@ -99,31 +86,45 @@ Partial Class CAP_AuxiliarMayor
         SalirToolStripMenuItem.Size = New Size(260, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
+        ' MenúToolStripMenuItem
+        ' 
+        MenúToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {InicioToolStripMenuItem, FinalToolStripMenuItem})
+        MenúToolStripMenuItem.Name = "MenúToolStripMenuItem"
+        MenúToolStripMenuItem.Size = New Size(50, 24)
+        MenúToolStripMenuItem.Text = "Mes"
+        ' 
         ' InicioToolStripMenuItem
         ' 
         InicioToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IncorporaciónToolStripMenuItem})
         InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        InicioToolStripMenuItem.Size = New Size(224, 26)
+        InicioToolStripMenuItem.Size = New Size(128, 26)
         InicioToolStripMenuItem.Text = "Inicio"
+        ' 
+        ' IncorporaciónToolStripMenuItem
+        ' 
+        IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
+        IncorporaciónToolStripMenuItem.Size = New Size(184, 26)
+        IncorporaciónToolStripMenuItem.Text = "Incorporación"
         ' 
         ' FinalToolStripMenuItem
         ' 
         FinalToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {EneroToolStripMenuItem})
         FinalToolStripMenuItem.Name = "FinalToolStripMenuItem"
-        FinalToolStripMenuItem.Size = New Size(224, 26)
+        FinalToolStripMenuItem.Size = New Size(128, 26)
         FinalToolStripMenuItem.Text = "Final"
-        ' 
-        ' IncorporaciónToolStripMenuItem
-        ' 
-        IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
-        IncorporaciónToolStripMenuItem.Text = "Incorporación"
         ' 
         ' EneroToolStripMenuItem
         ' 
         EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(224, 26)
+        EneroToolStripMenuItem.Size = New Size(130, 26)
         EneroToolStripMenuItem.Text = "Enero"
+        ' 
+        ' EdiciónToolStripMenuItem
+        ' 
+        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónCtrlCToolStripMenuItem, CopiarToolStripMenuItem, CopiarTodoCtrlSToolStripMenuItem})
+        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
+        EdiciónToolStripMenuItem.Size = New Size(72, 24)
+        EdiciónToolStripMenuItem.Text = "Edición"
         ' 
         ' CopiarSelecciónCtrlCToolStripMenuItem
         ' 
@@ -227,6 +228,7 @@ Partial Class CAP_AuxiliarMayor
         Controls.Add(DataGridView1)
         Controls.Add(Label1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_AuxiliarMayor"
         Text = "CAP_AuxiliarMayor"

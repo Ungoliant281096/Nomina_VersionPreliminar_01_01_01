@@ -22,6 +22,7 @@ Partial Class CAP_ArchivosPdf
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_ArchivosPdf))
         TextBox1 = New TextBox()
         ListBox1 = New ListBox()
         VScrollBar1 = New VScrollBar()
@@ -85,6 +86,7 @@ Partial Class CAP_ArchivosPdf
         Controls.Add(VScrollBar1)
         Controls.Add(ListBox1)
         Controls.Add(TextBox1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "CAP_ArchivosPdf"
         Text = "CAP_ArchivosPdf"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

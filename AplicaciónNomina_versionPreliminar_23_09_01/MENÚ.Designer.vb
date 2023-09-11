@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CAP_Actualizacion
+Partial Class MENÚ
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,66 +22,60 @@ Partial Class CAP_Actualizacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Actualizacion))
-        ProgressBar1 = New ProgressBar()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(MENÚ))
         Button1 = New Button()
         Button2 = New Button()
-        Timer1 = New Timer(components)
-        Label1 = New Label()
+        Button3 = New Button()
         SuspendLayout()
-        ' 
-        ' ProgressBar1
-        ' 
-        ProgressBar1.Location = New Point(21, 85)
-        ProgressBar1.Name = "ProgressBar1"
-        ProgressBar1.Size = New Size(456, 57)
-        ProgressBar1.TabIndex = 0
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(106, 173)
+        Button1.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
+        Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
+        Button1.Location = New Point(189, 154)
         Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
-        Button1.TabIndex = 1
-        Button1.Text = "Actualizar"
+        Button1.Size = New Size(146, 139)
+        Button1.TabIndex = 0
+        Button1.Text = "Cheques"
+        Button1.TextAlign = ContentAlignment.BottomCenter
         Button1.UseVisualStyleBackColor = True
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(273, 173)
+        Button2.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
+        Button2.Image = CType(resources.GetObject("Button2.Image"), Image)
+        Button2.Location = New Point(431, 154)
         Button2.Name = "Button2"
-        Button2.Size = New Size(94, 29)
-        Button2.TabIndex = 2
-        Button2.Text = "Cerrar"
+        Button2.Size = New Size(146, 139)
+        Button2.TabIndex = 1
+        Button2.Text = "Nómina"
+        Button2.TextAlign = ContentAlignment.BottomCenter
         Button2.UseVisualStyleBackColor = True
         ' 
-        ' Label1
+        ' Button3
         ' 
-        Label1.BackColor = SystemColors.ControlLight
-        Label1.Location = New Point(76, 18)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(342, 54)
-        Label1.TabIndex = 3
+        Button3.Image = CType(resources.GetObject("Button3.Image"), Image)
+        Button3.Location = New Point(644, 358)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(116, 80)
+        Button3.TabIndex = 2
+        Button3.UseVisualStyleBackColor = True
         ' 
-        ' CAP_Actualizacion
+        ' MENÚ
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(497, 268)
-        Controls.Add(Label1)
+        ClientSize = New Size(800, 450)
+        Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
-        Controls.Add(ProgressBar1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        Name = "CAP_Actualizacion"
-        Text = "CAP_Actualizacion"
+        Name = "MENÚ"
+        Text = "MENÚ"
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Button3 As Button
 End Class
