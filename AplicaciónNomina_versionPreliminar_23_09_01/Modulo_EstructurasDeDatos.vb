@@ -1,4 +1,6 @@
-﻿Module Modulo_EstructurasDeDatos
+﻿Imports System.Globalization
+
+Module Modulo_EstructurasDeDatos
 	Structure CAT_MA
 		<VBFixedString(6), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=6)> Public B1 As String
 		<VBFixedString(32), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=32)> Public B2 As String
@@ -222,5 +224,26 @@
 		FileClose(4)
 
 	End Sub
+
+	Public Sub imprimirOtrasCh(grillaDat As DataGridView)
+		Dim largoDelRandom As Integer
+		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+		FileOpen(5, rutaDelEjecutable + "\PerOtre", OpenMode.Random,,, Len(otrosCampos))
+		largoDelRandom = LOF(5) \ Len(otrosCampos)
+
+
+		grillaDat.ColumnCount = 4
+
+		For i As Integer = 1 To largoDelRandom
+			FileGet(5, otrosCampos, i)
+			grillaDat.Rows.Add(otrosCampos.CURP, otrosCampos.otra, otrosCampos.yporsi, otrosCampos.yotra)
+		Next i
+
+		grillaDat.Focus()
+		FileClose(5)
+
+	End Sub
+
 
 End Module

@@ -6,4 +6,9 @@ Public Class NOM_EdicionDePersonal
         ImprimirCtasBanco(DataGridView1)
 
     End Sub
+
+    Private Sub PantallaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PantallaToolStripMenuItem.Click
+        imprimirOtrasCh(DataGridView1)
+    End Sub
+
 End Class

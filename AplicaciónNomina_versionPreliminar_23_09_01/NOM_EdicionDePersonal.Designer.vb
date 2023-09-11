@@ -81,13 +81,13 @@ Partial Class NOM_EdicionDePersonal
         ' NuméricamenteToolStripMenuItem
         ' 
         NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(202, 26)
+        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
         NuméricamenteToolStripMenuItem.Text = "Numéricamente"
         ' 
         ' AlfabéticamenteToolStripMenuItem
         ' 
         AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
-        AlfabéticamenteToolStripMenuItem.Size = New Size(202, 26)
+        AlfabéticamenteToolStripMenuItem.Size = New Size(224, 26)
         AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
         ' 
         ' SalidaToolStripMenuItem
@@ -143,13 +143,13 @@ Partial Class NOM_EdicionDePersonal
         ' PantallaToolStripMenuItem
         ' 
         PantallaToolStripMenuItem.Name = "PantallaToolStripMenuItem"
-        PantallaToolStripMenuItem.Size = New Size(144, 26)
+        PantallaToolStripMenuItem.Size = New Size(224, 26)
         PantallaToolStripMenuItem.Text = "Pantalla"
         ' 
         ' TotalToolStripMenuItem
         ' 
         TotalToolStripMenuItem.Name = "TotalToolStripMenuItem"
-        TotalToolStripMenuItem.Size = New Size(144, 26)
+        TotalToolStripMenuItem.Size = New Size(224, 26)
         TotalToolStripMenuItem.Text = "Total"
         ' 
         ' NOM_EdicionDePersonal
