@@ -590,7 +590,7 @@ Partial Class NOM_CapturarNominaQuincenal
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(953, 244)
+        Me.DataGridView1.Size = New System.Drawing.Size(953, 324)
         Me.DataGridView1.TabIndex = 16
         '
         'ColNom
@@ -779,7 +779,7 @@ Partial Class NOM_CapturarNominaQuincenal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(952, 548)
+        Me.ClientSize = New System.Drawing.Size(952, 643)
         Me.Controls.Add(Me.VScrollBar1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label5)

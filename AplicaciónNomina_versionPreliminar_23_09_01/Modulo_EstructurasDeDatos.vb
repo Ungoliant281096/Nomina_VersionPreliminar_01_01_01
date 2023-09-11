@@ -67,17 +67,17 @@
 		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public C5 As String
 	End Structure
 	Structure per
-		Public nom As String
-		Public ape1 As String
-		Public ape2 As String
-		Public RFC As String
-		Public imss As String
-		Public fal As String
-		Public fab As String
-		Public ingr As String
-		Public viat As String
-		Public otras As String
-		Public integrado As String
+		<VBFixedString(20), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=20)> Public nom As String
+		<VBFixedString(20), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=20)> Public ape1 As String
+		<VBFixedString(20), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=20)> Public ape2 As String
+		<VBFixedString(18), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=18)> Public RFC As String
+		<VBFixedString(18), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=18)> Public imss As String
+		<VBFixedString(12), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=12)> Public fal As String
+		<VBFixedString(12), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=12)> Public fab As String
+		Public ingr As Long
+		Public viat As Long
+		Public otras As Long
+		Public integrado As Long
 	End Structure
 	Structure basini
 		Public datoArch As String
@@ -109,6 +109,16 @@
 		Public otraded As Decimal
 	End Structure
 
+	Structure Clabnx
+		Public Q1 As String
+	End Structure
+
+	Structure OtrasCh
+		Public CURP As String
+		Public otra As String
+		Public yotra As String
+		Public yporsi As String
+	End Structure
 
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
 	Public CATAUX As CAT_AX
@@ -119,4 +129,70 @@
 	Public cuentas As Ct
 	Public DATOS As DAT_OS
 	Public OPER As oper_aciones
+
+	Public personal As per
+	Public cuentasDeBanco As Clabnx
+	Public otrosCampos As OtrasCh
+
+
+	Public Sub imprimirPersonal(grillaDat As DataGridView)
+		Dim largoDelRandom As Integer
+		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+		FileOpen(1, rutaDelEjecutable + "\personal.dno", OpenMode.Random,,, Len(personal))
+		largoDelRandom = LOF(1) \ Len(personal)
+
+		grillaDat.ColumnCount = 12
+
+		For i As Integer = 1 To largoDelRandom
+			FileGet(1, personal, i)
+			grillaDat.Rows.Add(personal.nom, personal.ape1, personal.ape2, personal.RFC, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado)
+		Next i
+
+		grillaDat.Focus()
+		FileClose(1)
+
+	End Sub
+
+	Public Sub imprimirAuxiliar(grillaDat As DataGridView)
+		Dim largoDelRandom As Integer
+		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+		FileOpen(2, rutaDelEjecutable + "\CATAUX", OpenMode.Random,,, Len(CATAUX))
+		largoDelRandom = LOF(2) \ Len(CATAUX)
+
+
+		grillaDat.ColumnCount = 12
+
+		For i As Integer = 1 To largoDelRandom
+			FileGet(3, CATAUX, i)
+			grillaDat.Rows.Add(CATAUX.C1, CATAUX.C2, CATAUX.C3, CATAUX.C4, CATAUX.C5)
+		Next i
+
+		grillaDat.Focus()
+		FileClose(2)
+
+	End Sub
+
+	Public Sub imprimirMayor(grillaDat As DataGridView)
+		Dim largoDelRandom As Integer
+		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+		FileOpen(3, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
+		largoDelRandom = LOF(3) \ Len(CATMAY)
+
+
+		grillaDat.ColumnCount = 12
+
+		For i As Integer = 1 To largoDelRandom
+			FileGet(3, CATMAY, i)
+			grillaDat.Rows.Add(CATMAY.B1, CATMAY.B2, CATMAY.B3, CATMAY.B4, CATMAY.B5)
+		Next i
+
+		grillaDat.Focus()
+		FileClose(3)
+
+	End Sub
+
+
 End Module
