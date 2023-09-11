@@ -30,28 +30,34 @@ Partial Class MENÚ
         ' 
         ' Button1
         ' 
+        Button1.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
         Button1.Location = New Point(189, 154)
         Button1.Name = "Button1"
         Button1.Size = New Size(146, 139)
         Button1.TabIndex = 0
+        Button1.Text = "Cheques"
+        Button1.TextAlign = ContentAlignment.BottomCenter
         Button1.UseVisualStyleBackColor = True
         ' 
         ' Button2
         ' 
+        Button2.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Button2.Image = CType(resources.GetObject("Button2.Image"), Image)
         Button2.Location = New Point(431, 154)
         Button2.Name = "Button2"
         Button2.Size = New Size(146, 139)
         Button2.TabIndex = 1
+        Button2.Text = "Nómina"
+        Button2.TextAlign = ContentAlignment.BottomCenter
         Button2.UseVisualStyleBackColor = True
         ' 
         ' Button3
         ' 
         Button3.Image = CType(resources.GetObject("Button3.Image"), Image)
-        Button3.Location = New Point(653, 342)
+        Button3.Location = New Point(644, 358)
         Button3.Name = "Button3"
-        Button3.Size = New Size(123, 73)
+        Button3.Size = New Size(116, 80)
         Button3.TabIndex = 2
         Button3.UseVisualStyleBackColor = True
         ' 
