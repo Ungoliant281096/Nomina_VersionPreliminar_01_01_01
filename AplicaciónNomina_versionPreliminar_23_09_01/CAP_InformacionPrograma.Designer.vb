@@ -22,6 +22,7 @@ Partial Class CAP_InformacionPrograma
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_InformacionPrograma))
         GroupBox1 = New GroupBox()
         Label14 = New Label()
         Label13 = New Label()
@@ -209,6 +210,7 @@ Partial Class CAP_InformacionPrograma
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Controls.Add(GroupBox1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "CAP_InformacionPrograma"
         Text = "CAP_InformacionPrograma"
         GroupBox1.ResumeLayout(False)

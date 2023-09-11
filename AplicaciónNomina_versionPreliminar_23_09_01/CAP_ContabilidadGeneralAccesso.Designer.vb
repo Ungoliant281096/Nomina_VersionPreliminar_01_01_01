@@ -22,6 +22,7 @@ Partial Class CAP_ContabilidadGeneralAccesso
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_ContabilidadGeneralAccesso))
         MenuStrip1 = New MenuStrip()
         AnexoToolStripMenuItem = New ToolStripMenuItem()
         OrdenarToolStripMenuItem = New ToolStripMenuItem()
@@ -139,6 +140,7 @@ Partial Class CAP_ContabilidadGeneralAccesso
         ClientSize = New Size(626, 554)
         Controls.Add(DataGridView1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_ContabilidadGeneralAccesso"
         Text = "CAP_ContabilidadGeneralAccesso"

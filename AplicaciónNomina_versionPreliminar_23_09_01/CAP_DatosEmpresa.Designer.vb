@@ -22,6 +22,7 @@ Partial Class CAP_DatosEmpresa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_DatosEmpresa))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -113,6 +114,7 @@ Partial Class CAP_DatosEmpresa
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "CAP_DatosEmpresa"
         Text = "CAP_DatosEmpresa"
         ResumeLayout(False)

@@ -22,6 +22,7 @@ Partial Class CAP_ArchivosActualizados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_ArchivosActualizados))
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónCtrlTToolStripMenuItem = New ToolStripMenuItem()
@@ -110,6 +111,7 @@ Partial Class CAP_ArchivosActualizados
         ClientSize = New Size(417, 457)
         Controls.Add(DataGridView1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_ArchivosActualizados"
         Text = "CAP_ArchivosActualizados"

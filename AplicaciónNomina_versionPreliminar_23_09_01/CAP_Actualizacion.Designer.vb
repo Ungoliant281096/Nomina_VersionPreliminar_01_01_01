@@ -23,6 +23,7 @@ Partial Class CAP_Actualizacion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Actualizacion))
         ProgressBar1 = New ProgressBar()
         Button1 = New Button()
         Button2 = New Button()
@@ -72,6 +73,7 @@ Partial Class CAP_Actualizacion
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(ProgressBar1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "CAP_Actualizacion"
         Text = "CAP_Actualizacion"
         ResumeLayout(False)

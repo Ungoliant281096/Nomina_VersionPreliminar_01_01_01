@@ -22,6 +22,7 @@ Partial Class CAP_AjusteImpresionCheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_AjusteImpresionCheques))
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
         ArchivarToolStripMenuItem = New ToolStripMenuItem()
@@ -205,6 +206,7 @@ Partial Class CAP_AjusteImpresionCheques
         Controls.Add(DataGridView1)
         Controls.Add(TextBox1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_AjusteImpresionCheques"
         Text = "CAP_AjusteImpresionCheques"

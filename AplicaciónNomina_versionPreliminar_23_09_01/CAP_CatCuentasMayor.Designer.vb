@@ -22,6 +22,7 @@ Partial Class CAP_CatCuentasMayor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_CatCuentasMayor))
         MenuStrip1 = New MenuStrip()
         VerToolStripMenuItem = New ToolStripMenuItem()
         AlfabéticamenteToolStripMenuItem = New ToolStripMenuItem()
@@ -32,9 +33,9 @@ Partial Class CAP_CatCuentasMayor
         CopiarTodoToolStripMenuItem = New ToolStripMenuItem()
         EditarCuentasToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
-        HScrollBar1 = New HScrollBar()
         ColCta = New DataGridViewTextBoxColumn()
         ColNom = New DataGridViewTextBoxColumn()
+        HScrollBar1 = New HScrollBar()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -110,13 +111,6 @@ Partial Class CAP_CatCuentasMayor
         DataGridView1.Size = New Size(618, 343)
         DataGridView1.TabIndex = 1
         ' 
-        ' HScrollBar1
-        ' 
-        HScrollBar1.Location = New Point(25, 383)
-        HScrollBar1.Name = "HScrollBar1"
-        HScrollBar1.Size = New Size(618, 18)
-        HScrollBar1.TabIndex = 2
-        ' 
         ' ColCta
         ' 
         ColCta.HeaderText = "Cuenta"
@@ -131,6 +125,13 @@ Partial Class CAP_CatCuentasMayor
         ColNom.Name = "ColNom"
         ColNom.Width = 125
         ' 
+        ' HScrollBar1
+        ' 
+        HScrollBar1.Location = New Point(25, 383)
+        HScrollBar1.Name = "HScrollBar1"
+        HScrollBar1.Size = New Size(618, 18)
+        HScrollBar1.TabIndex = 2
+        ' 
         ' CAP_CatCuentasMayor
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -139,6 +140,7 @@ Partial Class CAP_CatCuentasMayor
         Controls.Add(HScrollBar1)
         Controls.Add(DataGridView1)
         Controls.Add(MenuStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_CatCuentasMayor"
         Text = "CAP_CatCuentasMayor"
