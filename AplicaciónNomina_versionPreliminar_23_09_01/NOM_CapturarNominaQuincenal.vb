@@ -15,11 +15,7 @@ Public Class NOM_CapturarNominaQuincenal
     End Sub
 
     Private Sub IniciarCapturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IniciarCapturaToolStripMenuItem.Click
-        'imprimirPersonal(DataGridView1)
-        'imprimirAuxiliar(DataGridView1)
-        imprimirMayor(DataGridView1)
+
     End Sub
-
-
 
 End Class

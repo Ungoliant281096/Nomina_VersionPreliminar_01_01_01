@@ -114,10 +114,10 @@
 	End Structure
 
 	Structure OtrasCh
-		Public CURP As String
-		Public otra As String
-		Public yotra As String
-		Public yporsi As String
+		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public CURP As String
+		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public otra As String
+		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public yotra As String
+		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public yporsi As String
 	End Structure
 
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
@@ -195,22 +195,31 @@
 	End Sub
 
 	Public Sub ImprimirCtasBanco(grillaDat As DataGridView)
-		Dim file1 As Integer = FreeFile()
+
 		Dim largoDelRandom As Integer
 		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
 
-		FileOpen(file1, rutaDelEjecutable + "\Bnxcla.dno", OpenMode.Random,,, Len(cuentasDeBanco))
-		largoDelRandom = LOF(file1) \ Len(cuentasDeBanco)
+		FileOpen(4, rutaDelEjecutable + "\Bnxcla.dno", OpenMode.Random,,, Len(cuentasDeBanco))
+		largoDelRandom = LOF(4) \ Len(cuentasDeBanco)
 
-		grillaDat.ColumnCount = 2
+		FileOpen(5, rutaDelEjecutable + "\personal.dno", OpenMode.Random,,, Len(personal))
+		largoDelRandom = LOF(5) \ Len(personal)
+
+		FileOpen(6, rutaDelEjecutable + "\PerOtre.dno", OpenMode.Random,,, Len(otrosCampos))
+		largoDelRandom = LOF(6) \ Len(otrosCampos)
+
+		grillaDat.ColumnCount = 12
 
 		For i As Integer = 1 To largoDelRandom
-			FileGet(file1, cuentasDeBanco, i)
-			grillaDat.Rows.Add(cuentasDeBanco.Q1)
+			FileGet(4, cuentasDeBanco, i)
+			FileGet(5, personal, i)
+			FileGet(6, otrosCampos, i)
+
+			grillaDat.Rows.Add(i, personal.nom & "" & personal.ape1 & "" & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr, personal.viat, personal.otras, personal.integrado, cuentasDeBanco.Q1)
 		Next i
 
 		grillaDat.Focus()
-		FileClose(file1)
+		FileClose(4)
 
 	End Sub
 
