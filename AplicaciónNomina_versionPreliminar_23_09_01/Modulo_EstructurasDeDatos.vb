@@ -217,11 +217,15 @@ Module Modulo_EstructurasDeDatos
 			FileGet(5, personal, i)
 			FileGet(6, otrosCampos, i)
 
-			grillaDat.Rows.Add(i, personal.nom & "" & personal.ape1 & "" & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr, personal.viat, personal.otras, personal.integrado, cuentasDeBanco.Q1)
+			'If personal.fab = "" Then ' Verificar si no hay fecha de baja
+			grillaDat.Rows.Add(i, personal.nom & " " & personal.ape1 & " " & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado, cuentasDeBanco.Q1)
+			'End If
 		Next i
 
 		grillaDat.Focus()
 		FileClose(4)
+		FileClose(5)
+		FileClose(6)
 
 	End Sub
 

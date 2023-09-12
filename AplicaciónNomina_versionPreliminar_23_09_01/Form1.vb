@@ -16,7 +16,7 @@ Public Class Form1
     End Sub
 
     Private Sub CFDIComplementoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CFDIComplementoToolStripMenuItem.Click
-        NOM_CapturaEmitirCFDI.Show()
+        NOM_DatosCompPersonal.Show()
     End Sub
 
     Private Sub ImpresiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImpresiónToolStripMenuItem.Click

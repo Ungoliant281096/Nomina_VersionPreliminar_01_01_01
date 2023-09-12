@@ -115,7 +115,6 @@ Partial Class NOM_CapturarNominaQuincenal
         Me.ColTotDed = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColBanamex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -586,11 +585,11 @@ Partial Class NOM_CapturarNominaQuincenal
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColNom, Me.ColDiasT, Me.ColSueldo, Me.ColHsNorm, Me.ColHsDob, Me.ColAguinaldo, Me.ColHsTriples, Me.ColPtu, Me.ColViat, Me.ColPremioPt, Me.ColPVacac, Me.ColOtras, Me.ColPercExe, Me.ColTotIng, Me.ColIspt, Me.ColCrSal, Me.ColSubP, Me.ColImss, Me.ColPrestamos, Me.ColFona, Me.ColPenAlimen, Me.ColInfona, Me.ColTotDed, Me.ColNeto, Me.ColBanamex})
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 307)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 306)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(953, 324)
+        Me.DataGridView1.Size = New System.Drawing.Size(928, 297)
         Me.DataGridView1.TabIndex = 16
         '
         'ColNom
@@ -768,19 +767,11 @@ Partial Class NOM_CapturarNominaQuincenal
         Me.ColBanamex.Name = "ColBanamex"
         Me.ColBanamex.Width = 125
         '
-        'VScrollBar1
-        '
-        Me.VScrollBar1.Location = New System.Drawing.Point(941, 30)
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(10, 503)
-        Me.VScrollBar1.TabIndex = 17
-        '
         'NOM_CapturarNominaQuincenal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(952, 643)
-        Me.Controls.Add(Me.VScrollBar1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox3)
@@ -902,5 +893,4 @@ Partial Class NOM_CapturarNominaQuincenal
     Friend WithEvents ColTotDed As DataGridViewTextBoxColumn
     Friend WithEvents ColNeto As DataGridViewTextBoxColumn
     Friend WithEvents ColBanamex As DataGridViewTextBoxColumn
-    Friend WithEvents VScrollBar1 As VScrollBar
 End Class

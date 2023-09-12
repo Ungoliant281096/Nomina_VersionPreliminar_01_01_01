@@ -18,4 +18,13 @@ Public Class NOM_CapturarNominaQuincenal
 
     End Sub
 
+    Private Sub NOM_CapturarNominaQuincenal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView1.Width = Me.Width * 0.95
+        DataGridView1.Height = Me.Height * 0.65
+    End Sub
+
+    Private Sub NOM_CapturarNominaQuincenal_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        DataGridView1.Width = Me.Width * 0.95
+        DataGridView1.Height = Me.Height * 0.65
+    End Sub
 End Class

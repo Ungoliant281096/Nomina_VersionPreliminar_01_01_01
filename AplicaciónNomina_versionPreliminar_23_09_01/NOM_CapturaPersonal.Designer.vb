@@ -186,6 +186,7 @@ Partial Class NOM_CapturaPersonal
         Me.TextBox12.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox12.Location = New System.Drawing.Point(115, 193)
         Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.PlaceholderText = "Obra"
         Me.TextBox12.Size = New System.Drawing.Size(95, 27)
         Me.TextBox12.TabIndex = 26
         '
@@ -194,6 +195,7 @@ Partial Class NOM_CapturaPersonal
         Me.TextBox13.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox13.Location = New System.Drawing.Point(115, 226)
         Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.PlaceholderText = "%"
         Me.TextBox13.Size = New System.Drawing.Size(95, 27)
         Me.TextBox13.TabIndex = 27
         '
