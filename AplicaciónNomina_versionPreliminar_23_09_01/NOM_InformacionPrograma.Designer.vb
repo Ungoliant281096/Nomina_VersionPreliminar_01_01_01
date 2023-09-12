@@ -22,198 +22,199 @@ Partial Class NOM_InformacionPrograma
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        Label2 = New Label()
-        Label3 = New Label()
-        Label4 = New Label()
-        Label5 = New Label()
-        Label6 = New Label()
-        Label7 = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
-        Label10 = New Label()
-        Label11 = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
-        Label14 = New Label()
-        GroupBox1 = New GroupBox()
-        GroupBox1.SuspendLayout()
-        SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(36, 36)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(71, 20)
-        Label1.TabIndex = 0
-        Label1.Text = "Nombre:"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(36, 88)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(65, 20)
-        Label2.TabIndex = 1
-        Label2.Text = "Versión:"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(36, 146)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(154, 20)
-        Label3.TabIndex = 2
-        Label3.Text = "Última modificación:"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(36, 198)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(56, 20)
-        Label4.TabIndex = 3
-        Label4.Text = "Editor:"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label5.Location = New Point(36, 253)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(106, 20)
-        Label5.TabIndex = 4
-        Label5.Text = "Tamaño total:"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label6.Location = New Point(36, 308)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(143, 20)
-        Label6.TabIndex = 5
-        Label6.Text = "Sistema basado en:"
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label7.Location = New Point(36, 362)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(93, 20)
-        Label7.TabIndex = 6
-        Label7.Text = "Compatible:"
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label8.Location = New Point(312, 36)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(64, 20)
-        Label8.TabIndex = 7
-        Label8.Text = "Nómina"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label9.Location = New Point(312, 88)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(46, 20)
-        Label9.TabIndex = 8
-        Label9.Text = "23.7.1"
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label10.Location = New Point(312, 146)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(61, 20)
-        Label10.TabIndex = 9
-        Label10.Text = "Label10"
-        ' 
-        ' Label11
-        ' 
-        Label11.AutoSize = True
-        Label11.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label11.Location = New Point(312, 198)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(233, 20)
-        Label11.TabIndex = 10
-        Label11.Text = "SACMAG DE MÉXICO S.A DE C.V."
-        ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label12.Location = New Point(312, 253)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(54, 20)
-        Label12.TabIndex = 11
-        Label12.Text = "1.0 MB"
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label13.Location = New Point(312, 308)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(83, 20)
-        Label13.TabIndex = 12
-        Label13.Text = "x64/ 86bits"
-        ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label14.Location = New Point(312, 362)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(84, 20)
-        Label14.TabIndex = 13
-        Label14.Text = "win 7, 8, 10"
-        ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Controls.Add(Label14)
-        GroupBox1.Controls.Add(Label13)
-        GroupBox1.Controls.Add(Label12)
-        GroupBox1.Controls.Add(Label11)
-        GroupBox1.Controls.Add(Label10)
-        GroupBox1.Controls.Add(Label9)
-        GroupBox1.Controls.Add(Label8)
-        GroupBox1.Controls.Add(Label7)
-        GroupBox1.Controls.Add(Label6)
-        GroupBox1.Controls.Add(Label5)
-        GroupBox1.Controls.Add(Label4)
-        GroupBox1.Controls.Add(Label3)
-        GroupBox1.Controls.Add(Label2)
-        GroupBox1.Controls.Add(Label1)
-        GroupBox1.Location = New Point(40, 20)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(704, 421)
-        GroupBox1.TabIndex = 14
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Propiedades"
-        ' 
-        ' NOM_InformacionPrograma
-        ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(GroupBox1)
-        Name = "NOM_InformacionPrograma"
-        Text = "NOM_InformacionPrograma"
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
-        ResumeLayout(False)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(36, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombre:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(36, 88)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(65, 20)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Versión:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(36, 146)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(154, 20)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Última modificación:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(36, 198)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 20)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Editor:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.Location = New System.Drawing.Point(36, 253)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(106, 20)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Tamaño total:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.Location = New System.Drawing.Point(36, 308)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(143, 20)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Sistema basado en:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Location = New System.Drawing.Point(36, 362)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(93, 20)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Compatible:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label8.Location = New System.Drawing.Point(312, 36)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(64, 20)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Nómina"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label9.Location = New System.Drawing.Point(312, 88)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(46, 20)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "23.7.1"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label10.Location = New System.Drawing.Point(312, 146)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(61, 20)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "Label10"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label11.Location = New System.Drawing.Point(312, 198)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(233, 20)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "SACMAG DE MÉXICO S.A DE C.V."
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label12.Location = New System.Drawing.Point(312, 253)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(54, 20)
+        Me.Label12.TabIndex = 11
+        Me.Label12.Text = "1.0 MB"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label13.Location = New System.Drawing.Point(312, 308)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(83, 20)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "x64/ 86bits"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label14.Location = New System.Drawing.Point(312, 362)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(84, 20)
+        Me.Label14.TabIndex = 13
+        Me.Label14.Text = "win 7, 8, 10"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(554, 421)
+        Me.GroupBox1.TabIndex = 14
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Propiedades"
+        '
+        'NOM_InformacionPrograma
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(576, 441)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Name = "NOM_InformacionPrograma"
+        Me.Text = "NOM_InformacionPrograma"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.ResumeLayout(False)
+
     End Sub
 
     Friend WithEvents Label1 As Label

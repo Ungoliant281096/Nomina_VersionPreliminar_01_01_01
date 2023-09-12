@@ -70,18 +70,12 @@
 
     End Sub
 
-    Private Sub ÍndiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÍndiceToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         MENÚ.Show()
         Me.Hide()
 
+    End Sub
+    Private Sub CAP_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        MENÚ.Show()
     End Sub
 End Class

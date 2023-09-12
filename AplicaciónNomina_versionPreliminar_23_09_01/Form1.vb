@@ -26,8 +26,6 @@ Public Class Form1
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         MENÚ.Show()
         Me.Hide()
-
-
     End Sub
 
     Private Sub ImpresiónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ImpresiónToolStripMenuItem1.Click
@@ -45,7 +43,6 @@ Public Class Form1
     Private Sub DirectorioDeTarifasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeTarifasToolStripMenuItem.Click
         NOM_Tarifas.Show()
     End Sub
-
     Private Sub SubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubdirectorioToolStripMenuItem.Click
         MessageBox.Show("Aun no se puede crear un subdirectorio")
     End Sub
@@ -81,5 +78,9 @@ Public Class Form1
     Private Sub mostrarDatosEmpresa()
         Label1.Text = "Empresa: "
         Label4.Text = "Año: " + "Subsidio: " + "Salario minimio x dia: $"
+    End Sub
+
+    Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        MENÚ.Show()
     End Sub
 End Class
