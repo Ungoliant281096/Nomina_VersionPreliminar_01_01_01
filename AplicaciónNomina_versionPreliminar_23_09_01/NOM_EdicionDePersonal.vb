@@ -2,7 +2,7 @@
 Public Class NOM_EdicionDePersonal
 
     Private Sub NOM_EdicionDePersonal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ImprimirCtasBanco(DataGridView1)
+        ImprimirCtasBanco(DataGridView1, largoPersonal)
 
         DataGridView1.Width = Me.Width * 0.9
         DataGridView1.Height = Me.Height * 0.85

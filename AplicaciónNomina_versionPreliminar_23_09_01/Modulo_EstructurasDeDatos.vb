@@ -1,4 +1,5 @@
 ﻿Imports System.Globalization
+Imports System.Security.Cryptography.X509Certificates
 
 Module Modulo_EstructurasDeDatos
 	Structure CAT_MA
@@ -82,33 +83,33 @@ Module Modulo_EstructurasDeDatos
 		Public integrado As Long
 	End Structure
 	Structure basini
-		Public datoArch As String
+		<VBFixedString(255), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=255)> Public datoArch As String
 	End Structure
 	Structure nom
-		Public dias As Decimal
-		Public hsnor As Decimal
-		Public hs_no As Decimal
-		Public hsdbl As Decimal
-		Public hs_db As Decimal
-		Public hstri As Decimal
-		Public hs_tr As Decimal
-		Public ispt As Decimal
-		Public crdsal As Decimal
-		Public imss As Decimal
-		Public sueldo As Decimal
-		Public hs_nor As Decimal
-		Public hs_dbl As Decimal
-		Public hs_tri As Decimal
-		Public viaticos As Decimal
-		Public pvac As Decimal
-		Public otras As Decimal
-		Public aguin As Decimal
-		Public ptu As Decimal
-		Public exentos As Decimal
-		Public prestamos As Decimal
-		Public fonacot As Decimal
-		Public telefono As Decimal
-		Public otraded As Decimal
+		Public dias As Long
+		Public hsnor As Long
+		Public hs_no As Long
+		Public hsdbl As Long
+		Public hs_db As Long
+		Public hstri As Long
+		Public hs_tr As Long
+		Public ispt As Long
+		Public crdsal As Long
+		Public imss As Long
+		Public sueldo As Long
+		Public hs_nor As Long
+		Public hs_dbl As Long
+		Public hs_tri As Long
+		Public viaticos As Long
+		Public pvac As Long
+		Public otras As Long
+		Public aguin As Long
+		Public ptu As Long
+		Public exentos As Long
+		Public prestamos As Long
+		Public fonacot As Long
+		Public telefono As Long
+		Public otraded As Long
 	End Structure
 
 	Structure Clabnx
@@ -131,23 +132,60 @@ Module Modulo_EstructurasDeDatos
 	Public cuentas As Ct
 	Public DATOS As DAT_OS
 	Public OPER As oper_aciones
+	Public archivoNomina As nom
 
 	Public personal As per
 	Public cuentasDeBanco As Clabnx
 	Public otrosCampos As OtrasCh
 
+	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+	Public largoDeBancos As Integer
+	Public largoPersonal As Integer
+	Public largoOtrosCammpos As Integer
+	Public largoCatalogoAuxiliar As Integer
+	Public largoCatalogoMayor As Integer
+	Public largoMaestro As Integer
+	Public largoNomina As Integer
+	Public largoNomCom As Integer
+
+	Public numeroMayor As Integer = 1
+	Public numeroAuxiliar As Integer = 2
+	Public numeroPersonal As Integer = 3
+	Public numeroBancos As Integer = 4
+	Public numeroOtros As Integer = 5
+	Public numeroNomina As Integer = 6
+	Public Sub abrirRandomNominaCaptura()
+
+
+		FileOpen(numeroMayor, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
+		largoCatalogoMayor = LOF(numeroMayor) \ Len(CATMAY)
+
+		FileOpen(numeroAuxiliar, rutaDelEjecutable + "\CATAUX", OpenMode.Random,,, Len(CATAUX))
+		largoCatalogoAuxiliar = LOF(numeroAuxiliar) \ Len(CATAUX)
+
+		FileOpen(numeroPersonal, rutaDelEjecutable + "\personal.dno", OpenMode.Random,,, Len(personal))
+		largoPersonal = LOF(numeroPersonal) \ Len(personal)
+
+		FileOpen(numeroBancos, rutaDelEjecutable + "\Bnxcla.dno", OpenMode.Random,,, Len(cuentasDeBanco))
+		largoDeBancos = LOF(numeroBancos) \ Len(cuentasDeBanco)
+
+		FileOpen(numeroOtros, rutaDelEjecutable + "\PerOtre.dno", OpenMode.Random,,, Len(otrosCampos))
+		largoOtrosCammpos = LOF(numeroOtros) \ Len(otrosCampos)
+
+		'FileOpen(numeroNomina, rutaDelEjecutable + "", OpenMode.Random,,, Len(archivoNomina))
+		'largoNomina = LOF(numeroNomina) \ Len(archivoNomina)
+
+
+	End Sub
+
 
 	Public Sub imprimirPersonal(grillaDat As DataGridView)
 		Dim largoDelRandom As Integer
-		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-		FileOpen(1, rutaDelEjecutable + "\personal.dno", OpenMode.Random,,, Len(personal))
-		largoDelRandom = LOF(1) \ Len(personal)
 
 		grillaDat.ColumnCount = 12
 
 		For i As Integer = 1 To largoDelRandom
-			FileGet(1, personal, i)
+			FileGet(numeroPersonal, personal, i)
 			grillaDat.Rows.Add(personal.nom, personal.ape1, personal.ape2, personal.RFC, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado)
 		Next i
 
@@ -158,16 +196,11 @@ Module Modulo_EstructurasDeDatos
 
 	Public Sub imprimirAuxiliar(grillaDat As DataGridView)
 		Dim largoDelRandom As Integer
-		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-		FileOpen(2, rutaDelEjecutable + "\CATAUX", OpenMode.Random,,, Len(CATAUX))
-		largoDelRandom = LOF(2) \ Len(CATAUX)
-
 
 		grillaDat.ColumnCount = 12
 
 		For i As Integer = 1 To largoDelRandom
-			FileGet(3, CATAUX, i)
+			FileGet(numeroAuxiliar, CATAUX, i)
 			grillaDat.Rows.Add(CATAUX.C1, CATAUX.C2, CATAUX.C3, CATAUX.C4, CATAUX.C5)
 		Next i
 
@@ -178,16 +211,11 @@ Module Modulo_EstructurasDeDatos
 
 	Public Sub imprimirMayor(grillaDat As DataGridView)
 		Dim largoDelRandom As Integer
-		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-		FileOpen(3, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
-		largoDelRandom = LOF(3) \ Len(CATMAY)
-
 
 		grillaDat.ColumnCount = 12
 
 		For i As Integer = 1 To largoDelRandom
-			FileGet(3, CATMAY, i)
+			FileGet(numeroMayor, CATMAY, i)
 			grillaDat.Rows.Add(CATMAY.B1, CATMAY.B2, CATMAY.B3, CATMAY.B4, CATMAY.B5)
 		Next i
 
@@ -196,58 +224,37 @@ Module Modulo_EstructurasDeDatos
 
 	End Sub
 
-	Public Sub ImprimirCtasBanco(grillaDat As DataGridView)
-
-		Dim largoDelRandom As Integer
-		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-		FileOpen(4, rutaDelEjecutable + "\Bnxcla.dno", OpenMode.Random,,, Len(cuentasDeBanco))
-		largoDelRandom = LOF(4) \ Len(cuentasDeBanco)
-
-		FileOpen(5, rutaDelEjecutable + "\personal.dno", OpenMode.Random,,, Len(personal))
-		largoDelRandom = LOF(5) \ Len(personal)
-
-		FileOpen(6, rutaDelEjecutable + "\PerOtre.dno", OpenMode.Random,,, Len(otrosCampos))
-		largoDelRandom = LOF(6) \ Len(otrosCampos)
+	Public Sub ImprimirCtasBanco(grillaDat As DataGridView, largoDelRandom As Integer)
 
 		grillaDat.ColumnCount = 12
 
-		For i As Integer = 1 To largoDelRandom
-			FileGet(4, cuentasDeBanco, i)
-			FileGet(5, personal, i)
-			FileGet(6, otrosCampos, i)
+			For i As Integer = 1 To largoDelRandom
+				FileGet(numeroBancos, cuentasDeBanco, i)
+				FileGet(numeroPersonal, personal, i)
+				FileGet(numeroOtros, otrosCampos, i)
 
-			'If personal.fab = "" Then ' Verificar si no hay fecha de baja
-			grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
-			'End If
-		Next i
+
+				'If valor = 0 Then ' Verificar si no hay fecha de baja
+				grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
+				'End If
+			Next i
 
 		grillaDat.Focus()
-		FileClose(4)
-		FileClose(5)
-		FileClose(6)
 
 	End Sub
 
 	Public Sub imprimirOtrasCh(grillaDat As DataGridView)
 		Dim largoDelRandom As Integer
-		Dim rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-		FileOpen(5, rutaDelEjecutable + "\PerOtre", OpenMode.Random,,, Len(otrosCampos))
-		largoDelRandom = LOF(5) \ Len(otrosCampos)
-
 
 		grillaDat.ColumnCount = 4
 
 		For i As Integer = 1 To largoDelRandom
-			FileGet(5, otrosCampos, i)
+			FileGet(numeroOtros, otrosCampos, i)
 			grillaDat.Rows.Add(otrosCampos.CURP, otrosCampos.otra, otrosCampos.yporsi, otrosCampos.yotra)
 		Next i
 
 		grillaDat.Focus()
-		FileClose(5)
 
 	End Sub
-
 
 End Module
