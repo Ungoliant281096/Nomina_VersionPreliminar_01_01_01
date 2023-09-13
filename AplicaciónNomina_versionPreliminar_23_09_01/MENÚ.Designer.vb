@@ -39,10 +39,10 @@ Partial Class MENÚ
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
-        Button1.Location = New Point(10, 7)
+        Button1.Location = New Point(11, 9)
         Button1.Margin = New Padding(0)
         Button1.Name = "Button1"
-        Button1.Size = New Size(128, 67)
+        Button1.Size = New Size(146, 89)
         Button1.TabIndex = 0
         Button1.TextAlign = ContentAlignment.BottomCenter
         Button1.UseVisualStyleBackColor = False
@@ -56,50 +56,50 @@ Partial Class MENÚ
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
         Button2.Image = CType(resources.GetObject("Button2.Image"), Image)
-        Button2.Location = New Point(144, 9)
+        Button2.Location = New Point(165, 12)
         Button2.Margin = New Padding(0)
         Button2.Name = "Button2"
-        Button2.Size = New Size(128, 67)
+        Button2.Size = New Size(146, 89)
         Button2.TabIndex = 1
         Button2.TextAlign = ContentAlignment.BottomCenter
         Button2.UseVisualStyleBackColor = False
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(10, 154)
-        Button3.Margin = New Padding(3, 2, 3, 2)
+        Button3.Location = New Point(11, 205)
         Button3.Name = "Button3"
-        Button3.Size = New Size(261, 24)
+        Button3.Size = New Size(298, 32)
         Button3.TabIndex = 2
         Button3.Text = "Salir"
         Button3.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
-        Label1.Location = New Point(42, 78)
+        Label1.Location = New Point(48, 104)
         Label1.Name = "Label1"
-        Label1.Size = New Size(60, 22)
+        Label1.Size = New Size(69, 29)
         Label1.TabIndex = 3
-        Label1.Text = "Cheques"' 
+        Label1.Text = "Cheques"
+        ' 
         ' Label2
         ' 
-        Label2.Location = New Point(180, 78)
+        Label2.Location = New Point(206, 104)
         Label2.Name = "Label2"
-        Label2.Size = New Size(55, 22)
+        Label2.Size = New Size(63, 29)
         Label2.TabIndex = 4
-        Label2.Text = "Nómina"' 
+        Label2.Text = "Nómina"
+        ' 
         ' MENÚ
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(285, 187)
+        ClientSize = New Size(326, 249)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        Margin = New Padding(3, 2, 3, 2)
         Name = "MENÚ"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Contabilidad"
