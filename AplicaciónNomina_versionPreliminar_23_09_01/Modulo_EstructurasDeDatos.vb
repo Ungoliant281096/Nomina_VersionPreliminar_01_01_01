@@ -218,7 +218,7 @@ Module Modulo_EstructurasDeDatos
 			FileGet(6, otrosCampos, i)
 
 			'If personal.fab = "" Then ' Verificar si no hay fecha de baja
-			grillaDat.Rows.Add(i, personal.nom & " " & personal.ape1 & " " & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado, cuentasDeBanco.Q1)
+			grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
 			'End If
 		Next i
 
