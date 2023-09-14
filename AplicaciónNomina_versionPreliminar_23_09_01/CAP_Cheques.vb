@@ -75,7 +75,31 @@
         Me.Hide()
 
     End Sub
-    Private Sub CAP_Cheques_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub CAP_Cheques_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         MENÚ.Show()
+    End Sub
+
+    Private Sub PólizaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PólizaToolStripMenuItem.Click
+        DataGridView1.Width = 16000
+        Label4.Visible = True
+        Label5.Visible = True
+        TextBox3.Visible = True
+        TextBox4.Visible = True
+        TextBox5.Visible = True
+        GroupBox1.Visible = False
+        GroupBox2.Visible = False
+        Label3.Capture = "Poliza No. "
+
+    End Sub
+
+    Private Sub ChequeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ChequeToolStripMenuItem1.Click
+        Me.Show()
+        Label4.Visible = False
+        Label5.Visible = False
+        TextBox3.Visible = False
+        TextBox4.Visible = False
+        TextBox5.Visible = False
+        GroupBox1.Visible = True
+        GroupBox2.Visible = True
     End Sub
 End Class
