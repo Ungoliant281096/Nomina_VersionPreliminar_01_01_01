@@ -74,12 +74,19 @@ Public Class NOM_CapturarNominaQuincenal
             Else
                 If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa)) Then
                     ' llamda a funcion
+
                 End If
             End If
 
             If RadioButton3.Checked = True Then
                 If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
                     ' Llamada a funcion
+                    Dim renglon As Integer
+                    renglon = renglon + 1
+                    DataGridView1.RowCount = renglon
+                    DataGridView1.ColumnCount = 0
+                    DataGridView1.Rows.Add(i)
+                    ' Llamada a funcion carganom
                 End If
             Else
                 If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
@@ -87,6 +94,7 @@ Public Class NOM_CapturarNominaQuincenal
                 End If
 
             End If
+
 
         Next i
     End Sub
