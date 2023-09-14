@@ -228,16 +228,16 @@ Module Modulo_EstructurasDeDatos
 
 		grillaDat.ColumnCount = 12
 
-			For i As Integer = 1 To largoDelRandom
-				FileGet(numeroBancos, cuentasDeBanco, i)
-				FileGet(numeroPersonal, personal, i)
-				FileGet(numeroOtros, otrosCampos, i)
+		For i As Integer = 1 To largoDelRandom
+			FileGet(numeroBancos, cuentasDeBanco, i)
+			FileGet(numeroPersonal, personal, i)
+			FileGet(numeroOtros, otrosCampos, i)
 
 
-				'If valor = 0 Then ' Verificar si no hay fecha de baja
-				grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
-				'End If
-			Next i
+			'If valor = 0 Then ' Verificar si no hay fecha de baja
+			grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
+			'End If
+		Next i
 
 		grillaDat.Focus()
 
