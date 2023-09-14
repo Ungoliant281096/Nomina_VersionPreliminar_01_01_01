@@ -111,7 +111,68 @@ Module Modulo_EstructurasDeDatos
 		Public telefono As Long
 		Public otraded As Long
 	End Structure
-
+	Structure ob
+		Public O_1 As Integer
+		Public por_1 As Integer
+		Public im_1 As Long
+		Public O_2 As Integer
+		Public por_2 As Integer
+		Public im_2 As Long
+		Public O_3 As Integer
+		Public por_3 As Integer
+		Public im_3 As Long
+		Public O_4 As Integer
+		Public por_4 As Integer
+		Public im_4 As Long
+		Public O_5 As Integer
+		Public por_5 As Integer
+		Public im_5 As Long
+		Public O_6 As Integer
+		Public por_6 As Integer
+		Public im_6 As Long
+		Public O_7 As Integer
+		Public por_7 As Integer
+		Public im_7 As Long
+		Public O_8 As Integer
+		Public por_8 As Integer
+		Public im_8 As Long
+		Public O_9 As Long
+		Public por_9 As Integer
+		Public im_9 As Long
+		Public O_10 As Integer
+		Public por_10 As Integer
+		Public im_10 As Long
+		Public O_11 As Integer
+		Public por_11 As Integer
+		Public im_11 As Long
+		Public O_12 As Integer
+		Public por_12 As Integer
+		Public im_12 As Long
+		Public O_13 As Integer
+		Public por_13 As Integer
+		Public im_13 As Long
+		Public O_14 As Integer
+		Public por_14 As Integer
+		Public im_14 As Long
+		Public O_15 As Integer
+		Public por_15 As Integer
+		Public im_15 As Long
+		Public O_16 As Integer
+		Public por_16 As Integer
+		Public im_16 As Long
+		Public O_17 As Integer
+		Public por_17 As Integer
+		Public im_17 As Long
+		Public O_18 As Integer
+		Public por_18 As Integer
+		Public im_18 As Long
+		Public O_19 As Integer
+		Public por_19 As Integer
+		Public im_19 As Long
+		Public O_20 As Integer
+		Public por_20 As Integer
+		Public im_20 As Long
+	End Structure
 	Structure Clabnx
 		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
 	End Structure
@@ -121,6 +182,16 @@ Module Modulo_EstructurasDeDatos
 		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public otra As String
 		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public yotra As String
 		<VBFixedString(30), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=30)> Public yporsi As String
+	End Structure
+	Structure nomco
+		<VBFixedString(50), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=50)> Public ArchImp As String
+		Public PSubDi As Long
+		Public subdio As Long
+		Public subapl As Long
+		Public subNap As Long
+		Public CreTot As Long
+		Public CredNe As Long
+		Public ImpTot As Long
 	End Structure
 
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
@@ -133,12 +204,16 @@ Module Modulo_EstructurasDeDatos
 	Public DATOS As DAT_OS
 	Public OPER As oper_aciones
 	Public archivoNomina As nom
-
+	Public maestro As ob
 	Public personal As per
 	Public cuentasDeBanco As Clabnx
 	Public otrosCampos As OtrasCh
+	Public nominaCompleta As Integer
 
+	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+	REM largos de los random
 	Public largoDeBancos As Integer
 	Public largoPersonal As Integer
 	Public largoOtrosCammpos As Integer
@@ -146,14 +221,18 @@ Module Modulo_EstructurasDeDatos
 	Public largoCatalogoMayor As Integer
 	Public largoMaestro As Integer
 	Public largoNomina As Integer
-	Public largoNomCom As Integer
+	Public largoNominaCompleta As Integer
 
+	REM numeros asigando a los random
 	Public numeroMayor As Integer = 1
 	Public numeroAuxiliar As Integer = 2
 	Public numeroPersonal As Integer = 3
 	Public numeroBancos As Integer = 4
 	Public numeroOtros As Integer = 5
 	Public numeroNomina As Integer = 6
+	Public numeroMaestro As Integer = 7
+	Public numeronominaCompleta As Integer = 8
+
 	Public Sub abrirRandomNominaCaptura()
 
 
@@ -172,10 +251,14 @@ Module Modulo_EstructurasDeDatos
 		FileOpen(numeroOtros, rutaDelEjecutable + "\PerOtre.dno", OpenMode.Random,,, Len(otrosCampos))
 		largoOtrosCammpos = LOF(numeroOtros) \ Len(otrosCampos)
 
+		FileOpen(numeroMaestro, rutaDelEjecutable + "\maestro.dno", OpenMode.Random,,, Len(maestro))
+		largoMaestro = LOF(numeroMaestro) \ Len(maestro)
+
+		'FileOpen(numeronominaCompleta, rutaDelEjecutable + "", OpenMode.Random,,, Len(nominaCompleta))
+		'largoNominaCompleta = LOF(numeronominaCompleta) \ Len(nominaCompleta)
+
 		'FileOpen(numeroNomina, rutaDelEjecutable + "", OpenMode.Random,,, Len(archivoNomina))
 		'largoNomina = LOF(numeroNomina) \ Len(archivoNomina)
-
-		MessageBox.Show("Se han cargado todos los arhivos esenciales")
 
 
 	End Sub

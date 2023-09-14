@@ -64,8 +64,13 @@ Public Class NOM_CapturarNominaQuincenal
         ' maestro
         ' nom_com
         ' clbnx
-        For i As Integer = 0 To largoNomina
+        For i As Integer = 1 To largoPersonal
             FileGet(numeroNomina, archivoNomina, i)
+            FileGet(numeroPersonal, personal, i)
+            FileGet(numeroBancos, cuentasDeBanco, i)
+            FileGet(numeroMaestro, maestro, i)
+
+            DataGridView1.Rows.Add(archivoNomina.sueldo, personal.nom)
         Next i
     End Sub
 End Class
