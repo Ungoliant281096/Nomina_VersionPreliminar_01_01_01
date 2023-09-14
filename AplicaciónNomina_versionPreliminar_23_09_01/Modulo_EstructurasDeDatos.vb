@@ -237,8 +237,7 @@ Module Modulo_EstructurasDeDatos
 
 	End Sub
 
-	Public Sub imprimirOtrasCh(grillaDat As DataGridView)
-		Dim largoDelRandom As Integer
+	Public Sub imprimirOtrasCh(grillaDat As DataGridView, largoDelRandom As Integer)
 
 		grillaDat.ColumnCount = 4
 

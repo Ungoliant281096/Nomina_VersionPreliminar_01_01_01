@@ -9,7 +9,7 @@ Public Class NOM_EdicionDePersonal
     End Sub
 
     Private Sub PantallaToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        imprimirOtrasCh(DataGridView1)
+        imprimirOtrasCh(DataGridView1, largoOtrosCammpos)
     End Sub
 
     Private Sub NOM_EdicionDePersonal_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
