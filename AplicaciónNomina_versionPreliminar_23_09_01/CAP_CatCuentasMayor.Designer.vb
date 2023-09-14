@@ -127,9 +127,10 @@ Partial Class CAP_CatCuentasMayor
         ' 
         ' HScrollBar1
         ' 
-        HScrollBar1.Location = New Point(25, 383)
+        HScrollBar1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        HScrollBar1.Location = New Point(0, 427)
         HScrollBar1.Name = "HScrollBar1"
-        HScrollBar1.Size = New Size(618, 18)
+        HScrollBar1.Size = New Size(688, 15)
         HScrollBar1.TabIndex = 2
         ' 
         ' CAP_CatCuentasMayor

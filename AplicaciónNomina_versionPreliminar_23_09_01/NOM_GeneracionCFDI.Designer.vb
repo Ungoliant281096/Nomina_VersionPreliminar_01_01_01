@@ -24,8 +24,6 @@ Partial Class NOM_GeneracionCFDI
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        EliminarToolStripMenuItem = New ToolStripMenuItem()
-        GenerarExcelToolStripMenuItem = New ToolStripMenuItem()
         CopiarCtrCToolStripMenuItem = New ToolStripMenuItem()
         PegarCtrVToolStripMenuItem = New ToolStripMenuItem()
         CAPTIONToolStripMenuItem = New ToolStripMenuItem()
@@ -34,6 +32,8 @@ Partial Class NOM_GeneracionCFDI
         SeleccionarYCopiarSegundaTablaToolStripMenuItem = New ToolStripMenuItem()
         QuitarTitúlosToolStripMenuItem = New ToolStripMenuItem()
         FijarTítulosCtrlToolStripMenuItem = New ToolStripMenuItem()
+        EliminarToolStripMenuItem = New ToolStripMenuItem()
+        GenerarExcelToolStripMenuItem = New ToolStripMenuItem()
         TextBox1 = New TextBox()
         DataGridView1 = New DataGridView()
         DataGridView2 = New DataGridView()
@@ -60,18 +60,6 @@ Partial Class NOM_GeneracionCFDI
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
         ' 
-        ' EliminarToolStripMenuItem
-        ' 
-        EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        EliminarToolStripMenuItem.Size = New Size(77, 24)
-        EliminarToolStripMenuItem.Text = "Eliminar"
-        ' 
-        ' GenerarExcelToolStripMenuItem
-        ' 
-        GenerarExcelToolStripMenuItem.Name = "GenerarExcelToolStripMenuItem"
-        GenerarExcelToolStripMenuItem.Size = New Size(113, 24)
-        GenerarExcelToolStripMenuItem.Text = "Generar Excel"
-        ' 
         ' CopiarCtrCToolStripMenuItem
         ' 
         CopiarCtrCToolStripMenuItem.Name = "CopiarCtrCToolStripMenuItem"
@@ -87,7 +75,7 @@ Partial Class NOM_GeneracionCFDI
         ' CAPTIONToolStripMenuItem
         ' 
         CAPTIONToolStripMenuItem.Name = "CAPTIONToolStripMenuItem"
-        CAPTIONToolStripMenuItem.Size = New Size(281, 26)
+        CAPTIONToolStripMenuItem.Size = New Size(345, 26)
         CAPTIONToolStripMenuItem.Text = "CAPTION"
         ' 
         ' SeleccionarTodoCtrEToolStripMenuItem
@@ -119,6 +107,18 @@ Partial Class NOM_GeneracionCFDI
         FijarTítulosCtrlToolStripMenuItem.Name = "FijarTítulosCtrlToolStripMenuItem"
         FijarTítulosCtrlToolStripMenuItem.Size = New Size(345, 26)
         FijarTítulosCtrlToolStripMenuItem.Text = "Fijar títulos                       Ctrl + T"
+        ' 
+        ' EliminarToolStripMenuItem
+        ' 
+        EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        EliminarToolStripMenuItem.Size = New Size(77, 24)
+        EliminarToolStripMenuItem.Text = "Eliminar"
+        ' 
+        ' GenerarExcelToolStripMenuItem
+        ' 
+        GenerarExcelToolStripMenuItem.Name = "GenerarExcelToolStripMenuItem"
+        GenerarExcelToolStripMenuItem.Size = New Size(113, 24)
+        GenerarExcelToolStripMenuItem.Text = "Generar Excel"
         ' 
         ' TextBox1
         ' 

@@ -16,4 +16,6 @@ Public Class NOM_EdicionDePersonal
         DataGridView1.Width = Me.Width * 0.9
         DataGridView1.Height = Me.Height * 0.85
     End Sub
+
+
 End Class

@@ -160,7 +160,7 @@ Partial Class Form1
         ' SubdirectorioToolStripMenuItem
         ' 
         SubdirectorioToolStripMenuItem.Name = "SubdirectorioToolStripMenuItem"
-        SubdirectorioToolStripMenuItem.Size = New Size(224, 26)
+        SubdirectorioToolStripMenuItem.Size = New Size(182, 26)
         SubdirectorioToolStripMenuItem.Text = "Subdirectorio"
         ' 
         ' TarifasImpuestosToolStripMenuItem
@@ -173,26 +173,26 @@ Partial Class Form1
         ' Articulo113ToolStripMenuItem
         ' 
         Articulo113ToolStripMenuItem.Name = "Articulo113ToolStripMenuItem"
-        Articulo113ToolStripMenuItem.Size = New Size(224, 26)
+        Articulo113ToolStripMenuItem.Size = New Size(189, 26)
         Articulo113ToolStripMenuItem.Text = "Articulo 113"
         ' 
         ' Arítuclo114ToolStripMenuItem
         ' 
         Arítuclo114ToolStripMenuItem.Name = "Arítuclo114ToolStripMenuItem"
-        Arítuclo114ToolStripMenuItem.Size = New Size(224, 26)
+        Arítuclo114ToolStripMenuItem.Size = New Size(189, 26)
         Arítuclo114ToolStripMenuItem.Text = "Arítuclo 114"
         ' 
         ' CréditoSalarioToolStripMenuItem
         ' 
         CréditoSalarioToolStripMenuItem.Name = "CréditoSalarioToolStripMenuItem"
-        CréditoSalarioToolStripMenuItem.Size = New Size(224, 26)
+        CréditoSalarioToolStripMenuItem.Size = New Size(189, 26)
         CréditoSalarioToolStripMenuItem.Text = "Crédito salario"
         ' 
         ' AnualToolStripMenuItem
         ' 
         AnualToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ISRAnual177ToolStripMenuItem, SubsudioAnual178ToolStripMenuItem, CreditoSalarioToolStripMenuItem})
         AnualToolStripMenuItem.Name = "AnualToolStripMenuItem"
-        AnualToolStripMenuItem.Size = New Size(224, 26)
+        AnualToolStripMenuItem.Size = New Size(189, 26)
         AnualToolStripMenuItem.Text = "Anual"
         ' 
         ' ISRAnual177ToolStripMenuItem
