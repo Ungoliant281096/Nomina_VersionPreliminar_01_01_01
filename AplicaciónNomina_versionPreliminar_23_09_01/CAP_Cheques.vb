@@ -1,4 +1,6 @@
 ﻿Public Class CAP_Cheques
+
+
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
     End Sub
@@ -78,20 +80,6 @@
     Private Sub CAP_Cheques_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         MENÚ.Show()
     End Sub
-
-    Private Sub PólizaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PólizaToolStripMenuItem.Click
-        DataGridView1.Width = 16000
-        Label4.Visible = True
-        Label5.Visible = True
-        TextBox3.Visible = True
-        TextBox4.Visible = True
-        TextBox5.Visible = True
-        GroupBox1.Visible = False
-        GroupBox2.Visible = False
-        Label3.Capture = "Poliza No. "
-
-    End Sub
-
     Private Sub ChequeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ChequeToolStripMenuItem1.Click
         Me.Show()
         Label4.Visible = False
@@ -101,5 +89,46 @@
         TextBox5.Visible = False
         GroupBox1.Visible = True
         GroupBox2.Visible = True
+
+        DataGridView1.Size = New Size(900, 271)
     End Sub
+    Private Sub PólizaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PólizaToolStripMenuItem.Click
+        DataGridView1.Size = New Size(1350, 800)
+
+        Label4.Visible = True
+        Label5.Visible = True
+        TextBox3.Visible = True
+        TextBox4.Visible = True
+        TextBox5.Visible = True
+        GroupBox1.Visible = False
+        GroupBox2.Visible = False
+        Label3.Text = "Poliza No."
+        ColReda.Visible = True
+
+
+    End Sub
+
+    Private Sub CAP_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Label4.Visible = False
+        Label5.Visible = False
+        TextBox3.Visible = False
+        TextBox4.Visible = False
+        TextBox5.Visible = False
+        GroupBox1.Visible = True
+        GroupBox2.Visible = True
+        Label3.Text = ""
+        ColReda.Visible = False
+        ColCuenta.Width = 55
+        ColSubCta.Width = 55
+        ColNom.Width = 250
+        ColParcial.Width = 60
+        ColDebe.Width = 60
+        ColHaber.Width = 60
+        ColReda.Width = 200
+        ColFolioFis.Width = 310
+
+    End Sub
+
+
 End Class
