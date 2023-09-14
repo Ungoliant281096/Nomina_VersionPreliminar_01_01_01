@@ -26,6 +26,9 @@ Public Class NOM_CapturarNominaQuincenal
     Private Sub IniciarCapturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IniciarCapturaToolStripMenuItem.Click
         Dim archivo As String
         Dim mesComboBox As Integer
+        Dim añoBajaEmpleado As Integer
+        Dim mesBajaEmpleado As Integer
+        Dim diaBajaEmpleado As Integer
 
         ' pregunta si se trata de una nomina normal o una especial
         If RadioButton1.Checked = True Then
@@ -58,19 +61,33 @@ Public Class NOM_CapturarNominaQuincenal
             ' dias paagados/mesElegido/añoEmpresa
         End If
 
-        ' archivos que se necesitan para una nomina
-        ' Nomina
-        ' personal
-        ' maestro
-        ' nom_com
-        ' clbnx
         For i As Integer = 1 To largoPersonal
             FileGet(numeroNomina, archivoNomina, i)
             FileGet(numeroPersonal, personal, i)
             FileGet(numeroBancos, cuentasDeBanco, i)
             FileGet(numeroMaestro, maestro, i)
 
-            DataGridView1.Rows.Add(archivoNomina.sueldo, personal.nom)
+            If RadioButton3.Checked = True Then
+                If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa - 1)) Then
+                    ' llamada a funcion
+                End If
+            Else
+                If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa)) Then
+                    ' llamda a funcion
+                End If
+            End If
+
+            If RadioButton3.Checked = True Then
+                If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
+                    ' Llamada a funcion
+                End If
+            Else
+                If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
+                    ' Llamada a funcion
+                End If
+
+            End If
+
         Next i
     End Sub
 End Class

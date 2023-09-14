@@ -194,6 +194,15 @@ Module Modulo_EstructurasDeDatos
 		Public ImpTot As Long
 	End Structure
 
+
+	Structure empre
+		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
+		Public añoEmpresa As Integer
+		Public sm As Long
+		Public psub As Long
+		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
+	End Structure
+
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
 	Public CATAUX As CAT_AX
 	Public CATMAY As CAT_MA
@@ -259,7 +268,6 @@ Module Modulo_EstructurasDeDatos
 
 		'FileOpen(numeroNomina, rutaDelEjecutable + "", OpenMode.Random,,, Len(archivoNomina))
 		'largoNomina = LOF(numeroNomina) \ Len(archivoNomina)
-
 
 	End Sub
 
