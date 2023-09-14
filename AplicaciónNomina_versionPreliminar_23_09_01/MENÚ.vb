@@ -15,6 +15,6 @@
     End Sub
 
     Private Sub MENÚ_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        abrirRandomNominaCaptura()
     End Sub
 End Class

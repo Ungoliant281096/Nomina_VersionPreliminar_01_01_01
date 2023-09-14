@@ -2,7 +2,7 @@
 
 
     Private Sub CAP_CatCuentasMayor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        imprimirMayor(DataGridView1)
+        imprimirMayor(DataGridView1, largoCatalogoMayor)
         DataGridView1.Width = Me.Width * 0.9
         DataGridView1.Height = Me.Height * 0.85
     End Sub

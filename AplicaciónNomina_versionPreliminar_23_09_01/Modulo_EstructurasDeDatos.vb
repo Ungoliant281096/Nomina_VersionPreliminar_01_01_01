@@ -175,12 +175,13 @@ Module Modulo_EstructurasDeDatos
 		'FileOpen(numeroNomina, rutaDelEjecutable + "", OpenMode.Random,,, Len(archivoNomina))
 		'largoNomina = LOF(numeroNomina) \ Len(archivoNomina)
 
+		MessageBox.Show("Se han cargado todos los arhivos esenciales")
+
 
 	End Sub
 
 
-	Public Sub imprimirPersonal(grillaDat As DataGridView)
-		Dim largoDelRandom As Integer
+	Public Sub imprimirPersonal(grillaDat As DataGridView, largoDelRandom As Integer)
 
 		grillaDat.ColumnCount = 12
 
@@ -190,14 +191,12 @@ Module Modulo_EstructurasDeDatos
 		Next i
 
 		grillaDat.Focus()
-		FileClose(1)
 
 	End Sub
 
-	Public Sub imprimirAuxiliar(grillaDat As DataGridView)
-		Dim largoDelRandom As Integer
+	Public Sub imprimirAuxiliar(grillaDat As DataGridView, largoDelRandom As Integer)
 
-		grillaDat.ColumnCount = 12
+		grillaDat.ColumnCount = 5
 
 		For i As Integer = 1 To largoDelRandom
 			FileGet(numeroAuxiliar, CATAUX, i)
@@ -205,14 +204,12 @@ Module Modulo_EstructurasDeDatos
 		Next i
 
 		grillaDat.Focus()
-		FileClose(2)
 
 	End Sub
 
-	Public Sub imprimirMayor(grillaDat As DataGridView)
-		Dim largoDelRandom As Integer
+	Public Sub imprimirMayor(grillaDat As DataGridView, largoDelRandom As Integer)
 
-		grillaDat.ColumnCount = 12
+		grillaDat.ColumnCount = 5
 
 		For i As Integer = 1 To largoDelRandom
 			FileGet(numeroMayor, CATMAY, i)
@@ -220,7 +217,6 @@ Module Modulo_EstructurasDeDatos
 		Next i
 
 		grillaDat.Focus()
-		FileClose(3)
 
 	End Sub
 
@@ -233,10 +229,8 @@ Module Modulo_EstructurasDeDatos
 			FileGet(numeroPersonal, personal, i)
 			FileGet(numeroOtros, otrosCampos, i)
 
-
-			'If valor = 0 Then ' Verificar si no hay fecha de baja
 			grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
-			'End If
+
 		Next i
 
 		grillaDat.Focus()
