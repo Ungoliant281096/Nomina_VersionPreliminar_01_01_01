@@ -29,7 +29,7 @@ Public Class NOM_CapturarNominaQuincenal
         Dim añoBajaEmpleado As Integer
         Dim mesBajaEmpleado As Integer
         Dim diaBajaEmpleado As Integer
-
+        Dim datosEmpresa As Integer
         ' pregunta si se trata de una nomina normal o una especial
         If RadioButton1.Checked = True Then
             If RadioButton2.Checked = True Then
