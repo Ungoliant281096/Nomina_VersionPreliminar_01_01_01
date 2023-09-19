@@ -5,59 +5,14 @@ Public Class CAP_Cheques
     Dim midir As String
     Dim MientraS As String
     Dim tope As String
+    Dim Archivo As String
+    Dim nombreEmpresa As String
 
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
-
-        Dim Ruta_Acceso_Contr As String
-        FileClose(1)
-
-        MientraS = ""
-        Ruta_Acceso_Contr = ""
-        midir = System.IO.Directory.GetCurrentDirectory()
-        midir = midir.TrimEnd()
-        Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
-        If midir.EndsWith("\") Then
-            midir = midir.Substring(0, midir.Length - 1)
-        End If
-        'OpenFileDialog1.InitialDirectory = "midir"
-
-        'OpenFileDialog1.CheckFileExists = True
-        'OpenFileDialog1.ShowReadOnly = False 
-
-        Dim openFileDialog1 As New OpenFileDialog With {
-            .InitialDirectory = "midir",
-            .CheckFileExists = True,
-            .ShowReadOnly = False,
-            .Filter = "Archivos de Nomina(Dat*.*)|Dat*.*",
-            .Title = "Seleccionar archivo"
-        }
-        If openFileDialog1.ShowDialog() = DialogResult.OK Then
-            Show()
-            ' Realiza alguna acción con el archivo seleccionado.
-
-        End If
-
-        If openFileDialog1.FileName <> "" Then
-            Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-            MientraS = openFileDialog1.FileName
-        End If
-
-        openFileDialog1.FileName.Substring(0, tope)
-
-
-        ChDir(MientraS)
-
-        'FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
-
-        FileClose(3)
 
     End Sub
     Sub sigpaso()
@@ -67,10 +22,113 @@ Public Class CAP_Cheques
 
             FileClose(1)
         Else
-            'Get( 1, 1, DATOS) 
+            FileGet(1, DATOS, 1)
+            Label2.BackColor = Color.Yellow
+
+            m_m = 1
+            Label3.Text = "de" + RTrim(Mm(m_m)) + "de" + DATOS.a_o
+            Me.Text = Mid(DATOS.D1, 1, 32) & "  Captura de cheques"
+            nombreEmpresa = Trim(DATOS.D2)
+            ultimo.texto = RTrim(DATOS.No_arch)
         End If
 
     End Sub
+    Sub inicio()
+        Dim checar As Integer
+        FileOpen(3, Ruta_Acceso_Contr & "Gcont_Arr", OpenMode.Random, , , Len(SCont))
+        FileGet(3, SCont, 1)
+        If SCont.guarda.Substring(0, 1) <= " " Then
+            ChDrive("C:\")
+        Else
+            If Not SCont.guarda.StartsWith("C") Then
+                ChDrive(SCont.guarda.Substring(0, 1))
+            End If
+
+            ChDir(SCont.guarda.Trim())
+
+        End If
+
+        FileGet(3, SCont, 2)
+        Dir_Costos = SCont.guarda.Trim()
+
+        FileGet(3, SCont, 1)
+
+        FileClose(3)
+        FileClose(1)
+
+        Archivo = "DATOS"
+        FileOpen(1, Archivo, OpenMode.Random,,, Len(DATOS))
+        cm = LOF(1) / Len(DATOS)
+        FileGet(1, DATOS, 1)
+        checar = Trim(DATOS.No_arch)
+
+
+        ' Bloquea la grid si se esta usando costos
+
+
+
+        ' Cerrar el archivo
+        FileClose(3)
+
+    End Sub
+    Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
+
+
+        FileClose(1)
+
+        MientraS = ""
+        Ruta_Acceso_Contr = ""
+
+        Try
+
+            midir = System.IO.Directory.GetCurrentDirectory()
+            midir = midir.TrimEnd()
+            Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
+            If midir.EndsWith("\") Then
+                midir = midir.Substring(0, midir.Length - 1)
+            End If
+            'OpenFileDialog1.InitialDirectory = "midir"
+
+            'OpenFileDialog1.CheckFileExists = True
+            'OpenFileDialog1.ShowReadOnly = False 
+
+            Dim openFileDialog1 As New OpenFileDialog With {
+            .InitialDirectory = "midir",
+            .CheckFileExists = True,
+            .ShowReadOnly = False,
+            .Filter = "Archivos de Nomina(Dat*.*)|Dat*.*",
+            .Title = "Seleccionar archivo"
+        }
+            If openFileDialog1.ShowDialog() = DialogResult.OK Then
+                Show()
+                ' Realiza alguna acción con el archivo seleccionado.
+
+            End If
+
+            If openFileDialog1.FileName <> "" Then
+                Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
+                MientraS = openFileDialog1.FileName
+
+
+                openFileDialog1.FileName.Substring(0, tope)
+
+
+                ChDir("MientraS")
+
+                FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
+
+                FileClose(3)
+                cm = 0
+                inicio()
+                sigpaso()
+                'MeEne_Click 1
+            End If
+        Catch ex As Exception
+            MsgBox("Error")
+        End Try
+    End Sub
+
+
 
     Private Sub AjustarChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjustarChequeToolStripMenuItem.Click
         CAP_AjusteImpresionCheques.Show()
@@ -189,5 +247,11 @@ Public Class CAP_Cheques
 
     End Sub
 
+    Private Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(1)) + "de" + DATOS.a_o
+        m_m = MenuStrip1.GetItemAt(,)
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
 
+    End Sub
 End Class

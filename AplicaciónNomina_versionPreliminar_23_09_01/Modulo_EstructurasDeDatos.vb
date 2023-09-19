@@ -192,6 +192,34 @@ Module Modulo_EstructurasDeDatos
 		Public por_20 As Integer
 		Public im_20 As Long
 	End Structure
+	Structure Mvtos
+		Public Inc As Long
+		Public Ene As Long
+		Public Feb As Long
+		Public Mar As Long
+		Public Abr As Long
+		Public May As Long
+		Public Jun As Long
+		Public Jul As Long
+		Public Ago As Long
+		Public Sep As Long
+		Public Oct As Long
+		Public Nov As Long
+		Public Dic As Long
+	End Structure
+	Structure ult
+		Public num As Long
+		Public Ubi As Integer
+		Public renglon As Long
+		Public texto As String
+		Public poliza As Integer
+		Public Impresion As Integer
+		Public TipoCap As Integer
+		Public redaccion As String
+	End Structure
+	Structure sc
+		Public guarda As String
+	End Structure
 	Structure Clabnx
 		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
 	End Structure
@@ -241,7 +269,12 @@ Module Modulo_EstructurasDeDatos
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
+	Public SCont As sc
+	Public Ruta_Acceso_Contr As String
+	Public Dir_Costos As String
+	Public cm As String
+	Public Mm(15) As String, dd(15) As Integer, m_m As Integer, dia As Integer
+	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
 	REM largos de los random
 	Public largoDeBancos As Integer
 	Public largoPersonal As Integer

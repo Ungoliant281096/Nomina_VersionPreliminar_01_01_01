@@ -93,6 +93,14 @@ Partial Class CAP_Cheques
         OpenFileDialog2 = New OpenFileDialog()
         Label6 = New Label()
         DataGridView1 = New DataGridView()
+        ColCuenta = New DataGridViewTextBoxColumn()
+        ColSubCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
+        ColParcial = New DataGridViewTextBoxColumn()
+        ColDebe = New DataGridViewTextBoxColumn()
+        ColHaber = New DataGridViewTextBoxColumn()
+        ColReda = New DataGridViewTextBoxColumn()
+        ColFolioFis = New DataGridViewTextBoxColumn()
         Label7 = New Label()
         TextBox6 = New TextBox()
         Label8 = New Label()
@@ -110,14 +118,6 @@ Partial Class CAP_Cheques
         CheckBox2 = New CheckBox()
         OpenFileDialog3 = New OpenFileDialog()
         OpenFileDialog4 = New OpenFileDialog()
-        ColCuenta = New DataGridViewTextBoxColumn()
-        ColSubCta = New DataGridViewTextBoxColumn()
-        ColNom = New DataGridViewTextBoxColumn()
-        ColParcial = New DataGridViewTextBoxColumn()
-        ColDebe = New DataGridViewTextBoxColumn()
-        ColHaber = New DataGridViewTextBoxColumn()
-        ColReda = New DataGridViewTextBoxColumn()
-        ColFolioFis = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -365,79 +365,79 @@ Partial Class CAP_Cheques
         ' IncorporaciónToolStripMenuItem
         ' 
         IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(184, 26)
+        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
         IncorporaciónToolStripMenuItem.Text = "Incorporación"
         ' 
         ' EneroToolStripMenuItem
         ' 
         EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(184, 26)
+        EneroToolStripMenuItem.Size = New Size(224, 26)
         EneroToolStripMenuItem.Text = "Enero"
         ' 
         ' FebreroToolStripMenuItem
         ' 
         FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
-        FebreroToolStripMenuItem.Size = New Size(184, 26)
+        FebreroToolStripMenuItem.Size = New Size(224, 26)
         FebreroToolStripMenuItem.Text = "Febrero "
         ' 
         ' MarzoToolStripMenuItem
         ' 
         MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
-        MarzoToolStripMenuItem.Size = New Size(184, 26)
+        MarzoToolStripMenuItem.Size = New Size(224, 26)
         MarzoToolStripMenuItem.Text = "Marzo"
         ' 
         ' AbrilToolStripMenuItem
         ' 
         AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
-        AbrilToolStripMenuItem.Size = New Size(184, 26)
+        AbrilToolStripMenuItem.Size = New Size(224, 26)
         AbrilToolStripMenuItem.Text = "Abril"
         ' 
         ' MayoToolStripMenuItem
         ' 
         MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
-        MayoToolStripMenuItem.Size = New Size(184, 26)
+        MayoToolStripMenuItem.Size = New Size(224, 26)
         MayoToolStripMenuItem.Text = "Mayo"
         ' 
         ' JunioToolStripMenuItem
         ' 
         JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
-        JunioToolStripMenuItem.Size = New Size(184, 26)
+        JunioToolStripMenuItem.Size = New Size(224, 26)
         JunioToolStripMenuItem.Text = "Junio"
         ' 
         ' JulioToolStripMenuItem
         ' 
         JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
-        JulioToolStripMenuItem.Size = New Size(184, 26)
+        JulioToolStripMenuItem.Size = New Size(224, 26)
         JulioToolStripMenuItem.Text = "Julio"
         ' 
         ' AgostoToolStripMenuItem
         ' 
         AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
-        AgostoToolStripMenuItem.Size = New Size(184, 26)
+        AgostoToolStripMenuItem.Size = New Size(224, 26)
         AgostoToolStripMenuItem.Text = "Agosto"
         ' 
         ' SeptiembreToolStripMenuItem
         ' 
         SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
-        SeptiembreToolStripMenuItem.Size = New Size(184, 26)
+        SeptiembreToolStripMenuItem.Size = New Size(224, 26)
         SeptiembreToolStripMenuItem.Text = "Septiembre"
         ' 
         ' OctubreToolStripMenuItem
         ' 
         OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
-        OctubreToolStripMenuItem.Size = New Size(184, 26)
+        OctubreToolStripMenuItem.Size = New Size(224, 26)
         OctubreToolStripMenuItem.Text = "Octubre"
         ' 
         ' NoviembreToolStripMenuItem
         ' 
         NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
-        NoviembreToolStripMenuItem.Size = New Size(184, 26)
+        NoviembreToolStripMenuItem.Size = New Size(224, 26)
         NoviembreToolStripMenuItem.Text = "Noviembre"
         ' 
         ' DiciembreToolStripMenuItem
         ' 
         DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
-        DiciembreToolStripMenuItem.Size = New Size(184, 26)
+        DiciembreToolStripMenuItem.Size = New Size(224, 26)
         DiciembreToolStripMenuItem.Text = "Diciembre"
         ' 
         ' AyudaToolStripMenuItem1
@@ -591,6 +591,62 @@ Partial Class CAP_Cheques
         DataGridView1.Size = New Size(1177, 271)
         DataGridView1.TabIndex = 13
         ' 
+        ' ColCuenta
+        ' 
+        ColCuenta.HeaderText = "Cuenta"
+        ColCuenta.MinimumWidth = 6
+        ColCuenta.Name = "ColCuenta"
+        ColCuenta.Width = 125
+        ' 
+        ' ColSubCta
+        ' 
+        ColSubCta.HeaderText = "SubCta"
+        ColSubCta.MinimumWidth = 6
+        ColSubCta.Name = "ColSubCta"
+        ColSubCta.Width = 125
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
+        ' 
+        ' ColParcial
+        ' 
+        ColParcial.HeaderText = "Parcial"
+        ColParcial.MinimumWidth = 6
+        ColParcial.Name = "ColParcial"
+        ColParcial.Width = 125
+        ' 
+        ' ColDebe
+        ' 
+        ColDebe.HeaderText = "Debe"
+        ColDebe.MinimumWidth = 6
+        ColDebe.Name = "ColDebe"
+        ColDebe.Width = 125
+        ' 
+        ' ColHaber
+        ' 
+        ColHaber.HeaderText = "Haber"
+        ColHaber.MinimumWidth = 6
+        ColHaber.Name = "ColHaber"
+        ColHaber.Width = 125
+        ' 
+        ' ColReda
+        ' 
+        ColReda.HeaderText = "Redacción"
+        ColReda.MinimumWidth = 6
+        ColReda.Name = "ColReda"
+        ColReda.Width = 125
+        ' 
+        ' ColFolioFis
+        ' 
+        ColFolioFis.HeaderText = "Folio Fiscal"
+        ColFolioFis.MinimumWidth = 6
+        ColFolioFis.Name = "ColFolioFis"
+        ColFolioFis.Width = 125
+        ' 
         ' Label7
         ' 
         Label7.AutoSize = True
@@ -740,62 +796,6 @@ Partial Class CAP_Cheques
         ' OpenFileDialog4
         ' 
         OpenFileDialog4.FileName = "OpenFileDialog4"
-        ' 
-        ' ColCuenta
-        ' 
-        ColCuenta.HeaderText = "Cuenta"
-        ColCuenta.MinimumWidth = 6
-        ColCuenta.Name = "ColCuenta"
-        ColCuenta.Width = 125
-        ' 
-        ' ColSubCta
-        ' 
-        ColSubCta.HeaderText = "SubCta"
-        ColSubCta.MinimumWidth = 6
-        ColSubCta.Name = "ColSubCta"
-        ColSubCta.Width = 125
-        ' 
-        ' ColNom
-        ' 
-        ColNom.HeaderText = "Nombre"
-        ColNom.MinimumWidth = 6
-        ColNom.Name = "ColNom"
-        ColNom.Width = 125
-        ' 
-        ' ColParcial
-        ' 
-        ColParcial.HeaderText = "Parcial"
-        ColParcial.MinimumWidth = 6
-        ColParcial.Name = "ColParcial"
-        ColParcial.Width = 125
-        ' 
-        ' ColDebe
-        ' 
-        ColDebe.HeaderText = "Debe"
-        ColDebe.MinimumWidth = 6
-        ColDebe.Name = "ColDebe"
-        ColDebe.Width = 125
-        ' 
-        ' ColHaber
-        ' 
-        ColHaber.HeaderText = "Haber"
-        ColHaber.MinimumWidth = 6
-        ColHaber.Name = "ColHaber"
-        ColHaber.Width = 125
-        ' 
-        ' ColReda
-        ' 
-        ColReda.HeaderText = "Redacción"
-        ColReda.MinimumWidth = 6
-        ColReda.Name = "ColReda"
-        ColReda.Width = 125
-        ' 
-        ' ColFolioFis
-        ' 
-        ColFolioFis.HeaderText = "Folio Fiscal"
-        ColFolioFis.MinimumWidth = 6
-        ColFolioFis.Name = "ColFolioFis"
-        ColFolioFis.Width = 125
         ' 
         ' CAP_Cheques
         ' 
