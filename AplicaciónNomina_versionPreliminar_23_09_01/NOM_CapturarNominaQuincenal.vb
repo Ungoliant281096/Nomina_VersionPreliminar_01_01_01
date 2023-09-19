@@ -1,8 +1,6 @@
 ﻿Imports System.IO
 
 Public Class NOM_CapturarNominaQuincenal
-
-
     Private Sub CFDIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CFDIToolStripMenuItem.Click
         NOM_GeneracionCFDI.Show()
     End Sub
@@ -29,13 +27,22 @@ Public Class NOM_CapturarNominaQuincenal
         Dim añoBajaEmpleado As Integer
         Dim mesBajaEmpleado As Integer
         Dim diaBajaEmpleado As Integer
+        Dim archivoPrimeraQuincena As String
+        Dim archivoSegundaQuincena As String
+        Dim fechaDeQuincena As String
+        Dim diasDePago As Integer
 
         ' pregunta si se trata de una nomina normal o una especial
-        If RadioButton1.Checked = True Then
-            If RadioButton2.Checked = True Then
+        If optionNominaNormal.Checked = True Then
+            If optionPrimeraQuincena.Checked = True Then
                 ' debe crear dos archivos que almacenan las nominas primera
+                archivoPrimeraQuincena = UCase(Mid(ComboBox1.Text, 1, 3) + "1" + LTrim(Str(datosEmpresa.añoEmpresa))) + ".NOM"
+                archivoPrimeraQuincena = UCase(Mid(ComboBox1.Text, 1, 3) + "1" + LTrim(Str(datosEmpresa.añoEmpresa))) + ".cmp"
+                diasDePago = 14
             Else
                 ' y segunda quincena del mes
+                archivoSegundaQuincena = UCase(Mid(ComboBox1.Text, 1, 3) + "2" + LTrim(Str(datosEmpresa.añoEmpresa))) + ".NOM"
+                archivoSegundaQuincena = UCase(Mid(ComboBox1.Text, 1, 3) + "2" + LTrim(Str(datosEmpresa.añoEmpresa))) + ".cmp"
             End If
             ' en caso de que sea una nomina normal
         Else
@@ -45,21 +52,21 @@ Public Class NOM_CapturarNominaQuincenal
         End If
 
         mesComboBox = ComboBox1.SelectedIndex
-
-        ' Si el comboBox no tiene seleccionado ningun mes selecciona enero por defecto
         If mesComboBox = -1 Then
-            MessageBox.Show("Debes elegir un mes para calcular la nomina")
+            mesComboBox = 0
         End If
 
         If mesComboBox < 10 Then
-            ' asigna el nombre de la quincena
-            ' dias paagados/mesElegido/añoEmpresa
+            fechaDeQuincena = LTrim(Str(diasDePago)) + "/0" + LTrim(Str(mesComboBox)) + "/" + LTrim(Str(datosEmpresa.añoEmpresa))
+        End If
+        If mesComboBox > 9 Then
+            fechaDeQuincena = LTrim(Str(diasDePago)) + "/" + LTrim(Str(mesComboBox)) + "/" + LTrim(Str(datosEmpresa.añoEmpresa))
         End If
 
-        If mesComboBox > 9 Then
-            ' asigna el nombre de la quincena
-            ' dias paagados/mesElegido/añoEmpresa
-        End If
+        ' Aqui debe llamar la funcion checarFecha
+        ' cehcarFecha()
+
+
 
         For i As Integer = 1 To largoPersonal
             'FileGet(numeroNomina, archivoNomina, i)
@@ -67,7 +74,7 @@ Public Class NOM_CapturarNominaQuincenal
             FileGet(numeroBancos, cuentasDeBanco, i)
             FileGet(numeroMaestro, maestro, i)
 
-            If RadioButton3.Checked = True Then
+            If optionPrimeraQuincena.Checked = True Then
                 If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa - 1)) Then
                     ' llamada a funcion
                 End If
@@ -78,7 +85,7 @@ Public Class NOM_CapturarNominaQuincenal
                 End If
             End If
 
-            If RadioButton3.Checked = True Then
+            If optionPrimeraQuincena.Checked = True Then
                 If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
                     ' Llamada a funcion
                     Dim renglon As Integer

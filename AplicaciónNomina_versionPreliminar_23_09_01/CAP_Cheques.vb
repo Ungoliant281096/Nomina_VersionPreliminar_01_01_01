@@ -248,10 +248,13 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
+        Dim m_m As Integer = 1
+
         Label2.Text = "de" + RTrim(Mm(1)) + "de" + DATOS.a_o
-        m_m = MenuStrip1.GetItemAt(,)
+
         Label2.BackColor = Color.Red
         CAP_LocalizarPolizas.Show()
 
     End Sub
+
 End Class
