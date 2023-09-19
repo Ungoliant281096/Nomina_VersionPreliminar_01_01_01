@@ -22,6 +22,7 @@ Partial Class CAP_Cheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Cheques))
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
@@ -92,13 +93,6 @@ Partial Class CAP_Cheques
         OpenFileDialog2 = New OpenFileDialog()
         Label6 = New Label()
         DataGridView1 = New DataGridView()
-        ColCuenta = New DataGridViewTextBoxColumn()
-        ColSubCta = New DataGridViewTextBoxColumn()
-        ColNom = New DataGridViewTextBoxColumn()
-        ColParcial = New DataGridViewTextBoxColumn()
-        ColDebe = New DataGridViewTextBoxColumn()
-        ColHaber = New DataGridViewTextBoxColumn()
-        ColFolioFis = New DataGridViewTextBoxColumn()
         Label7 = New Label()
         TextBox6 = New TextBox()
         Label8 = New Label()
@@ -116,6 +110,14 @@ Partial Class CAP_Cheques
         CheckBox2 = New CheckBox()
         OpenFileDialog3 = New OpenFileDialog()
         OpenFileDialog4 = New OpenFileDialog()
+        ColCuenta = New DataGridViewTextBoxColumn()
+        ColSubCta = New DataGridViewTextBoxColumn()
+        ColNom = New DataGridViewTextBoxColumn()
+        ColParcial = New DataGridViewTextBoxColumn()
+        ColDebe = New DataGridViewTextBoxColumn()
+        ColHaber = New DataGridViewTextBoxColumn()
+        ColReda = New DataGridViewTextBoxColumn()
+        ColFolioFis = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -128,7 +130,7 @@ Partial Class CAP_Cheques
         MenuStrip1.Items.AddRange(New ToolStripItem() {ArchivoToolStripMenuItem, CapturaToolStripMenuItem, EdiciónToolStripMenuItem, MesToolStripMenuItem, AyudaToolStripMenuItem, AyudaToolStripMenuItem1})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(897, 28)
+        MenuStrip1.Size = New Size(1307, 28)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -485,7 +487,7 @@ Partial Class CAP_Cheques
         ' 
         ' Label3
         ' 
-        Label3.BackColor = SystemColors.ActiveBorder
+        Label3.BackColor = Color.Yellow
         Label3.Location = New Point(467, 62)
         Label3.Name = "Label3"
         Label3.Size = New Size(155, 25)
@@ -571,64 +573,23 @@ Partial Class CAP_Cheques
         ' 
         ' DataGridView1
         ' 
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCuenta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColFolioFis})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCuenta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColReda, ColFolioFis})
         DataGridView1.GridColor = SystemColors.ActiveBorder
-        DataGridView1.Location = New Point(39, 240)
+        DataGridView1.Location = New Point(24, 250)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(822, 288)
+        DataGridView1.Size = New Size(1177, 271)
         DataGridView1.TabIndex = 13
-        ' 
-        ' ColCuenta
-        ' 
-        ColCuenta.HeaderText = "Cuenta"
-        ColCuenta.MinimumWidth = 6
-        ColCuenta.Name = "ColCuenta"
-        ColCuenta.Width = 125
-        ' 
-        ' ColSubCta
-        ' 
-        ColSubCta.HeaderText = "SubCuenta"
-        ColSubCta.MinimumWidth = 6
-        ColSubCta.Name = "ColSubCta"
-        ColSubCta.Width = 125
-        ' 
-        ' ColNom
-        ' 
-        ColNom.HeaderText = "Nombre"
-        ColNom.MinimumWidth = 6
-        ColNom.Name = "ColNom"
-        ColNom.Width = 125
-        ' 
-        ' ColParcial
-        ' 
-        ColParcial.HeaderText = "Parcial"
-        ColParcial.MinimumWidth = 6
-        ColParcial.Name = "ColParcial"
-        ColParcial.Width = 125
-        ' 
-        ' ColDebe
-        ' 
-        ColDebe.HeaderText = "Debe"
-        ColDebe.MinimumWidth = 6
-        ColDebe.Name = "ColDebe"
-        ColDebe.Width = 125
-        ' 
-        ' ColHaber
-        ' 
-        ColHaber.HeaderText = "Haber"
-        ColHaber.MinimumWidth = 6
-        ColHaber.Name = "ColHaber"
-        ColHaber.Width = 125
-        ' 
-        ' ColFolioFis
-        ' 
-        ColFolioFis.HeaderText = "Folio Fiscal"
-        ColFolioFis.MinimumWidth = 6
-        ColFolioFis.Name = "ColFolioFis"
-        ColFolioFis.Width = 125
         ' 
         ' Label7
         ' 
@@ -746,7 +707,7 @@ Partial Class CAP_Cheques
         GroupBox1.Controls.Add(Label8)
         GroupBox1.Controls.Add(TextBox6)
         GroupBox1.Controls.Add(Label7)
-        GroupBox1.Location = New Point(45, 550)
+        GroupBox1.Location = New Point(91, 634)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(610, 251)
         GroupBox1.TabIndex = 26
@@ -755,7 +716,7 @@ Partial Class CAP_Cheques
         ' GroupBox2
         ' 
         GroupBox2.Controls.Add(CheckBox2)
-        GroupBox2.Location = New Point(674, 566)
+        GroupBox2.Location = New Point(720, 650)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(120, 101)
         GroupBox2.TabIndex = 27
@@ -780,11 +741,67 @@ Partial Class CAP_Cheques
         ' 
         OpenFileDialog4.FileName = "OpenFileDialog4"
         ' 
+        ' ColCuenta
+        ' 
+        ColCuenta.HeaderText = "Cuenta"
+        ColCuenta.MinimumWidth = 6
+        ColCuenta.Name = "ColCuenta"
+        ColCuenta.Width = 125
+        ' 
+        ' ColSubCta
+        ' 
+        ColSubCta.HeaderText = "SubCta"
+        ColSubCta.MinimumWidth = 6
+        ColSubCta.Name = "ColSubCta"
+        ColSubCta.Width = 125
+        ' 
+        ' ColNom
+        ' 
+        ColNom.HeaderText = "Nombre"
+        ColNom.MinimumWidth = 6
+        ColNom.Name = "ColNom"
+        ColNom.Width = 125
+        ' 
+        ' ColParcial
+        ' 
+        ColParcial.HeaderText = "Parcial"
+        ColParcial.MinimumWidth = 6
+        ColParcial.Name = "ColParcial"
+        ColParcial.Width = 125
+        ' 
+        ' ColDebe
+        ' 
+        ColDebe.HeaderText = "Debe"
+        ColDebe.MinimumWidth = 6
+        ColDebe.Name = "ColDebe"
+        ColDebe.Width = 125
+        ' 
+        ' ColHaber
+        ' 
+        ColHaber.HeaderText = "Haber"
+        ColHaber.MinimumWidth = 6
+        ColHaber.Name = "ColHaber"
+        ColHaber.Width = 125
+        ' 
+        ' ColReda
+        ' 
+        ColReda.HeaderText = "Redacción"
+        ColReda.MinimumWidth = 6
+        ColReda.Name = "ColReda"
+        ColReda.Width = 125
+        ' 
+        ' ColFolioFis
+        ' 
+        ColFolioFis.HeaderText = "Folio Fiscal"
+        ColFolioFis.MinimumWidth = 6
+        ColFolioFis.Name = "ColFolioFis"
+        ColFolioFis.Width = 125
+        ' 
         ' CAP_Cheques
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(897, 901)
+        ClientSize = New Size(1307, 1034)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Controls.Add(DataGridView1)
@@ -804,6 +821,7 @@ Partial Class CAP_Cheques
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
         Name = "CAP_Cheques"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "CAP_Cheques"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
@@ -908,5 +926,6 @@ Partial Class CAP_Cheques
     Friend WithEvents ColParcial As DataGridViewTextBoxColumn
     Friend WithEvents ColDebe As DataGridViewTextBoxColumn
     Friend WithEvents ColHaber As DataGridViewTextBoxColumn
+    Friend WithEvents ColReda As DataGridViewTextBoxColumn
     Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
 End Class
