@@ -195,7 +195,7 @@ Module Modulo_EstructurasDeDatos
 	End Structure
 
 
-	Structure empre
+	Structure empresa
 		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
 		Public añoEmpresa As Integer
 		Public sm As Long
@@ -218,6 +218,7 @@ Module Modulo_EstructurasDeDatos
 	Public cuentasDeBanco As Clabnx
 	Public otrosCampos As OtrasCh
 	Public nominaCompleta As Integer
+	Public datosEmpresa As empresa
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
