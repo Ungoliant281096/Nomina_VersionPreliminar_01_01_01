@@ -72,10 +72,10 @@ Partial Class NOM_CapturarNominaQuincenal
         Me.DetalleCalculoImptosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportarDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImportarDatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.optionNominaNormal = New System.Windows.Forms.RadioButton()
+        Me.optionNominaEspecial = New System.Windows.Forms.RadioButton()
+        Me.optionPrimeraQuincena = New System.Windows.Forms.RadioButton()
+        Me.OptionSegundaQuincena = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -434,54 +434,54 @@ Partial Class NOM_CapturarNominaQuincenal
         Me.ImportarDatosToolStripMenuItem.Size = New System.Drawing.Size(124, 24)
         Me.ImportarDatosToolStripMenuItem.Text = "Importar Datos"
         '
-        'RadioButton1
+        'optionNominaNormal
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(31, 37)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(80, 24)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Normal"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.optionNominaNormal.AutoSize = True
+        Me.optionNominaNormal.Location = New System.Drawing.Point(31, 37)
+        Me.optionNominaNormal.Name = "optionNominaNormal"
+        Me.optionNominaNormal.Size = New System.Drawing.Size(80, 24)
+        Me.optionNominaNormal.TabIndex = 1
+        Me.optionNominaNormal.TabStop = True
+        Me.optionNominaNormal.Text = "Normal"
+        Me.optionNominaNormal.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'optionNominaEspecial
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(31, 78)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(84, 24)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Especial"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.optionNominaEspecial.AutoSize = True
+        Me.optionNominaEspecial.Location = New System.Drawing.Point(31, 78)
+        Me.optionNominaEspecial.Name = "optionNominaEspecial"
+        Me.optionNominaEspecial.Size = New System.Drawing.Size(84, 24)
+        Me.optionNominaEspecial.TabIndex = 2
+        Me.optionNominaEspecial.TabStop = True
+        Me.optionNominaEspecial.Text = "Especial"
+        Me.optionNominaEspecial.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'optionPrimeraQuincena
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(28, 37)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(81, 24)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Primera"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.optionPrimeraQuincena.AutoSize = True
+        Me.optionPrimeraQuincena.Location = New System.Drawing.Point(28, 37)
+        Me.optionPrimeraQuincena.Name = "optionPrimeraQuincena"
+        Me.optionPrimeraQuincena.Size = New System.Drawing.Size(81, 24)
+        Me.optionPrimeraQuincena.TabIndex = 3
+        Me.optionPrimeraQuincena.TabStop = True
+        Me.optionPrimeraQuincena.Text = "Primera"
+        Me.optionPrimeraQuincena.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'OptionSegundaQuincena
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(28, 78)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(88, 24)
-        Me.RadioButton4.TabIndex = 4
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Segunda"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.OptionSegundaQuincena.AutoSize = True
+        Me.OptionSegundaQuincena.Location = New System.Drawing.Point(28, 78)
+        Me.OptionSegundaQuincena.Name = "OptionSegundaQuincena"
+        Me.OptionSegundaQuincena.Size = New System.Drawing.Size(88, 24)
+        Me.OptionSegundaQuincena.TabIndex = 4
+        Me.OptionSegundaQuincena.TabStop = True
+        Me.OptionSegundaQuincena.Text = "Segunda"
+        Me.OptionSegundaQuincena.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.optionNominaEspecial)
+        Me.GroupBox1.Controls.Add(Me.optionNominaNormal)
         Me.GroupBox1.Location = New System.Drawing.Point(50, 61)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(146, 142)
@@ -491,8 +491,8 @@ Partial Class NOM_CapturarNominaQuincenal
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
+        Me.GroupBox2.Controls.Add(Me.OptionSegundaQuincena)
+        Me.GroupBox2.Controls.Add(Me.optionPrimeraQuincena)
         Me.GroupBox2.Location = New System.Drawing.Point(222, 61)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(155, 142)
@@ -851,10 +851,10 @@ Partial Class NOM_CapturarNominaQuincenal
     Friend WithEvents IndividualesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TotalesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DirectorioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents optionNominaNormal As RadioButton
+    Friend WithEvents optionNominaEspecial As RadioButton
+    Friend WithEvents optionPrimeraQuincena As RadioButton
+    Friend WithEvents OptionSegundaQuincena As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TextBox1 As TextBox

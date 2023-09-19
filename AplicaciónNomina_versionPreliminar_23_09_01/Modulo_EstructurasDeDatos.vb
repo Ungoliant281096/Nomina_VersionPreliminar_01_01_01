@@ -85,7 +85,7 @@ Module Modulo_EstructurasDeDatos
 	Structure basini
 		<VBFixedString(255), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=255)> Public datoArch As String
 	End Structure
-	Structure nom
+	Structure nominaQuincenal
 		Public dias As Long
 		Public hsnor As Long
 		Public hs_no As Long
@@ -111,6 +111,25 @@ Module Modulo_EstructurasDeDatos
 		Public telefono As Long
 		Public otraded As Long
 	End Structure
+	Structure nuevaNominaCompleta
+		<VBFixedString(50), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=50)> Public ArchImp As String
+		Public PSubDi As Long
+		Public subapl As Long
+		Public subNap As Long
+		Public Cretot As Long
+		Public CredNe As Long
+		Public ImpTOt As Long
+	End Structure
+
+	Structure nominaAnterior
+		Public inggrav As Long
+		Public imptoret As Long
+		Public credcal As Long
+		Public subapl As Long
+		Public subtotal As Long
+		Public subnoapl As Long
+	End Structure
+
 	Structure ob
 		Public O_1 As Integer
 		Public por_1 As Integer
@@ -197,7 +216,7 @@ Module Modulo_EstructurasDeDatos
 
 	Structure empresa
 		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
-		Public añoEmpresa As Integer
+		Public añoEmpresa As Long
 		Public sm As Long
 		Public psub As Long
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
@@ -212,13 +231,13 @@ Module Modulo_EstructurasDeDatos
 	Public cuentas As Ct
 	Public DATOS As DAT_OS
 	Public OPER As oper_aciones
-	Public archivoNomina As nom
 	Public maestro As ob
 	Public personal As per
 	Public cuentasDeBanco As Clabnx
 	Public otrosCampos As OtrasCh
-	Public nominaCompleta As Integer
 	Public datosEmpresa As empresa
+	Public nominaCompleta As nuevaNominaCompleta
+	Public archivoNominaQuincenal As nominaQuincenal
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
@@ -230,7 +249,7 @@ Module Modulo_EstructurasDeDatos
 	Public largoCatalogoAuxiliar As Integer
 	Public largoCatalogoMayor As Integer
 	Public largoMaestro As Integer
-	Public largoNomina As Integer
+	Public largoNominaQuincenal As Integer
 	Public largoNominaCompleta As Integer
 
 	REM numeros asigando a los random
@@ -239,8 +258,8 @@ Module Modulo_EstructurasDeDatos
 	Public numeroPersonal As Integer = 3
 	Public numeroBancos As Integer = 4
 	Public numeroOtros As Integer = 5
-	Public numeroNomina As Integer = 6
-	Public numeroMaestro As Integer = 7
+	Public numeroMaestro As Integer = 6
+	Public numeroNominaQuincenal As Integer = 7
 	Public numeronominaCompleta As Integer = 8
 
 	Public Sub abrirRandomNominaCaptura()
@@ -263,12 +282,6 @@ Module Modulo_EstructurasDeDatos
 
 		FileOpen(numeroMaestro, rutaDelEjecutable + "\maestro.dno", OpenMode.Random,,, Len(maestro))
 		largoMaestro = LOF(numeroMaestro) \ Len(maestro)
-
-		'FileOpen(numeronominaCompleta, rutaDelEjecutable + "", OpenMode.Random,,, Len(nominaCompleta))
-		'largoNominaCompleta = LOF(numeronominaCompleta) \ Len(nominaCompleta)
-
-		'FileOpen(numeroNomina, rutaDelEjecutable + "", OpenMode.Random,,, Len(archivoNomina))
-		'largoNomina = LOF(numeroNomina) \ Len(archivoNomina)
 
 	End Sub
 
