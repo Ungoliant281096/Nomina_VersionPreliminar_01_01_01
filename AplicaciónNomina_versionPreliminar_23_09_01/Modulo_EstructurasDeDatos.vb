@@ -273,7 +273,7 @@ Module Modulo_EstructurasDeDatos
 	Public Ruta_Acceso_Contr As String
 	Public Dir_Costos As String
 	Public cm As String
-	Public Mm(15) As String, dd(15) As Integer, m_m As Integer, dia As Integer
+	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
 	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
 	REM largos de los random
 	Public largoDeBancos As Integer

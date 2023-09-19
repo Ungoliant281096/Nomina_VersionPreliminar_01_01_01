@@ -7,6 +7,7 @@ Public Class CAP_Cheques
     Dim tope As String
     Dim Archivo As String
     Dim nombreEmpresa As String
+    Dim KeyPress As Integer
 
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
@@ -25,8 +26,8 @@ Public Class CAP_Cheques
             FileGet(1, DATOS, 1)
             Label2.BackColor = Color.Yellow
 
-            m_m = 1
-            Label3.Text = "de" + RTrim(Mm(m_m)) + "de" + DATOS.a_o
+            mespoliza = 1
+            Label3.Text = "de" + RTrim(Mm(mespoliza)) + "de" + DATOS.a_o
             Me.Text = Mid(DATOS.D1, 1, 32) & "  Captura de cheques"
             nombreEmpresa = Trim(DATOS.D2)
             ultimo.texto = RTrim(DATOS.No_arch)
@@ -71,6 +72,7 @@ Public Class CAP_Cheques
         FileClose(3)
 
     End Sub
+
     Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
 
 
@@ -103,9 +105,8 @@ Public Class CAP_Cheques
                 Show()
                 ' Realiza alguna acción con el archivo seleccionado.
 
-            End If
 
-            If openFileDialog1.FileName <> "" Then
+            ElseIf openFileDialog1.FileName <> "" Then
                 Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
                 MientraS = openFileDialog1.FileName
 
@@ -116,15 +117,17 @@ Public Class CAP_Cheques
                 ChDir("MientraS")
 
                 FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
-
+                SCont.guarda = MientraS
+                FilePut(3, SCont, 1)
                 FileClose(3)
+
                 cm = 0
                 inicio()
                 sigpaso()
                 'MeEne_Click 1
             End If
         Catch ex As Exception
-            MsgBox("Error")
+            MsgBox("Error", "Captura")
         End Try
     End Sub
 
@@ -246,15 +249,97 @@ Public Class CAP_Cheques
         ColFolioFis.Width = 310
 
     End Sub
+    Sub incluirMes()
 
+        Dim mes As String
+
+        mes = DateTime.Now.ToString("MM")
+        TextBox1.Text = DateTime.Now.Day.ToString()
+
+        If TextBox1.Text = DateTime.Now.Day.ToString() Then
+            KeyPress = Keys.Enter
+
+        End If
+
+        'If mes = "01" Then
+        '    EneroToolStripMenuItem(1)
+        'ElseIf mes = "02" Then
+        '    FebreroToolStripMenuItem(2)
+
+        'ElseIf mes = "03" Then
+        '    MarzoToolStripMenuItem(3)
+
+        'ElseIf mes = "04" Then
+        '    AbrilToolStripMenuItem(4)
+
+        'ElseIf mes = "05" Then
+        '    MayoToolStripMenuItem(5)
+
+        'ElseIf mes = "06" Then
+        '    JunioToolStripMenuItem(6)
+
+        'ElseIf mes = "07" Then
+        '    JulioToolStripMenuItem(7)
+
+        'ElseIf mes = "08" Then
+        '    AgostoToolStripMenuItem(8)
+
+        'ElseIf mes = "07" Then
+        '    SeptiembreToolStripMenuItem(9)
+
+        'ElseIf mes = "08" Then
+        '    OctubreToolStripMenuItem(10)
+
+        'ElseIf mes = "07" Then
+        '    NoviembreToolStripMenuItem(11)
+
+        'ElseIf mes = "08" Then
+        '    DiciembreToolStripMenuItem(12)
+
+        'End If
+
+
+        Select Case mes
+            Case "01"
+                EneroToolStripMenuItem(1)
+            Case "02"
+                FebreroToolStripMenuItem(2)
+            Case "03"
+                MarzoToolStripMenuItem(3)
+            Case "04"
+                AbrilToolStripMenuItem(4)
+            Case "05"
+                MayoToolStripMenuItem(5)
+            Case "06"
+                JunioToolStripMenuItem(6)
+            Case "07"
+                JulioToolStripMenuItem(7)
+            Case "08"
+                AgostoToolStripMenuItem(8)
+            Case "09"
+                SeptiembreToolStripMenuItem(9)
+            Case "10"
+                OctubreToolStripMenuItem(10)
+            Case "11"
+                NoviembreToolStripMenuItem(11)
+            Case "12"
+                DiciembreToolStripMenuItem(12)
+        End Select
+
+
+
+
+
+
+
+    End Sub
     Private Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
         Dim m_m As Integer = 1
 
         Label2.Text = "de" + RTrim(Mm(1)) + "de" + DATOS.a_o
-
+        m_m = MenuStrip1.GetItemAt(,)
         Label2.BackColor = Color.Red
         CAP_LocalizarPolizas.Show()
 
     End Sub
-
 End Class
