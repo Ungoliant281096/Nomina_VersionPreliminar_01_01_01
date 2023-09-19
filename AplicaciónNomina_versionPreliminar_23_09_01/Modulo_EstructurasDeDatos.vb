@@ -297,6 +297,7 @@ Module Modulo_EstructurasDeDatos
 
 	Public Sub abrirRandomNominaCaptura()
 
+		' hola quita este 
 
 		FileOpen(numeroMayor, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
 		largoCatalogoMayor = LOF(numeroMayor) \ Len(CATMAY)
