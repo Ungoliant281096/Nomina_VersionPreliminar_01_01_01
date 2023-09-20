@@ -218,7 +218,8 @@ Module Modulo_EstructurasDeDatos
 		Public redaccion As String
 	End Structure
 	Structure sc
-		Public guarda As String
+
+		<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public guarda As String
 	End Structure
 	Structure Clabnx
 		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
@@ -266,16 +267,18 @@ Module Modulo_EstructurasDeDatos
 	Public datosEmpresa As empresa
 	Public nominaCompleta As nuevaNominaCompleta
 	Public archivoNominaQuincenal As nominaQuincenal
+	Public SCont As sc
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-	Public SCont As sc
+
 	Public Ruta_Acceso_Contr As String
 	Public Dir_Costos As String
 	Public cm As String
 	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
 	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
 	REM largos de los random
+	Public largoGconta As Integer
 	Public largoDeBancos As Integer
 	Public largoPersonal As Integer
 	Public largoOtrosCammpos As Integer
@@ -294,6 +297,7 @@ Module Modulo_EstructurasDeDatos
 	Public numeroMaestro As Integer = 6
 	Public numeroNominaQuincenal As Integer = 7
 	Public numeronominaCompleta As Integer = 8
+	Public numeroGConta As Integer = 9
 
 	Public Sub abrirRandomNominaCaptura()
 
