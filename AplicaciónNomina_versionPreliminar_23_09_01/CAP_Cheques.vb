@@ -269,43 +269,6 @@ Public Class CAP_Cheques
 
         End If
 
-        'If mes = "01" Then
-        '    EneroToolStripMenuItem(1)
-        'ElseIf mes = "02" Then
-        '    FebreroToolStripMenuItem(2)
-
-        'ElseIf mes = "03" Then
-        '    MarzoToolStripMenuItem(3)
-
-        'ElseIf mes = "04" Then
-        '    AbrilToolStripMenuItem(4)
-
-        'ElseIf mes = "05" Then
-        '    MayoToolStripMenuItem(5)
-
-        'ElseIf mes = "06" Then
-        '    JunioToolStripMenuItem(6)
-
-        'ElseIf mes = "07" Then
-        '    JulioToolStripMenuItem(7)
-
-        'ElseIf mes = "08" Then
-        '    AgostoToolStripMenuItem(8)
-
-        'ElseIf mes = "07" Then
-        '    SeptiembreToolStripMenuItem(9)
-
-        'ElseIf mes = "08" Then
-        '    OctubreToolStripMenuItem(10)
-
-        'ElseIf mes = "07" Then
-        '    NoviembreToolStripMenuItem(11)
-
-        'ElseIf mes = "08" Then
-        '    DiciembreToolStripMenuItem(12)
-
-        'End If
-
 
         Select Case mes
             Case "01"

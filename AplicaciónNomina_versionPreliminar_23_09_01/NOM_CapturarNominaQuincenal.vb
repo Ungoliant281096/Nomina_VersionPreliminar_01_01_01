@@ -66,7 +66,14 @@ Public Class NOM_CapturarNominaQuincenal
         ' Aqui debe llamar la funcion checarFecha
         ' cehcarFecha()
 
+        FileOpen(numeroNominaQuincenal, rutaDelEjecutable + archivoPrimeraQuincena, OpenMode.Random,,, Len(archivoNominaQuincenal))
+        largoNominaQuincenal = LOF(numeroNominaQuincenal) \ Len(archivoNominaQuincenal)
 
+        FileOpen(numeroNominaQuincenal, rutaDelEjecutable + archivoSegundaQuincena, OpenMode.Random,,, Len(archivoNominaQuincenal))
+        largoNominaQuincenal = LOF(numeroNominaQuincenal) \ Len(archivoNominaQuincenal)
+
+        FileOpen(numeronominaCompleta, rutaDelEjecutable + archivo, OpenMode.Random,,, Len(nominaCompleta))
+        largoNominaCompleta = LOF(numeronominaCompleta) \ Len(nominaCompleta)
 
         For i As Integer = 1 To largoPersonal
             'FileGet(numeroNomina, archivoNomina, i)
@@ -99,10 +106,7 @@ Public Class NOM_CapturarNominaQuincenal
                 If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
                     ' Llamada a funcion
                 End If
-
             End If
-
-
         Next i
     End Sub
 End Class
