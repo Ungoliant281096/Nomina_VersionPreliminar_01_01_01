@@ -28,7 +28,7 @@ Public Class CAP_Cheques
             Label2.BackColor = Color.Yellow
 
             mespoliza = 1
-            Label3.Text = "de" + RTrim(Mm(mespoliza)) + "de" + DATOS.a_o
+            Label2.Text = "de" + RTrim(Mm(mespoliza)) + "de" + DATOS.a_o
             Me.Text = Mid(DATOS.D1, 1, 32) & "  Captura de cheques"
             nombreEmpresa = Trim(DATOS.D2)
             ultimo.texto = RTrim(DATOS.No_arch)
@@ -103,32 +103,33 @@ Public Class CAP_Cheques
             .Title = "Seleccionar archivo"
         }
             If openFileDialog1.ShowDialog() = DialogResult.OK Then
-                Show()
+                'Show()
                 ' Realiza alguna acción con el archivo seleccionado.
+                If openFileDialog1.FileName <> "" Then
+                    Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
+                    MientraS = openFileDialog1.FileName
 
 
-            ElseIf openFileDialog1.FileName <> "" Then
-                Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-                MientraS = openFileDialog1.FileName
+                    openFileDialog1.FileName.Substring(0, tope)
 
 
-                openFileDialog1.FileName.Substring(0, tope)
+                    ChDir("MientraS")
 
+                    FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
+                    SCont.guarda = MientraS
+                    FilePut(3, SCont, 1)
+                    FileClose(3)
 
-                ChDir("MientraS")
-
-                FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
-                SCont.guarda = MientraS
-                FilePut(3, SCont, 1)
-                FileClose(3)
-
-                cm = 0
-                inicio()
-                sigpaso()
-                'MeEne_Click 1
+                    cm = 0
+                    inicio()
+                    sigpaso()
+                    'MeEne_Click 1
+                End If
             End If
+
+            Exit Sub
         Catch ex As Exception
-            MsgBox("Error", "Captura")
+            MsgBox("Error")
         End Try
     End Sub
 
@@ -307,32 +308,32 @@ Public Class CAP_Cheques
         'End If
 
 
-        Select Case mes
-            Case "01"
-                EneroToolStripMenuItem(1)
-            Case "02"
-                FebreroToolStripMenuItem(2)
-            Case "03"
-                MarzoToolStripMenuItem(3)
-            Case "04"
-                AbrilToolStripMenuItem(4)
-            Case "05"
-                MayoToolStripMenuItem(5)
-            Case "06"
-                JunioToolStripMenuItem(6)
-            Case "07"
-                JulioToolStripMenuItem(7)
-            Case "08"
-                AgostoToolStripMenuItem(8)
-            Case "09"
-                SeptiembreToolStripMenuItem(9)
-            Case "10"
-                OctubreToolStripMenuItem(10)
-            Case "11"
-                NoviembreToolStripMenuItem(11)
-            Case "12"
-                DiciembreToolStripMenuItem(12)
-        End Select
+        'Select Case mes
+        '    Case "01"
+        '        EneroToolStripMenuItem(1)
+        '    Case "02"
+        '        FebreroToolStripMenuItem(2)
+        '    Case "03"
+        '        MarzoToolStripMenuItem(3)
+        '    Case "04"
+        '        AbrilToolStripMenuItem(4)
+        '    Case "05"
+        '        MayoToolStripMenuItem(5)
+        '    Case "06"
+        '        JunioToolStripMenuItem(6)
+        '    Case "07"
+        '        JulioToolStripMenuItem(7)
+        '    Case "08"
+        '        AgostoToolStripMenuItem(8)
+        '    Case "09"
+        '        SeptiembreToolStripMenuItem(9)
+        '    Case "10"
+        '        OctubreToolStripMenuItem(10)
+        '    Case "11"
+        '        NoviembreToolStripMenuItem(11)
+        '    Case "12"
+        '        DiciembreToolStripMenuItem(12)
+        'End Select
 
 
 
@@ -342,12 +343,97 @@ Public Class CAP_Cheques
 
     End Sub
     Private Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
-        Dim m_m As Integer = 1
-
         Label2.Text = "de" + RTrim(Mm(1)) + "de" + DATOS.a_o
-        m_m = MenuStrip1.GetItemAt(,)
+        mespoliza = 1
         Label2.BackColor = Color.Red
         CAP_LocalizarPolizas.Show()
 
     End Sub
+
+    Private Sub FebreroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FebreroToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(2)) + "de" + DATOS.a_o
+        mespoliza = 2
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+
+    End Sub
+
+    Private Sub MarzoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarzoToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(3)) + "de" + DATOS.a_o
+        mespoliza = 3
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub AbrilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrilToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(4)) + "de" + DATOS.a_o
+        mespoliza = 4
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub MayoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MayoToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(5)) + "de" + DATOS.a_o
+        mespoliza = 5
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub JunioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JunioToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(6)) + "de" + DATOS.a_o
+        mespoliza = 6
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub JulioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JulioToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(7)) + "de" + DATOS.a_o
+        mespoliza = 7
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub AgostoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgostoToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(8)) + "de" + DATOS.a_o
+        mespoliza = 8
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub SeptiembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeptiembreToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(9)) + "de" + DATOS.a_o
+        mespoliza = 9
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub OctubreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OctubreToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(10)) + "de" + DATOS.a_o
+        mespoliza = 10
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub NoviembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoviembreToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(11)) + "de" + DATOS.a_o
+        mespoliza = 11
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub DiciembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiciembreToolStripMenuItem.Click
+        Label2.Text = "de" + RTrim(Mm(12)) + "de" + DATOS.a_o
+        mespoliza = 12
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+    End Sub
+
+    Private Sub IncorporaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncorporaciónToolStripMenuItem.Click
+        Label2.Text = RTrim(Mm(13)) + "de saldos " + (DATOS.a_o)
+        mespoliza = 13
+        Label2.BackColor = Color.Red
+        CAP_LocalizarPolizas.Show()
+
+    End Sub
+
 End Class
