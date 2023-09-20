@@ -8,6 +8,7 @@ Public Class CAP_Cheques
     Dim Archivo As String
     Dim nombreEmpresa As String
     Dim KeyPress As Integer
+    Dim mi_entr As String
 
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
@@ -139,6 +140,13 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
+        Dim mi_ent As String
+        mi_entr = ultimo.texto
+        FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
+        FileGet(3, SCont, 2)
+
+
+
         CAP_Entrada.Show()
 
     End Sub
