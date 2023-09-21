@@ -37,19 +37,22 @@ Public Class CAP_Cheques
 
     End Sub
     Sub inicio()
+
         Dim checar As Integer
-        FileOpen(numeroGConta, Ruta_Acceso_Contr & "Gcont_Arr", OpenMode.Random, , , Len(SCont))
+        FileOpen(numeroGConta, "Gcont_Arr", OpenMode.Random, , , Len(SCont))
         FileGet(numeroGConta, SCont, 1)
+
         If SCont.guarda.Substring(0, 1) <= " " Then
             ChDrive("C:\")
         Else
             If Not SCont.guarda.StartsWith("C") Then
-                ChDrive(SCont.guarda.Substring(0, numeroGConta))
+                ChDrive(SCont.guarda.Substring(0, 1))
             End If
 
             ChDir(SCont.guarda.Trim())
 
         End If
+
 
         FileGet(numeroGConta, SCont, 2)
         Dir_Costos = SCont.guarda.Trim()
@@ -102,37 +105,32 @@ Public Class CAP_Cheques
         }
             If openFileDialog1.ShowDialog() = DialogResult.OK Then
 
-                ' Realiza alguna acción con el archivo seleccionado.
-                If openFileDialog1.FileName <> "" Then
+            ' Realiza alguna acción con el archivo seleccionado.
+            If openFileDialog1.FileName <> "" Then
 
-                    Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-
-
-                    'openFileDialog1.FileName.Substring(0, tope)
-
-                    MientraS = (openFileDialog1.FileName.Substring(0, tope))
-
-                       ChDir(MientraS)
+                Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
 
 
-                    'MientraS = (openFileDialog1.FileName)
-                    'ChDir(MientraS)
+                MientraS = (openFileDialog1.FileName.Substring(1))
+                'aqui esta el problema
+                ChDir(MientraS)
 
-                    FileOpen(numeroGConta, "C:\GconTA\Gcont", OpenMode.Random,,, Len(SCont))
-                    SCont.guarda = MientraS
-                    FilePut(numeroGConta, SCont, 1)
-                    FileClose(numeroGConta)
 
-                    cm = 0
-                    inicio()
-                    sigpaso()
-                    ''MeEne_Click 1
-                End If
+                'FileOpen(numeroGConta, Ruta_Acceso_Contr + "\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+                'SCont.guarda = MientraS
+                'FilePut(numeroGConta, SCont, 1)
+                'FileClose(numeroGConta)
+
+                cm = 0
+                'inicio()
+                sigpaso()
+                ''MeEne_Click 1
             End If
+        End If
 
             Exit Sub
         'Catch ex As Exception
-        'MsgBox(Err.Description)
+        ' MsgBox(Err.Description)
         'End Try
     End Sub
 
@@ -144,14 +142,14 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
-        Dim mi_ent As String
-        mi_entr = ultimo.texto
-        FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
-        FileGet(3, SCont, 2)
+        'Dim mi_ent As String
+        'mi_entr = ultimo.texto
+        'FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+        'FileGet(3, SCont, 2)
 
 
 
-        CAP_Entrada.Show()
+        'CAP_Entrada.Show()
 
     End Sub
 
