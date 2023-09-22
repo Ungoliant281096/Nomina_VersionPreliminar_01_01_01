@@ -38,7 +38,7 @@ Public Class CAP_Cheques
     End Sub
     Sub inicio()
 
-        Dim checar As Integer
+        Dim checar As String
         FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
         FileGet(numeroGConta, SCont, 1)
 
