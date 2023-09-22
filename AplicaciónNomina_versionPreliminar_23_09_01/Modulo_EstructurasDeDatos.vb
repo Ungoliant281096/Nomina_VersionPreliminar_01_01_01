@@ -284,6 +284,7 @@ Module Modulo_EstructurasDeDatos
 	Public largoMaestro As Integer
 	Public largoNominaQuincenal As Integer
 	Public largoNominaCompleta As Integer
+	Public largoEmpresa As Integer
 
 	REM numeros asigando a los random
 	Public numeroMayor As Integer = 1
@@ -294,6 +295,8 @@ Module Modulo_EstructurasDeDatos
 	Public numeroMaestro As Integer = 6
 	Public numeroNominaQuincenal As Integer = 7
 	Public numeronominaCompleta As Integer = 8
+
+	Public numeroEmprsa As Integer = 10
 
 	Public Sub abrirRandomNominaCaptura()
 
@@ -316,6 +319,9 @@ Module Modulo_EstructurasDeDatos
 
 		FileOpen(numeroMaestro, rutaDelEjecutable + "\maestro.dno", OpenMode.Random,,, Len(maestro))
 		largoMaestro = LOF(numeroMaestro) \ Len(maestro)
+
+		FileOpen(numeroEmprsa, rutaDelEjecutable + "\EMPRESA.dno", OpenMode.Random,,, Len(datosEmpresa))
+		largoEmpresa = LOF(numeroEmprsa) \ Len(datosEmpresa)
 
 	End Sub
 

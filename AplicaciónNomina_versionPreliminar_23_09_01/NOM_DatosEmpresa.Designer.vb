@@ -22,167 +22,169 @@ Partial Class NOM_DatosEmpresa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        MenuStrip1 = New MenuStrip()
-        EmpresaToolStripMenuItem = New ToolStripMenuItem()
-        SalirToolStripMenuItem = New ToolStripMenuItem()
-        Label1 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
-        Label2 = New Label()
-        Label3 = New Label()
-        TextBox4 = New TextBox()
-        Label4 = New Label()
-        Label5 = New Label()
-        TextBox5 = New TextBox()
-        Button1 = New Button()
-        MenuStrip1.SuspendLayout()
-        SuspendLayout()
-        ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {EmpresaToolStripMenuItem})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(709, 28)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
-        ' 
-        ' EmpresaToolStripMenuItem
-        ' 
-        EmpresaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SalirToolStripMenuItem})
-        EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        EmpresaToolStripMenuItem.Size = New Size(80, 24)
-        EmpresaToolStripMenuItem.Text = "Empresa"
-        ' 
-        ' SalirToolStripMenuItem
-        ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(121, 26)
-        SalirToolStripMenuItem.Text = "Salir"
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 15F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label1.Location = New Point(35, 40)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(122, 35)
-        Label1.TabIndex = 1
-        Label1.Text = "Empresa:"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(35, 78)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(405, 27)
-        TextBox1.TabIndex = 2
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(549, 120)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(125, 27)
-        TextBox2.TabIndex = 3
-        ' 
-        ' TextBox3
-        ' 
-        TextBox3.Location = New Point(549, 193)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(125, 27)
-        TextBox3.TabIndex = 4
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label2.Location = New Point(466, 120)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(53, 28)
-        Label2.TabIndex = 5
-        Label2.Text = "Año:"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label3.Location = New Point(380, 164)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(155, 56)
-        Label3.TabIndex = 6
-        Label3.Text = "Salario Minímo " & vbCrLf & "            Vigente:"
-        ' 
-        ' TextBox4
-        ' 
-        TextBox4.Location = New Point(549, 261)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(125, 27)
-        TextBox4.TabIndex = 7
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label4.Location = New Point(314, 242)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(218, 56)
-        Label4.TabIndex = 8
-        Label4.Text = "Porcentaje de Subsidio " & vbCrLf & "                         Vigente:"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label5.Location = New Point(369, 326)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(166, 56)
-        Label5.TabIndex = 9
-        Label5.Text = "Fecha del ultimo " & vbCrLf & "               cambio:"
-        ' 
-        ' TextBox5
-        ' 
-        TextBox5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
-        TextBox5.Location = New Point(549, 330)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(125, 27)
-        TextBox5.TabIndex = 10
-        ' 
-        ' Button1
-        ' 
-        Button1.FlatStyle = FlatStyle.Popup
-        Button1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Button1.Location = New Point(186, 402)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(309, 80)
-        Button1.TabIndex = 11
-        Button1.Text = "ARCHIVAR"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' NOM_DatosEmpresa
-        ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(709, 520)
-        Controls.Add(Button1)
-        Controls.Add(TextBox5)
-        Controls.Add(Label5)
-        Controls.Add(Label4)
-        Controls.Add(TextBox4)
-        Controls.Add(Label3)
-        Controls.Add(Label2)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
-        Controls.Add(Label1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
-        Name = "NOM_DatosEmpresa"
-        Text = "NOM_DatosEmpresa"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
-        ResumeLayout(False)
-        PerformLayout()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.EmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.MenuStrip1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpresaToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(709, 28)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'EmpresaToolStripMenuItem
+        '
+        Me.EmpresaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
+        Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
+        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(80, 24)
+        Me.EmpresaToolStripMenuItem.Text = "Empresa"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(121, 26)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(35, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(122, 35)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Empresa:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(35, 78)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(639, 27)
+        Me.TextBox1.TabIndex = 2
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(259, 120)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(415, 27)
+        Me.TextBox2.TabIndex = 3
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(259, 193)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(415, 27)
+        Me.TextBox3.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(35, 120)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(53, 28)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Año:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(35, 164)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(155, 56)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Salario Minímo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "            Vigente:"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(259, 261)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(415, 27)
+        Me.TextBox4.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(35, 242)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(218, 56)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Porcentaje de Subsidio " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         Vigente:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label5.Location = New System.Drawing.Point(35, 326)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(166, 56)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Fecha del ultimo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "               cambio:"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.TextBox5.Location = New System.Drawing.Point(259, 330)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(415, 27)
+        Me.TextBox5.TabIndex = 10
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Button1.Location = New System.Drawing.Point(186, 402)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(309, 80)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "ARCHIVAR"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'NOM_DatosEmpresa
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(709, 520)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Name = "NOM_DatosEmpresa"
+        Me.Text = "NOM_DatosEmpresa"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
