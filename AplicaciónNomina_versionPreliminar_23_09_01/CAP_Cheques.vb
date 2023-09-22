@@ -1,4 +1,5 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
+Imports System.IO
 Imports AplicaciónNomina_versionPreliminar_23_09_01.Modulo_EstructurasDeDatos
 
 Public Class CAP_Cheques
@@ -36,9 +37,11 @@ Public Class CAP_Cheques
 
     End Sub
     Sub inicio()
+
         Dim checar As Integer
-        FileOpen(3, Ruta_Acceso_Contr & "Gcont_Arr", OpenMode.Random, , , Len(SCont))
-        FileGet(3, SCont, 1)
+        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
+        FileGet(numeroGConta, SCont, 1)
+
         If SCont.guarda.Substring(0, 1) <= " " Then
             ChDrive("C:\")
         Else
@@ -50,12 +53,13 @@ Public Class CAP_Cheques
 
         End If
 
-        FileGet(3, SCont, 2)
+
+        FileGet(numeroGConta, SCont, 2)
         Dir_Costos = SCont.guarda.Trim()
 
-        FileGet(3, SCont, 1)
+        FileGet(numeroGConta, SCont, 1)
 
-        FileClose(3)
+        FileClose(numeroGConta)
         FileClose(1)
 
         Archivo = "DATOS"
@@ -70,7 +74,7 @@ Public Class CAP_Cheques
 
 
         ' Cerrar el archivo
-        FileClose(3)
+        FileClose(numeroGConta)
 
     End Sub
 
@@ -79,21 +83,18 @@ Public Class CAP_Cheques
 
         FileClose(1)
 
-        MientraS = ""
-        Ruta_Acceso_Contr = ""
+        'MientraS = ""
+        'Ruta_Acceso_Contr = ""
 
-        Try
+        'Try
 
-            midir = System.IO.Directory.GetCurrentDirectory()
+        midir = System.IO.Directory.GetCurrentDirectory()
             midir = midir.TrimEnd()
             Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
             If midir.EndsWith("\") Then
                 midir = midir.Substring(0, midir.Length - 1)
             End If
-            'OpenFileDialog1.InitialDirectory = "midir"
 
-            'OpenFileDialog1.CheckFileExists = True
-            'OpenFileDialog1.ShowReadOnly = False 
 
             Dim openFileDialog1 As New OpenFileDialog With {
             .InitialDirectory = "midir",
@@ -103,34 +104,34 @@ Public Class CAP_Cheques
             .Title = "Seleccionar archivo"
         }
             If openFileDialog1.ShowDialog() = DialogResult.OK Then
-                'Show()
+
                 ' Realiza alguna acción con el archivo seleccionado.
                 If openFileDialog1.FileName <> "" Then
+
                     Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-                    MientraS = openFileDialog1.FileName
 
 
-                    openFileDialog1.FileName.Substring(0, tope)
+                    MientraS = (openFileDialog1.FileName.Substring(0, tope))
+
+                    ChDir(MientraS)
 
 
-                    ChDir("MientraS")
-
-                    FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
+                    FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
                     SCont.guarda = MientraS
-                    FilePut(3, SCont, 1)
-                    FileClose(3)
+                    FilePut(numeroGConta, MientraS, 1)
+                    FileClose(numeroGConta)
 
                     cm = 0
                     inicio()
                     sigpaso()
-                    'MeEne_Click 1
+                    ''MeEne_Click 1
                 End If
             End If
 
             Exit Sub
-        Catch ex As Exception
-            MsgBox("Error")
-        End Try
+            'Catch ex As Exception
+        'MsgBox(Err.Description)
+        ' End Try
     End Sub
 
 
@@ -141,14 +142,14 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
-        Dim mi_ent As String
-        mi_entr = ultimo.texto
-        FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockRead, Len(SCont))
-        FileGet(3, SCont, 2)
+        'Dim mi_ent As String
+        'mi_entr = ultimo.texto
+        'FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+        'FileGet(3, SCont, 2)
 
 
 
-        CAP_Entrada.Show()
+        'CAP_Entrada.Show()
 
     End Sub
 
