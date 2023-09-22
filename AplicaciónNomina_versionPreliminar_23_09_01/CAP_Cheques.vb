@@ -3,13 +3,20 @@ Imports System.IO
 Imports AplicaciónNomina_versionPreliminar_23_09_01.Modulo_EstructurasDeDatos
 
 Public Class CAP_Cheques
+    Dim anuncio As String
+    Dim Archivo As String
+    Dim Arch_act As String
     Dim midir As String
     Dim MientraS As String
     Dim tope As String
-    Dim Archivo As String
     Dim nombreEmpresa As String
     Dim KeyPress As Integer
     Dim mi_entr As String
+    Dim rgtro As Integer
+
+
+
+    Dim donde As Integer
 
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
@@ -151,7 +158,59 @@ Public Class CAP_Cheques
             MsgBox(Err.Description)
         End Try
     End Sub
+    Sub Actualizacion()
+        Dim i As Integer
+        Close()
 
+        FileOpen(1, "DATOS", OpenMode.Random,,, Len(DATOS))
+        FileGet(1, DATOS, 1)
+        If DATOS.No_arch = "" Then
+            Archivo = InputBox("Teclee el nombre del archivo de datos ")
+            If Len(Archivo) > 6 Then
+                MsgBox("Nombre de archivo no valido ", vbCritical)
+                Exit Sub
+            Else
+                DATOS.No_arch = Archivo
+                FilePut(1, DATOS, 1)
+            End If
+        End If
+
+        Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.ReadOnlyChecked = True
+        openFileDialog.ShowReadOnly = False
+        openFileDialog.CheckPathExists = False
+
+        midir = System.IO.Directory.GetCurrentDirectory()
+        midir = midir.TrimEnd()
+
+        If midir.EndsWith("\") Then
+            midir = midir.Substring(0, midir.Length - 1)
+        End If
+
+        DATOS.No_arch = RTrim(DATOS.No_arch)
+        OpenFileDialog1.FileName = midir + "\" + RTrim(DATOS.No_arch) + "*.*"
+        anuncio = ""
+        anuncio = "Archivos de Operaciones (" + RTrim(DATOS.No_arch) + "*.*)|" + RTrim(DATOS.No_arch) + "*.*|Todos los archivos (*.*)|*.*"
+        'OpenFileDialog1 = anuncio
+        OpenFileDialog1.ShowDialog()
+        donde = Len(RTrim(DATOS.No_arch)) + 1
+        Arch_act = OpenFileDialog1.Title.TrimEnd()
+        Mes_Act = 0
+        For i = 1 To Len(Arch_act)
+            If (Mid(Arch_act, i, 1) >= Chr(48)) AndAlso (Mid(Arch_act, i, 1) <= Chr(57)) Then
+                Mes_Act = Val((RTrim(Arch_act), 2))
+            End If
+            If (Mid(Arch_act, i + 2, 1)) = "." Then
+                MsgBox("Archivo no Valido ", vbCritical)
+                Exit Sub
+            End If
+            Exit For
+        Next i
+
+
+
+
+    End Sub
 
 
     Private Sub AjustarChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjustarChequeToolStripMenuItem.Click
@@ -160,13 +219,14 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
-        Dim mi_ent As String
+        Dim mi_ent As String = ultimo.texto
         mi_entr = ultimo.texto
         FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
         FileGet(numeroGConta, SCont, 2)
         CAP_Entrada.Text = Trim(SCont.guarda)
-        'CAP_Entrada.Capture = "Cg-Contabilidad"
-        CAP_Entrada.Show()
+        CAP_Entrada.Label1.Text = "Ubicación de directorios"
+        CAP_Entrada.Text = "Cg-Contabilidad"
+        'CAP_Entrada.Show()
 
         If ultimo.texto <> "" Then
             If ultimo.texto.EndsWith("\") Then
@@ -174,23 +234,22 @@ Public Class CAP_Cheques
             End If
             SCont.guarda = ultimo.texto
         End If
+        CAP_Entrada.Show()
         ultimo.texto = mi_ent
         If SCont.guarda <> "" Then
             Dir_Costos = Trim(SCont.guarda)
             mi_ent = Dir(Dir_Costos)
             If mi_ent <> "" Then
-                FilePut(numeroGConta, SCont.guarda, 1)
+                FilePut(numeroGConta, SCont.guarda, 2)
+
                 Close()
 
             Else
-                MsgBox("NO EXISTE EL DIRECTORIO")
+                Threading.Thread.Sleep(5000)
+                MessageBox.Show("NO EXISTE EL DIRECTORIO", "Error")
                 Close()
             End If
         End If
-
-
-
-
 
     End Sub
 
@@ -239,6 +298,21 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub ActualizarSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActualizarSaldosToolStripMenuItem.Click
+        If (Mes_Act > 0) And (Mes_Act < 14) Then
+            FileGet(1, DATOS, Arch_act)
+            rgtro = Val(DATOS.ultimoReg)
+            Close()
+
+            'FileOpen(Arch_act, OpenMode.Random,,, Len(OPER))
+            Dm = LOF(12) / Len(OPER)
+            tope = Val(DATOS.ultimoReg)
+            If rgtro <> Dm Then
+                MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
+                Close()
+
+            End If
+
+        End If
         CAP_Actualizacion.Show()
 
     End Sub
