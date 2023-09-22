@@ -39,42 +39,60 @@ Public Class CAP_Cheques
     Sub inicio()
 
         Dim checar As String
-        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
-        FileGet(numeroGConta, SCont, 1)
 
-        If SCont.guarda.Substring(0, 1) <= " " Then
-            ChDrive("C:\")
-        Else
-            If Not SCont.guarda.StartsWith("C") Then
-                ChDrive(SCont.guarda.Substring(0, 1))
+        Try
+            FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
+            FileGet(numeroGConta, SCont, 1)
+
+            If SCont.guarda.Substring(0, 1) <= " " Then
+                ChDrive("C:\")
+            Else
+                If Not SCont.guarda.StartsWith("C") Then
+                    ChDrive(SCont.guarda.Substring(0, 1))
+                End If
+
+                ChDir(SCont.guarda.Trim())
+
             End If
 
-            ChDir(SCont.guarda.Trim())
 
-        End If
+            FileGet(numeroGConta, SCont, 2)
+            Dir_Costos = SCont.guarda.Trim()
 
+            FileGet(numeroGConta, SCont, 1)
 
-        FileGet(numeroGConta, SCont, 2)
-        Dir_Costos = SCont.guarda.Trim()
+            FileClose(numeroGConta)
+            FileClose(1)
 
-        FileGet(numeroGConta, SCont, 1)
-
-        FileClose(numeroGConta)
-        FileClose(1)
-
-        Archivo = "DATOS"
-        FileOpen(1, Archivo, OpenMode.Random,,, Len(DATOS))
-        cm = LOF(1) / Len(DATOS)
-        FileGet(1, DATOS, 1)
-        checar = Trim(DATOS.No_arch)
+            Archivo = "DATOS"
+            FileOpen(1, Archivo, OpenMode.Random,,, Len(DATOS))
+            cm = LOF(1) / Len(DATOS)
+            FileGet(1, DATOS, 1)
+            checar = Trim(DATOS.No_arch)
 
 
-        ' Bloquea la grid si se esta usando costos
+            ' Bloquea la grid si se esta usando costos
+
+            If checar = "COS" Then
+                MsgBox("Actualmente estás en el Directorio de costos " + Trim(SCont.guarda) + " Recuerda que no puedes capturar costos con este programa, utiliza el programa de costos")
+                Me.DataGridView1.Enabled = False
+                DataGridView1.Enabled = False
+            Else
+
+                Me.DataGridView1.Enabled = True
+                DataGridView1.Enabled = True
+
+            End If
 
 
 
-        ' Cerrar el archivo
-        FileClose(numeroGConta)
+
+            ' Cerrar el archivo
+            FileClose(numeroGConta)
+
+        Catch
+            MsgBox(Err.Description)
+        End Try
 
     End Sub
 
@@ -86,9 +104,9 @@ Public Class CAP_Cheques
         'MientraS = ""
         'Ruta_Acceso_Contr = ""
 
-        'Try
+        Try
 
-        midir = System.IO.Directory.GetCurrentDirectory()
+            midir = System.IO.Directory.GetCurrentDirectory()
             midir = midir.TrimEnd()
             Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
             If midir.EndsWith("\") Then
@@ -129,9 +147,9 @@ Public Class CAP_Cheques
             End If
 
             Exit Sub
-            'Catch ex As Exception
-        'MsgBox(Err.Description)
-        ' End Try
+        Catch ex As Exception
+            MsgBox(Err.Description)
+        End Try
     End Sub
 
 
@@ -142,14 +160,37 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
-        'Dim mi_ent As String
-        'mi_entr = ultimo.texto
-        'FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-        'FileGet(3, SCont, 2)
+        Dim mi_ent As String
+        mi_entr = ultimo.texto
+        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+        FileGet(numeroGConta, SCont, 2)
+        CAP_Entrada.Text = Trim(SCont.guarda)
+        'CAP_Entrada.Capture = "Cg-Contabilidad"
+        CAP_Entrada.Show()
+
+        If ultimo.texto <> "" Then
+            If ultimo.texto.EndsWith("\") Then
+                ultimo.texto = ultimo.texto & "\"
+            End If
+            SCont.guarda = ultimo.texto
+        End If
+        ultimo.texto = mi_ent
+        If SCont.guarda <> "" Then
+            Dir_Costos = Trim(SCont.guarda)
+            mi_ent = Dir(Dir_Costos)
+            If mi_ent <> "" Then
+                FilePut(numeroGConta, SCont.guarda, 1)
+                Close()
+
+            Else
+                MsgBox("NO EXISTE EL DIRECTORIO")
+                Close()
+            End If
+        End If
 
 
 
-        'CAP_Entrada.Show()
+
 
     End Sub
 
