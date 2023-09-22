@@ -267,7 +267,7 @@ Module Modulo_EstructurasDeDatos
 	Public datosEmpresa As empresa
 	Public nominaCompleta As nuevaNominaCompleta
 	Public archivoNominaQuincenal As nominaQuincenal
-	Public SCont As sc
+	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)

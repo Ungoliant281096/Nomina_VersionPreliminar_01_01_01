@@ -39,7 +39,7 @@ Public Class CAP_Cheques
     Sub inicio()
 
         Dim checar As Integer
-        FileOpen(numeroGConta, "Gcont_Arr", OpenMode.Random, , , Len(SCont))
+        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
         FileGet(numeroGConta, SCont, 1)
 
         If SCont.guarda.Substring(0, 1) <= " " Then
@@ -105,33 +105,33 @@ Public Class CAP_Cheques
         }
             If openFileDialog1.ShowDialog() = DialogResult.OK Then
 
-            ' Realiza alguna acción con el archivo seleccionado.
-            If openFileDialog1.FileName <> "" Then
+                ' Realiza alguna acción con el archivo seleccionado.
+                If openFileDialog1.FileName <> "" Then
 
-                Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-
-
-                MientraS = (openFileDialog1.FileName.Substring(1))
-                'aqui esta el problema
-                ChDir(MientraS)
+                    Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
 
 
-                'FileOpen(numeroGConta, Ruta_Acceso_Contr + "\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-                'SCont.guarda = MientraS
-                'FilePut(numeroGConta, SCont, 1)
-                'FileClose(numeroGConta)
+                    MientraS = (openFileDialog1.FileName.Substring(0, tope))
 
-                cm = 0
-                'inicio()
-                sigpaso()
-                ''MeEne_Click 1
+                    ChDir(MientraS)
+
+
+                    FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+                    SCont.guarda = MientraS
+                    FilePut(numeroGConta, MientraS, 1)
+                    FileClose(numeroGConta)
+
+                    cm = 0
+                    inicio()
+                    sigpaso()
+                    ''MeEne_Click 1
+                End If
             End If
-        End If
 
             Exit Sub
-        'Catch ex As Exception
-        ' MsgBox(Err.Description)
-        'End Try
+            'Catch ex As Exception
+        'MsgBox(Err.Description)
+        ' End Try
     End Sub
 
 
