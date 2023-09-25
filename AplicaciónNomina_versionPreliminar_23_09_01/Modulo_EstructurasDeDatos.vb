@@ -266,7 +266,19 @@ Module Modulo_EstructurasDeDatos
 	Public datosEmpresa As empresa
 	Public nominaCompleta As nuevaNominaCompleta
 	Public archivoNominaQuincenal As nominaQuincenal
-	Public SCont As sc
+	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
+	Public Mes_Act As Integer
+	REM Ubicacion del ejecutable 
+	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+
+	Public Ruta_Acceso_Contr As String
+	Public Dir_Costos As String
+	Public cm As Integer, Dm As Integer, EM As Integer, qm As Integer, Mes As Integer
+	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
+	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
+
+
 
 	REM largos de los random
 	Public largoDeBancos As Integer
