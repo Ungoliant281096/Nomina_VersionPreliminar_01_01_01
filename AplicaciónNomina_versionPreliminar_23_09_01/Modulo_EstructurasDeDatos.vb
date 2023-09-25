@@ -300,6 +300,7 @@ Module Modulo_EstructurasDeDatos
 	Public cm As String
 	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
 	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
+	Public dm As Integer
 
 	Public Sub abrirRandomNominaCaptura()
 

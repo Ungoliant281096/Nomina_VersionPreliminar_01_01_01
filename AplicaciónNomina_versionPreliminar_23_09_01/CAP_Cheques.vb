@@ -58,13 +58,13 @@ Public Class CAP_Cheques
                     ChDrive(SCont.guardaRutaDatos.Substring(0, 1))
                 End If
 
-                ChDir(SCont.guarda.Trim())
+                ChDir(SCont.guardaRutaDatos.Trim())
 
             End If
 
 
             FileGet(numeroGConta, SCont, 2)
-            Dir_Costos = SCont.guarda.Trim()
+            Dir_Costos = SCont.guardaRutaDatos.Trim()
 
             FileGet(numeroGConta, SCont, 1)
 
@@ -81,7 +81,7 @@ Public Class CAP_Cheques
             ' Bloquea la grid si se esta usando costos
 
             If checar = "COS" Then
-                MsgBox("Actualmente estás en el Directorio de costos " + Trim(SCont.guarda) + " Recuerda que no puedes capturar costos con este programa, utiliza el programa de costos")
+                MsgBox("Actualmente estás en el Directorio de costos " + Trim(SCont.guardaRutaDatos) + " Recuerda que no puedes capturar costos con este programa, utiliza el programa de costos")
                 Me.DataGridView1.Enabled = False
                 DataGridView1.Enabled = False
             Else
@@ -223,7 +223,7 @@ Public Class CAP_Cheques
         mi_entr = ultimo.texto
         FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
         FileGet(numeroGConta, SCont, 2)
-        CAP_Entrada.Text = Trim(SCont.guarda)
+        CAP_Entrada.Text = Trim(SCont.guardaRutaDatos)
         CAP_Entrada.Label1.Text = "Ubicación de directorios"
         CAP_Entrada.Text = "Cg-Contabilidad"
         'CAP_Entrada.Show()
@@ -232,15 +232,15 @@ Public Class CAP_Cheques
             If ultimo.texto.EndsWith("\") Then
                 ultimo.texto = ultimo.texto & "\"
             End If
-            SCont.guarda = ultimo.texto
+            SCont.guardaRutaDatos = ultimo.texto
         End If
         CAP_Entrada.Show()
         ultimo.texto = mi_ent
-        If SCont.guarda <> "" Then
-            Dir_Costos = Trim(SCont.guarda)
+        If SCont.guardaRutaDatos <> "" Then
+            Dir_Costos = Trim(SCont.guardaRutaDatos)
             mi_ent = Dir(Dir_Costos)
             If mi_ent <> "" Then
-                FilePut(numeroGConta, SCont.guarda, 2)
+                FilePut(numeroGConta, SCont.guardaRutaDatos, 2)
 
                 Close()
 
