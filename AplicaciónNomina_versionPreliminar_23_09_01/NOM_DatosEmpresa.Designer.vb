@@ -138,7 +138,7 @@ Partial Class NOM_DatosEmpresa
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(166, 56)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Fecha del ultimo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "               cambio:"
+        Me.Label5.Text = "Fecha del ultimaOperacion " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "               cambio:"
         '
         'TextBox5
         '

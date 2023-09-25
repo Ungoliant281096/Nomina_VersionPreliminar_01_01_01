@@ -50,7 +50,7 @@ Module Modulo_EstructurasDeDatos
 		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public a_o As String
 		<VBFixedString(25), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=25)> Public others1 As String
 		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public ultimaPol1 As String
-		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public ultimoReg As String
+		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public ultimaOperacionReg As String
 		<VBFixedString(12), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=12)> Public others As String
 	End Structure
 	Structure oper_aciones
@@ -207,15 +207,15 @@ Module Modulo_EstructurasDeDatos
 		Public Nov As Long
 		Public Dic As Long
 	End Structure
-	Structure ult
-		Public num As Long
-		Public Ubi As Integer
-		Public renglon As Long
-		Public texto As String
+	Structure ultitmaOperacion
+		Public numeroOperacion As Long
+		Public ubicacionOperacion As Integer
+		Public renglonOperacion As Long
+		Public textoOperacion As String
 		Public poliza As Integer
-		Public Impresion As Integer
-		Public TipoCap As Integer
-		Public redaccion As String
+		Public impresionOperacion As Integer
+		Public tipoOperacion As Integer
+		Public redaccionOperacion As String
 	End Structure
 	Structure Clabnx
 		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
@@ -238,7 +238,6 @@ Module Modulo_EstructurasDeDatos
 		Public ImpTot As Long
 	End Structure
 
-
 	Structure empresa
 		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
 		Public añoEmpresa As Long
@@ -246,28 +245,30 @@ Module Modulo_EstructurasDeDatos
 		Public psub As Long
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
 	End Structure
+
 	Structure sc
 		<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public guardaRutaDatos As String
 	End Structure
 
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
+	Public archivoNominaQuincenal As nominaQuincenal
 	Public CATAUX As CAT_AX
 	Public CATMAY As CAT_MA
 	Public Ctos As ope
-	Public otros As otr
-	Public renglon As Rg
 	Public cuentas As Ct
-	Public DATOS As DAT_OS
-	Public OPER As oper_aciones
-	Public maestro As ob
-	Public personal As per
 	Public cuentasDeBanco As Clabnx
-	Public otrosCampos As OtrasCh
+	Public DATOS As DAT_OS
 	Public datosEmpresa As empresa
-	Public nominaCompleta As nuevaNominaCompleta
-	Public archivoNominaQuincenal As nominaQuincenal
-	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
+	Public maestro As ob
 	Public Mes_Act As Integer
+	Public nominaCompleta As nuevaNominaCompleta
+	Public OPER As oper_aciones
+	Public otros As otr
+	Public otrosCampos As OtrasCh
+	Public personal As per
+	Public renglon As Rg
+	Public SCont As sc
+	Public ultimaOperacion As ultitmaOperacion
 
 	REM largos de los random
 	Public largoDeBancos As Integer
@@ -295,11 +296,12 @@ Module Modulo_EstructurasDeDatos
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
 	Public Ruta_Acceso_Contr As String
 	Public Dir_Costos As String
-	Public cm As String
 	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
-	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
+	Public BALANZON As Integer
+	Public cm As Integer
 	Public dm As Integer
 
 	Public Sub abrirRandomNominaCaptura()

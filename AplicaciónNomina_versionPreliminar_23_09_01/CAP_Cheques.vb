@@ -10,7 +10,6 @@ Public Class CAP_Cheques
     Dim MientraS As String
     Dim tope As String
     Dim nombreEmpresa As String
-    Dim KeyPress As Integer
     Dim mi_entr As String
     Dim rgtro As Integer
 
@@ -39,7 +38,7 @@ Public Class CAP_Cheques
             Label2.Text = "de" + RTrim(Mm(mespoliza)) + "de" + DATOS.a_o
             Me.Text = Mid(DATOS.D1, 1, 32) & "  Captura de cheques"
             nombreEmpresa = Trim(DATOS.D2)
-            ultimo.texto = RTrim(DATOS.No_arch)
+            ultimaOperacion.textoOperacion = RTrim(DATOS.No_arch)
         End If
 
     End Sub
@@ -90,9 +89,6 @@ Public Class CAP_Cheques
                 DataGridView1.Enabled = True
 
             End If
-
-
-
 
             ' Cerrar el archivo
             FileClose(numeroGConta)
@@ -219,31 +215,28 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
-        Dim mi_ent As String = ultimo.texto
-        mi_entr = ultimo.texto
-        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-        FileGet(numeroGConta, SCont, 2)
-        CAP_Entrada.Text = Trim(SCont.guardaRutaDatos)
-        CAP_Entrada.Label1.Text = "Ubicación de directorios"
-        CAP_Entrada.Text = "Cg-Contabilidad"
-        'CAP_Entrada.Show()
+        Dim mi_ent As String = ultimaOperacion.textoOperacion
 
-        If ultimo.texto <> "" Then
-            If ultimo.texto.EndsWith("\") Then
-                ultimo.texto = ultimo.texto & "\"
-            End If
-            SCont.guardaRutaDatos = ultimo.texto
-        End If
+        FileGet(numeroGConta, SCont, 1)
+        CAP_Entrada.TextBox1.Text = Trim(SCont.guardaRutaDatos)
         CAP_Entrada.Show()
-        ultimo.texto = mi_ent
+
+        If ultimaOperacion.textoOperacion <> "" Then
+            If ultimaOperacion.textoOperacion.EndsWith("\") Then
+                ultimaOperacion.textoOperacion = ultimaOperacion.textoOperacion & "\"
+            End If
+            SCont.guardaRutaDatos = ultimaOperacion.textoOperacion
+        End If
+
+        CAP_Entrada.Show()
+        ultimaOperacion.textoOperacion = mi_ent
+
         If SCont.guardaRutaDatos <> "" Then
             Dir_Costos = Trim(SCont.guardaRutaDatos)
             mi_ent = Dir(Dir_Costos)
             If mi_ent <> "" Then
                 FilePut(numeroGConta, SCont.guardaRutaDatos, 2)
-
                 Close()
-
             Else
                 Threading.Thread.Sleep(5000)
                 MessageBox.Show("NO EXISTE EL DIRECTORIO", "Error")
@@ -300,12 +293,12 @@ Public Class CAP_Cheques
     Private Sub ActualizarSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActualizarSaldosToolStripMenuItem.Click
         If (Mes_Act > 0) And (Mes_Act < 14) Then
             FileGet(1, DATOS, Arch_act)
-            rgtro = Val(DATOS.ultimoReg)
+            rgtro = Val(DATOS.ultimaOperacionReg)
             Close()
 
             'FileOpen(Arch_act, OpenMode.Random,,, Len(OPER))
-            Dm = LOF(12) / Len(OPER)
-            tope = Val(DATOS.ultimoReg)
+            dm = LOF(12) / Len(OPER)
+            tope = Val(DATOS.ultimaOperacionReg)
             If rgtro <> Dm Then
                 MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
                 Close()
@@ -375,7 +368,7 @@ Public Class CAP_Cheques
 
     End Sub
     Sub incluirMes()
-
+        Dim keypress As Integer
         Dim mes As String
 
         mes = DateTime.Now.ToString("MM")
