@@ -42,20 +42,20 @@ Public Class CAP_Cheques
         FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
         FileGet(numeroGConta, SCont, 1)
 
-        If SCont.guarda.Substring(0, 1) <= " " Then
+        If SCont.guardaRutaDatos.Substring(0, 1) <= " " Then
             ChDrive("C:\")
         Else
-            If Not SCont.guarda.StartsWith("C") Then
-                ChDrive(SCont.guarda.Substring(0, 1))
+            If Not SCont.guardaRutaDatos.StartsWith("C") Then
+                ChDrive(SCont.guardaRutaDatos.Substring(0, 1))
             End If
 
-            ChDir(SCont.guarda.Trim())
+            ChDir(SCont.guardaRutaDatos.Trim())
 
         End If
 
 
         FileGet(numeroGConta, SCont, 2)
-        Dir_Costos = SCont.guarda.Trim()
+        Dir_Costos = SCont.guardaRutaDatos.Trim()
 
         FileGet(numeroGConta, SCont, 1)
 
@@ -117,8 +117,8 @@ Public Class CAP_Cheques
 
 
                     FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-                    SCont.guarda = MientraS
-                    FilePut(numeroGConta, MientraS, 1)
+                SCont.guardaRutaDatos = MientraS
+                FilePut(numeroGConta, MientraS, 1)
                     FileClose(numeroGConta)
 
                     cm = 0

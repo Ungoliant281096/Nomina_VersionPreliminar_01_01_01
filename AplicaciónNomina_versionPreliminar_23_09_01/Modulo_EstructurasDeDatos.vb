@@ -217,10 +217,6 @@ Module Modulo_EstructurasDeDatos
 		Public TipoCap As Integer
 		Public redaccion As String
 	End Structure
-	Structure sc
-
-		<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public guarda As String
-	End Structure
 	Structure Clabnx
 		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
 	End Structure
@@ -250,6 +246,9 @@ Module Modulo_EstructurasDeDatos
 		Public psub As Long
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
 	End Structure
+	Structure sc
+		<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public guardaRutaDatos As String
+	End Structure
 
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
 	Public CATAUX As CAT_AX
@@ -267,18 +266,9 @@ Module Modulo_EstructurasDeDatos
 	Public datosEmpresa As empresa
 	Public nominaCompleta As nuevaNominaCompleta
 	Public archivoNominaQuincenal As nominaQuincenal
-	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
+	Public SCont As sc
 
-	REM Ubicacion del ejecutable 
-	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-	Public Ruta_Acceso_Contr As String
-	Public Dir_Costos As String
-	Public cm As String
-	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
-	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
 	REM largos de los random
-	Public largoGconta As Integer
 	Public largoDeBancos As Integer
 	Public largoPersonal As Integer
 	Public largoOtrosCammpos As Integer
@@ -287,6 +277,7 @@ Module Modulo_EstructurasDeDatos
 	Public largoMaestro As Integer
 	Public largoNominaQuincenal As Integer
 	Public largoNominaCompleta As Integer
+	Public largoGconta As Integer
 	Public largoEmpresa As Integer
 
 	REM numeros asigando a los random
@@ -299,12 +290,17 @@ Module Modulo_EstructurasDeDatos
 	Public numeroNominaQuincenal As Integer = 7
 	Public numeronominaCompleta As Integer = 8
 	Public numeroGConta As Integer = 9
-
 	Public numeroEmprsa As Integer = 10
 
-	Public Sub abrirRandomNominaCaptura()
+	REM Ubicacion del ejecutable 
+	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+	Public Ruta_Acceso_Contr As String
+	Public Dir_Costos As String
+	Public cm As String
+	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
+	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
 
-		' hola quita este 
+	Public Sub abrirRandomNominaCaptura()
 
 		FileOpen(numeroMayor, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
 		largoCatalogoMayor = LOF(numeroMayor) \ Len(CATMAY)
@@ -326,6 +322,9 @@ Module Modulo_EstructurasDeDatos
 
 		FileOpen(numeroEmprsa, rutaDelEjecutable + "\EMPRESA.dno", OpenMode.Random,,, Len(datosEmpresa))
 		largoEmpresa = LOF(numeroEmprsa) \ Len(datosEmpresa)
+
+		FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+		largoGconta = LOF(numeroGConta) \ Len(SCont)
 
 	End Sub
 
