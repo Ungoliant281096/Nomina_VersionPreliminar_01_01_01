@@ -12,10 +12,14 @@ Public Class CAP_Cheques
     Dim nombreEmpresa As String
     Dim mi_entr As String
     Dim rgtro As Integer
-
-
-
+    Dim Ok_che As Integer
+    Dim impor_te As Long
+    Dim c_ambiar As Integer
     Dim donde As Integer
+    Dim Sal_do As Long
+    Dim sumaDebe As Long
+    Dim sumaHaber As Long
+    Dim flag As Long
 
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
@@ -98,6 +102,83 @@ Public Class CAP_Cheques
         End Try
 
     End Sub
+    Sub aplicacion()
+        Dim i As Integer
+        'FileOpen(18, fiscal, OpenMode.Random,,, Len(DATOS))
+        'OPER.CTA = (6 - Len(Str(ultimo.poliza)), " ") + Str(ultimo.poliza)
+        If ultimo.TipoCap = 0 Then
+            'OPER.descr = LTrim(RTrim(TextBox5.Text)) + "" + Left(TextBox4.Text, 8)
+        Else
+
+        End If
+    End Sub
+    Sub reiniciarAplicacion()
+
+    End Sub
+    Sub VerSumas()
+        Dim i As Integer
+        sumaDebe = 0 : sumaHaber = 0 : Ok_che = 0
+        For i = 1 To ultimo.renglon
+            If DataGridView1.Rows(i).Cells(4).Value <> "" Then
+                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(4).Value
+            End If
+            If DataGridView1.Rows(i).Cells(5).Value <> "" Then
+                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(5).Value
+            End If
+        Next i
+        Dim resultado As Integer = Strings.Format(sumaDebe, "###,###,##0.00")
+        DataGridView1.Rows(0).Cells(4).Value = resultado
+        DataGridView1.Rows(0).Cells(5).Value = resultado
+
+
+    End Sub
+    Sub cam_saldo()
+
+
+        If DataGridView1.Rows(0).Cells(4).Value <> "" Or DataGridView1.Rows(0).Cells(5).Value <> "" Then
+            If DataGridView1.Rows(0).Cells(5).Value = "" Then
+                Sal_do = DataGridView1.Rows(0).Cells(4).Value
+            Else
+                Sal_do = DataGridView1.Rows(0).Cells(5).Value
+            End If
+        End If
+        If valcelant = "" Then valcelant = 0
+        If c_ambiar = 1 Then Sal_do = Sal_do - valcelant : 
+        Sal_do = Sal_do + impor_te
+        Dim resul As String = Strings.Format(Sal_do, "z1")
+        Dim resutl As String = Strings.Format(impor_te, "z1")
+        If Sal_do > 0 Then 'Cuando "saldo" en (n,4) de como resultado un valor mayor a cero entrara en esta función
+
+            DataGridView1.Rows(0).Cells(4).Value = resul
+            DataGridView1.Rows(0).Cells(5).Value = ""
+            Alarma.Imt = Sal_do
+            VerSumas()
+        Else
+
+            DataGridView1.Rows(0).Cells(5).Value = resul
+            DataGridView1.Rows(0).Cells(4).Value = ""
+            Alarma.Imt = Sal_do
+            VerSumas()
+
+            If impor_te > 0 Then
+                DataGridView1.Rows(0).Cells(4).Value = resutl
+                DataGridView1.Rows(0).Cells(5).Value = ""
+                Alarma.Imt = impor_te
+                VerSumas()
+            Else
+                DataGridView1.Rows(0).Cells(5).Value = resutl
+                DataGridView1.Rows(0).Cells(4).Value = ""
+                Alarma.Imt = impor_te
+                VerSumas()
+            End If
+
+
+
+        End If
+
+
+
+    End Sub
 
     Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
 
@@ -106,6 +187,7 @@ Public Class CAP_Cheques
 
         'MientraS = ""
         'Ruta_Acceso_Contr = ""
+
 
         Try
 
@@ -215,6 +297,7 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub DirectorioDeCostosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectorioDeCostosToolStripMenuItem.Click
+<<<<<<< HEAD
         Dim mi_ent As String = ultimaOperacion.textoOperacion
 
         FileGet(numeroGConta, SCont, 1)
@@ -224,24 +307,50 @@ Public Class CAP_Cheques
         If ultimaOperacion.textoOperacion <> "" Then
             If ultimaOperacion.textoOperacion.EndsWith("\") Then
                 ultimaOperacion.textoOperacion = ultimaOperacion.textoOperacion & "\"
+=======
+        Dim mi_ent As String = ultimo.texto
+        mi_entr = ultimo.texto
+        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+        FileGet(numeroGConta, SCont, 2)
+        CAP_Entrada.Text = Trim(SCont.guarda)
+        CAP_Entrada.Label1.Text = "Ubicación de directorios"
+        CAP_Entrada.Text = "Cg-Contabilidad"
+        CAP_Entrada.Show()
+
+        If ultimo.texto <> "" Then
+            If ultimo.texto.EndsWith("\") Then
+                ultimo.texto = ultimo.texto & "\"
+>>>>>>> Se agregó Sub:
             End If
             SCont.guardaRutaDatos = ultimaOperacion.textoOperacion
         End If
+<<<<<<< HEAD
 
         CAP_Entrada.Show()
         ultimaOperacion.textoOperacion = mi_ent
 
         If SCont.guardaRutaDatos <> "" Then
             Dir_Costos = Trim(SCont.guardaRutaDatos)
+=======
+        ultimo.texto = mi_ent
+        If SCont.guarda <> "" Then
+            Dir_Costos = Trim(SCont.guarda)
+>>>>>>> Se agregó Sub:
             mi_ent = Dir(Dir_Costos)
             If mi_ent <> "" Then
                 FilePut(numeroGConta, SCont.guardaRutaDatos, 2)
                 Close()
+<<<<<<< HEAD
             Else
                 Threading.Thread.Sleep(5000)
+=======
+>>>>>>> Se agregó Sub:
                 MessageBox.Show("NO EXISTE EL DIRECTORIO", "Error")
                 Close()
+                'Else
             End If
+
+            'End If
         End If
 
     End Sub
@@ -299,7 +408,7 @@ Public Class CAP_Cheques
             'FileOpen(Arch_act, OpenMode.Random,,, Len(OPER))
             dm = LOF(12) / Len(OPER)
             tope = Val(DATOS.ultimaOperacionReg)
-            If rgtro <> Dm Then
+            If rgtro <> dm Then
                 MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
                 Close()
 
@@ -508,4 +617,62 @@ Public Class CAP_Cheques
 
     End Sub
 
+    Private Sub ReiniciarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReiniciarToolStripMenuItem.Click
+
+    End Sub
+    Sub ENTRCTA()
+        Dim NoEncontrada As Integer
+        Dim Y1 As Integer
+        Dim Zi As Integer
+        FileClose(2)
+        FileOpen(2, "CATMAY", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.Default)
+        cm = LOF(2) / Len(CATMAY)
+        NoEncontrada = 0
+        For Y1 = 1 To cm : FileGet(2, CATMAY, Y1)
+
+            If Val(CATMAY.B1) = Label6.Text Then
+                trcta.incia = Y1
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(0).Value = Val(CATMAY.B1)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(2).Value = Trim(CATMAY.B2)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(6).Value = Y1
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = Val(CATMAY.B4)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value = Val(CATMAY.B5)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(9).Value = "B"
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(10).Value = ""
+
+                trcta.incia = DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value
+                trcta.termina = DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value
+
+                If DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = 0 Then
+                    DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = ""
+                    DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value = ""
+                End If
+                NoEncontrada = 1
+
+                If IsNumeric(DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value) Then
+                    'DataGridView1.Rows(0).Cells(0).Value = DataGridView1.Rows(0).Cells(0).Value + 1 = DataGridView1.Rows(0).Cells(0).Value)
+                Else
+                    DataGridView1.Rows(0).Cells(0).Value = 4
+                End If
+                Exit For
+            End If
+        Next Y1
+
+        If NoEncontrada = 0 Then
+            MsgBox("La cuenta no existe " + DataGridView1.Rows(0).Cells(0).Value + DataGridView1.Rows(2).Cells(0).Value)
+            'DataGridView1.Item.Remove(DataGridView: Zi = z1 - 1)
+            'CHECAP.Items.RemoveAt(CHECAP.Row)
+            'DataGridView1.Item.Remove
+
+        End If
+
+
+
+    End Sub
 End Class

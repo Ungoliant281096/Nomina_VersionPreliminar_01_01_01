@@ -85,6 +85,9 @@ Module Modulo_EstructurasDeDatos
 	Structure basini
 		<VBFixedString(255), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=255)> Public datoArch As String
 	End Structure
+	Structure fol_io
+		<VBFixedString(36), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=36)> Public fol As String
+	End Structure
 	Structure nominaQuincenal
 		Public dias As Long
 		Public hsnor As Long
@@ -192,6 +195,17 @@ Module Modulo_EstructurasDeDatos
 		Public por_20 As Integer
 		Public im_20 As Long
 	End Structure
+	Structure cheques
+		Public num As Integer
+		Public beneficiario As String
+		Public importe As Long
+		Public clave As String
+		Public numreal As Integer
+		Public refer As Integer
+		Public conta As Integer
+
+
+	End Structure
 	Structure Mvtos
 		Public Inc As Long
 		Public Ene As Long
@@ -207,6 +221,7 @@ Module Modulo_EstructurasDeDatos
 		Public Nov As Long
 		Public Dic As Long
 	End Structure
+<<<<<<< HEAD
 	Structure ultitmaOperacion
 		Public numeroOperacion As Long
 		Public ubicacionOperacion As Integer
@@ -216,6 +231,62 @@ Module Modulo_EstructurasDeDatos
 		Public impresionOperacion As Integer
 		Public tipoOperacion As Integer
 		Public redaccionOperacion As String
+=======
+	Structure fis_cal
+		<VBFixedString(36), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=36)> Public folio As String
+		Public estado As Boolean
+
+	End Structure
+	Structure ContCat
+		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public g1 As String
+		<VBFixedString(5), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=5)> Public g2 As String
+		<VBFixedString(6), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=6)> Public g3 As String
+	End Structure
+	Structure ult
+		Public num As Long
+		Public Ubi As Integer
+		Public renglon As Long
+		Public texto As String
+		Public poliza As Integer
+		Public Impresion As Integer
+		Public TipoCap As Integer
+		Public redaccion As String
+	End Structure
+	Structure tra_cta
+		Public num As Integer
+		<VBFixedString(32), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=32)> Public nombre As String
+		Public donde As Integer
+		Public incia As Integer
+		Public termina As Integer
+		<VBFixedString(1), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=1)> Public clave As String
+
+
+	End Structure
+	Structure tra_Scta
+		Public num As Integer
+		<VBFixedString(32), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=32)> Public nombre As String
+		Public donde As Integer
+		Public refer As Integer
+		<VBFixedString(1), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=1)> Public clave As String
+	End Structure
+	Structure sc
+
+		<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public guarda As String
+>>>>>>> Se agregó Sub:
+	End Structure
+	Structure Al
+		Public Cos As Integer
+		Public Rda As String
+		Public Imt As Long
+		Public Gto As Integer
+		Public Dep As Integer
+		Public Clt As Integer
+		Public Otr As Integer
+	End Structure
+	Structure Su
+		Public Parcial As Long
+		Public Debe As Long
+		Public Haber As Long
 	End Structure
 	Structure Clabnx
 		<VBFixedString(16), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=16)> Public Q1 As String
@@ -259,6 +330,7 @@ Module Modulo_EstructurasDeDatos
 	Public cuentasDeBanco As Clabnx
 	Public DATOS As DAT_OS
 	Public datosEmpresa As empresa
+<<<<<<< HEAD
 	Public maestro As ob
 	Public Mes_Act As Integer
 	Public nominaCompleta As nuevaNominaCompleta
@@ -270,6 +342,51 @@ Module Modulo_EstructurasDeDatos
 	Public SCont As sc
 	Public ultimaOperacion As ultitmaOperacion
 
+=======
+	Public nominaCompleta As nuevaNominaCompleta
+	Public archivoNominaQuincenal As nominaQuincenal
+	Public fiscal As fis_cal
+	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
+	Public Alarma As Al
+	Public Su_ma As Su, Ruta_Acceso, Ruta_Acceso_Contr, Arch_Oper As String
+	Public Dir_Costos As String
+	Public MvDebe As Mvtos, MvHaber As Mvtos, Sub_dir As String
+	Public MvDebeS As Mvtos, MvHaberS As Mvtos
+	Public ContrCatal As ContCat, Arc_FinaL As Integer
+	Public CONS_ULTA As Integer, final As Integer
+	Public ultimo As ult, ultimo1 As ult, BALANZON As Integer
+	Public trcta As tra_cta
+	Public trscta As tra_Scta
+	Public cheque As cheques
+	Public folio As fol_io
+	Public Rango_Inic As Long, Rango_Final As Long
+	Public Arch_act, z1 As String
+	Public z2 As String, valcelant, fin_oper As Long, Mes_Act As Integer, month As String, anio As String
+	Public cm As Integer, Dm As Integer, EM As Integer, qm As Integer, Mes As Integer
+	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
+	Public dir1 As String
+	Public archivos1() As String
+	Public archivos1Pdf() As String
+	Public rutArchi
+	Public rutArchi1
+	Public rutArchi2
+	Public routes(100) As String
+	Public routesPdf(100) As String
+	Public change As Boolean
+	Public polizaiden As String
+	'Public nombreArchivo
+
+
+
+	REM Ubicacion del ejecutable 
+	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+
+
+
+
+
+
+>>>>>>> Se agregó Sub:
 	REM largos de los random
 	Public largoDeBancos As Integer
 	Public largoPersonal As Integer
@@ -294,9 +411,17 @@ Module Modulo_EstructurasDeDatos
 	Public numeroGConta As Integer = 9
 	Public numeroEmprsa As Integer = 10
 
+<<<<<<< HEAD
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
 
+
+
+
+
+=======
+	Public Sub abrirRandomNominaCaptura()
+>>>>>>> Se agregó Sub:
 	Public Ruta_Acceso_Contr As String
 	Public Dir_Costos As String
 	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
