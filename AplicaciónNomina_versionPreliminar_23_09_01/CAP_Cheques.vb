@@ -300,15 +300,14 @@ Public Class CAP_Cheques
 
         Dim mi_ent As String
         mi_entr = ultimo.texto
-        FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-        FileGet(numeroGConta, SCont, 2)
+
+        'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+
+        'FileGet(numeroGConta, SCont, 2)
         CAP_Entrada.Text = Trim(SCont.guarda)
         CAP_Entrada.Label1.Text = "Ubicación de directorios"
         CAP_Entrada.Text = "Cg-Contabilidad"
         CAP_Entrada.Show()
-        'FileGet(numeroGConta, SCont, 1)
-        'CAP_Entrada.TextBox1.Text = Trim(SCont.guarda)
-        'CAP_Entrada.Show()
 
 
         If ultimo.texto <> "" Then
@@ -318,33 +317,27 @@ Public Class CAP_Cheques
             End If
             SCont.guarda = ultimo.texto
         End If
-
-        CAP_Entrada.Show()
         ultimo.texto = mi_ent
 
         If SCont.guarda <> "" Then
-                    Dir_Costos = Trim(SCont.guarda)
+            FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
 
-                    ultimo.texto = mi_ent
-            If SCont.guarda <> "" Then
-                Dir_Costos = Trim(SCont.guarda)
-
-                mi_ent = Dir(Dir_Costos)
-                If mi_ent <> "" Then
-                    FilePut(numeroGConta, SCont.guarda, 2)
-                    Close()
-                Else
-
-
-                    'MessageBox.Show("NO EXISTE EL DIRECTORIO", "Error")
-                    'Close()
-                    'Else
-                End If
+            FileGet(numeroGConta, SCont, 2)
+            Dir_Costos = Trim(SCont.guarda)
+            mi_ent = Dir(Dir_Costos)
+            If mi_ent <> "" Then
+                FilePut(numeroGConta, SCont.guarda, 2)
+                Close()
+            Else
                 MessageBox.Show("NO EXISTE EL DIRECTORIO", "Error")
                 Close()
 
             End If
+            'MessageBox.Show("NO EXISTE EL DIRECTORIO", "Error")
+            'Close()
+
         End If
+
 
     End Sub
 
@@ -467,6 +460,32 @@ Public Class CAP_Cheques
         ColHaber.Width = 60
         ColReda.Width = 200
         ColFolioFis.Width = 310
+
+    End Sub
+    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            DataGridView1.Focus()
+        End If
+    End Sub
+
+    Sub sustraccionDebeHaber()
+        Try
+            Dim sumaDebe As Integer
+            Dim sumaHaber As Integer
+            Dim diferenciaHaber As Integer
+            sumaDebe = Convert.ToDecimal(DataGridView1.Rows(0).Cells(4).Value)
+            sumaHaber = Convert.ToDecimal(DataGridView1.Rows(0).Cells(5).Value)
+            diferenciaHaber = sumaDebe + sumaHaber
+
+            If diferenciaHaber >= 0 Then
+                TextBox2.Text = (ToString(diferenciaHaber))
+
+
+                DataGridView1.Focus()
+            End If
+        Catch
+            MsgBox("Realiza un cheque e ingresa los montos correspondientes.")
+        End Try
 
     End Sub
     Sub incluirMes()
@@ -613,6 +632,45 @@ Public Class CAP_Cheques
     Private Sub ReiniciarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReiniciarToolStripMenuItem.Click
 
     End Sub
+    Sub verificar(sumaDebe, sumaHaber, Ok_che)
+        Dim i As Integer
+
+        'Inician variables en 0
+        sumaDebe = 0
+        sumaHaber = 0
+        Ok_che = 0
+
+        If ultimo.TipoCap = 1 Then
+            Ok_che = 1
+
+        End If
+
+        For i = 1 To ultimo.renglon
+            If DataGridView1.Rows(i).Cells(4).Value <> "" Then
+                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(4).Value
+            End If
+            If DataGridView1.Rows(i).Cells(5).Value <> "" Then
+                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(5).Value
+
+                If TextBox7.Text <> "" Then
+                    If TextBox7.Text = (DataGridView1.Rows(i).Cells(5).Value * -1) Then
+                        Ok_che = 1
+                    End If
+                End If
+            End If
+        Next i
+        ' Establece las sumas dentro de la Grid
+        'DataGridView1.Rows(ultimo.renglon + 1, 2).Value = " sumas"
+        'DataGridView1.Rows(ultimo.renglon + 1, 4).Value = (sumaDebe, z1)
+        'DataGridView1.Rows(ultimo.renglon + 1, 5).Value = (sumaHaber, z1)
+
+
+
+
+
+
+    End Sub
+
     Sub ENTRCTA()
         Dim NoEncontrada As Integer
         Dim Y1 As Integer
