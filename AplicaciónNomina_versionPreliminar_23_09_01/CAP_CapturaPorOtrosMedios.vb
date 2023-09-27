@@ -13,4 +13,16 @@
         CAP_SubCuentas.Show()
 
     End Sub
+
+
+    Private Sub CAP_CapturaPorOtrosMedios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ColCta.Width = 70
+        ColSubCta.Width = 70
+        ColNom.Width = 200
+        ColParcial.Width = 80
+        ColDebe.Width = 80
+        ColHaber.Width = 80
+        ColReda.Width = 160
+        ColFolioFis.Width = 200
+    End Sub
 End Class

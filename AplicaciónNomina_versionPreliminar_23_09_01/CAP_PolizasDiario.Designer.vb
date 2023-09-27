@@ -22,6 +22,7 @@ Partial Class CAP_PolizasDiario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
         CambioDirectorioToolStripMenuItem = New ToolStripMenuItem()
@@ -59,7 +60,7 @@ Partial Class CAP_PolizasDiario
         MenuStrip1.Items.AddRange(New ToolStripItem() {ArchivoToolStripMenuItem, EdiciónToolStripMenuItem, ImprimirToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1024, 28)
+        MenuStrip1.Size = New Size(1147, 28)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -161,13 +162,21 @@ Partial Class CAP_PolizasDiario
         ' 
         ' DataGridView1
         ' 
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColRedac, ColFolioFis})
-        DataGridView1.Location = New Point(30, 152)
+        DataGridView1.Location = New Point(12, 85)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(902, 719)
+        DataGridView1.Size = New Size(1086, 719)
         DataGridView1.TabIndex = 4
         ' 
         ' ColCta
@@ -228,7 +237,7 @@ Partial Class CAP_PolizasDiario
         ' 
         ' VScrollBar1
         ' 
-        VScrollBar1.Location = New Point(1011, 32)
+        VScrollBar1.Location = New Point(1135, 28)
         VScrollBar1.Name = "VScrollBar1"
         VScrollBar1.Size = New Size(12, 635)
         VScrollBar1.TabIndex = 5
@@ -245,7 +254,7 @@ Partial Class CAP_PolizasDiario
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1024, 629)
+        ClientSize = New Size(1147, 629)
         Controls.Add(VScrollBar1)
         Controls.Add(DataGridView1)
         Controls.Add(Label1)

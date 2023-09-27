@@ -22,6 +22,7 @@ Partial Class CAP_CapturaPorOtrosMedios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_CapturaPorOtrosMedios))
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
@@ -73,6 +74,8 @@ Partial Class CAP_CapturaPorOtrosMedios
         ColParcial = New DataGridViewTextBoxColumn()
         ColDebe = New DataGridViewTextBoxColumn()
         ColHaber = New DataGridViewTextBoxColumn()
+        ColReda = New DataGridViewTextBoxColumn()
+        ColFolioFis = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -364,13 +367,21 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' 
         ' DataGridView1
         ' 
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColReda, ColFolioFis})
         DataGridView1.Location = New Point(29, 163)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(609, 450)
+        DataGridView1.Size = New Size(1048, 450)
         DataGridView1.TabIndex = 12
         ' 
         ' ColCta
@@ -414,6 +425,20 @@ Partial Class CAP_CapturaPorOtrosMedios
         ColHaber.MinimumWidth = 6
         ColHaber.Name = "ColHaber"
         ColHaber.Width = 125
+        ' 
+        ' ColReda
+        ' 
+        ColReda.HeaderText = "Redacción"
+        ColReda.MinimumWidth = 6
+        ColReda.Name = "ColReda"
+        ColReda.Width = 125
+        ' 
+        ' ColFolioFis
+        ' 
+        ColFolioFis.HeaderText = "Folio Fiscal"
+        ColFolioFis.MinimumWidth = 6
+        ColFolioFis.Name = "ColFolioFis"
+        ColFolioFis.Width = 125
         ' 
         ' CAP_CapturaPorOtrosMedios
         ' 
@@ -494,4 +519,6 @@ Partial Class CAP_CapturaPorOtrosMedios
     Friend WithEvents ColParcial As DataGridViewTextBoxColumn
     Friend WithEvents ColDebe As DataGridViewTextBoxColumn
     Friend WithEvents ColHaber As DataGridViewTextBoxColumn
+    Friend WithEvents ColReda As DataGridViewTextBoxColumn
+    Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
 End Class
