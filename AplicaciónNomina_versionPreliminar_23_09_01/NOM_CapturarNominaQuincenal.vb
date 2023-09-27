@@ -66,14 +66,14 @@ Public Class NOM_CapturarNominaQuincenal
         ' Aqui debe llamar la funcion checarFecha
         ' cehcarFecha()
 
-        FileOpen(numeroNominaQuincenal, rutaDelEjecutable + archivoPrimeraQuincena, OpenMode.Random,,, Len(archivoNominaQuincenal))
-        largoNominaQuincenal = LOF(numeroNominaQuincenal) \ Len(archivoNominaQuincenal)
+        'FileOpen(numeroNominaQuincenal, rutaDelEjecutable + archivoPrimeraQuincena, OpenMode.Random,,, Len(archivoNominaQuincenal))
+        'largoNominaQuincenal = LOF(numeroNominaQuincenal) \ Len(archivoNominaQuincenal)
 
-        FileOpen(numeroNominaQuincenal, rutaDelEjecutable + archivoSegundaQuincena, OpenMode.Random,,, Len(archivoNominaQuincenal))
-        largoNominaQuincenal = LOF(numeroNominaQuincenal) \ Len(archivoNominaQuincenal)
+        'FileOpen(numeroNominaQuincenal, rutaDelEjecutable + archivoSegundaQuincena, OpenMode.Random,,, Len(archivoNominaQuincenal))
+        'largoNominaQuincenal = LOF(numeroNominaQuincenal) \ Len(archivoNominaQuincenal)
 
-        FileOpen(numeronominaCompleta, rutaDelEjecutable + archivo, OpenMode.Random,,, Len(nominaCompleta))
-        largoNominaCompleta = LOF(numeronominaCompleta) \ Len(nominaCompleta)
+        'FileOpen(numeronominaCompleta, rutaDelEjecutable + archivo, OpenMode.Random,,, Len(nominaCompleta))
+        'largoNominaCompleta = LOF(numeronominaCompleta) \ Len(nominaCompleta)
 
         For i As Integer = 1 To largoPersonal
             'FileGet(numeroNomina, archivoNomina, i)
@@ -81,32 +81,32 @@ Public Class NOM_CapturarNominaQuincenal
             FileGet(numeroBancos, cuentasDeBanco, i)
             FileGet(numeroMaestro, maestro, i)
 
-            If optionPrimeraQuincena.Checked = True Then
-                If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa - 1)) Then
-                    ' llamada a funcion
-                End If
-            Else
-                If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa)) Then
-                    ' llamda a funcion
+            'If optionPrimeraQuincena.Checked = True Then
+            '    If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa - 1)) Then
+            '        ' llamada a funcion
+            '    End If
+            'Else
+            '    If (añoBajaEmpleado > 0) And (añoBajaEmpleado < (datosEmpresa.añoEmpresa)) Then
+            '        ' llamda a funcion
+            '    End If
+            'End If
 
-                End If
-            End If
+            'If optionPrimeraQuincena.Checked = True Then
+            'If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
+            ' Llamada a funcion
+            'Dim renglon As Integer
+            ' renglon = renglon + 1
+            'DataGridView1.RowCount = renglon
+            ' DataGridView1.ColumnCount = 0
 
-            If optionPrimeraQuincena.Checked = True Then
-                If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
-                    ' Llamada a funcion
-                    Dim renglon As Integer
-                    renglon = renglon + 1
-                    DataGridView1.RowCount = renglon
-                    DataGridView1.ColumnCount = 0
-                    DataGridView1.Rows.Add(i)
-                    ' Llamada a funcion carganom
-                End If
-            Else
-                If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
-                    ' Llamada a funcion
-                End If
-            End If
+            DataGridView1.Rows.Add(personal.nom + personal.ape1)
+            ' Llamada a funcion carganom
+            '    End If
+            'Else
+            'If (mesBajaEmpleado > 0 And (mesBajaEmpleado <= mesComboBox) And (añoBajaEmpleado = (datosEmpresa.añoEmpresa))) Then
+            ' Llamada a funcion
+            ' End If
+            ' End If
         Next i
     End Sub
 End Class

@@ -598,6 +598,7 @@ Partial Class NOM_CapturarNominaQuincenal
         Me.ColNom.HeaderText = "Nombre"
         Me.ColNom.MinimumWidth = 6
         Me.ColNom.Name = "ColNom"
+        Me.ColNom.ReadOnly = True
         Me.ColNom.Width = 125
         '
         'ColDiasT
