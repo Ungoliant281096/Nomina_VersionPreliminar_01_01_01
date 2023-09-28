@@ -366,7 +366,9 @@ Module Modulo_EstructurasDeDatos
 	Public routesPdf(100) As String
 	Public change As Boolean
 	Public polizaiden As String
-	'Public nombreArchivo
+	Public nombreArchivo As String
+	Public validateXMLArchives As String
+	Public validatePdfArchives As String
 
 
 
