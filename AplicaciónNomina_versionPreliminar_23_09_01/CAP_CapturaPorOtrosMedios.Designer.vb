@@ -100,13 +100,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' GuardarPólizaToolStripMenuItem
         ' 
         GuardarPólizaToolStripMenuItem.Name = "GuardarPólizaToolStripMenuItem"
-        GuardarPólizaToolStripMenuItem.Size = New Size(188, 26)
+        GuardarPólizaToolStripMenuItem.Size = New Size(224, 26)
         GuardarPólizaToolStripMenuItem.Text = "Guardar Póliza"
         ' 
         ' SalirToolStripMenuItem
         ' 
         SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(188, 26)
+        SalirToolStripMenuItem.Size = New Size(224, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
         ' EdiciónToolStripMenuItem

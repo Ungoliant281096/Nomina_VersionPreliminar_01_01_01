@@ -551,19 +551,25 @@ Public Class CAP_Cheques
         If (Mes_Act > 0) And (Mes_Act < 14) Then
             FileGet(1, DATOS, Arch_act)
             rgtro = Val(DATOS.ultimaOperacionReg)
-            Close()
 
-            'FileOpen(Arch_act, OpenMode.Random,,, Len(OPER))
-            dm = LOF(12) / Len(OPER)
+
+            FileOpen(12, Arch_act, OpenMode.Random,,, Len(OPER))
+
+            Dm = LOF(12) / Len(OPER)
             tope = Val(DATOS.ultimaOperacionReg)
-            If rgtro <> dm Then
+            If rgtro <> Dm Then
                 MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
-                Close()
-
+                FileClose(1, 12)
+            Else
+                ultimo.num = 2
+                ultimo.Ubi = tope + 1
+                CAP_Actualizacion.Show()
+                'Me.Show()
+                ultimo.num = 0
+                ultimo.Ubi = 0
+                Mes_Act = 0
             End If
-
         End If
-        CAP_Actualizacion.Show()
 
     End Sub
 
@@ -641,7 +647,6 @@ Public Class CAP_Cheques
 
             If diferenciaHaber >= 0 Then
                 TextBox2.Text = (ToString(diferenciaHaber))
-
 
                 DataGridView1.Focus()
             End If
@@ -1020,5 +1025,26 @@ Public Class CAP_Cheques
         TextBox10.Text = ""
         TextBox11.Text = ""
 
+    End Sub
+
+    Private Sub SumaDebeYHaberCtrlLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumaDebeYHaberCtrlLToolStripMenuItem.Click
+        sustraccionDebeHaber()
+
+    End Sub
+
+    Private Sub BorrarAplicaciónCtrlBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarAplicaciónCtrlBToolStripMenuItem.Click
+        DataGridView1.ClearSelection()
+
+
+        If change = True Then
+            DataGridView1.Rows(0).Cells(0).Value = 1
+            DataGridView1.Rows(0).Cells(0).Value = "" : trcta.clave = "" : trcta.donde = "" : trcta.incia = ""
+            trcta.nombre = "" : trcta.num = "" : trcta.termina = "" : ultimo.renglon = ""
+            Alarma.Cos = "" : TextBox4.Text = "" : TextBox3.Text = "" : TextBox5.Text = ""
+            TextBox8.Text = "" : TextBox6.Text = "" : TextBox7.Text = "" : TextBox9.Text = ""
+            TextBox10.Text = "" : TextBox11.Text = ""
+
+
+        End If
     End Sub
 End Class
