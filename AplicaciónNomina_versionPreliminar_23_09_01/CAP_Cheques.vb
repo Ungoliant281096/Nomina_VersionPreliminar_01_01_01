@@ -33,9 +33,7 @@ Public Class CAP_Cheques
         CAP_Balance.Show()
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
 
-    End Sub
     Sub sigpaso()
         Dim cm As Integer
         If cm < 1 Then
@@ -649,6 +647,7 @@ Public Class CAP_Cheques
                 TextBox2.Text = (ToString(diferenciaHaber))
 
                 DataGridView1.Focus()
+
             End If
         Catch
             MsgBox("Realiza un cheque e ingresa los montos correspondientes.")
@@ -1046,5 +1045,153 @@ Public Class CAP_Cheques
 
 
         End If
+    End Sub
+    Private Sub DataGridView1_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellLeave
+        If DataGridView1.Rows(0).Cells(0).Value > 0 Then
+            DataGridView1.DefaultCellStyle.BackColor = Color.White
+
+        End If
+
+    End Sub
+    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
+        'Dim respuesta As String
+        'valcelant = DataGridView1.Text
+
+
+        If DataGridView1.Rows(0).Cells(0).Value > 0 Then
+            DataGridView1.DefaultCellStyle.BackColor = Color.Green
+
+        End If
+    End Sub
+
+
+    Private Sub AgregarSubctaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarSubctaToolStripMenuItem.Click
+        Dim cambiar As String
+        'Dim r As String
+        'Dim com As String
+
+        If DataGridView1.Rows(9).Cells(0).Value = "C" Then  'problema
+
+            If DataGridView1.Rows(7).Cells(0).Value <> "" Then
+
+                'RaiseEvent.DataGridView1_CellLeave()
+                trscta.refer = DataGridView1.Rows(7).Cells(0).Value
+                trcta.incia = DataGridView1.Rows(trscta.refer).Cells(7).Value
+                trcta.termina = DataGridView1.Rows(trscta.refer).Cells(8).Value
+                'DataGridView1.Rows.Add, DataGridView1.Rows : ultimo.renglon + 1
+                'RaiseEvent.DataGridView1_CellLeave()
+                'RaiseEvent.DataGridView1_CellEnter()
+                cambiar = 0
+                'RaiseEvent.DataGridView1_CellLeave()
+                'RaiseEvent.DataGridView1_CellEnter()
+
+
+
+
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub EliminarSubctaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarSubctaToolStripMenuItem.Click
+        Dim cambiar As String
+        Dim r As Integer
+
+        If DataGridView1.Rows(0).Cells(9).Value = "C" Then 'aquí hay que solucionar algo
+            impor_te = DataGridView1.Rows(0).Cells(3).Value
+            trscta.refer = DataGridView1.Rows(0).Cells(7).Value
+
+            If DataGridView1.Rows(-1).Cells(9).Value = "B" And DataGridView1.Rows(+1).Cells(9).Value <> "C" Then
+                MsgBox("Es necesario borrar la cuenta") : Exit Sub
+
+            End If
+
+            If DataGridView1.Rows(trscta.refer).Cells(4).Value <> "" Then
+                Sal_do = DataGridView1.Rows(trscta.refer).Cells(4).Value - impor_te
+            Else
+                Sal_do = DataGridView1.Rows(trscta.refer).Cells(5).Value - impor_te
+
+            End If
+            If Sal_do > 0 Then
+                Sal_do = DataGridView1.Rows(trscta.refer).Cells(4).Value = Format(Sal_do, z1)
+            Else
+                Sal_do = DataGridView1.Rows(trscta.refer).Cells(5).Value = Format(Sal_do, z1)
+            End If
+
+            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            ultimo.renglon = ultimo.renglon + 1
+
+            'RaiseEvent.DataGridView1_CellLeave()
+            'RaiseEvent.DataGridView1_CellEnter()
+            cambiar = 0
+
+            For r = DataGridView1.Rows(0).Cells(+1).Value To DataGridView1.Rows(0).Cells(-1).Value
+                If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1
+                If DataGridView1.Rows(r).Cells(9).Value = "C" And cambiar = 1 Then
+                    DataGridView1.Rows(r).Cells(7).Value = "COMODIN"
+
+                End If
+
+            Next r
+            cambiar = 0
+
+
+        End If
+
+
+
+    End Sub
+
+    Private Sub BorrarCuentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarCuentaToolStripMenuItem.Click
+        Dim cambio As String
+        Dim r As Integer
+        Dim cambiar As String
+        Dim comodin As String
+        Dim currentCell As DataGridViewCell = DataGridView1.CurrentCell
+        Dim row As Integer '= currentCell.RowIndex solucionar
+        Dim col As Integer = currentCell.ColumnIndex 'solucionar
+
+
+        cambio = DataGridView1.Rows(0).Cells(0).Value
+
+        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then
+            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            ultimo.renglon = ultimo.renglon - 1
+
+
+            If col = 7 AndAlso cambio <> DataGridView1.Item(col, row).Value Then
+                ' Código para el caso en que cambio no sea igual al valor de la celda en la columna 7
+            End If
+
+            If col = 9 AndAlso DataGridView1.Item(col, row).Value <> "C" Then
+                ' Código para el caso en que el valor de la celda en la columna 9 no sea igual a "C"
+                ultimo.renglon = ultimo.renglon - 1
+                DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+
+            End If
+
+            For r = DataGridView1.Rows(0).Cells(0).Value To DataGridView1.Rows(0).Cells(-1).Value
+                If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1 : comodin = DataGridView1.Rows(0).Cells(0).Value
+                If DataGridView1.Rows(r).Cells(9).Value = "C" And (cambiar = 1) Then
+                    DataGridView1.Rows(r).Cells(7).Value = comodin
+                End If
+            Next r
+
+            cambiar = 0
+            trcta.incia = 0
+            If ultimo.renglon < 1 Then
+                ultimo.renglon = 1
+            End If
+
+        End If
+
+
+
+
+    End Sub
+
+    Private Sub VerificarSumasF6ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerificarSumasF6ToolStripMenuItem.Click
+
     End Sub
 End Class
