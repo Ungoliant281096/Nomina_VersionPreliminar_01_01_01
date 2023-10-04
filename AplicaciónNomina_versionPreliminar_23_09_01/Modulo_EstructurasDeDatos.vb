@@ -355,7 +355,7 @@ Module Modulo_EstructurasDeDatos
 	Public Arch_act, z1 As String
 	Public z2 As String, valcelant, fin_oper As Long, Mes_Act As Integer, month As String, anio As String
 	Public cm As Integer, Dm As Integer, EM As Integer, qm As Integer, Mes As Integer
-	Public Mm(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
+	Public MesCheque(15) As String, dd(15) As Integer, mespoliza As Integer, dia As Integer
 	Public dir1 As String
 	Public archivos1() As String
 	Public archivos1Pdf() As String

@@ -1,5 +1,8 @@
 ﻿Public Class CAP_CapturaPorOtrosMedios
     Dim impor_te As Long
+    Dim Zi As Integer, Rgtro_Validacion As Integer, Mess As Integer
+    Dim Suma_Corr As Integer
+    Dim imprimir As Boolean
     Private Sub CopiarTodoCtrlSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopiarTodoCtrlSToolStripMenuItem.Click
 
     End Sub
@@ -60,7 +63,8 @@
                     FilePut(3, OPER, fin_oper)
 
                 Case "C"
-                    'OPER.CTA = (6 - Len(Str(DataGridView1.Rows(i).Cells(9).Value), " ") + Str(DataGridView1.Rows(i).Cells(9).Value)
+
+                    OPER.CTA = (StrDup(6 - Len(DataGridView1.Rows(i).Cells(9).Value), " ") + Str(DataGridView1.Rows(i).Cells(9).Value))
                     OPER.descr = Trim(DataGridView1.Rows(i).Cells(10).Value)
 
                     If Trim(DataGridView1.Rows(i).Cells(11).Value) <> "" Then
@@ -91,15 +95,13 @@
     End Sub
 
     Private Sub GuardarPólizaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarPólizaToolStripMenuItem.Click
-        Dim TemPOraL, Temporal1, InIPGr As Long, InIPGc As Long, LLevaT As String
-        Dim Zi As Integer, Rgtro_Validacion As Integer, Mess As Integer
-        Dim Suma_Corr As Integer
-        Dim imprimir As Boolean
+
+
         Select Case Rgtro_Validacion
             Case 1
                 If Suma_Corr = 1 Then
                     Close()
-                    FileOpen(3, Arch_Oper, OpenMode.Random,,, Len(OPER))
+                    abrirRandomNominaCaptura()
                     fin_oper = LOF(3) / Len(OPER)
                     ultimo.poliza = 0
 
@@ -116,14 +118,71 @@
                     End If
 
                 End If
-                'apli()
+                apli()
                 DataGridView1.ClearSelection()
 
         End Select
     End Sub
+    Sub ENTRCTA()
+        Dim NoEncontrada As Integer
+        Dim Y1 As Integer
+        Dim Zi As Integer
 
+        FileClose(2)
+        abrirRandomNominaCaptura()
+        cm = LOF(2) / Len(CATMAY)
+        NoEncontrada = 0
+        For Y1 = 1 To cm : FileGet(2, CATMAY, Y1)
+
+            If Val(CATMAY.B1) = Label6.Text Then
+                trcta.incia = Y1
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(0).Value = Val(CATMAY.B1)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(2).Value = Trim(CATMAY.B2)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(6).Value = Y1
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = Val(CATMAY.B4)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value = Val(CATMAY.B5)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(9).Value = "B"
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(10).Value = ""
+
+                trcta.incia = DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value
+                trcta.termina = DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value
+
+                If DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = 0 Then
+                    DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = ""
+                    DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value = ""
+                End If
+                NoEncontrada = 1
+
+                If IsNumeric(DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value) Then
+                    DataGridView1.Rows(0).Cells(0).Value = DataGridView1.Rows(0).Cells(0).Value + 1 = DataGridView1.Rows(0).Cells(0).Value
+                Else
+                    DataGridView1.Rows(0).Cells(0).Value = 4
+                End If
+                Exit For
+            End If
+        Next Y1
+
+        If NoEncontrada = 0 Then
+            MsgBox("La cuenta no existe " + DataGridView1.Rows(0).Cells(0).Value + DataGridView1.Rows(2).Cells(0).Value)
+            'DataGridView1.Item.Remove(DataGridView: Zi = z1 - 1)
+            'CHECAP.Items.RemoveAt(CHECAP.Row)
+            'DataGridView1.Item.Remove
+
+        End If
+
+
+
+    End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
 
     End Sub
+
+
 End Class

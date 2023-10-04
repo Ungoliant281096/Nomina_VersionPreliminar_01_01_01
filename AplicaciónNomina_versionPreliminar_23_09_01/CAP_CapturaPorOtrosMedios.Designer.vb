@@ -100,13 +100,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' GuardarPólizaToolStripMenuItem
         ' 
         GuardarPólizaToolStripMenuItem.Name = "GuardarPólizaToolStripMenuItem"
-        GuardarPólizaToolStripMenuItem.Size = New Size(224, 26)
+        GuardarPólizaToolStripMenuItem.Size = New Size(188, 26)
         GuardarPólizaToolStripMenuItem.Text = "Guardar Póliza"
         ' 
         ' SalirToolStripMenuItem
         ' 
         SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
+        SalirToolStripMenuItem.Size = New Size(188, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
         ' EdiciónToolStripMenuItem
@@ -168,79 +168,79 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' IncorporaciónToolStripMenuItem
         ' 
         IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(184, 26)
+        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
         IncorporaciónToolStripMenuItem.Text = "Incorporación"
         ' 
         ' EneroToolStripMenuItem
         ' 
         EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(184, 26)
+        EneroToolStripMenuItem.Size = New Size(224, 26)
         EneroToolStripMenuItem.Text = "Enero"
         ' 
         ' FebreroToolStripMenuItem
         ' 
         FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
-        FebreroToolStripMenuItem.Size = New Size(184, 26)
+        FebreroToolStripMenuItem.Size = New Size(224, 26)
         FebreroToolStripMenuItem.Text = "Febrero"
         ' 
         ' MarzoToolStripMenuItem
         ' 
         MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
-        MarzoToolStripMenuItem.Size = New Size(184, 26)
+        MarzoToolStripMenuItem.Size = New Size(224, 26)
         MarzoToolStripMenuItem.Text = "Marzo"
         ' 
         ' AbrilToolStripMenuItem
         ' 
         AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
-        AbrilToolStripMenuItem.Size = New Size(184, 26)
+        AbrilToolStripMenuItem.Size = New Size(224, 26)
         AbrilToolStripMenuItem.Text = "Abril"
         ' 
         ' MayoToolStripMenuItem
         ' 
         MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
-        MayoToolStripMenuItem.Size = New Size(184, 26)
+        MayoToolStripMenuItem.Size = New Size(224, 26)
         MayoToolStripMenuItem.Text = "Mayo"
         ' 
         ' JunioToolStripMenuItem
         ' 
         JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
-        JunioToolStripMenuItem.Size = New Size(184, 26)
+        JunioToolStripMenuItem.Size = New Size(224, 26)
         JunioToolStripMenuItem.Text = "Junio"
         ' 
         ' JulioToolStripMenuItem
         ' 
         JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
-        JulioToolStripMenuItem.Size = New Size(184, 26)
+        JulioToolStripMenuItem.Size = New Size(224, 26)
         JulioToolStripMenuItem.Text = "Julio"
         ' 
         ' AgostoToolStripMenuItem
         ' 
         AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
-        AgostoToolStripMenuItem.Size = New Size(184, 26)
+        AgostoToolStripMenuItem.Size = New Size(224, 26)
         AgostoToolStripMenuItem.Text = "Agosto"
         ' 
         ' SeptiembreToolStripMenuItem
         ' 
         SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
-        SeptiembreToolStripMenuItem.Size = New Size(184, 26)
+        SeptiembreToolStripMenuItem.Size = New Size(224, 26)
         SeptiembreToolStripMenuItem.Text = "Septiembre"
         ' 
         ' OctubreToolStripMenuItem
         ' 
         OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
-        OctubreToolStripMenuItem.Size = New Size(184, 26)
+        OctubreToolStripMenuItem.Size = New Size(224, 26)
         OctubreToolStripMenuItem.Text = "Octubre"
         ' 
         ' NoviembreToolStripMenuItem
         ' 
         NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
-        NoviembreToolStripMenuItem.Size = New Size(184, 26)
+        NoviembreToolStripMenuItem.Size = New Size(224, 26)
         NoviembreToolStripMenuItem.Text = "Noviembre"
         ' 
         ' DiciembreToolStripMenuItem
         ' 
         DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
-        DiciembreToolStripMenuItem.Size = New Size(184, 26)
+        DiciembreToolStripMenuItem.Size = New Size(224, 26)
         DiciembreToolStripMenuItem.Text = "Diciembre"
         ' 
         ' VerToolStripMenuItem
