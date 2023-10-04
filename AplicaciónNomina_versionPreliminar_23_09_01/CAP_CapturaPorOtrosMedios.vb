@@ -66,7 +66,6 @@
 
                     OPER.CTA = (StrDup(6 - Len(DataGridView1.Rows(i).Cells(9).Value), " ") + Str(DataGridView1.Rows(i).Cells(9).Value))
                     OPER.descr = Trim(DataGridView1.Rows(i).Cells(10).Value)
-
                     If Trim(DataGridView1.Rows(i).Cells(11).Value) <> "" Then
                         fiscal.estado = True
                     Else
