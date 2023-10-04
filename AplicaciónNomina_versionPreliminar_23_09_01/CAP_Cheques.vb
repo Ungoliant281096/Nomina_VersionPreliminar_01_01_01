@@ -1132,9 +1132,6 @@ Public Class CAP_Cheques
 
         End If
 
-
-
-
     End Sub
 
     Private Sub VerificarSumasF6ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerificarSumasF6ToolStripMenuItem.Click
