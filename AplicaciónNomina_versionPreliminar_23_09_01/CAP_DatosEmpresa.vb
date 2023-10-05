@@ -1,5 +1,22 @@
 ﻿Public Class CAP_DatosEmpresa
     Dim Modif_General As Integer
+
+    Private Sub CAP_DatosEmpresa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
+
+        If TextBox1.Text <> "" Then
+            Dim result As DialogResult = MessageBox.Show("Esta a punto de modificar los datos de la empresa" & Environment.NewLine & "¿Desea continuar?", "Confirmación", MessageBoxButtons.OKCancel)
+            If result = DialogResult.Cancel Then
+                Me.Close()
+                Exit Sub
+            End If
+            TextBox1_GotFocus(sender, e)
+
+
+        End If
+
+
+    End Sub
     Private Sub CAP_DatosEmpresa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If LOF(1) > 1 Then
             FileGet(1, DATOS, 1)
@@ -11,20 +28,6 @@
         End If
     End Sub
 
-    Private Sub CAP_DatosEmpresa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-
-
-        If TextBox1.Text <> "" Then
-            Dim result As DialogResult = MessageBox.Show("Esta a punto de modificar los datos de la empresa" & Environment.NewLine & "¿Desea continuar?", "Confirmación", MessageBoxButtons.OKCancel)
-            If result = DialogResult.Cancel Then
-                Me.Close()
-                Exit Sub
-            End If
-            TextBox1.Focus()
-        End If
-
-
-    End Sub
 
     Private Sub CAP_DatosEmpresa_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Dim Grb As Integer
@@ -42,7 +45,7 @@
         End If
     End Sub
 
-    Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
+    Public Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
         Modif_General = 1
 
     End Sub
