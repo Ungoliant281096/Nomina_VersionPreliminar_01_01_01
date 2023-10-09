@@ -1,4 +1,5 @@
-﻿Imports System.Text
+﻿Imports System.Linq.Expressions
+Imports System.Text
 Imports Microsoft.SqlServer.Server
 
 Public Class CAP_CapturaPorOtrosMedios
@@ -10,10 +11,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Dim InIPGr As Long, InIPGc As Long
     Dim infoSeleccionadaTemp As Integer
     Dim filasSeleccionadas As Integer
-    Dim primerFila As Integer = DataGridView1.CurrentRow.Index
-    Dim ultimoFila As Integer = DataGridView1.RowCount - 1
-    Dim primerColumna As Integer = DataGridView1.SelectedColumns(0).Index
-    Dim ultimoColumna As Integer = DataGridView1.SelectedColumns(DataGridView1.SelectedColumns.Count - 1).Index
+
     Sub apli()
         OPER.CTA = OPER.CTA.Replace(" ", "") + Str(ultimo.poliza)
         OPER.descr = Trim(TextBox3.Text)
@@ -132,11 +130,7 @@ Public Class CAP_CapturaPorOtrosMedios
         DataGridView1.Columns(3).Width = 1400 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Parcial" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
         DataGridView1.Columns(4).Width = 1400 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Debe" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
         DataGridView1.Columns(5).Width = 1400 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Haber" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(6).Width = 800
-        DataGridView1.Columns(7).Width = 800
-        DataGridView1.Columns(8).Width = 800
-        DataGridView1.Columns(9).Width = 800
-        DataGridView1.Columns(10).Width = 3200
+        'DataGridView1.Columns(6).Width = 800 : DataGridView1.Columns(7).Width = 800 : DataGridView1.Columns(8).Width = 800 : DataGridView1.Columns(9).Width = 800 : DataGridView1.Columns(10).Width = 3200
 
         Me.Text = "REDACCIÓN"
 
@@ -156,27 +150,6 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
     End Sub
-
-    Sub verificar(sumaDebe, sumaHaber, cheque)
-        sumaDebe = 0 : sumaHaber = 0 : cheque = 0
-        If ultimo.TipoCap = 1 Then cheque = 1
-        For i = 1 To (DataGridView1.Rows(-1).Cells(0).Value)
-            If (DataGridView1.Rows(i).Cells(4).Value) <> "" Then
-                sumaDebe = sumaDebe + (DataGridView1.Rows(i).Cells(4).Value)
-            End If
-            If (DataGridView1.Rows(i).Cells(5).Value) <> "" Then
-                sumaHaber = sumaHaber + (DataGridView1.Rows(i).Cells(5).Value)
-
-
-
-            End If
-
-        Next i
-
-
-
-    End Sub
-
     Sub ENTRCTA()
         Dim NoEncontrada As Integer
         Dim Y1 As Integer
@@ -233,6 +206,80 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
     End Sub
+
+    Sub verificar(sumaDebe, sumaHaber, cheque)
+        sumaDebe = 0 : sumaHaber = 0 : cheque = 0
+        If ultimo.TipoCap = 1 Then cheque = 1
+        For i = 1 To (DataGridView1.Rows(-1).Cells(0).Value)
+            If (DataGridView1.Rows(i).Cells(4).Value) <> "" Then
+                sumaDebe = sumaDebe + (DataGridView1.Rows(i).Cells(4).Value)
+            End If
+            If (DataGridView1.Rows(i).Cells(5).Value) <> "" Then
+                sumaHaber = sumaHaber + (DataGridView1.Rows(i).Cells(5).Value)
+
+
+
+            End If
+
+        Next i
+
+    End Sub
+
+
+    Sub Redacc()
+        For i = 1 To DataGridView1.Rows.Count - 1
+            If IsNumeric(DataGridView1.Rows(i).Cells(1).Value) Then
+                If (DataGridView1.Rows(i).Cells(10).Value) = "" Then
+                    DataGridView1.Rows(i).Cells(10).Value = Trim(TextBox2.Text)
+                End If
+            End If
+            If (DataGridView1.Rows(i).Cells(0).Value) = "" AndAlso (DataGridView1.Rows(i).Cells(1).Value) Then
+                Exit For
+            End If
+        Next i
+
+    End Sub
+
+    Sub validacion()
+        Dim a As Integer
+        For Zi = 1 To (DataGridView1.Rows.Count - 1)
+            a = 3
+            If Zi > (DataGridView1.Rows(-2).Cells(0).Value) Then Zi = DataGridView1.Rows(-1).Cells(0).Value
+            Exit For
+
+            DataGridView1.RowCount = Zi : DataGridView1.ColumnCount = 0
+            If IsNumeric(DataGridView1.Rows(Zi).Cells(0).Value) Then a = 1
+            If IsNumeric(DataGridView1.Rows(Zi).Cells(1).Value) Then a = "a2"
+            Select Case a
+                Case 1
+                    TextBox1.Text = (DataGridView1.Rows(Zi).Cells(0).Value)
+                    ENTRCTA()
+
+                Case 2
+                    TextBox1.Text = (DataGridView1.Rows(Zi).Cells(1).Value)
+
+                Case Else
+
+                    Zi = Zi
+
+
+
+
+            End Select
+
+
+
+
+
+
+
+
+
+        Next Zi
+
+    End Sub
+
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
 
@@ -344,15 +391,23 @@ Public Class CAP_CapturaPorOtrosMedios
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
+        Dim primerFila As Integer = DataGridView1.CurrentRow.Index
+        Dim ultimoFila As Integer = DataGridView1.RowCount - 1
+        Dim primerColumna As Integer = DataGridView1.SelectedColumns(0).Index
+        Dim ultimoColumna As Integer = DataGridView1.SelectedColumns(DataGridView1.SelectedColumns.Count - 1).Index
         For i = primerFila To ultimoFila
             DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
         Next i
-        sumaTotal()
+        sumaToPoliza()
 
     End Sub
 
-    Sub sumaTotal()
+    Sub sumaToPoliza()
         Dim sumaDt As Integer
+        Dim primerFila As Integer = DataGridView1.CurrentRow.Index
+        Dim ultimoFila As Integer = DataGridView1.RowCount - 1
+        Dim primerColumna As Integer = DataGridView1.SelectedColumns(0).Index
+        Dim ultimoColumna As Integer = DataGridView1.SelectedColumns(DataGridView1.SelectedColumns.Count - 1).Index
         Su_ma.Parcial = 0 : Su_ma.Debe = 0 : Su_ma.Haber = 0
         For s = 1 To primerFila - 1
             If DataGridView1.Rows(s).Cells(9).Value = "C" Then
@@ -382,6 +437,18 @@ Public Class CAP_CapturaPorOtrosMedios
             If DataGridView1.Rows(s).Cells(9).Value = "" Then Exit For
         Next s
     End Sub
+
+    Sub sumaPoliza()
+        For sm = 1 To DataGridView1.Rows.Count - 1
+            If IsNumeric(DataGridView1.Rows(sm).Cells(4).Value) Then
+                Su_ma.Debe = Su_ma.Debe + (DataGridView1.Rows(sm).Cells(4).Value)
+                'DataGridView1.Rows(sm).Cells(4).Value = Format(DataGridView1.Rows(sm).Cells(4).Value, z1)
+
+            End If
+        Next
+
+    End Sub
+
 
 
     Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter

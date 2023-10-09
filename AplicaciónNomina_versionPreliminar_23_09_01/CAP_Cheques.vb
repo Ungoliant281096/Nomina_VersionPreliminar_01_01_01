@@ -612,6 +612,63 @@ Public Class CAP_Cheques
 
 
     End Sub
+    Sub ENTRCTA()
+        Dim NoEncontrada As Integer
+        Dim Y1 As Integer
+        Dim Zi As Integer
+
+        FileClose(2)
+        abrirRandomNominaCaptura()
+        cm = LOF(2) / Len(CATMAY)
+        NoEncontrada = 0
+        For Y1 = 1 To cm : FileGet(2, CATMAY, Y1)
+
+            If Val(CATMAY.B1) = Label6.Text Then
+                trcta.incia = Y1
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(0).Value = Val(CATMAY.B1)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(2).Value = Trim(CATMAY.B2)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(6).Value = Y1
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = Val(CATMAY.B4)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value = Val(CATMAY.B5)
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(9).Value = "B"
+
+                DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(10).Value = ""
+
+                trcta.incia = DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value
+                trcta.termina = DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value
+
+                If DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = 0 Then
+                    DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value = ""
+                    DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(8).Value = ""
+                End If
+                NoEncontrada = 1
+
+                If IsNumeric(DataGridView1.Rows(DataGridView1.CurrentRow.Index).Cells(7).Value) Then
+                    DataGridView1.Rows(0).Cells(0).Value = DataGridView1.Rows(0).Cells(0).Value + 1 = DataGridView1.Rows(0).Cells(0).Value
+                Else
+                    DataGridView1.Rows(0).Cells(0).Value = 4
+                End If
+                Exit For
+            End If
+        Next Y1
+
+        If NoEncontrada = 0 Then
+            MsgBox("La cuenta no existe " + DataGridView1.Rows(0).Cells(0).Value + DataGridView1.Rows(2).Cells(0).Value)
+            'DataGridView1.Item.Remove(DataGridView: Zi = z1 - 1)
+            'CHECAP.Items.RemoveAt(CHECAP.Row)
+            'DataGridView1.Item.Remove
+
+        End If
+
+
+
+    End Sub
+
 
     Private Sub CAP_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -1019,7 +1076,7 @@ Public Class CAP_Cheques
         'Dim r As String
         'Dim com As String
 
-        If DataGridView1.Rows(9).Cells(0).Value = "C" Then  'problema
+        If DataGridView1.Rows(0).Cells(9).Value = "C" Then  'problema
 
             If DataGridView1.Rows(7).Cells(0).Value <> "" Then
 
@@ -1043,6 +1100,10 @@ Public Class CAP_Cheques
     Private Sub EliminarSubctaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarSubctaToolStripMenuItem.Click
         Dim cambiar As String
         Dim r As Integer
+
+        'If (DataGridView1.CurrentRow.Index) = "C" Then
+
+        'End If
 
         If (DataGridView1.Rows(0).Cells(9).Value) = "C" Then 'aquí hay que solucionar algo
             impor_te = DataGridView1.Rows(0).Cells(3).Value
@@ -1095,8 +1156,8 @@ Public Class CAP_Cheques
         Dim cambiar As String
         Dim comodin As String
         Dim currentCell As DataGridViewCell = DataGridView1.CurrentCell
-        Dim row As Integer '= currentCell.RowIndex solucionar
-        Dim col As Integer = currentCell.ColumnIndex 'solucionar
+        Dim row As Integer = currentCell.RowIndex
+        Dim col As Integer = currentCell.ColumnIndex
 
 
         cambio = DataGridView1.Rows(0).Cells(0).Value

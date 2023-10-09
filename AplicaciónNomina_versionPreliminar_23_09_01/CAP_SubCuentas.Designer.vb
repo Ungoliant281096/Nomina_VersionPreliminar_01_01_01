@@ -58,19 +58,19 @@ Partial Class CAP_SubCuentas
         ' AlfabéticamenteToolStripMenuItem
         ' 
         AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
-        AlfabéticamenteToolStripMenuItem.Size = New Size(202, 26)
+        AlfabéticamenteToolStripMenuItem.Size = New Size(224, 26)
         AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
         ' 
         ' NuméricamenteToolStripMenuItem
         ' 
         NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(202, 26)
+        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
         NuméricamenteToolStripMenuItem.Text = "Numéricamente"
         ' 
         ' SalirToolStripMenuItem
         ' 
         SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(202, 26)
+        SalirToolStripMenuItem.Size = New Size(224, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
         ' EdiciónToolStripMenuItem
