@@ -96,15 +96,45 @@ Public Class CAP_CapturaPorOtrosMedios
                         Next i
                     End If
 
+
+                    apli()
+                    DataGridView1.ClearSelection()
+                    DataGridView1.RowCount = 1 : DataGridView1.ColumnCount = 0
+                    DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.RowCount - 1
+                    DataGridView1.Rows(DataGridView1.RowCount - 1).Selected = True
+
+                    DataGridView1_CellEnter(sender, e)
+
+                    DataGridView1.RowCount = 100
+
+                    DataGridView1.Columns(0).Width = 100 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" = True
+                    DataGridView1.Columns(1).Width = 100 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "SubCta" = True
+                    DataGridView1.Columns(2).Width = 300 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" = True
+                    DataGridView1.Columns(3).Width = 150 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" = True
+                    DataGridView1.Columns(4).Width = 150 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe" = True
+                    DataGridView1.Columns(5).Width = 150 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" = True
+
+                    DataGridView1.Columns(6).Width = 10 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "  " : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+                    DataGridView1.Columns(7).Width = 10 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "  " : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+                    DataGridView1.Columns(8).Width = 10 : DataGridView1.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(8).HeaderText = "  " : DataGridView1.Columns(8).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+                    DataGridView1.Columns(9).Width = 200 : DataGridView1.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(9).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+                    DataGridView1.Columns(10).Width = 200 : DataGridView1.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(10).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+                Else
+                    MsgBox("Las sumas no se han verificado", vbCritical)
                 End If
-                apli()
-                DataGridView1.ClearSelection()
+            Case Else
+
+                MessageBox.Show("ESTA PÓLIZA NO SE PUEDE ARCHIVAR, " & Chr(13) & "NO ESTA VALIDADA", "CAPTURA", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
 
         End Select
+        Exit Sub
+        MsgBox("NO SE ELIGIO EL MES EN EL QUE SE DEBE DE APLICAR LA PÓLIZA" & Chr(13) & "INTENTE DE NUEVO", vbCritical)
     End Sub
     Private Sub CuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentasToolStripMenuItem.Click
         'If DataGridView1.Rows(i).Cells(9).Value = 0 Then
         CAP_CatCuentasMayor.Show()
+
         If ultimo.Ubi = 1 Then
             TextBox2.Text = trcta.num
         End If
@@ -113,6 +143,38 @@ Public Class CAP_CapturaPorOtrosMedios
 
     Private Sub SubCuentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubCuentasToolStripMenuItem.Click
         CAP_SubCuentas.Show()
+
+
+    End Sub
+    Sub verificar(sumaDebe, sumaHaber, cheque)
+        sumaDebe = 0 : sumaHaber = 0 : cheque = 0
+        If ultimo.TipoCap = 1 Then cheque = 1
+        For i = 1 To (DataGridView1.Rows(-1).Cells(0).Value)
+            If (DataGridView1.Rows(i).Cells(4).Value) <> "" Then
+                sumaDebe = sumaDebe + (DataGridView1.Rows(i).Cells(4).Value)
+            End If
+            If (DataGridView1.Rows(i).Cells(5).Value) <> "" Then
+                sumaHaber = sumaHaber + (DataGridView1.Rows(i).Cells(5).Value)
+                If TextBox2.Text <> "" Then
+                    If TextBox2.Text = (DataGridView1.Rows(i).Cells(5).Value) * -1 Then cheque = 1
+                End If
+            End If
+        Next i
+
+        DataGridView1.Rows(ultimo.renglon + 1).Cells(2).Value = "  sumas"
+        'DataGridView1.Rows(ultimo.renglon + 1).Cells(4).Value = Format(sumaDebe, z1)
+        'DataGridView1.Rows(ultimo.renglon + 1).Cells(5).Value = Format(sumaHaber, z1)
+        Dim result As Decimal
+        If Decimal.TryParse(sumaDebe + sumaHaber, result) AndAlso result <> 0 Then
+            cheque = 0
+        End If
+
+        If cheque = 0 Then
+                MsgBox("El importe del cheque no es correcto o las sumas no son iguales")
+                DataGridView1.Rows(ultimo.renglon + 1).Cells(2).Value = ""
+                DataGridView1.Rows(ultimo.renglon + 1).Cells(4).Value = ""
+                DataGridView1.Rows(ultimo.renglon + 1).Cells(5).Value = ""
+            End If
 
     End Sub
 
@@ -124,13 +186,18 @@ Public Class CAP_CapturaPorOtrosMedios
         Me.Text = Me.Text + "" + Trim(DATOS.D1)
         Rgtro_Validacion = 0
 
-        DataGridView1.Columns(0).Width = 800 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(1).Width = 800 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "SubCta" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(2).Width = 3350 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Nombre" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(3).Width = 1400 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Parcial" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(4).Width = 1400 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Debe" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(5).Width = 1400 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Haber" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        'DataGridView1.Columns(6).Width = 800 : DataGridView1.Columns(7).Width = 800 : DataGridView1.Columns(8).Width = 800 : DataGridView1.Columns(9).Width = 800 : DataGridView1.Columns(10).Width = 3200
+        DataGridView1.Columns(0).Width = 100 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(1).Width = 100 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "SubCta" : DataGridView1.Columns(1).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(2).Width = 300 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" : DataGridView1.Columns(2).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(3).Width = 150 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" : DataGridView1.Columns(3).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(4).Width = 150 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe" : DataGridView1.Columns(4).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(5).Width = 150 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" : DataGridView1.Columns(5).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+
+        DataGridView1.Columns(6).Width = 10 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "  " : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(7).Width = 10 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "  " : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(8).Width = 10 : DataGridView1.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(8).HeaderText = "  " : DataGridView1.Columns(8).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(9).Width = 200 : DataGridView1.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(9).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(10).Width = 200 : DataGridView1.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(10).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
 
         Me.Text = "REDACCIÓN"
 
@@ -207,23 +274,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
     End Sub
 
-    Sub verificar(sumaDebe, sumaHaber, cheque)
-        sumaDebe = 0 : sumaHaber = 0 : cheque = 0
-        If ultimo.TipoCap = 1 Then cheque = 1
-        For i = 1 To (DataGridView1.Rows(-1).Cells(0).Value)
-            If (DataGridView1.Rows(i).Cells(4).Value) <> "" Then
-                sumaDebe = sumaDebe + (DataGridView1.Rows(i).Cells(4).Value)
-            End If
-            If (DataGridView1.Rows(i).Cells(5).Value) <> "" Then
-                sumaHaber = sumaHaber + (DataGridView1.Rows(i).Cells(5).Value)
 
-
-
-            End If
-
-        Next i
-
-    End Sub
 
 
     Sub Redacc()
@@ -239,7 +290,42 @@ Public Class CAP_CapturaPorOtrosMedios
         Next i
 
     End Sub
+    'Sub LocEsp(IC As Integer, Fl As Integer, Rto As Integer)
+    '    abrirRandomNominaCaptura()
 
+
+    'End Sub
+    Sub CalificaSubCta()
+        Dim op1 As Integer, califPrimero As Integer, califSegundo As Integer
+        Dim op2 As Integer, aplicado As Integer, nuevo As Integer
+        Dim registroIncio As Integer, registroFin As Integer
+
+        op2 = 0
+        If (DataGridView1.Rows(-1).Cells(9).Value) = "B" Then op2 = DataGridView1.RowCount = -1
+        If (DataGridView1.Rows(-1).Cells(9).Value) = "C" Then op2 = (DataGridView1.Rows(-1).Cells(7).Value)
+
+        If op2 > 0 Then
+            op1 = DataGridView1.RowCount : aplicado = 0
+            If IsNumeric(DataGridView1.Rows(op2).Cells(1).Value) Then
+                registroIncio = (DataGridView1.Rows(op2).Cells(7).Value)
+                registroFin = (DataGridView1.Rows(op2).Cells(8).Value)
+
+                Do Until (DataGridView1.Rows(op2).Cells(1).Value) = ""
+                    califPrimero = (DataGridView1.Rows(op2).Cells(1).Value)
+                    abrirRandomNominaCaptura()
+                    For i = registroIncio To registroFin : FileGet(numeroAuxiliar, i, 2)
+
+
+
+
+                    Next
+
+                Loop
+            End If
+
+        End If
+
+    End Sub
     Sub validacion()
         Dim a As Integer
         For Zi = 1 To (DataGridView1.Rows.Count - 1)
@@ -464,6 +550,382 @@ Public Class CAP_CapturaPorOtrosMedios
 
     Private Sub DataGridView1_Leave(sender As Object, e As EventArgs) Handles DataGridView1.Leave
         DataGridView1.DefaultCellStyle.BackColor = Color.White
+
+    End Sub
+
+
+    Private Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+
+
+    End Sub
+
+    Private Sub FebreroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FebreroToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub MarzoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarzoToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub AbrilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrilToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub MayoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MayoToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub JunioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JunioToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+
+    End Sub
+
+    Private Sub JulioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JulioToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub AgostoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgostoToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub SeptiembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeptiembreToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub OctubreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OctubreToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub NoviembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoviembreToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub DiciembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiciembreToolStripMenuItem.Click
+        Dim Index As Integer
+        FileClose()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub IncorporaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncorporaciónToolStripMenuItem.Click
+        Dim Index As Integer
+        Close()
+        abrirRandomNominaCaptura()
+        FileGet(1, DATOS, 1)
+        Arch_Oper = Trim(DATOS.No_arch)
+
+        Select Case Index
+            Case 0
+                Mess = 13
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + 13
+
+            Case 1 To 9
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+
+            Case 10 To 12
+                Mess = Index
+                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+
+
+        End Select
+    End Sub
+
+    Private Sub ValidaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidaciónToolStripMenuItem.Click
+
+    End Sub
+
+
+
+    Private Sub TextBox2_GotFocus(sender As Object, e As EventArgs) Handles TextBox2.GotFocus
+        On Error Resume Next
+
+        TextBox2.SelectionStart = Len(TextBox2.Text)
+
+    End Sub
+
+
+    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+        End If
 
     End Sub
 End Class

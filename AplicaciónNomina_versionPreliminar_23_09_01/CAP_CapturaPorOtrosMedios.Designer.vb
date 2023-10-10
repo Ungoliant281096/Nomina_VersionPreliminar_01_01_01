@@ -74,6 +74,9 @@ Partial Class CAP_CapturaPorOtrosMedios
         ColParcial = New DataGridViewTextBoxColumn()
         ColDebe = New DataGridViewTextBoxColumn()
         ColHaber = New DataGridViewTextBoxColumn()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
         ColReda = New DataGridViewTextBoxColumn()
         ColFolioFis = New DataGridViewTextBoxColumn()
         MenuStrip1.SuspendLayout()
@@ -253,13 +256,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' CuentasToolStripMenuItem
         ' 
         CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
-        CuentasToolStripMenuItem.Size = New Size(169, 26)
+        CuentasToolStripMenuItem.Size = New Size(224, 26)
         CuentasToolStripMenuItem.Text = "Cuentas"
         ' 
         ' SubCuentasToolStripMenuItem
         ' 
         SubCuentasToolStripMenuItem.Name = "SubCuentasToolStripMenuItem"
-        SubCuentasToolStripMenuItem.Size = New Size(169, 26)
+        SubCuentasToolStripMenuItem.Size = New Size(224, 26)
         SubCuentasToolStripMenuItem.Text = "SubCuentas"
         ' 
         ' Label1
@@ -376,7 +379,7 @@ Partial Class CAP_CapturaPorOtrosMedios
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
         DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColReda, ColFolioFis})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, Column1, Column2, Column3, ColReda, ColFolioFis})
         DataGridView1.Location = New Point(29, 163)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
@@ -425,6 +428,27 @@ Partial Class CAP_CapturaPorOtrosMedios
         ColHaber.MinimumWidth = 6
         ColHaber.Name = "ColHaber"
         ColHaber.Width = 125
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = ""
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
+        Column1.Width = 125
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = ""
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
+        Column2.Width = 125
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = ""
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
+        Column3.Width = 125
         ' 
         ' ColReda
         ' 
@@ -519,6 +543,9 @@ Partial Class CAP_CapturaPorOtrosMedios
     Friend WithEvents ColParcial As DataGridViewTextBoxColumn
     Friend WithEvents ColDebe As DataGridViewTextBoxColumn
     Friend WithEvents ColHaber As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents ColReda As DataGridViewTextBoxColumn
     Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
 End Class
