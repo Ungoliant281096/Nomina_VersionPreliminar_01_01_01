@@ -118,10 +118,32 @@ Partial Class CAP_Cheques
         CheckBox2 = New CheckBox()
         OpenFileDialog3 = New OpenFileDialog()
         OpenFileDialog4 = New OpenFileDialog()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        PictureBox5 = New PictureBox()
+        PictureBox6 = New PictureBox()
+        PictureBox7 = New PictureBox()
+        PictureBox8 = New PictureBox()
+        PictureBox9 = New PictureBox()
+        PictureBox10 = New PictureBox()
+        PictureBox11 = New PictureBox()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -476,7 +498,7 @@ Partial Class CAP_Cheques
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(24, 64)
+        Label1.Location = New Point(24, 77)
         Label1.Name = "Label1"
         Label1.Size = New Size(44, 23)
         Label1.TabIndex = 1
@@ -484,7 +506,7 @@ Partial Class CAP_Cheques
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(74, 62)
+        TextBox1.Location = New Point(74, 75)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(65, 27)
         TextBox1.TabIndex = 2
@@ -492,7 +514,7 @@ Partial Class CAP_Cheques
         ' Label2
         ' 
         Label2.BackColor = SystemColors.ActiveBorder
-        Label2.Location = New Point(156, 62)
+        Label2.Location = New Point(156, 75)
         Label2.Name = "Label2"
         Label2.Size = New Size(281, 25)
         Label2.TabIndex = 3
@@ -501,7 +523,7 @@ Partial Class CAP_Cheques
         ' Label3
         ' 
         Label3.BackColor = Color.Yellow
-        Label3.Location = New Point(467, 62)
+        Label3.Location = New Point(467, 75)
         Label3.Name = "Label3"
         Label3.Size = New Size(155, 25)
         Label3.TabIndex = 4
@@ -510,7 +532,7 @@ Partial Class CAP_Cheques
         ' CheckBox1
         ' 
         CheckBox1.AutoSize = True
-        CheckBox1.Location = New Point(642, 63)
+        CheckBox1.Location = New Point(642, 76)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(75, 24)
         CheckBox1.TabIndex = 5
@@ -519,7 +541,7 @@ Partial Class CAP_Cheques
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(74, 95)
+        TextBox2.Location = New Point(74, 108)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(171, 27)
         TextBox2.TabIndex = 6
@@ -528,7 +550,7 @@ Partial Class CAP_Cheques
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(24, 145)
+        Label4.Location = New Point(24, 158)
         Label4.Name = "Label4"
         Label4.Size = New Size(45, 23)
         Label4.TabIndex = 7
@@ -536,7 +558,7 @@ Partial Class CAP_Cheques
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(75, 145)
+        TextBox3.Location = New Point(75, 158)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(319, 27)
         TextBox3.TabIndex = 8
@@ -545,7 +567,7 @@ Partial Class CAP_Cheques
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label5.Location = New Point(412, 146)
+        Label5.Location = New Point(412, 159)
         Label5.Name = "Label5"
         Label5.Size = New Size(93, 23)
         Label5.TabIndex = 9
@@ -553,14 +575,14 @@ Partial Class CAP_Cheques
         ' 
         ' TextBox4
         ' 
-        TextBox4.Location = New Point(511, 109)
+        TextBox4.Location = New Point(511, 122)
         TextBox4.Name = "TextBox4"
         TextBox4.Size = New Size(251, 27)
         TextBox4.TabIndex = 10
         ' 
         ' TextBox5
         ' 
-        TextBox5.Location = New Point(511, 142)
+        TextBox5.Location = New Point(511, 155)
         TextBox5.Name = "TextBox5"
         TextBox5.Size = New Size(251, 27)
         TextBox5.TabIndex = 11
@@ -810,11 +832,132 @@ Partial Class CAP_Cheques
         ' 
         OpenFileDialog4.FileName = "OpenFileDialog4"
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(34, 31)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(25, 24)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 28
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(74, 31)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(25, 24)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 29
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(157, 31)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(25, 24)
+        PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox3.TabIndex = 30
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(199, 31)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(25, 24)
+        PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox4.TabIndex = 31
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(242, 31)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(25, 24)
+        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox5.TabIndex = 32
+        PictureBox5.TabStop = False
+        ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
+        PictureBox6.Location = New Point(280, 31)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(25, 24)
+        PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox6.TabIndex = 33
+        PictureBox6.TabStop = False
+        ' 
+        ' PictureBox7
+        ' 
+        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
+        PictureBox7.Location = New Point(324, 31)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(25, 24)
+        PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox7.TabIndex = 34
+        PictureBox7.TabStop = False
+        ' 
+        ' PictureBox8
+        ' 
+        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
+        PictureBox8.Location = New Point(369, 31)
+        PictureBox8.Name = "PictureBox8"
+        PictureBox8.Size = New Size(25, 24)
+        PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox8.TabIndex = 35
+        PictureBox8.TabStop = False
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
+        PictureBox9.Location = New Point(412, 31)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(25, 24)
+        PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox9.TabIndex = 36
+        PictureBox9.TabStop = False
+        ' 
+        ' PictureBox10
+        ' 
+        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
+        PictureBox10.Location = New Point(458, 31)
+        PictureBox10.Name = "PictureBox10"
+        PictureBox10.Size = New Size(25, 24)
+        PictureBox10.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox10.TabIndex = 37
+        PictureBox10.TabStop = False
+        ' 
+        ' PictureBox11
+        ' 
+        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
+        PictureBox11.Location = New Point(114, 31)
+        PictureBox11.Name = "PictureBox11"
+        PictureBox11.Size = New Size(25, 24)
+        PictureBox11.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox11.TabIndex = 38
+        PictureBox11.TabStop = False
+        ' 
         ' CAP_Cheques
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1307, 1034)
+        Controls.Add(PictureBox11)
+        Controls.Add(PictureBox10)
+        Controls.Add(PictureBox9)
+        Controls.Add(PictureBox8)
+        Controls.Add(PictureBox7)
+        Controls.Add(PictureBox6)
+        Controls.Add(PictureBox5)
+        Controls.Add(PictureBox4)
+        Controls.Add(PictureBox3)
+        Controls.Add(PictureBox2)
+        Controls.Add(PictureBox1)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Controls.Add(DataGridView1)
@@ -843,6 +986,17 @@ Partial Class CAP_Cheques
         GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -941,4 +1095,15 @@ Partial Class CAP_Cheques
     Friend WithEvents ColHaber As DataGridViewTextBoxColumn
     Friend WithEvents ColReda As DataGridViewTextBoxColumn
     Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
 End Class

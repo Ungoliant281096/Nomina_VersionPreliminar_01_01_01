@@ -920,7 +920,7 @@ Public Class CAP_Cheques
     Private Sub GuardarAplicaciónCtrlGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarAplicaciónCtrlGToolStripMenuItem.Click
         Dim i As Integer
         If (validatePdfArchives < 1 And change = False) Then
-            MsgBox("No se puede guardar cheque sin archivo PDF")
+            MessageBox.Show("No se puede guardar cheque sin archivo PDF", "Error")
             Exit Sub
         End If
 
@@ -1197,5 +1197,19 @@ Public Class CAP_Cheques
 
     Private Sub VerificarSumasF6ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerificarSumasF6ToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PólizasCtrlFToolStripMenuItem_Click(sender, e)
+
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        CambioSubdirectorioToolStripMenuItem_Click(sender, e)
+    End Sub
+
+    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
+        GuardarAplicaciónCtrlGToolStripMenuItem_Click(sender, e)
     End Sub
 End Class

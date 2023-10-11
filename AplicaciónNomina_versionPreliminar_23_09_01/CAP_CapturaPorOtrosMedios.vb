@@ -12,6 +12,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Dim infoSeleccionadaTemp As Integer
     Dim filasSeleccionadas As Integer
 
+
     Sub apli()
         OPER.CTA = OPER.CTA.Replace(" ", "") + Str(ultimo.poliza)
         OPER.descr = Trim(TextBox3.Text)
@@ -432,14 +433,14 @@ Public Class CAP_CapturaPorOtrosMedios
         Dim inicio As Integer
         Dim retornoCarro As Long
         Dim inicioCopia As Long
-        infoTemp = ""
+
         Dim primerFila As Integer = DataGridView1.CurrentRow.Index
         Dim ultimoFila As Integer = DataGridView1.RowCount - 1
         Dim primerColumna As Integer = DataGridView1.SelectedColumns(0).Index
         Dim ultimoColumna As Integer = DataGridView1.SelectedColumns(DataGridView1.SelectedColumns.Count - 1).Index
         retornoCarro = InIPGc
         inicioCopia = InIPGr
-
+        infoTemp = ""
         primerFila = inicioCopia : primerColumna = retornoCarro
         If infoSeleccionadaTemp <> "" Then
             Clipboard.Clear()
