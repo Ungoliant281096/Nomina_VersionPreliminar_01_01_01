@@ -1,5 +1,8 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
+Imports System.Drawing.Printing
 Imports System.IO
+Imports System.Reflection
+Imports System.Xml
 Imports AplicaciónNomina_versionPreliminar_23_09_01.Modulo_EstructurasDeDatos
 
 Public Class CAP_Cheques
@@ -506,9 +509,44 @@ Public Class CAP_Cheques
 
 
     End Sub
+    Sub recorrerGrid(inicio, fin) 'lin_che
+        Dim antes As Integer
 
+
+    End Sub
     Private Sub ChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequeToolStripMenuItem.Click
+        'Dim anterior As Integer
+        'Dim actual As Integer
 
+        If ultimo.TipoCap <= 1 Then
+            MsgBox("No existe el cheque", vbCritical, "Captura de cheques")
+        Else
+            verificar(sumaDebe, sumaHaber, Ok_che)
+            If Ok_che = 1 Then
+                Dim result As DialogResult = OpenFileDialog1.ShowDialog()
+                If result = DialogResult.Cancel Then
+                    MsgBox("Lo siento ocurrio un error al intentar imprimir" & Err.Description, vbCritical, "Error")
+
+                    Dim printDialog As New PrintDialog()
+                    If printDialog.ShowDialog() = DialogResult.OK Then
+                        Dim printerSettings As PrinterSettings = printDialog.PrinterSettings
+                        printerSettings.DefaultPageSettings.Landscape = True
+                        Dim font As New Font("Arial", 10)
+                        Dim printDocument As New PrintDocument()
+                        'AddHandler printDocument.PrintPage, Sub(sender, e)
+                        '                                        e.Graphics.DrawString("Hello, world!", font, Brushes.Black, 0, 0)
+                        '                                    End Sub
+                        printDocument.PrinterSettings = printerSettings
+                        printDocument.Print()
+                    End If
+
+
+                End If
+
+            End If
+
+
+        End If
     End Sub
 
     Private Sub SubcuentasCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubcuentasCtrlToolStripMenuItem.Click
@@ -559,7 +597,7 @@ Public Class CAP_Cheques
             abrirRandomNominaCaptura()
             'FileOpen(12, Arch_act, OpenMode.Random,,, Len(OPER))
 
-            Dm = LOF(12) / Len(OPER)
+
             tope = Val(DATOS.ultimaOperacionReg)
             If rgtro >= Dm Then
                 MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
@@ -619,7 +657,7 @@ Public Class CAP_Cheques
 
         FileClose(2)
         abrirRandomNominaCaptura()
-        cm = LOF(2) / Len(CATMAY)
+
         NoEncontrada = 0
         For Y1 = 1 To cm : FileGet(2, CATMAY, Y1)
 
@@ -1211,5 +1249,80 @@ Public Class CAP_Cheques
 
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
         GuardarAplicaciónCtrlGToolStripMenuItem_Click(sender, e)
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        ChequeToolStripMenuItem_Click(sender, e)
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+        Dim archivoXml As New XmlDocument()
+        Dim nodelist As XmlNodeList
+        Dim nodelist2 As XmlNodeList
+        Dim nodo As XmlNode
+        Dim nodo1 As XmlNode
+        Dim rutaArchivos1
+
+        currentdir = Trim(Modulo_EstructurasDeDatos.SCont.guarda)
+        currentdir = Mid(currentdir, 1, 2)
+        rutaArchivos1 = ""
+        TextBox3.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
+        TextBox10.Text = ""
+        TextBox11.Text = ""
+
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.FileName = ""
+        openFileDialog1.Multiselect = True
+        openFileDialog1.ReadOnlyChecked = False
+        openFileDialog1.SupportMultiDottedExtensions = True
+
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            With openFileDialog1
+                .Filter = "Archivos XML|*.xml"
+                .Title = "Selecccionar Archivo(s) XML"
+                .FileName = ""
+            End With
+        End If
+
+
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+        Dim archivosPDF As Integer
+        Dim i As Integer
+        currentdir = Trim(Modulo_EstructurasDeDatos.SCont.guarda)
+        currentdir = Mid(currentdir, 1, 2)
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.FileName = ""
+        openFileDialog1.Multiselect = True
+        openFileDialog1.ReadOnlyChecked = False
+        openFileDialog1.SupportMultiDottedExtensions = True
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            With openFileDialog1
+                .Filter = "Archivos PDF|*.pdf"
+                .Title = "Selecccionar Archivo(s) PDF"
+                .FileName = ""
+            End With
+        End If
+
+
+
     End Sub
 End Class

@@ -22,8 +22,8 @@ Partial Class CAP_PolizasDiario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_PolizasDiario))
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
         CambioDirectorioToolStripMenuItem = New ToolStripMenuItem()
@@ -37,6 +37,9 @@ Partial Class CAP_PolizasDiario
         RangoToolStripMenuItem = New ToolStripMenuItem()
         TodasToolStripMenuItem = New ToolStripMenuItem()
         GroupBox1 = New GroupBox()
+        PictureBox2 = New PictureBox()
+        PictureBox1 = New PictureBox()
+        PictureBox8 = New PictureBox()
         ComboBox1 = New ComboBox()
         Label1 = New Label()
         DataGridView1 = New DataGridView()
@@ -51,15 +54,12 @@ Partial Class CAP_PolizasDiario
         VScrollBar1 = New VScrollBar()
         OpenFileDialog1 = New OpenFileDialog()
         OpenFileDialog2 = New OpenFileDialog()
-        PictureBox8 = New PictureBox()
-        PictureBox1 = New PictureBox()
-        PictureBox2 = New PictureBox()
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -152,6 +152,36 @@ Partial Class CAP_PolizasDiario
         GroupBox1.Size = New Size(313, 33)
         GroupBox1.TabIndex = 1
         GroupBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(161, 5)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(25, 24)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 38
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(89, 5)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(25, 24)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 37
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox8
+        ' 
+        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
+        PictureBox8.Location = New Point(19, 5)
+        PictureBox8.Name = "PictureBox8"
+        PictureBox8.Size = New Size(25, 24)
+        PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox8.TabIndex = 36
+        PictureBox8.TabStop = False
         ' 
         ' ComboBox1
         ' 
@@ -260,36 +290,6 @@ Partial Class CAP_PolizasDiario
         ' 
         OpenFileDialog2.FileName = "OpenFileDialog2"
         ' 
-        ' PictureBox8
-        ' 
-        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(19, 5)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(25, 24)
-        PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox8.TabIndex = 36
-        PictureBox8.TabStop = False
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(89, 5)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(25, 24)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 37
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(161, 5)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(25, 24)
-        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox2.TabIndex = 38
-        PictureBox2.TabStop = False
-        ' 
         ' CAP_PolizasDiario
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -307,10 +307,10 @@ Partial Class CAP_PolizasDiario
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         GroupBox1.ResumeLayout(False)
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub

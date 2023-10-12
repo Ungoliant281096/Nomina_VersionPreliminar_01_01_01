@@ -1,4 +1,5 @@
 ﻿Imports System.Linq.Expressions
+Imports System.Net.Http.Headers
 Imports System.Text
 Imports Microsoft.SqlServer.Server
 
@@ -171,11 +172,11 @@ Public Class CAP_CapturaPorOtrosMedios
         End If
 
         If cheque = 0 Then
-                MsgBox("El importe del cheque no es correcto o las sumas no son iguales")
-                DataGridView1.Rows(ultimo.renglon + 1).Cells(2).Value = ""
-                DataGridView1.Rows(ultimo.renglon + 1).Cells(4).Value = ""
-                DataGridView1.Rows(ultimo.renglon + 1).Cells(5).Value = ""
-            End If
+            MsgBox("El importe del cheque no es correcto o las sumas no son iguales")
+            DataGridView1.Rows(ultimo.renglon + 1).Cells(2).Value = ""
+            DataGridView1.Rows(ultimo.renglon + 1).Cells(4).Value = ""
+            DataGridView1.Rows(ultimo.renglon + 1).Cells(5).Value = ""
+        End If
 
     End Sub
 
@@ -291,11 +292,18 @@ Public Class CAP_CapturaPorOtrosMedios
         Next i
 
     End Sub
-    'Sub LocEsp(IC As Integer, Fl As Integer, Rto As Integer)
-    '    abrirRandomNominaCaptura()
+    Sub LocEsp(IC As Integer, Fl As Integer, Rto As Integer)
+        abrirRandomNominaCaptura()
 
+        For i = IC To Fl : FileGet(3, CATAUX, i)
+            If Val(CATAUX.C1) = 0 And Val(CATAUX.C3) = 0 Then
+                Rto = i
+                Exit For
+            End If
 
-    'End Sub
+        Next i
+
+    End Sub
     Sub CalificaSubCta()
         Dim op1 As Integer, califPrimero As Integer, califSegundo As Integer
         Dim op2 As Integer, aplicado As Integer, nuevo As Integer
@@ -315,15 +323,39 @@ Public Class CAP_CapturaPorOtrosMedios
                     califPrimero = (DataGridView1.Rows(op2).Cells(1).Value)
                     abrirRandomNominaCaptura()
                     For i = registroIncio To registroFin : FileGet(numeroAuxiliar, i, 2)
+                        califSegundo = Val(CATAUX.C1)
+                        If califSegundo = califPrimero Then
+                            aplicado = 1
+                            DataGridView1.ColumnCount = 2 : DataGridView1.Rows(0).Cells(0).Value = Trim(CATAUX.C2)
+                            DataGridView1.ColumnCount = 6 : DataGridView1.Rows(0).Cells(0).Value = i
+                            DataGridView1.ColumnCount = 7 : DataGridView1.Rows(0).Cells(0).Value = op2
+                            DataGridView1.ColumnCount = 9 : DataGridView1.Rows(0).Cells(0).Value = "C"
+                            Exit For
+                        End If
+                    Next i
 
+                    If aplicado = 0 Then
+                        CATAUX.C1 = Str(califPrimero)
+                        DataGridView1.ColumnCount = 2
+                        If DataGridView1.CurrentCell.Value = "" Then
+                            DataGridView1.CurrentCell.Value = "No existe" + Str(califPrimero)
+                        End If
+                        CATAUX.C2 = LTrim(DataGridView1.CurrentCell.Value)
 
-
-
-                    Next
-
+                        CATAUX.C3 = ""
+                        CATAUX.C4 = "" : CATAUX.C5 = "" : FilePut(3, CATAUX, nuevo)
+                        DataGridView1.ColumnCount = 6 : DataGridView1.CurrentCell.Value = nuevo
+                        DataGridView1.ColumnCount = 7 : DataGridView1.CurrentCell.Value = op2
+                        DataGridView1.ColumnCount = 9 : DataGridView1.CurrentCell.Value = "C"
+                    End If
+                    op1 = op1 + 1 : DataGridView1.RowCount = op1
                 Loop
+            Else
+                DataGridView1.ColumnCount = 0
+                DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+                Zi = Zi - 1
+                DataGridView1.ColumnCount = DataGridView1.ColumnCount + 1
             End If
-
         End If
 
     End Sub
@@ -336,33 +368,25 @@ Public Class CAP_CapturaPorOtrosMedios
 
             DataGridView1.RowCount = Zi : DataGridView1.ColumnCount = 0
             If IsNumeric(DataGridView1.Rows(Zi).Cells(0).Value) Then a = 1
-            If IsNumeric(DataGridView1.Rows(Zi).Cells(1).Value) Then a = "a2"
+            If IsNumeric(DataGridView1.Rows(Zi).Cells(1).Value) Then a = 2
             Select Case a
                 Case 1
                     TextBox1.Text = (DataGridView1.Rows(Zi).Cells(0).Value)
                     ENTRCTA()
 
                 Case 2
-                    TextBox1.Text = (DataGridView1.Rows(Zi).Cells(1).Value)
+                    CalificaSubCta()
+
 
                 Case Else
 
+                    DataGridView1.Rows.RemoveAt(Zi)
+
+
                     Zi = Zi
-
-
-
-
             End Select
-
-
-
-
-
-
-
-
-
         Next Zi
+        Rgtro_Validacion = 1
 
     End Sub
 

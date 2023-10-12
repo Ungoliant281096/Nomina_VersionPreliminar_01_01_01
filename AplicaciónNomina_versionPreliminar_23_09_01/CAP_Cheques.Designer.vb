@@ -835,7 +835,7 @@ Partial Class CAP_Cheques
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(34, 31)
+        PictureBox1.Location = New Point(43, 31)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(25, 24)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -845,7 +845,7 @@ Partial Class CAP_Cheques
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(74, 31)
+        PictureBox2.Location = New Point(91, 31)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(25, 24)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
@@ -855,7 +855,7 @@ Partial Class CAP_Cheques
         ' PictureBox3
         ' 
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(157, 31)
+        PictureBox3.Location = New Point(184, 31)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(25, 24)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
@@ -865,7 +865,7 @@ Partial Class CAP_Cheques
         ' PictureBox4
         ' 
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(199, 31)
+        PictureBox4.Location = New Point(236, 31)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(25, 24)
         PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
@@ -875,7 +875,7 @@ Partial Class CAP_Cheques
         ' PictureBox5
         ' 
         PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(242, 31)
+        PictureBox5.Location = New Point(284, 31)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(25, 24)
         PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
@@ -885,7 +885,7 @@ Partial Class CAP_Cheques
         ' PictureBox6
         ' 
         PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(280, 31)
+        PictureBox6.Location = New Point(333, 31)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(25, 24)
         PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
@@ -895,7 +895,7 @@ Partial Class CAP_Cheques
         ' PictureBox7
         ' 
         PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(324, 31)
+        PictureBox7.Location = New Point(377, 31)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(25, 24)
         PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
@@ -905,7 +905,7 @@ Partial Class CAP_Cheques
         ' PictureBox8
         ' 
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(369, 31)
+        PictureBox8.Location = New Point(422, 31)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(25, 24)
         PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
@@ -915,7 +915,7 @@ Partial Class CAP_Cheques
         ' PictureBox9
         ' 
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(412, 31)
+        PictureBox9.Location = New Point(465, 31)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(25, 24)
         PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
@@ -925,7 +925,7 @@ Partial Class CAP_Cheques
         ' PictureBox10
         ' 
         PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(458, 31)
+        PictureBox10.Location = New Point(511, 31)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(25, 24)
         PictureBox10.SizeMode = PictureBoxSizeMode.StretchImage
@@ -935,7 +935,7 @@ Partial Class CAP_Cheques
         ' PictureBox11
         ' 
         PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
-        PictureBox11.Location = New Point(114, 31)
+        PictureBox11.Location = New Point(136, 31)
         PictureBox11.Name = "PictureBox11"
         PictureBox11.Size = New Size(25, 24)
         PictureBox11.SizeMode = PictureBoxSizeMode.StretchImage
