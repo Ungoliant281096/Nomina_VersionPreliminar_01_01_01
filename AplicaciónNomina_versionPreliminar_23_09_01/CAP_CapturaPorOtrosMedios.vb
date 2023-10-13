@@ -139,6 +139,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
         If ultimo.Ubi = 1 Then
             TextBox2.Text = trcta.num
+
         End If
 
     End Sub

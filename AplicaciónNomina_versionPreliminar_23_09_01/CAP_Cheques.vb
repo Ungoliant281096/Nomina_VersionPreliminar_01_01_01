@@ -343,6 +343,7 @@ Public Class CAP_Cheques
             Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
             If midir.EndsWith("\") Then
                 midir = midir.Substring(0, midir.Length - 1)
+
             End If
 
 
@@ -1143,7 +1144,7 @@ Public Class CAP_Cheques
 
         'End If
 
-        If (DataGridView1.Rows(0).Cells(9).Value) = "C" Then 'aquí hay que solucionar algo
+        If (DataGridView1.Rows(0).Cells(9).Value) = "C" Then ''
             impor_te = DataGridView1.Rows(0).Cells(3).Value
             trscta.refer = DataGridView1.Rows(0).Cells(7).Value
 
@@ -1200,7 +1201,7 @@ Public Class CAP_Cheques
 
         cambio = DataGridView1.Rows(0).Cells(0).Value
 
-        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then
+        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then  'error'
             DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
             ultimo.renglon = ultimo.renglon - 1
 
@@ -1252,6 +1253,7 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        EliminarSubctaToolStripMenuItem_Click(sender, e)
 
     End Sub
 
@@ -1322,6 +1324,40 @@ Public Class CAP_Cheques
             End With
         End If
 
+
+
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
+        If trcta.incia <= 0 Then
+            MsgBox("Verifique la cuenta.")
+        Else
+            ultimo.Ubi = 0
+            abrirRandomNominaCaptura()
+            CAP_SubCuentas.Show()
+        End If
+        If ultimo.Ubi > 0 Then 'mostrar_trscta
+            Clipboard.Clear()
+
+        End If
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        AgregarSubctaToolStripMenuItem_Click(sender, e)
+
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        BorrarCuentaToolStripMenuItem_Click(sender, e)
+
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Dim row As DataGridViewRow = DataGridView1.CurrentRow
+        'Dim verAnte As DataGridViewRow = DataGridView1.Rows(row.Index - 1)
+        'If verAnte <= 0 Then
+
+        'End If
 
 
     End Sub

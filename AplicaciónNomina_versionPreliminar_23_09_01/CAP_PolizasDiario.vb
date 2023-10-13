@@ -14,6 +14,8 @@ Public Class CAP_PolizasDiario
     End Sub
 
     Private Sub CAP_PolizasDiario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboBox1.Visible = False
+
         ColCta.Width = 80
         ColSubCta.Width = 80
         ColNom.Width = 150
@@ -50,6 +52,11 @@ Public Class CAP_PolizasDiario
 
     Private Sub CambioDirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioDirectorioToolStripMenuItem.Click
         MsgBox("No puedes cambiar el subdirectorio.")
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        MsgBox("No existe póliza para imprimir")
 
     End Sub
 End Class
