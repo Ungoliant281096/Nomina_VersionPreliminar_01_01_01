@@ -370,12 +370,8 @@ Module Modulo_EstructurasDeDatos
 	Public validateXMLArchives As String
 	Public validatePdfArchives As String
 
-
-
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
-
-
 
 	REM largos de los random
 	Public largoDeBancos As Integer
@@ -400,9 +396,6 @@ Module Modulo_EstructurasDeDatos
 	Public numeronominaCompleta As Integer = 8
 	Public numeroGConta As Integer = 9
 	Public numeroEmprsa As Integer = 10
-
-
-
 
 	Public Sub abrirRandomNominaCaptura()
 
@@ -429,6 +422,27 @@ Module Modulo_EstructurasDeDatos
 
 		FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
 		largoGconta = LOF(numeroGConta) \ Len(SCont)
+
+	End Sub
+
+	Public Sub imprimirEmpleados(grillaDat As DataGridView, largoDelRandom As Integer)
+
+		' Establece la cantidad de columnas que la grid necesita
+		grillaDat.ColumnCount = 12
+
+		' For que recorre los random e imprime los datos en la grid
+		For i As Integer = 1 To largoDelRandom
+			FileGet(numeroBancos, cuentasDeBanco, i)
+			FileGet(numeroPersonal, personal, i)
+			FileGet(numeroOtros, otrosCampos, i)
+
+			' Agrega la fila a la grid
+			grillaDat.Rows.Add(i, personal.nom.Trim() & " " & personal.ape1.Trim() & " " & personal.ape2.Trim(), personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
+
+		Next i
+
+		' Establece el foco en la grid
+		grillaDat.Focus()
 
 	End Sub
 
@@ -472,22 +486,6 @@ Module Modulo_EstructurasDeDatos
 
 	End Sub
 
-	Public Sub ImprimirCtasBanco(grillaDat As DataGridView, largoDelRandom As Integer)
-
-		grillaDat.ColumnCount = 12
-
-		For i As Integer = 1 To largoDelRandom
-			FileGet(numeroBancos, cuentasDeBanco, i)
-			FileGet(numeroPersonal, personal, i)
-			FileGet(numeroOtros, otrosCampos, i)
-
-			grillaDat.Rows.Add(i, personal.nom & personal.ape1 & personal.ape2, personal.RFC, otrosCampos.CURP, personal.imss, personal.fal, personal.fab, personal.ingr / 10000, personal.viat, personal.otras, personal.integrado / 10000, cuentasDeBanco.Q1)
-
-		Next i
-
-		grillaDat.Focus()
-
-	End Sub
 
 	Public Sub imprimirOtrasCh(grillaDat As DataGridView, largoDelRandom As Integer)
 

@@ -76,7 +76,7 @@ Partial Class NOM_EdicionDePersonal
         '
         Me.OrdenarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuméricamenteToolStripMenuItem, Me.AlfabéticamenteToolStripMenuItem})
         Me.OrdenarToolStripMenuItem.Name = "OrdenarToolStripMenuItem"
-        Me.OrdenarToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.OrdenarToolStripMenuItem.Size = New System.Drawing.Size(146, 26)
         Me.OrdenarToolStripMenuItem.Text = "Ordenar"
         '
         'NuméricamenteToolStripMenuItem
@@ -94,7 +94,7 @@ Partial Class NOM_EdicionDePersonal
         'SalidaToolStripMenuItem
         '
         Me.SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(146, 26)
         Me.SalidaToolStripMenuItem.Text = "Salida"
         '
         'EdiciónToolStripMenuItem
@@ -144,13 +144,13 @@ Partial Class NOM_EdicionDePersonal
         'PantallaToolStripMenuItem
         '
         Me.PantallaToolStripMenuItem.Name = "PantallaToolStripMenuItem"
-        Me.PantallaToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.PantallaToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
         Me.PantallaToolStripMenuItem.Text = "Pantalla"
         '
         'TotalToolStripMenuItem
         '
         Me.TotalToolStripMenuItem.Name = "TotalToolStripMenuItem"
-        Me.TotalToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.TotalToolStripMenuItem.Size = New System.Drawing.Size(144, 26)
         Me.TotalToolStripMenuItem.Text = "Total"
         '
         'DataGridView1
@@ -158,7 +158,7 @@ Partial Class NOM_EdicionDePersonal
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.rfcEmpleado, Me.curpEmpleado, Me.imssEmpleado, Me.fechaAltaEmpleado, Me.fechaBajaEmpleado, Me.salarioDiarioEmpleado, Me.viaticosEmpleado, Me.otrosDiariosEmpleado, Me.salarioDiarioIntegradoEmpleado, Me.numeroTarjetaEmpleado})
-        Me.DataGridView1.Location = New System.Drawing.Point(14, 36)
+        Me.DataGridView1.Location = New System.Drawing.Point(14, 34)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
@@ -171,84 +171,84 @@ Partial Class NOM_EdicionDePersonal
         Me.idEmpleado.HeaderText = "Id"
         Me.idEmpleado.MinimumWidth = 6
         Me.idEmpleado.Name = "idEmpleado"
-        Me.idEmpleado.Width = 125
+        Me.idEmpleado.Width = 69
         '
         'nombreEmpleado
         '
         Me.nombreEmpleado.HeaderText = "Nombre"
         Me.nombreEmpleado.MinimumWidth = 6
         Me.nombreEmpleado.Name = "nombreEmpleado"
-        Me.nombreEmpleado.Width = 125
+        Me.nombreEmpleado.Width = 69
         '
         'rfcEmpleado
         '
         Me.rfcEmpleado.HeaderText = "RFC"
         Me.rfcEmpleado.MinimumWidth = 6
         Me.rfcEmpleado.Name = "rfcEmpleado"
-        Me.rfcEmpleado.Width = 125
+        Me.rfcEmpleado.Width = 69
         '
         'curpEmpleado
         '
         Me.curpEmpleado.HeaderText = "CURP"
         Me.curpEmpleado.MinimumWidth = 6
         Me.curpEmpleado.Name = "curpEmpleado"
-        Me.curpEmpleado.Width = 125
+        Me.curpEmpleado.Width = 69
         '
         'imssEmpleado
         '
         Me.imssEmpleado.HeaderText = "IMSS"
         Me.imssEmpleado.MinimumWidth = 6
         Me.imssEmpleado.Name = "imssEmpleado"
-        Me.imssEmpleado.Width = 125
+        Me.imssEmpleado.Width = 69
         '
         'fechaAltaEmpleado
         '
         Me.fechaAltaEmpleado.HeaderText = "Fecha alta"
         Me.fechaAltaEmpleado.MinimumWidth = 6
         Me.fechaAltaEmpleado.Name = "fechaAltaEmpleado"
-        Me.fechaAltaEmpleado.Width = 125
+        Me.fechaAltaEmpleado.Width = 70
         '
         'fechaBajaEmpleado
         '
         Me.fechaBajaEmpleado.HeaderText = "Fecha baja"
         Me.fechaBajaEmpleado.MinimumWidth = 6
         Me.fechaBajaEmpleado.Name = "fechaBajaEmpleado"
-        Me.fechaBajaEmpleado.Width = 125
+        Me.fechaBajaEmpleado.Width = 69
         '
         'salarioDiarioEmpleado
         '
         Me.salarioDiarioEmpleado.HeaderText = "Salario diario"
         Me.salarioDiarioEmpleado.MinimumWidth = 6
         Me.salarioDiarioEmpleado.Name = "salarioDiarioEmpleado"
-        Me.salarioDiarioEmpleado.Width = 125
+        Me.salarioDiarioEmpleado.Width = 69
         '
         'viaticosEmpleado
         '
         Me.viaticosEmpleado.HeaderText = "Viáticos diarios"
         Me.viaticosEmpleado.MinimumWidth = 6
         Me.viaticosEmpleado.Name = "viaticosEmpleado"
-        Me.viaticosEmpleado.Width = 125
+        Me.viaticosEmpleado.Width = 69
         '
         'otrosDiariosEmpleado
         '
         Me.otrosDiariosEmpleado.HeaderText = "Otros diarios"
         Me.otrosDiariosEmpleado.MinimumWidth = 6
         Me.otrosDiariosEmpleado.Name = "otrosDiariosEmpleado"
-        Me.otrosDiariosEmpleado.Width = 125
+        Me.otrosDiariosEmpleado.Width = 69
         '
         'salarioDiarioIntegradoEmpleado
         '
         Me.salarioDiarioIntegradoEmpleado.HeaderText = "SDI"
         Me.salarioDiarioIntegradoEmpleado.MinimumWidth = 6
         Me.salarioDiarioIntegradoEmpleado.Name = "salarioDiarioIntegradoEmpleado"
-        Me.salarioDiarioIntegradoEmpleado.Width = 125
+        Me.salarioDiarioIntegradoEmpleado.Width = 69
         '
         'numeroTarjetaEmpleado
         '
         Me.numeroTarjetaEmpleado.HeaderText = "Numero tarjeta"
         Me.numeroTarjetaEmpleado.MinimumWidth = 6
         Me.numeroTarjetaEmpleado.Name = "numeroTarjetaEmpleado"
-        Me.numeroTarjetaEmpleado.Width = 125
+        Me.numeroTarjetaEmpleado.Width = 69
         '
         'NOM_EdicionDePersonal
         '
