@@ -60,7 +60,7 @@ Public Class CAP_Cheques
         Dim checar As String
 
         Try
-            FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random, , , Len(SCont))
+            'abrirRandomNominaCaptura()
             FileGet(numeroGConta, SCont, 1)
 
             If SCont.guarda.Substring(0, 1) <= " " Then
@@ -84,7 +84,7 @@ Public Class CAP_Cheques
             FileClose(1)
 
             Archivo = "DATOS"
-            FileOpen(1, Archivo, OpenMode.Random,,, Len(DATOS))
+
             cm = LOF(1) / Len(DATOS)
             FileGet(1, DATOS, 1)
             checar = Trim(DATOS.No_arch)
@@ -128,7 +128,7 @@ Public Class CAP_Cheques
     End Sub
     Sub aplicacion()
         Dim i As Integer
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
 
         'OPER.CTA = (6 - Len(Str(ultimo.poliza)), " ") + Str(ultimo.poliza)
         If ultimo.TipoCap = 0 Then
@@ -304,7 +304,7 @@ Public Class CAP_Cheques
         archivooper()
         Dim nom_arch As Integer = FreeFile()
 
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         'FileOpen(nom_arch, "ruta_del_archivo", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.Shared, Len(OPER))
         fin_oper = LOF(nom_arch) / Len(OPER)
         ultimo.poliza = 0
@@ -368,7 +368,7 @@ Public Class CAP_Cheques
 
 
                     'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-                    abrirRandomNominaCaptura()
+                    'abrirRandomNominaCaptura()
                     SCont.guarda = MientraS
                     FilePut(numeroGConta, MientraS, 1)
                     FileClose(numeroGConta)
@@ -407,7 +407,7 @@ Public Class CAP_Cheques
     Sub Actualizacion()
         Dim i As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         'FileOpen(1, "DATOS", OpenMode.Random,,, Len(DATOS))
         FileGet(1, DATOS, 1)
         If DATOS.No_arch = "" Then
@@ -488,7 +488,7 @@ Public Class CAP_Cheques
         ultimo.texto = mi_ent
 
         If SCont.guarda <> "" Then
-            abrirRandomNominaCaptura()
+            'abrirRandomNominaCaptura()
 
             'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
 
@@ -512,6 +512,11 @@ Public Class CAP_Cheques
     End Sub
     Sub recorrerGrid(inicio, fin) 'lin_che
         Dim antes As Integer
+        Dim largoPapel As Integer
+        Dim anchoPapel As Integer
+        Dim numCheque As Integer
+        Dim operacion As Integer
+        Dim ancho2 As Integer
 
 
     End Sub
@@ -595,7 +600,7 @@ Public Class CAP_Cheques
             FileGet(1, DATOS, Mes_Act)
             rgtro = Val(DATOS.ultimaOperacionReg)
 
-            abrirRandomNominaCaptura()
+            'abrirRandomNominaCaptura()
             'FileOpen(12, Arch_act, OpenMode.Random,,, Len(OPER))
 
 
@@ -657,7 +662,7 @@ Public Class CAP_Cheques
         Dim Zi As Integer
 
         FileClose(2)
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
 
         NoEncontrada = 0
         For Y1 = 1 To cm : FileGet(2, CATMAY, Y1)
@@ -990,7 +995,7 @@ Public Class CAP_Cheques
             archivooper()
             Dim nom_arch As Integer = FreeFile()
             Close()
-            abrirRandomNominaCaptura()
+            'abrirRandomNominaCaptura()
             fin_oper = LOF(3) / Len(OPER)
             ultimo.poliza = 0
 
@@ -1021,7 +1026,7 @@ Public Class CAP_Cheques
 
         If ultimo.TipoCap = 1 Then
             FileClose(3)
-            abrirRandomNominaCaptura()
+            'abrirRandomNominaCaptura()
             fin_oper = LOF(3) / Len(OPER)
             Ok_che = 0
             verificar(0, 0, Ok_che)
@@ -1147,6 +1152,7 @@ Public Class CAP_Cheques
         If (DataGridView1.Rows(0).Cells(9).Value) = "C" Then ''
             impor_te = DataGridView1.Rows(0).Cells(3).Value
             trscta.refer = DataGridView1.Rows(0).Cells(7).Value
+            'Index was out of range. Must be non-negative and less than the size of the collection. Arg_ParamName_Name'
 
             If (DataGridView1.Rows(-1).Cells(9).Value) = "B" And DataGridView1.Rows(+1).Cells(9).Value <> "C" Then
                 MsgBox("Es necesario borrar la cuenta") : Exit Sub
@@ -1333,7 +1339,7 @@ Public Class CAP_Cheques
             MsgBox("Verifique la cuenta.")
         Else
             ultimo.Ubi = 0
-            abrirRandomNominaCaptura()
+            'abrirRandomNominaCaptura()
             CAP_SubCuentas.Show()
         End If
         If ultimo.Ubi > 0 Then 'mostrar_trscta
@@ -1351,13 +1357,40 @@ Public Class CAP_Cheques
         BorrarCuentaToolStripMenuItem_Click(sender, e)
 
     End Sub
+    Sub mostrarCta()
+        If trcta.num > 0 Then
+            If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
 
+
+
+        End If
+
+    End Sub
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        Dim row As DataGridViewRow = DataGridView1.CurrentRow
-        'Dim verAnte As DataGridViewRow = DataGridView1.Rows(row.Index - 1)
-        'If verAnte <= 0 Then
+        Dim primeraColum As Integer
+        primeraColum = DataGridView1.SelectedRows(0).Index - 1
+        If primeraColum <= 0 Then primeraColum = 1 : ultimo.renglon = 1
 
-        'End If
+        'Dim VerCta As Integer
+        'VerCta = Math.Max(DataGridView1.Rows(-1).Cells(1).Value)
+
+
+        If DataGridView1.Rows(primeraColum).Cells(0).Value <> " " And trcta.incia > 0 Then
+            MsgBox("La anterior es una cuenta")
+
+        Else
+            Close()
+            ultimo.Ubi = 0
+            CAP_CatCuentasMayor.Show()
+            If ultimo.Ubi = 1 Then
+                'mostrarCta
+            End If
+
+
+
+
+        End If
+
 
 
     End Sub

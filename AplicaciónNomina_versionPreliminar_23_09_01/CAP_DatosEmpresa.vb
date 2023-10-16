@@ -72,7 +72,7 @@ Public Class CAP_DatosEmpresa
         End If
     End Sub
 
-    Private Sub CAP_DatosEmpresa_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+    Private Sub CAP_DatosEmpresa_Closed(sender As Object, e As CancelEventArgs) Handles Me.Closed
         Dim Grb As Integer
         If Modif_General = 1 Then
             'Dim result As DialogResult = MessageBox.Show("¿Los datos de la empresa fueron modificados?" & Environment.NewLine & "¿Desea guardar los cambios", MessageBoxButtons.YesNo)
