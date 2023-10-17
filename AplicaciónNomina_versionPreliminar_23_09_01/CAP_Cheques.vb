@@ -2,6 +2,7 @@
 Imports System.Drawing.Printing
 Imports System.IO
 Imports System.Reflection
+Imports System.Runtime.InteropServices
 Imports System.Xml
 Imports AplicaciónNomina_versionPreliminar_23_09_01.Modulo_EstructurasDeDatos
 
@@ -31,6 +32,11 @@ Public Class CAP_Cheques
     Dim flag As Long
     Dim valida As Integer
     Dim verct_a As Integer
+    Dim contadorXml As Integer
+    Dim difer As Integer
+    Dim importe As Integer
+    Dim miArchivo As String
+
 
     Private Sub EstadosFinancierosCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadosFinancierosCtrlToolStripMenuItem.Click
         CAP_Balance.Show()
@@ -368,7 +374,7 @@ Public Class CAP_Cheques
 
 
                     'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-                    'abrirRandomNominaCaptura()
+                    abrirRandomNominaCaptura()
                     SCont.guarda = MientraS
                     FilePut(numeroGConta, MientraS, 1)
                     FileClose(numeroGConta)
@@ -520,6 +526,54 @@ Public Class CAP_Cheques
 
 
     End Sub
+    Sub mostrarCta()
+        'Dim sender As Object = Nothing
+        'Dim e As New DataGridViewCellEventArgs
+
+        If trcta.num > 0 Then
+            If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
+
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(0).Value = trcta.num
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(1).Value = ""
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(2).Value = "" + trcta.nombre
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(6).Value = trcta.donde
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(7).Value = trcta.incia
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(8).Value = trcta.termina
+            DataGridView1.Rows(DataGridView1.Rows.Count).Cells(9).Value = "B"
+            trscta.refer = DataGridView1.Rows.Count
+
+
+            If trcta.incia > 0 Then
+                If ultimo.TipoCap = 1 Then DataGridView1.Rows(DataGridView1.Rows.Count).Cells(10).Value = TextBox4.Text
+                DataGridView1.Rows(DataGridView1.Rows.Count + 1).Cells(7).Value = DataGridView1.Rows.Count
+                DataGridView1.Rows(DataGridView1.Rows.Count + 1).Cells(9).Value = "C"
+                'DataGridView1.Rows.Count = DataGridView1.Rows.Count + 1 : DataGridView1.Columns.Count = 1
+                'DataGridView1_CellEnter(sender, e)
+                'DataGridView1_CellLeave(sender, e)
+
+
+            End If
+
+
+        End If
+
+    End Sub
+
+    Sub mostrarSubcta()
+
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(0).Value = ""
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(1).Value = trscta.num
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(2).Value = " " + trscta.nombre
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(4).Value = ""
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(5).Value = ""
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(6).Value = trscta.donde
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(7).Value = trscta.refer
+        DataGridView1.Rows(DataGridView1.Rows.Count).Cells(9).Value = "C"
+
+        If ultimo.TipoCap = 1 Then DataGridView1.Rows(DataGridView1.Rows.Count).Cells(10).Value = ultimo.redaccion
+
+
+    End Sub
     Private Sub ChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequeToolStripMenuItem.Click
         'Dim anterior As Integer
         'Dim actual As Integer
@@ -556,7 +610,18 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub SubcuentasCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubcuentasCtrlToolStripMenuItem.Click
-        CAP_SubCuentas.Show()
+        Close()
+        If trcta.incia <= 0 Then
+            MsgBox("Verifique la cuenta")
+        Else
+            ultimo.Ubi = 0
+
+            CAP_SubCuentas.Show()
+        End If
+        If ultimo.Ubi > 0 Then mostrarSubcta()
+
+        Clipboard.Clear()
+
 
 
     End Sub
@@ -638,6 +703,7 @@ Public Class CAP_Cheques
         TextBox5.Visible = False
         GroupBox1.Visible = True
         GroupBox2.Visible = True
+        Label13.Visible = False
         Label3.Text = ""
         DataGridView1.Size = New Size(900, 271)
     End Sub
@@ -649,6 +715,7 @@ Public Class CAP_Cheques
         TextBox3.Visible = True
         TextBox4.Visible = True
         TextBox5.Visible = True
+        Label13.Visible = True
         GroupBox1.Visible = False
         GroupBox2.Visible = False
         Label3.Text = "Poliza No."
@@ -708,6 +775,53 @@ Public Class CAP_Cheques
             'DataGridView1.Item.Remove
 
         End If
+    End Sub
+
+    Sub analizaBalanceCtas()
+        Dim suma As Long, suma1 As Long, suma2 As Long, rr As Integer, ImpMay As Long
+        Dim inicio As Long, final As Long, alarma As Integer, alarma1 As Integer, alarma2 As Integer
+        Dim UbMay As Integer
+        Dim r
+        Dim CUENTON
+        Dim NOCTA$
+        Dim CTA$
+        Dim SUBCTA
+
+        For r = 1 To DataGridView1.Rows.Count - 1
+            If IsNumeric(DataGridView1.Rows(r).Cells(0).Value) Or IsNumeric(DataGridView1.Rows(r).Cells(1).Value) Then
+
+                If DataGridView1.Rows(r).Cells(9).Value = "B" Then
+                    If IsNumeric(DataGridView1.Rows(r).Cells(7).Value) Then
+                        inicio = DataGridView1.Rows(r).Cells(7).Value
+                    Else
+                        inicio = 0
+                    End If
+                    If IsNumeric(DataGridView1.Rows(r).Cells(7).Value) Then
+                        final = DataGridView1.Rows(r).Cells(8).Value
+                    End If
+                Else
+                    final = 0
+
+                End If
+                CUENTON = DataGridView1.Rows(r).Cells(0).Value : NOCTA = DataGridView1.Rows(r).Cells(2).Value
+                CTA = "C" : rr = r
+                If IsNumeric(DataGridView1.Rows(r).Cells(4).Value) Then
+                    suma = suma + DataGridView1.Rows(r).Cells(4).Value
+                    ImpMay = DataGridView1.Rows(r).Cells(4).Value
+                    UbMay = r
+                Else
+                    suma2 = suma2 + DataGridView1.Rows(r).Cells(5).Value
+                    ImpMay = DataGridView1.Rows(r).Cells(5).Value
+                End If
+                If (inicio = 0) Then
+
+
+                End If
+            End If
+
+        Next r
+
+
 
 
 
@@ -715,6 +829,14 @@ Public Class CAP_Cheques
 
 
     Private Sub CAP_Cheques_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        contadorXml = 0
+        miArchivo = Dir(numeroGConta, vbDirectory)
+        If miArchivo = "" Then
+            MkDir(numeroGConta)
+        End If
+        Ruta_Acceso_Contr = numeroGConta
+
 
         Label4.Visible = False
         Label5.Visible = False
@@ -724,15 +846,47 @@ Public Class CAP_Cheques
         GroupBox1.Visible = True
         GroupBox2.Visible = True
         Label3.Text = ""
+        Label13.Visible = False
         ColReda.Visible = False
-        ColCuenta.Width = 55
-        ColSubCta.Width = 55
-        ColNom.Width = 250
-        ColParcial.Width = 60
-        ColDebe.Width = 60
-        ColHaber.Width = 60
-        ColReda.Width = 200
-        ColFolioFis.Width = 310
+
+
+        z1 = "##,###,##0.00"
+
+        MesCheque(1) = " ENERO"
+        MesCheque(2) = " FEBRERO"
+        MesCheque(3) = " MARZO"
+        MesCheque(4) = " ABRIL"
+        MesCheque(5) = " MAYO"
+        MesCheque(6) = " JUNIO"
+        MesCheque(7) = " JULIO"
+        MesCheque(8) = " AGOSTO"
+        MesCheque(9) = " SEPTIEMBRE"
+        MesCheque(10) = " OCTUBRE"
+        MesCheque(11) = " NOVIEMBRE"
+        MesCheque(12) = " DICIEMBRE"
+
+        MesCheque(13) = " INCORPORACIÓN"
+
+        dd(1) = 31 : dd(2) = 28 : dd(3) = 31 : dd(4) = 30
+        dd(5) = 31 : dd(6) = 30 : dd(7) = 31 : dd(8) = 31
+        dd(9) = 30 : dd(10) = 31 : dd(11) = 30 : dd(12) = 31
+        dd(13) = 3
+
+        DataGridView1.ColumnCount = 9
+        DataGridView1.RowCount = 250
+
+        DataGridView1.Columns(0).Width = 75 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(1).Width = 75 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "Subcta" : DataGridView1.Columns(1).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(1).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(2).Width = 400 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" : DataGridView1.Columns(2).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(2).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(3).Width = 100 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" : DataGridView1.Columns(3).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(3).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(4).Width = 100 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe " : DataGridView1.Columns(4).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(4).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(5).Width = 100 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" : DataGridView1.Columns(5).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(5).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+
+        ReDim archivos1(0)
+
+
 
     End Sub
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown
@@ -1096,20 +1250,25 @@ Public Class CAP_Cheques
 
         End If
     End Sub
-    Private Sub DataGridView1_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellLeave
+    Public Sub DataGridView1_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellLeave
+
+
+
         If DataGridView1.Rows(0).Cells(0).Value > 0 Then
             DataGridView1.DefaultCellStyle.BackColor = Color.White
 
         End If
 
     End Sub
-    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
+    Public Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
         'Dim respuesta As String
-        'valcelant = DataGridView1.Text
+
+
+        valcelant = DataGridView1.Rows(0).Cells(0).Value
 
 
         If DataGridView1.Rows(0).Cells(0).Value > 0 Then
-            DataGridView1.DefaultCellStyle.BackColor = Color.Green
+            DataGridView1.DefaultCellStyle.BackColor = Color.LimeGreen
 
         End If
     End Sub
@@ -1302,7 +1461,10 @@ Public Class CAP_Cheques
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+    Sub DatosAnteriores()
+
+    End Sub
+    Sub DatosActuales()
 
     End Sub
 
@@ -1357,7 +1519,6 @@ Public Class CAP_Cheques
 
         End If
 
-    End Sub
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         Dim primeraColum As Integer
         primeraColum = DataGridView1.SelectedRows(0).Index - 1
@@ -1373,9 +1534,12 @@ Public Class CAP_Cheques
             ultimo.Ubi = 0
             CAP_CatCuentasMayor.Show()
             If ultimo.Ubi = 1 Then
-                'mostrarCta
+                mostrarCta()
+
             End If
         End If
 
     End Sub
+
+
 End Class
