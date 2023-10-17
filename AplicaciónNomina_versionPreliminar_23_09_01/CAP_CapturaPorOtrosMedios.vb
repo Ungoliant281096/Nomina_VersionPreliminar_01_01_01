@@ -587,24 +587,14 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
+
+
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
 
 
     End Sub
@@ -616,24 +606,12 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub MarzoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarzoToolStripMenuItem.Click
@@ -643,24 +621,11 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
-
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub AbrilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrilToolStripMenuItem.Click
@@ -670,24 +635,12 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub MayoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MayoToolStripMenuItem.Click
@@ -697,24 +650,11 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
-
-
-        End Select
     End Sub
 
     Private Sub JunioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JunioToolStripMenuItem.Click
@@ -724,24 +664,10 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
-
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
-
-
-        End Select
 
     End Sub
 
@@ -752,24 +678,11 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
-
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub AgostoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgostoToolStripMenuItem.Click
@@ -779,24 +692,12 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub SeptiembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeptiembreToolStripMenuItem.Click
@@ -806,24 +707,12 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub OctubreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OctubreToolStripMenuItem.Click
@@ -833,24 +722,12 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
-
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Mess = Index
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
 
-        End Select
     End Sub
 
     Private Sub NoviembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoviembreToolStripMenuItem.Click
@@ -860,24 +737,13 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
-
-            Case 10 To 12
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
 
-        End Select
+
     End Sub
 
     Private Sub DiciembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiciembreToolStripMenuItem.Click
@@ -887,51 +753,25 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
-
-            Case 10 To 12
-                Mess = Index
+        Mess = Index
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
-
-        End Select
     End Sub
 
     Private Sub IncorporaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncorporaciónToolStripMenuItem.Click
-        Dim Index As Integer
+
         Close()
         abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-        Select Case Index
-            Case 0
-                Mess = 13
+        Mess = 13
                 Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
                 Arch_Oper = Trim(DATOS.No_arch) + 13
 
-            Case 1 To 9
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
-            Case 10 To 12
-                Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
-
-
-        End Select
     End Sub
 
     Private Sub ValidaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidaciónToolStripMenuItem.Click

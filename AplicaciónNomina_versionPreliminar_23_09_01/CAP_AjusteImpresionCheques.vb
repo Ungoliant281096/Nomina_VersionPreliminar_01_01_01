@@ -1,4 +1,6 @@
-﻿Public Class CAP_AjusteImpresionCheques
+﻿Imports System.Drawing.Printing
+
+Public Class CAP_AjusteImpresionCheques
     Public Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If (e.RowIndex >= 0) AndAlso (e.ColumnIndex >= 0) Then
             DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Style.BackColor = Color.Green
@@ -43,5 +45,19 @@
 
     End Sub
 
+    Private Sub ImpresiónDatosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImpresiónDatosToolStripMenuItem.Click
+        Dim printDoc As New PrintDocument
+        'AddHandler printDoc.PrintPage, AddressOf 
 
+        '' indicamos que queremos imprimir
+        'printDoc.Print(CAP_AjusteImpresionCheques)
+
+
+
+
+    End Sub
+
+    Private Sub CAP_AjusteImpresionCheques_Click(sender As Object, e As EventArgs) Handles Me.Click
+
+    End Sub
 End Class
