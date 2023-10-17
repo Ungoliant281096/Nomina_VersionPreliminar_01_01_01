@@ -23,10 +23,24 @@
         FileGet(numeroOtros, otrosCampos, idEmpleado)
 
         Dim fecha As String = personal.fal
-        'Dim añoAlta As Integer = Left()
-        'Dim mesAlta As Integer = Left(fecha, 4)
-        'Dim diaAlta As Integer = Left(fecha, 4)
 
+        ' Dividir la fecha en año, mes y día
+        Dim partes() As String = fecha.Split("/"c)
+        Dim diaAlta As String = partes(0)
+        Dim mesAlta As String = partes(1)
+        Dim añoAlta As String = partes(2)
+
+        ' Validar que los valores son números y están dentro de rangos válidos
+        If IsNumeric(añoAlta) AndAlso IsNumeric(mesAlta) AndAlso IsNumeric(diaAlta) Then
+            Dim añoNum As Integer = Convert.ToInt32(añoAlta)
+            Dim mesNum As Integer = Convert.ToInt32(mesAlta)
+            Dim diaNum As Integer = Convert.ToInt32(diaAlta)
+
+            If añoNum >= 1 AndAlso añoNum <= 9999 AndAlso mesNum >= 1 AndAlso mesNum <= 12 AndAlso diaNum >= 1 AndAlso diaNum <= DateTime.DaysInMonth(añoNum, mesNum) Then
+                ' Asignar la fecha al DateTimePicker
+                DateTimePicker1.Value = New DateTime(añoNum, mesNum, diaNum)
+            End If
+        End If
 
         Label15.Text = idEmpleado
         TextBox1.Text = personal.RFC.Trim()
@@ -34,11 +48,10 @@
         TextBox3.Text = personal.nom.Trim()
         TextBox4.Text = personal.ape1.Trim()
         TextBox5.Text = personal.ape2.Trim()
-        DateTimePicker1.Value = New DateTime(2022, 5, 3)
-        TextBox8.Text = personal.ingr
-        TextBox9.Text = personal.viat
-        TextBox10.Text = personal.otras
+        TextBox8.Text = personal.ingr / 10000
+        TextBox9.Text = personal.viat / 10000
+        TextBox10.Text = personal.otras / 10000
         TextBox11.Text = personal.imss.Trim()
-        TextBox14.Text = personal.integrado
+        TextBox14.Text = personal.integrado / 10000
     End Sub
 End Class
