@@ -1300,12 +1300,6 @@ Public Class CAP_Cheques
 
 
 
-
-
-
-
-
-
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -1361,8 +1355,6 @@ Public Class CAP_Cheques
         If trcta.num > 0 Then
             If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
 
-
-
         End If
 
     End Sub
@@ -1374,10 +1366,8 @@ Public Class CAP_Cheques
         'Dim VerCta As Integer
         'VerCta = Math.Max(DataGridView1.Rows(-1).Cells(1).Value)
 
-
         If DataGridView1.Rows(primeraColum).Cells(0).Value <> " " And trcta.incia > 0 Then
             MsgBox("La anterior es una cuenta")
-
         Else
             Close()
             ultimo.Ubi = 0
@@ -1385,13 +1375,7 @@ Public Class CAP_Cheques
             If ultimo.Ubi = 1 Then
                 'mostrarCta
             End If
-
-
-
-
         End If
-
-
 
     End Sub
 End Class

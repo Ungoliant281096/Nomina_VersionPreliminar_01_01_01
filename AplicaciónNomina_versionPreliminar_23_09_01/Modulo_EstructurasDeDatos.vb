@@ -203,8 +203,6 @@ Module Modulo_EstructurasDeDatos
 		Public numreal As Integer
 		Public refer As Integer
 		Public conta As Integer
-
-
 	End Structure
 	Structure Mvtos
 		Public Inc As Long
@@ -317,8 +315,6 @@ Module Modulo_EstructurasDeDatos
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
 	End Structure
 
-
-
 	REM DECLARACION DE VARIABLES DE TIPO ESTRUCTURAS
 	Public archivoNominaQuincenal As nominaQuincenal
 	Public CATAUX As CAT_AX
@@ -335,10 +331,8 @@ Module Modulo_EstructurasDeDatos
 	Public otrosCampos As OtrasCh
 	Public personal As per
 	Public renglon As Rg
-	'Public SCont As sc
 	Public ultimaOperacion As ultitmaOperacion
 	Public fiscal As fis_cal
-	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
 	Public Alarma As Al
 	Public Su_ma As Su, Ruta_Acceso, Ruta_Acceso_Contr, Arch_Oper As String
 	Public Dir_Costos As String
@@ -369,6 +363,8 @@ Module Modulo_EstructurasDeDatos
 	Public nombreArchivo As String
 	Public validateXMLArchives As String
 	Public validatePdfArchives As String
+	<VBFixedString(64), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=64)> Public SCont As sc
+
 
 	REM Ubicacion del ejecutable 
 	Public rutaDelEjecutable As String = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)

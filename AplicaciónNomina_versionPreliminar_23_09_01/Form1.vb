@@ -1,8 +1,20 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.Odbc
 Imports System.Drawing.Text
+Imports System.IO
 
 Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        LlenarTreeView("C:\NOMINAS")
+
+        FileGet(numeroEmprsa, datosEmpresa, largoEmpresa)
+
+        Label1.Text = datosEmpresa.name.Trim()
+        Label2.Text = datosEmpresa.añoEmpresa
+        Label3.Text = datosEmpresa.psub / 10000
+        Label4.Text = datosEmpresa.sm / 10000
+
+    End Sub
     Private Sub CapturaPersonalToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CapturaPersonalToolStripMenuItem.Click
         NOM_CapturaPersonal.Show()
 
@@ -86,5 +98,57 @@ Public Class Form1
         MENÚ.Show()
     End Sub
 
+    Private Sub cambioDirectorioNomina()
+        ' Mostrar el diálogo para seleccionar un directorio
+        Dim dialogoDirectorio As New FolderBrowserDialog()
+        If dialogoDirectorio.ShowDialog() = DialogResult.OK Then
+            ' Limpiar el árbol actual antes de llenarlo con nuevos datos
+            TreeView1.Nodes.Clear()
+            ' Obtener el directorio seleccionado
+            Dim directorioSeleccionado As String = dialogoDirectorio.SelectedPath
+            ' Llenar el árbol con las carpetas y archivos del directorio
+            LlenarTreeView(directorioSeleccionado)
+        End If
+    End Sub
 
+    Private Sub LlenarTreeView(directorio As String)
+        ' Crear un nodo raíz con el nombre del directorio
+        Dim nodoRaiz As New TreeNode(Path.GetFileName(directorio))
+        nodoRaiz.Tag = directorio
+        TreeView1.Nodes.Add(nodoRaiz)
+        ' Llenar el árbol con las carpetas y archivos
+        LlenarNodo(nodoRaiz)
+    End Sub
+
+    Private Sub LlenarNodo(nodoPadre As TreeNode)
+        Try
+            ' Obtener la ruta del directorio o archivo asociado con este nodo
+            Dim ruta As String = DirectCast(nodoPadre.Tag, String)
+
+            ' Obtener la lista de subdirectorios
+            Dim subdirectorios As String() = Directory.GetDirectories(ruta)
+            For Each subdirectorio As String In subdirectorios
+                Dim nodo As New TreeNode(Path.GetFileName(subdirectorio))
+                nodo.Tag = subdirectorio
+                nodoPadre.Nodes.Add(nodo)
+                ' Llamar recursivamente para llenar los subnodos
+                LlenarNodo(nodo)
+            Next
+
+            ' Obtener la lista de archivos
+            Dim archivos As String() = Directory.GetFiles(ruta)
+            For Each archivo As String In archivos
+                Dim nodo As New TreeNode(Path.GetFileName(archivo))
+                nodo.Tag = archivo
+                nodoPadre.Nodes.Add(nodo)
+            Next
+        Catch ex As Exception
+            ' Manejar cualquier error que pueda ocurrir
+            MessageBox.Show("Error al acceder al directorio: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub CambioDeNominaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioDeNominaToolStripMenuItem.Click
+        cambioDirectorioNomina()
+    End Sub
 End Class
