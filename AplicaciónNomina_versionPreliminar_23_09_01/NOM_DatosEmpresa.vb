@@ -3,10 +3,23 @@
 
         FileGet(numeroEmprsa, datosEmpresa, largoEmpresa)
 
-        TextBox1.Text = datosEmpresa.name
+        TextBox1.Text = datosEmpresa.name.Trim()
         TextBox2.Text = datosEmpresa.añoEmpresa
         TextBox3.Text = datosEmpresa.sm
-        TextBox4.Text = datosEmpresa.fecha
+        TextBox4.Text = datosEmpresa.fecha.Trim()
         TextBox5.Text = datosEmpresa.psub
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        TextBox1.Text = datosEmpresa.name.Trim()
+        TextBox2.Text = datosEmpresa.añoEmpresa
+        TextBox3.Text = datosEmpresa.sm
+        TextBox4.Text = datosEmpresa.fecha.Trim()
+        TextBox5.Text = datosEmpresa.psub
+
+        FilePut(numeroEmprsa, datosEmpresa)
+
     End Sub
 End Class

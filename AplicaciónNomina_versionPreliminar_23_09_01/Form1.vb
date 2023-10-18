@@ -2,17 +2,19 @@
 Imports System.Data.Odbc
 Imports System.Drawing.Text
 Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         LlenarTreeView("C:\NOMINAS")
 
         FileGet(numeroEmprsa, datosEmpresa, largoEmpresa)
 
         Label1.Text = datosEmpresa.name.Trim()
         Label2.Text = datosEmpresa.añoEmpresa
-        Label3.Text = datosEmpresa.psub / 10000
-        Label4.Text = datosEmpresa.sm / 10000
+        Label3.Text = datosEmpresa.psub
+        Label4.Text = datosEmpresa.sm
 
     End Sub
     Private Sub CapturaPersonalToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CapturaPersonalToolStripMenuItem.Click

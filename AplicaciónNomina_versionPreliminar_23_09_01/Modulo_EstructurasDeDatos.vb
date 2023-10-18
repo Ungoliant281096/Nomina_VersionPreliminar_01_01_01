@@ -309,7 +309,7 @@ Module Modulo_EstructurasDeDatos
 
 	Structure empresa
 		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
-		Public añoEmpresa As Long
+		Public añoEmpresa As Integer
 		Public sm As Long
 		Public psub As Long
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
@@ -380,6 +380,7 @@ Module Modulo_EstructurasDeDatos
 	Public largoNominaCompleta As Integer
 	Public largoGconta As Integer
 	Public largoEmpresa As Integer
+	Public largoDatos As Integer
 
 	REM numeros asigando a los random
 	Public numeroMayor As Integer = 1
@@ -392,6 +393,7 @@ Module Modulo_EstructurasDeDatos
 	Public numeronominaCompleta As Integer = 8
 	Public numeroGConta As Integer = 9
 	Public numeroEmprsa As Integer = 10
+	Public numeroDatos As Integer = 11
 
 	Public Sub abrirRandomNominaCaptura()
 
@@ -418,6 +420,9 @@ Module Modulo_EstructurasDeDatos
 
 		FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
 		largoGconta = LOF(numeroGConta) \ Len(SCont)
+
+		FileOpen(numeroDatos, rutaDelEjecutable + "\DATOS", OpenMode.Random,,, Len(DATOS))
+		largoDatos = LOF(numeroDatos) \ Len(DATOS)
 
 	End Sub
 
