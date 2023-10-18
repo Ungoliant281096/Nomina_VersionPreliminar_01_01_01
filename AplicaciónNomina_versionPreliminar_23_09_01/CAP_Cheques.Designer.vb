@@ -23,6 +23,7 @@ Partial Class CAP_Cheques
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Cheques))
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
@@ -129,6 +130,7 @@ Partial Class CAP_Cheques
         PictureBox9 = New PictureBox()
         PictureBox10 = New PictureBox()
         PictureBox11 = New PictureBox()
+        Label13 = New Label()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -608,6 +610,7 @@ Partial Class CAP_Cheques
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.BackgroundColor = SystemColors.ActiveBorder
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
         DataGridViewCellStyle1.BackColor = SystemColors.Control
         DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
@@ -628,6 +631,10 @@ Partial Class CAP_Cheques
         ' 
         ' ColCuenta
         ' 
+        DataGridViewCellStyle2.BackColor = Color.White
+        DataGridViewCellStyle2.SelectionBackColor = Color.White
+        DataGridViewCellStyle2.SelectionForeColor = Color.White
+        ColCuenta.DefaultCellStyle = DataGridViewCellStyle2
         ColCuenta.HeaderText = "Cuenta"
         ColCuenta.MinimumWidth = 6
         ColCuenta.Name = "ColCuenta"
@@ -942,11 +949,22 @@ Partial Class CAP_Cheques
         PictureBox11.TabIndex = 38
         PictureBox11.TabStop = False
         ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
+        Label13.Location = New Point(413, 126)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(88, 23)
+        Label13.TabIndex = 39
+        Label13.Text = "Concepto:"
+        ' 
         ' CAP_Cheques
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1307, 1034)
+        Controls.Add(Label13)
         Controls.Add(PictureBox11)
         Controls.Add(PictureBox10)
         Controls.Add(PictureBox9)
@@ -1087,14 +1105,6 @@ Partial Class CAP_Cheques
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents OpenFileDialog3 As OpenFileDialog
     Friend WithEvents OpenFileDialog4 As OpenFileDialog
-    Friend WithEvents ColCuenta As DataGridViewTextBoxColumn
-    Friend WithEvents ColSubCta As DataGridViewTextBoxColumn
-    Friend WithEvents ColNom As DataGridViewTextBoxColumn
-    Friend WithEvents ColParcial As DataGridViewTextBoxColumn
-    Friend WithEvents ColDebe As DataGridViewTextBoxColumn
-    Friend WithEvents ColHaber As DataGridViewTextBoxColumn
-    Friend WithEvents ColReda As DataGridViewTextBoxColumn
-    Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
@@ -1106,4 +1116,13 @@ Partial Class CAP_Cheques
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents ColCuenta As DataGridViewTextBoxColumn
+    Friend WithEvents ColSubCta As DataGridViewTextBoxColumn
+    Friend WithEvents ColNom As DataGridViewTextBoxColumn
+    Friend WithEvents ColParcial As DataGridViewTextBoxColumn
+    Friend WithEvents ColDebe As DataGridViewTextBoxColumn
+    Friend WithEvents ColHaber As DataGridViewTextBoxColumn
+    Friend WithEvents ColReda As DataGridViewTextBoxColumn
+    Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
+    Friend WithEvents Label13 As Label
 End Class
