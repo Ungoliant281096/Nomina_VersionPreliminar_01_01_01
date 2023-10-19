@@ -103,13 +103,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' GuardarPólizaToolStripMenuItem
         ' 
         GuardarPólizaToolStripMenuItem.Name = "GuardarPólizaToolStripMenuItem"
-        GuardarPólizaToolStripMenuItem.Size = New Size(224, 26)
+        GuardarPólizaToolStripMenuItem.Size = New Size(188, 26)
         GuardarPólizaToolStripMenuItem.Text = "Guardar Póliza"
         ' 
         ' SalirToolStripMenuItem
         ' 
         SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
+        SalirToolStripMenuItem.Size = New Size(188, 26)
         SalirToolStripMenuItem.Text = "Salir"
         ' 
         ' EdiciónToolStripMenuItem
@@ -256,13 +256,13 @@ Partial Class CAP_CapturaPorOtrosMedios
         ' CuentasToolStripMenuItem
         ' 
         CuentasToolStripMenuItem.Name = "CuentasToolStripMenuItem"
-        CuentasToolStripMenuItem.Size = New Size(224, 26)
+        CuentasToolStripMenuItem.Size = New Size(169, 26)
         CuentasToolStripMenuItem.Text = "Cuentas"
         ' 
         ' SubCuentasToolStripMenuItem
         ' 
         SubCuentasToolStripMenuItem.Name = "SubCuentasToolStripMenuItem"
-        SubCuentasToolStripMenuItem.Size = New Size(224, 26)
+        SubCuentasToolStripMenuItem.Size = New Size(169, 26)
         SubCuentasToolStripMenuItem.Text = "SubCuentas"
         ' 
         ' Label1

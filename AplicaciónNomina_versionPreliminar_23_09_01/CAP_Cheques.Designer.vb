@@ -22,7 +22,9 @@ Partial Class CAP_Cheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Cheques))
         MenuStrip1 = New MenuStrip()
@@ -131,6 +133,7 @@ Partial Class CAP_Cheques
         PictureBox10 = New PictureBox()
         PictureBox11 = New PictureBox()
         Label13 = New Label()
+        ToolTip1 = New ToolTip(components)
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -520,16 +523,14 @@ Partial Class CAP_Cheques
         Label2.Name = "Label2"
         Label2.Size = New Size(281, 25)
         Label2.TabIndex = 3
-        Label2.Text = "Label2"
         ' 
         ' Label3
         ' 
-        Label3.BackColor = Color.Yellow
+        Label3.BackColor = Color.LemonChiffon
         Label3.Location = New Point(467, 75)
         Label3.Name = "Label3"
         Label3.Size = New Size(155, 25)
         Label3.TabIndex = 4
-        Label3.Text = "Label3"
         ' 
         ' CheckBox1
         ' 
@@ -621,6 +622,14 @@ Partial Class CAP_Cheques
         DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCuenta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColReda, ColFolioFis})
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Window
+        DataGridViewCellStyle3.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = Color.Snow
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.GridColor = SystemColors.ActiveBorder
         DataGridView1.Location = New Point(24, 250)
         DataGridView1.Name = "DataGridView1"
@@ -848,6 +857,8 @@ Partial Class CAP_Cheques
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 28
         PictureBox1.TabStop = False
+        PictureBox1.Tag = ""
+        ToolTip1.SetToolTip(PictureBox1, "Póliza")
         ' 
         ' PictureBox2
         ' 
@@ -958,6 +969,9 @@ Partial Class CAP_Cheques
         Label13.Size = New Size(88, 23)
         Label13.TabIndex = 39
         Label13.Text = "Concepto:"
+        ' 
+        ' ToolTip1
+        ' 
         ' 
         ' CAP_Cheques
         ' 
@@ -1125,4 +1139,5 @@ Partial Class CAP_Cheques
     Friend WithEvents ColReda As DataGridViewTextBoxColumn
     Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
     Friend WithEvents Label13 As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

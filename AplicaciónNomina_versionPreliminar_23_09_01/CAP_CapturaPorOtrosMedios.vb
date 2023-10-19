@@ -14,6 +14,73 @@ Public Class CAP_CapturaPorOtrosMedios
     Dim filasSeleccionadas As Integer
 
 
+    Private Sub CAP_CapturaPorOtrosMedios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        TextBox1.Text = 1
+        Mess = 1 : TextBox3.Text = ""
+        Label2.Text = "de Enero de" + Trim(DATOS.a_o)
+        Me.Text = Me.Text + "" + Trim(DATOS.D1)
+        Rgtro_Validacion = 0
+
+        DataGridView1.Columns(0).Width = 100 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(1).Width = 100 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "SubCta" : DataGridView1.Columns(1).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(2).Width = 300 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" : DataGridView1.Columns(2).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(3).Width = 150 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" : DataGridView1.Columns(3).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(4).Width = 150 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe" : DataGridView1.Columns(4).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(5).Width = 150 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" : DataGridView1.Columns(5).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+
+        DataGridView1.Columns(6).Width = 10 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "  " : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(7).Width = 10 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "  " : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(8).Width = 10 : DataGridView1.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(8).HeaderText = "  " : DataGridView1.Columns(8).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(9).Width = 200 : DataGridView1.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(9).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(10).Width = 200 : DataGridView1.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(10).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+
+        Me.Text = "REDACCIÓN"
+
+
+
+
+
+        'ColCta.Width = 70
+        'ColSubCta.Width = 70
+        'ColNom.Width = 200
+        'ColParcial.Width = 80
+        'ColDebe.Width = 80
+        'ColHaber.Width = 80
+        'ColReda.Width = 160
+        'ColFolioFis.Width = 200
+
+
+        TextBox1.Text = DateTime.Now.ToString("MM")
+        If (TextBox1.Text) = DateTime.Now.ToString Then
+            TextBox1_KeyPress(sender, e)
+
+        End If
+
+
+
+    End Sub
+    Public Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            ' Código para manejar la pulsación de la tecla Enter
+        End If
+    End Sub
+    Sub incluirFecha()
+        Dim mes As String
+        Dim sender As Object = Nothing
+        Dim e As New KeyPressEventArgs(ChrW(Keys.Enter))
+
+        mes = DateTime.Now.ToString("MM")
+
+        TextBox1.Text = DateTime.Now.Day.ToString()
+
+        If TextBox1.Text = DateTime.Now.Day.ToString() Then
+            TextBox1_KeyPress(sender, e)
+
+        End If
+    End Sub
+
+
     Sub apli()
         OPER.CTA = OPER.CTA.Replace(" ", "") + Str(ultimo.poliza)
         OPER.descr = Trim(TextBox3.Text)
@@ -182,44 +249,6 @@ Public Class CAP_CapturaPorOtrosMedios
     End Sub
 
 
-    Private Sub CAP_CapturaPorOtrosMedios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBox1.Text = 1
-        Mess = 1 : TextBox3.Text = ""
-        Label2.Text = "de Enero de" + Trim(DATOS.a_o)
-        Me.Text = Me.Text + "" + Trim(DATOS.D1)
-        Rgtro_Validacion = 0
-
-        DataGridView1.Columns(0).Width = 100 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(1).Width = 100 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "SubCta" : DataGridView1.Columns(1).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(2).Width = 300 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" : DataGridView1.Columns(2).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(3).Width = 150 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" : DataGridView1.Columns(3).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(4).Width = 150 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe" : DataGridView1.Columns(4).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(5).Width = 150 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" : DataGridView1.Columns(5).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-
-        DataGridView1.Columns(6).Width = 10 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "  " : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(7).Width = 10 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "  " : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(8).Width = 10 : DataGridView1.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(8).HeaderText = "  " : DataGridView1.Columns(8).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(9).Width = 200 : DataGridView1.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(9).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(10).Width = 200 : DataGridView1.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(10).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-
-        Me.Text = "REDACCIÓN"
-
-
-
-
-
-        'ColCta.Width = 70
-        'ColSubCta.Width = 70
-        'ColNom.Width = 200
-        'ColParcial.Width = 80
-        'ColDebe.Width = 80
-        'ColHaber.Width = 80
-        'ColReda.Width = 160
-        'ColFolioFis.Width = 200
-
-
-
-    End Sub
     Sub ENTRCTA()
         Dim NoEncontrada As Integer
         Dim Y1 As Integer
@@ -591,8 +620,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
 
@@ -608,8 +637,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -622,8 +651,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -637,8 +666,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -652,8 +681,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
     End Sub
 
@@ -665,8 +694,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -679,8 +708,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -694,8 +723,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -709,8 +738,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
 
 
     End Sub
@@ -725,7 +754,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
         Mess = Index
         Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
 
     End Sub
@@ -739,8 +768,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
 
 
@@ -755,8 +784,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
 
     End Sub
 
@@ -768,8 +797,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = 13
-                Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-                Arch_Oper = Trim(DATOS.No_arch) + 13
+        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + 13
 
 
     End Sub
@@ -794,4 +823,7 @@ Public Class CAP_CapturaPorOtrosMedios
         End If
 
     End Sub
+
+
+
 End Class
