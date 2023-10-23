@@ -24,20 +24,20 @@ Partial Class CAP_EstadoResultados
     Private Sub InitializeComponent()
         MenuStrip1 = New MenuStrip()
         ImpresiónToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         EstadoDeResultadosToolStripMenuItem = New ToolStripMenuItem()
+        EdiciónToolStripMenuItem = New ToolStripMenuItem()
         CopiarToolStripMenuItem = New ToolStripMenuItem()
         CopiarSelecciónCtrlCToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         Label2 = New Label()
         DataGridView1 = New DataGridView()
-        VScrollBar1 = New VScrollBar()
-        HScrollBar1 = New HScrollBar()
-        OpenFileDialog1 = New OpenFileDialog()
         ColCta = New DataGridViewTextBoxColumn()
         ColPar = New DataGridViewTextBoxColumn()
         ColImpte = New DataGridViewTextBoxColumn()
         ColDin = New DataGridViewTextBoxColumn()
+        VScrollBar1 = New VScrollBar()
+        HScrollBar1 = New HScrollBar()
+        OpenFileDialog1 = New OpenFileDialog()
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -59,6 +59,12 @@ Partial Class CAP_EstadoResultados
         ImpresiónToolStripMenuItem.Size = New Size(89, 24)
         ImpresiónToolStripMenuItem.Text = "Impresión"
         ' 
+        ' EstadoDeResultadosToolStripMenuItem
+        ' 
+        EstadoDeResultadosToolStripMenuItem.Name = "EstadoDeResultadosToolStripMenuItem"
+        EstadoDeResultadosToolStripMenuItem.Size = New Size(230, 26)
+        EstadoDeResultadosToolStripMenuItem.Text = "Estado de resultados"
+        ' 
         ' EdiciónToolStripMenuItem
         ' 
         EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarToolStripMenuItem, CopiarSelecciónCtrlCToolStripMenuItem})
@@ -66,16 +72,10 @@ Partial Class CAP_EstadoResultados
         EdiciónToolStripMenuItem.Size = New Size(72, 24)
         EdiciónToolStripMenuItem.Text = "Edición"
         ' 
-        ' EstadoDeResultadosToolStripMenuItem
-        ' 
-        EstadoDeResultadosToolStripMenuItem.Name = "EstadoDeResultadosToolStripMenuItem"
-        EstadoDeResultadosToolStripMenuItem.Size = New Size(230, 26)
-        EstadoDeResultadosToolStripMenuItem.Text = "Estado de resultados"
-        ' 
         ' CopiarToolStripMenuItem
         ' 
         CopiarToolStripMenuItem.Name = "CopiarToolStripMenuItem"
-        CopiarToolStripMenuItem.Size = New Size(291, 26)
+        CopiarToolStripMenuItem.Size = New Size(311, 26)
         CopiarToolStripMenuItem.Text = "Copiar "
         ' 
         ' CopiarSelecciónCtrlCToolStripMenuItem
@@ -113,24 +113,6 @@ Partial Class CAP_EstadoResultados
         DataGridView1.Size = New Size(436, 443)
         DataGridView1.TabIndex = 3
         ' 
-        ' VScrollBar1
-        ' 
-        VScrollBar1.Location = New Point(473, 165)
-        VScrollBar1.Name = "VScrollBar1"
-        VScrollBar1.Size = New Size(21, 445)
-        VScrollBar1.TabIndex = 4
-        ' 
-        ' HScrollBar1
-        ' 
-        HScrollBar1.Location = New Point(58, 592)
-        HScrollBar1.Name = "HScrollBar1"
-        HScrollBar1.Size = New Size(415, 16)
-        HScrollBar1.TabIndex = 5
-        ' 
-        ' OpenFileDialog1
-        ' 
-        OpenFileDialog1.FileName = "OpenFileDialog1"
-        ' 
         ' ColCta
         ' 
         ColCta.HeaderText = "CUENTA"
@@ -158,6 +140,24 @@ Partial Class CAP_EstadoResultados
         ColDin.MinimumWidth = 6
         ColDin.Name = "ColDin"
         ColDin.Width = 125
+        ' 
+        ' VScrollBar1
+        ' 
+        VScrollBar1.Location = New Point(473, 165)
+        VScrollBar1.Name = "VScrollBar1"
+        VScrollBar1.Size = New Size(21, 445)
+        VScrollBar1.TabIndex = 4
+        ' 
+        ' HScrollBar1
+        ' 
+        HScrollBar1.Location = New Point(58, 592)
+        HScrollBar1.Name = "HScrollBar1"
+        HScrollBar1.Size = New Size(415, 16)
+        HScrollBar1.TabIndex = 5
+        ' 
+        ' OpenFileDialog1
+        ' 
+        OpenFileDialog1.FileName = "OpenFileDialog1"
         ' 
         ' CAP_EstadoResultados
         ' 

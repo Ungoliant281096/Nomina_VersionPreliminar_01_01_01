@@ -51,12 +51,13 @@ Public Class CAP_CapturaPorOtrosMedios
         'ColFolioFis.Width = 200
 
 
-        TextBox1.Text = DateTime.Now.ToString("MM")
-        If (TextBox1.Text) = DateTime.Now.ToString Then
-            TextBox1_KeyPress(sender, e)
+        'TextBox1.Text = DateTime.Now.ToString("MM")
+        'If (TextBox1.Text) = DateTime.Now.ToString Then
+        '    TextBox1_KeyPress(sender, e)
 
-        End If
+        'End If
 
+        incluirFecha()
 
 
     End Sub
@@ -89,7 +90,7 @@ Public Class CAP_CapturaPorOtrosMedios
         fin_oper = fin_oper + 1
         FilePut(3, OPER, fin_oper)
         Dim i As Integer
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         For i = 1 To DataGridView1.Rows(-1).Cells(0).Value
             Select Case DataGridView1.Rows(i).Cells(9).Value
                 Case "B"
@@ -149,7 +150,7 @@ Public Class CAP_CapturaPorOtrosMedios
             Case 1
                 If Suma_Corr = 1 Then
                     Close()
-                    abrirRandomNominaCaptura()
+                    'abrirRandomNominaCaptura()
                     fin_oper = LOF(3) / Len(OPER)
                     ultimo.poliza = 0
 
@@ -255,7 +256,7 @@ Public Class CAP_CapturaPorOtrosMedios
         Dim Zi As Integer
 
         FileClose(2)
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         cm = LOF(2) / Len(CATMAY)
         NoEncontrada = 0
         For Y1 = 1 To cm : FileGet(2, CATMAY, Y1)
@@ -323,7 +324,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
     End Sub
     Sub LocEsp(IC As Integer, Fl As Integer, Rto As Integer)
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
 
         For i = IC To Fl : FileGet(3, CATAUX, i)
             If Val(CATAUX.C1) = 0 And Val(CATAUX.C3) = 0 Then
@@ -351,7 +352,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
                 Do Until (DataGridView1.Rows(op2).Cells(1).Value) = ""
                     califPrimero = (DataGridView1.Rows(op2).Cells(1).Value)
-                    abrirRandomNominaCaptura()
+                    'abrirRandomNominaCaptura()
                     For i = registroIncio To registroFin : FileGet(numeroAuxiliar, i, 2)
                         califSegundo = Val(CATAUX.C1)
                         If califSegundo = califPrimero Then
@@ -612,7 +613,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -631,7 +632,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub FebreroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FebreroToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -646,7 +647,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub MarzoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarzoToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -660,7 +661,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub AbrilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbrilToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -675,7 +676,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub MayoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MayoToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -689,7 +690,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub JunioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JunioToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -703,7 +704,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub JulioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JulioToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -717,7 +718,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub AgostoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgostoToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -732,7 +733,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub SeptiembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeptiembreToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -747,7 +748,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub OctubreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OctubreToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -762,7 +763,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub NoviembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoviembreToolStripMenuItem.Click
         Dim Index As Integer
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -778,7 +779,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub DiciembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiciembreToolStripMenuItem.Click
         Dim Index As Integer
         FileClose()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -792,7 +793,7 @@ Public Class CAP_CapturaPorOtrosMedios
     Private Sub IncorporaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncorporaciónToolStripMenuItem.Click
 
         Close()
-        abrirRandomNominaCaptura()
+        'abrirRandomNominaCaptura()
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
@@ -824,6 +825,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
     End Sub
 
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 
-
+    End Sub
 End Class

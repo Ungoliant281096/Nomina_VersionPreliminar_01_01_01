@@ -38,22 +38,6 @@ Public Class CAP_DatosEmpresa
     End Sub
 
 
-    'Private Sub CAP_DatosEmpresa_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-    '    Dim Grb As Integer
-    '    If Modif_General = 1 Then
-    '        'Dim result As DialogResult = MessageBox.Show("¿Los datos de la empresa fueron modificados?" & Environment.NewLine & "¿Desea guardar los cambios", MessageBoxButtons.YesNo)
-    '        Grb = MsgBox("¿Los datos de la empresa fueron modificados?" & Environment.NewLine & "¿Desea guardar los cambios", MessageBoxButtons.YesNo)
-    '        If Grb = vbYesNo Then
-    '            FileGet(1, DATOS, 1)
-    '            DATOS.D1 = TextBox1.Text : DATOS.D2 = TextBox2.Text : DATOS.a_o = TextBox3.Text
-    '            DATOS.No_arch = TextBox4.Text
-    '            FilePut(1, DATOS, 1)
-    '            Modif_General = 0
-
-    '        End If
-    '    End If
-    'End Sub
-
     Public Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
         Modif_General = 1
 

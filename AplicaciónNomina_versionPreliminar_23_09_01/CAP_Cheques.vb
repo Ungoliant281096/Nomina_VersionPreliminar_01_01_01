@@ -102,8 +102,8 @@ Public Class CAP_Cheques
         DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
         DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
 
-        ToolTip1.SetToolTip(PictureBox1, "Pólizas")
-
+        'ToolTip1.SetToolTip(PictureBox1, "Pólizas")
+        'ToolTip1.SetToolTip(PictureBox1, "")
 
         ReDim archivos1(0)
         sigpaso()
@@ -412,15 +412,15 @@ Public Class CAP_Cheques
     Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
 
 
-        FileClose(1)
+        'FileClose(1)
 
         'MientraS = ""
         'Ruta_Acceso_Contr = ""
 
 
-        Try
+        'Try
 
-            midir = System.IO.Directory.GetCurrentDirectory()
+        midir = System.IO.Directory.GetCurrentDirectory()
             midir = midir.TrimEnd()
             Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
             If midir.EndsWith("\") Then
@@ -444,16 +444,18 @@ Public Class CAP_Cheques
                     Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
 
 
+
                     MientraS = (openFileDialog1.FileName.Substring(0, tope))
 
                     ChDir(MientraS)
 
-
-                    'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-                    'abrirRandomNominaCaptura()
-                    SCont.guarda = MientraS
-                    FilePut(numeroGConta, MientraS, 1)
                     FileClose(numeroGConta)
+
+                abrirRandomNominaCaptura()
+                SCont.guarda = MientraS
+                FilePut(numeroGConta, MientraS, 1)
+
+                FileClose(numeroGConta)
 
                     cm = 0
                     inicio()
@@ -463,9 +465,9 @@ Public Class CAP_Cheques
             End If
 
             Exit Sub
-        Catch ex As Exception
-            MsgBox(Err.Description)
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(Err.Description)
+        'End Try
     End Sub
     Sub depura(elemento As Integer)
 
@@ -490,7 +492,6 @@ Public Class CAP_Cheques
         Dim i As Integer
         Close()
         'abrirRandomNominaCaptura()
-        'FileOpen(1, "DATOS", OpenMode.Random,,, Len(DATOS))
         FileGet(1, DATOS, 1)
         If DATOS.No_arch = "" Then
             Archivo = InputBox("Teclee el nombre del archivo de datos ")
@@ -551,9 +552,9 @@ Public Class CAP_Cheques
         Dim mi_ent As String
         mi_entr = ultimo.texto
 
-        'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
 
-        'FileGet(numeroGConta, SCont, 2)
+
+        FileGet(numeroGConta, SCont, 2)
         CAP_Entrada.Text = Trim(SCont.guarda)
         CAP_Entrada.Label1.Text = "Ubicación de directorios"
         CAP_Entrada.Text = "Cg-Contabilidad"
@@ -571,8 +572,6 @@ Public Class CAP_Cheques
 
         If SCont.guarda <> "" Then
             'abrirRandomNominaCaptura()
-
-            'FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
 
             FileGet(numeroGConta, SCont, 2)
             Dir_Costos = Trim(SCont.guarda)
@@ -592,16 +591,16 @@ Public Class CAP_Cheques
 
 
     End Sub
-    Sub recorrerGrid(inicio, fin) 'lin_che
-        Dim antes As Integer
-        Dim largoPapel As Integer
-        Dim anchoPapel As Integer
-        Dim numCheque As Integer
-        Dim operacion As Integer
-        Dim ancho2 As Integer
+    'Sub recorrerGrid(inicio, fin) 'lin_che
+    '    Dim antes As Integer
+    '    Dim largoPapel As Integer
+    '    Dim anchoPapel As Integer
+    '    Dim numCheque As Integer
+    '    Dim operacion As Integer
+    '    Dim ancho2 As Integer
 
 
-    End Sub
+    'End Sub
     Sub mostrar_Cta()
 
 
@@ -739,7 +738,6 @@ Public Class CAP_Cheques
             rgtro = Val(DATOS.ultimaOperacionReg)
 
             'abrirRandomNominaCaptura()
-            'FileOpen(12, Arch_act, OpenMode.Random,,, Len(OPER))
 
 
             tope = Val(DATOS.ultimaOperacionReg)
@@ -1337,7 +1335,7 @@ Public Class CAP_Cheques
 
         'End If
 
-        If (DataGridView1.Rows(0).Cells(9).Value) = "C" Then ''
+        If DataGridView1.Rows(0).Cells(9).Value = "C" Then ''
             impor_te = DataGridView1.Rows(0).Cells(3).Value
             trscta.refer = DataGridView1.Rows(0).Cells(7).Value
             'Index was out of range. Must be non-negative and less than the size of the collection. Arg_ParamName_Name'
@@ -1393,9 +1391,9 @@ Public Class CAP_Cheques
         Dim col As Integer = currentCell.ColumnIndex
 
 
-        cambio = DataGridView1.Rows(0).Cells(0).Value
+        'cambio = DataGridView1.Rows(0).Cells(0).Value
 
-        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then  'error'
+        If DataGridView1.Rows(DataGridView1.Rows(0).Cells(0).Value).Cells(9).Value = "B" Then  'error'
             DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
             ultimo.renglon = ultimo.renglon - 1
 
@@ -1528,7 +1526,8 @@ Public Class CAP_Cheques
             'abrirRandomNominaCaptura()
             CAP_SubCuentas.Show()
         End If
-        If ultimo.Ubi > 0 Then 'mostrar_trscta
+        If ultimo.Ubi > 0 Then 'mostrar_trsct
+
             Clipboard.Clear()
 
         End If
@@ -1550,27 +1549,27 @@ Public Class CAP_Cheques
         End If
     End Sub
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        Dim primeraColum As Integer
-        primeraColum = DataGridView1.SelectedRows(0).Index - 1
-        If primeraColum <= 0 Then primeraColum = 1 : ultimo.renglon = 1
+        Dim verCol As Integer
 
-        'Dim VerCta As Integer
-        'VerCta = Math.Max(DataGridView1.Rows(-1).Cells(1).Value)
+        verCol = DataGridView1.Rows.Count - 1
+        If verCol Then verCol = 1 : ultimo.renglon = qm
 
-        If DataGridView1.Rows(primeraColum).Cells(0).Value <> " " And trcta.incia > 0 Then
+        If DataGridView1.Rows(verCol).Cells(0).Value <> "" And trcta.incia > 0 Then
             MsgBox("La anterior es una cuenta")
+            DataGridView1.ColumnCount = 1
         Else
             Close()
             ultimo.Ubi = 0
             CAP_CatCuentasMayor.Show()
             If ultimo.Ubi = 1 Then
-                mostrar_Cta()
-
+                mostrarCta()
             End If
         End If
+        Clipboard.Clear()
 
     End Sub
 
+    Private Sub CAP_Cheques_ClientSizeChanged(sender As Object, e As EventArgs) Handles Me.ClientSizeChanged
 
-
+    End Sub
 End Class
