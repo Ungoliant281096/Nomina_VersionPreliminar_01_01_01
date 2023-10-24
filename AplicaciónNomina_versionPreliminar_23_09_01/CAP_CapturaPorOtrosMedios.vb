@@ -14,6 +14,8 @@ Public Class CAP_CapturaPorOtrosMedios
     Dim filasSeleccionadas As Integer
 
 
+
+
     Private Sub CAP_CapturaPorOtrosMedios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TextBox1.Text = 1
@@ -37,6 +39,20 @@ Public Class CAP_CapturaPorOtrosMedios
 
         Me.Text = "REDACCIÓN"
 
+        MesCheque(1) = " ENERO"
+        MesCheque(2) = " FEBRERO"
+        MesCheque(3) = " MARZO"
+        MesCheque(4) = " ABRIL"
+        MesCheque(5) = " MAYO"
+        MesCheque(6) = " JUNIO"
+        MesCheque(7) = " JULIO"
+        MesCheque(8) = " AGOSTO"
+        MesCheque(9) = " SEPTIEMBRE"
+        MesCheque(10) = " OCTUBRE"
+        MesCheque(11) = " NOVIEMBRE"
+        MesCheque(12) = " DICIEMBRE"
+
+        MesCheque(13) = " INCORPORACIÓN"
 
 
 
@@ -52,7 +68,7 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         'TextBox1.Text = DateTime.Now.ToString("MM")
-        'If (TextBox1.Text) = DateTime.Now.ToString Then
+        'If Parse(TextBox1.Text) = DateTime.Today Then
         '    TextBox1_KeyPress(sender, e)
 
         'End If
@@ -621,8 +637,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(1)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(1))
 
 
 
@@ -638,8 +654,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(2)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(2))
 
 
     End Sub
@@ -652,8 +668,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(3)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(3))
 
 
     End Sub
@@ -667,8 +683,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(4)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(4))
 
 
     End Sub
@@ -682,8 +698,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(5)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(5))
 
     End Sub
 
@@ -695,8 +711,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(6)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(6))
 
 
     End Sub
@@ -709,8 +725,8 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(7)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(7))
 
 
     End Sub
@@ -724,8 +740,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(8)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(8))
 
 
     End Sub
@@ -739,8 +755,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(9)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(9))
 
 
     End Sub
@@ -754,8 +770,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(10)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(10))
 
 
     End Sub
@@ -769,8 +785,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(11)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(11))
 
 
 
@@ -785,8 +801,8 @@ Public Class CAP_CapturaPorOtrosMedios
 
 
         Mess = Index
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
-        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(Mess))
+        Label2.Text = "de" + Trim(MesCheque(12)) + "de" + Trim(DATOS.a_o)
+        Arch_Oper = Trim(DATOS.No_arch) + Trim(Str(12))
 
     End Sub
 
@@ -798,7 +814,7 @@ Public Class CAP_CapturaPorOtrosMedios
         Arch_Oper = Trim(DATOS.No_arch)
 
         Mess = 13
-        Label2.Text = "de" + Trim(MesCheque(Mess)) + "de" + Trim(DATOS.a_o)
+        Label2.Text = "de" + Trim(MesCheque(13)) + "de" + Trim(DATOS.a_o)
         Arch_Oper = Trim(DATOS.No_arch) + 13
 
 

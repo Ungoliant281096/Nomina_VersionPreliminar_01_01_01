@@ -18,12 +18,15 @@ Public Class CAP_Cheques
     Dim nombreEmpresa As String
     Dim numcheque As String
     Dim numpoliza As String
+    Dim mensaje As String
+    Dim mesXml As String
+    Dim respuesta As String
     Dim concepto As String
     Dim currentdir As String
-    Dim mesXml As String
     Dim mi_entr As String
     Dim rgtro As Integer
     Dim Ok_che As Integer
+    Dim no_Se_Mofifica As Integer
     Dim impor_te As Long
     Dim c_ambiar As Integer
     Dim donde As Integer
@@ -60,9 +63,12 @@ Public Class CAP_Cheques
         Label3.Text = ""
         Label13.Visible = False
         ColReda.Visible = False
+        Label2.BackColor = Color.White
 
         Dim helpProvider As New HelpProvider()
         helpProvider.HelpNamespace = Ruta_Acceso + "\payuda2.hlp"
+
+
 
         inicio()
 
@@ -102,6 +108,8 @@ Public Class CAP_Cheques
         DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
         DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
 
+
+
         'ToolTip1.SetToolTip(PictureBox1, "Pólizas")
         'ToolTip1.SetToolTip(PictureBox1, "")
 
@@ -120,7 +128,7 @@ Public Class CAP_Cheques
 
 
     Sub sigpaso()
-        Dim cm As Integer
+
         If cm < 1 Then
             MsgBox("No Existe Datos de Contabilidad Cambie subdirectorio ")
 
@@ -133,7 +141,7 @@ Public Class CAP_Cheques
             Label2.Text = "de" + RTrim(MesCheque(mespoliza)) + "de" + DATOS.a_o
             Me.Text = Mid(DATOS.D1, 1, 32) & "  Captura de cheques"
             nombreEmpresa = Trim(DATOS.D2)
-            ultimaOperacion.textoOperacion = RTrim(DATOS.No_arch)
+            ultimo.texto = RTrim(DATOS.No_arch)
         End If
 
     End Sub
@@ -154,37 +162,37 @@ Public Class CAP_Cheques
 
                 ChDir(SCont.guarda.Trim())
 
+
+
+
+                FileGet(numeroGConta, SCont, 2)
+                Dir_Costos = SCont.guarda.Trim()
+
+                FileGet(numeroGConta, SCont, 1)
+
+                FileClose(numeroGConta)
+
+
+                Archivo = "DATOS"
+
+                cm = LOF(1) / Len(DATOS)
+                FileGet(1, DATOS, 1)
+                checar = Trim(DATOS.No_arch)
+
+
+                ' Bloquea la grid si se esta usando costos
+
+                If checar = "COS" Then
+                    MsgBox("Actualmente estás en el Directorio de costos " + Trim(SCont.guarda) + " Recuerda que no puedes capturar costos con este programa, utiliza el programa de costos")
+                    Me.DataGridView1.Enabled = False
+                    DataGridView1.Enabled = False
+                Else
+
+                    Me.DataGridView1.Enabled = True
+                    DataGridView1.Enabled = True
+
+                End If
             End If
-
-
-            FileGet(numeroGConta, SCont, 2)
-            Dir_Costos = SCont.guarda.Trim()
-
-            FileGet(numeroGConta, SCont, 1)
-
-            FileClose(numeroGConta)
-            FileClose(1)
-
-            Archivo = "DATOS"
-
-            cm = LOF(1) / Len(DATOS)
-            FileGet(1, DATOS, 1)
-            checar = Trim(DATOS.No_arch)
-
-
-            ' Bloquea la grid si se esta usando costos
-
-            If checar = "COS" Then
-                MsgBox("Actualmente estás en el Directorio de costos " + Trim(SCont.guarda) + " Recuerda que no puedes capturar costos con este programa, utiliza el programa de costos")
-                Me.DataGridView1.Enabled = False
-                DataGridView1.Enabled = False
-            Else
-
-                Me.DataGridView1.Enabled = True
-                DataGridView1.Enabled = True
-
-            End If
-
             ' Cerrar el archivo
             FileClose(numeroGConta)
 
@@ -211,9 +219,12 @@ Public Class CAP_Cheques
     Sub aplicacion()
         Dim i As Integer
         'abrirRandomNominaCaptura()
+        OPER.CTA = String.Format("{0}{1}", New String("", 6 - ultimo.poliza.ToString().Length), ultimo.poliza)
 
         'OPER.CTA = (6 - Len(Str(ultimo.poliza)), " ") + Str(ultimo.poliza)
         If ultimo.TipoCap = 0 Then
+            OPER.descr = String.Concat(TextBox5.Text.Trim(), TextBox4.Text.Trim().Substring(0, 8))
+
             'OPER.descr = LTrim(RTrim(TextBox5.Text)) + "" + Left(TextBox4.Text, 8)
         Else
             OPER.descr = RTrim(TextBox4.Text)
@@ -249,12 +260,13 @@ Public Class CAP_Cheques
 
         End If
 
-        For i = 1 To DataGridView1.Rows(-1).Cells(0).Value
+        For i = 1 To DataGridView1.RowCount - 1
             Select Case DataGridView1.Rows(i).Cells(9).Value
                 Case "B"
                     OPER.CTA = StrDup(6 - Len(DataGridView1.Rows(i).Cells(0).Value), " ") & DataGridView1.Rows(i).Cells(0).Value
                     OPER.descr = ""
                     OPER.fe = ""
+
                     If DataGridView1.Rows(i).Cells(5).Value = "" Then
                         impor_te = DataGridView1.Rows(i).Cells(4).Value
                     Else
@@ -312,13 +324,58 @@ Public Class CAP_Cheques
 
         'editaplic
 
-
-
+        Close()
 
     End Sub
     Sub reiniciarAplicacion()
 
     End Sub
+
+    Sub cam_saldo()
+
+
+        If DataGridView1.Rows(trscta.refer).Cells(4).Value <> "" Or DataGridView1.Rows(trscta.refer).Cells(5).Value <> "" Then
+            If DataGridView1.Rows(trscta.refer).Cells(5).Value = "" Then
+                Sal_do = DataGridView1.Rows(trscta.refer).Cells(4).Value
+            Else
+                Sal_do = DataGridView1.Rows(trscta.refer).Cells(5).Value
+            End If
+        End If
+        If valcelant = "" Then valcelant = 0
+        If c_ambiar = 1 Then Sal_do = Sal_do - valcelant : 
+        Sal_do = Sal_do + impor_te
+        'Dim resul As String = Strings.Format(Sal_do, "z1")
+        'Dim resutl As String = Strings.Format(impor_te, "z1")
+        If Sal_do > 0 Then 'Cuando "saldo" en (n,4) de como resultado un valor mayor a cero entrara en esta función
+
+            DataGridView1.Rows(trscta.refer).Cells(4).Value = Format(Sal_do, z1)
+            DataGridView1.Rows(trscta.refer).Cells(5).Value = ""
+            Alarma.Imt = Sal_do
+            VerSumas()
+        Else
+
+            DataGridView1.Rows(trscta.refer).Cells(5).Value = Format(Sal_do, z1)
+            DataGridView1.Rows(trscta.refer).Cells(4).Value = ""
+            Alarma.Imt = Sal_do
+            VerSumas()
+
+            If impor_te > 0 Then
+                DataGridView1.Rows(trscta.refer).Cells(4).Value = Format(impor_te, z1)
+                DataGridView1.Rows(trscta.refer).Cells(5).Value = ""
+                Alarma.Imt = impor_te
+                VerSumas()
+            Else
+                DataGridView1.Rows(trscta.refer).Cells(5).Value = Format(impor_te, z1)
+                DataGridView1.Rows(trscta.refer).Cells(4).Value = ""
+                Alarma.Imt = impor_te
+                VerSumas()
+            End If
+
+
+        End If
+
+    End Sub
+
     Sub VerSumas()
         Dim i As Integer
         sumaDebe = 0 : sumaHaber = 0 : Ok_che = 0
@@ -330,144 +387,11 @@ Public Class CAP_Cheques
                 sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(5).Value
             End If
         Next i
-        Dim resultado As Integer = Strings.Format(sumaDebe, "###,###,##0.00")
-        DataGridView1.Rows(0).Cells(4).Value = resultado
-        DataGridView1.Rows(0).Cells(5).Value = resultado
+        'Dim resultado As Integer = Strings.Format(sumaDebe, "###,###,##0.00")
+        DataGridView1.Rows(0).Cells(4).Value = Format(sumaDebe, "###,###,##0.00")
+        DataGridView1.Rows(0).Cells(5).Value = Format(sumaDebe, "###,###,##0.00")
 
 
-    End Sub
-    Sub cam_saldo()
-
-
-        If DataGridView1.Rows(0).Cells(4).Value <> "" Or DataGridView1.Rows(0).Cells(5).Value <> "" Then
-            If DataGridView1.Rows(0).Cells(5).Value = "" Then
-                Sal_do = DataGridView1.Rows(0).Cells(4).Value
-            Else
-                Sal_do = DataGridView1.Rows(0).Cells(5).Value
-            End If
-        End If
-        If valcelant = "" Then valcelant = 0
-        If c_ambiar = 1 Then Sal_do = Sal_do - valcelant : 
-        Sal_do = Sal_do + impor_te
-        Dim resul As String = Strings.Format(Sal_do, "z1")
-        Dim resutl As String = Strings.Format(impor_te, "z1")
-        If Sal_do > 0 Then 'Cuando "saldo" en (n,4) de como resultado un valor mayor a cero entrara en esta función
-
-            DataGridView1.Rows(0).Cells(4).Value = resul
-            DataGridView1.Rows(0).Cells(5).Value = ""
-            Alarma.Imt = Sal_do
-            VerSumas()
-        Else
-
-            DataGridView1.Rows(0).Cells(5).Value = resul
-            DataGridView1.Rows(0).Cells(4).Value = ""
-            Alarma.Imt = Sal_do
-            VerSumas()
-
-            If impor_te > 0 Then
-                DataGridView1.Rows(0).Cells(4).Value = resutl
-                DataGridView1.Rows(0).Cells(5).Value = ""
-                Alarma.Imt = impor_te
-                VerSumas()
-            Else
-                DataGridView1.Rows(0).Cells(5).Value = resutl
-                DataGridView1.Rows(0).Cells(4).Value = ""
-                Alarma.Imt = impor_te
-                VerSumas()
-            End If
-
-
-
-        End If
-
-    End Sub
-    Sub localizarpoliza()
-        Dim i As Integer
-        archivooper()
-        Dim nom_arch As Integer = FreeFile()
-
-        'abrirRandomNominaCaptura()
-        'FileOpen(nom_arch, "ruta_del_archivo", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.Shared, Len(OPER))
-        fin_oper = LOF(nom_arch) / Len(OPER)
-        ultimo.poliza = 0
-        If fin_oper <= 0 Then
-            ultimo.poliza = 1
-            Label3.Text = "Poliza No. " + Str(ultimo.poliza)
-        Else
-            For i = fin_oper To 1 Step -1
-                FileGet(3, OPER, 1)
-                If OPER.indenti = "A" Then
-                    ultimo.poliza = Val(OPER.CTA) + 1
-                    Label3.Text = "Poliza No. " + Str(ultimo.poliza)
-                    Exit For
-                End If
-            Next
-
-
-        End If
-
-
-    End Sub
-
-    Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
-
-
-        'FileClose(1)
-
-        'MientraS = ""
-        'Ruta_Acceso_Contr = ""
-
-
-        'Try
-
-        midir = System.IO.Directory.GetCurrentDirectory()
-            midir = midir.TrimEnd()
-            Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
-            If midir.EndsWith("\") Then
-                midir = midir.Substring(0, midir.Length - 1)
-
-            End If
-
-
-            Dim openFileDialog1 As New OpenFileDialog With {
-            .InitialDirectory = "midir",
-            .CheckFileExists = True,
-            .ShowReadOnly = False,
-            .Filter = "Archivos de Nomina(Dat*.*)|Dat*.*",
-            .Title = "Seleccionar archivo"
-        }
-            If openFileDialog1.ShowDialog() = DialogResult.OK Then
-
-                ' Realiza alguna acción con el archivo seleccionado.
-                If openFileDialog1.FileName <> "" Then
-
-                    Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-
-
-
-                    MientraS = (openFileDialog1.FileName.Substring(0, tope))
-
-                    ChDir(MientraS)
-
-                    FileClose(numeroGConta)
-
-                abrirRandomNominaCaptura()
-                SCont.guarda = MientraS
-                FilePut(numeroGConta, MientraS, 1)
-
-                FileClose(numeroGConta)
-
-                    cm = 0
-                    inicio()
-                    sigpaso()
-                    ''MeEne_Click 1
-                End If
-            End If
-
-            Exit Sub
-        'Catch ex As Exception
-        '    MsgBox(Err.Description)
-        'End Try
     End Sub
     Sub depura(elemento As Integer)
 
@@ -477,14 +401,6 @@ Public Class CAP_Cheques
 
         End If
 
-
-    End Sub
-
-    Sub limpiar()
-        verct_a = 0
-        trcta.clave = 0 : trcta.donde = 0 : trcta.incia = 0
-        trscta.nombre = 0 : trscta.num = 0 : trcta.termina = 0
-        ultimo.renglon = 0
 
     End Sub
 
@@ -537,13 +453,30 @@ Public Class CAP_Cheques
         Next i
 
 
-
-
     End Sub
 
+    Private Sub ActualizarSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActualizarSaldosToolStripMenuItem.Click
+        If (Mes_Act > 0) And (Mes_Act < 14) Then
+            FileGet(1, DATOS, Mes_Act)
+            rgtro = Val(DATOS.ultimaOperacionReg)
 
-    Private Sub AjustarChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjustarChequeToolStripMenuItem.Click
-        CAP_AjusteImpresionCheques.Show()
+            'abrirRandomNominaCaptura()
+
+
+            tope = Val(DATOS.ultimaOperacionReg)
+            If rgtro >= Dm Then
+                MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
+                FileClose(1, 12)
+            Else
+                ultimo.num = 2
+                ultimo.Ubi = tope + 1
+                CAP_Actualizacion.Show()
+                'Me.Show()
+                ultimo.num = 0
+                ultimo.Ubi = 0
+                Mes_Act = 0
+            End If
+        End If
 
     End Sub
 
@@ -551,8 +484,6 @@ Public Class CAP_Cheques
 
         Dim mi_ent As String
         mi_entr = ultimo.texto
-
-
 
         FileGet(numeroGConta, SCont, 2)
         CAP_Entrada.Text = Trim(SCont.guarda)
@@ -573,7 +504,7 @@ Public Class CAP_Cheques
         If SCont.guarda <> "" Then
             'abrirRandomNominaCaptura()
 
-            FileGet(numeroGConta, SCont, 2)
+
             Dir_Costos = Trim(SCont.guarda)
             mi_ent = Dir(Dir_Costos)
             If mi_ent <> "" Then
@@ -591,6 +522,327 @@ Public Class CAP_Cheques
 
 
     End Sub
+    Private Sub DesactualizarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DesactualizarToolStripMenuItem.Click
+        Actualizacion()
+        If Mes_Act > 0 And Mes_Act < 14 Then
+            FileGet(1, DATOS, Mes_Act)
+            rgtro = Val(DATOS.ultimaOperacionReg)
+
+            tope = Val(DATOS.ultimaOperacionReg)
+            If rgtro <> Dm Then
+                MsgBox(RTrim(Arch_act) + "No es posible Desactualizar", vbCritical)
+            Else
+                ultimo.num = 3
+                ultimo.Ubi = 1
+                CAP_Actualizacion.Show()
+                ultimo.num = 0
+                ultimo.Ubi = 0
+                Mes_Act = 0
+
+            End If
+
+        End If
+    End Sub
+    Private Sub GuardarAplicaciónCtrlGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarAplicaciónCtrlGToolStripMenuItem.Click
+        Dim i As Integer
+        If (validatePdfArchives < 1 And change = False) Then
+            MessageBox.Show("No se puede guardar cheque sin archivo PDF", "Error")
+            Exit Sub
+        End If
+
+        For i = 0 To DataGridView1.Rows(0).Cells(0).Value = -1
+            If DataGridView1.Rows(0).Cells(0).Value <> "" Then
+                ultimo.renglon = i + 1
+            End If
+        Next i
+
+        mesXml = Mid(Label2.Text, 4, 3)
+        Dim beneficiario As String = TextBox6.Text.Substring(0, 20)
+        currentdir = Trim(Modulo_EstructurasDeDatos.SCont.guarda)
+        currentdir = Mid(currentdir, 1, 2)
+        concepto = TextBox8.Text.Trim().Substring(0, 8) & TextBox4.Text.Trim().Substring(0, 30)
+        numcheque = LTrim(RTrim(TextBox8.Text))
+
+        If ultimo.renglon <= 3 Then
+            MsgBox("No se puede guardar la aplicación", vbCritical, "Captura de cheques")
+            Exit Sub
+        End If
+
+        If ultimo.TipoCap = 0 Then
+            If (ultimo.Impresion = 0) And (ultimo.TipoCap = 0) Then
+                MsgBox("El cheque no se ha impreso.")
+                Exit Sub
+            End If
+            inicio()
+            archivooper()
+            Dim nom_arch As Integer = FreeFile()
+            Close()
+            'abrirRandomNominaCaptura()
+            fin_oper = LOF(3) / Len(OPER)
+            ultimo.poliza = 0
+
+            If fin_oper <= 0 Then
+                ultimo.poliza = 1
+            Else
+                For i = fin_oper To 1 Step -1
+                    FileGet(3, OPER, i)
+                    If OPER.indenti = "A" Then
+                        ultimo.poliza = Val(OPER.CTA) + 1
+                        Label3.Text = "Poliza No. " + Str(ultimo.poliza)
+                        numpoliza = Trim(Str(ultimo.poliza))
+                        Exit For
+                    End If
+                Next
+            End If
+
+
+            'chkux()
+
+            If ultimo.renglon <= 3 Then
+                MsgBox("No se puede archivar la aplicación", vbCritical, "Captura de cheques.")
+                Exit Sub
+            End If
+            aplicacion()
+            ultimo.poliza = 0
+        End If
+
+        If ultimo.TipoCap = 1 Then
+            FileClose(3)
+            'abrirRandomNominaCaptura()
+            fin_oper = LOF(3) / Len(OPER)
+            Ok_che = 0
+            verificar(0, 0, Ok_che)
+
+            If Ok_che = 1 Then
+                ultimo.poliza = 0
+
+                If fin_oper <= 0 Then
+                    ultimo.poliza = 1
+                Else
+                    For i = fin_oper To 1 Step -1
+                        FileGet(3, OPER, i)
+                        If OPER.indenti = "A" Then
+                            ultimo.poliza = Val(OPER.CTA) + 1
+                            Label3.Text = "Poliza No. " + Str(ultimo.poliza)
+                            numpoliza = Trim(Str(ultimo.poliza))
+                            Exit For
+                        End If
+                    Next i
+                End If
+                'chkaux
+                If ultimo.renglon <= 3 Then
+                    MsgBox("No se puede archivar la aplicación", vbCritical, "Captura de cheques")
+                    Exit Sub
+                End If
+                aplicacion()
+
+                ultimo.poliza = ultimo.poliza + 1
+                Label3.Text = "Poliza No. " + Str(ultimo.poliza)
+            End If
+            FileClose(3)
+
+        End If
+        dir1 = Trim(SCont.guarda)
+
+
+    End Sub
+
+
+    Sub limpiar()
+        verct_a = 0
+        trcta.clave = 0 : trcta.donde = 0 : trcta.incia = 0
+        trscta.nombre = 0 : trscta.num = 0 : trcta.termina = 0
+        ultimo.renglon = 0
+
+    End Sub
+    Sub archivooper()
+        If RTrim(ultimo.texto) <= "" Then
+            CAP_Entrada.Text = ""
+            CAP_Entrada.Text = "Captura de cheques"
+            CAP_Entrada.Text = "No existe nombre de archivo de operaciones" & Environment.NewLine & "Use máximo 6 caracteres"
+            CAP_Entrada.Width = 180 * 6
+            CAP_Entrada.Show()
+            DATOS.No_arch = ultimo.texto
+
+            If RTrim(ultimo.texto) = "" Then
+                Exit Sub
+            End If
+            FilePut(1, DATOS, 1)
+        End If
+        If mespoliza = 10 Then
+            nom_arch = UCase(RTrim(ultimo.texto)) + "0" + LTrim(Str(mespoliza))
+        Else
+            nom_arch = UCase(RTrim(ultimo.texto)) + LTrim(Str(mespoliza))
+        End If
+
+    End Sub
+
+
+    Sub localizarpoliza()
+        Dim i As Integer
+        archivooper()
+        Dim nom_arch As Integer = FreeFile()
+
+        'abrirRandomNominaCaptura()
+        'FileOpen(nom_arch, "ruta_del_archivo", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.Shared, Len(OPER))
+        'fin_oper = LOF(nom_arch) / Len(OPER)
+        ultimo.poliza = 0
+        If fin_oper <= 0 Then
+            ultimo.poliza = 1
+            Label3.Text = "Poliza No. " + Str(ultimo.poliza)
+        Else
+            For i = fin_oper To 1 Step -1
+                FileGet(3, OPER, 1)
+                If OPER.indenti = "A" Then
+                    ultimo.poliza = Val(OPER.CTA) + 1
+                    Label3.Text = "Poliza No. " + Str(ultimo.poliza)
+                    Exit For
+                End If
+            Next i
+
+
+        End If
+        limpiar()
+
+
+    End Sub
+
+    Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
+
+
+        'FileClose(1)
+
+        'MientraS = ""
+        'Ruta_Acceso_Contr = ""
+
+
+        Try
+
+            midir = System.IO.Directory.GetCurrentDirectory()
+            midir = midir.TrimEnd()
+            Dim dir1 As New System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory())
+            If midir.EndsWith("\") Then
+                midir = midir.Substring(0, midir.Length - 1)
+
+            End If
+
+
+            Dim openFileDialog1 As New OpenFileDialog With {
+            .InitialDirectory = "midir",
+            .CheckFileExists = True,
+            .ShowReadOnly = False,
+            .Filter = "Archivos de Nomina(Dat*.*)|Dat*.*",
+            .Title = "Seleccionar archivo"
+        }
+            If openFileDialog1.ShowDialog() = DialogResult.OK Then
+
+                ' Realiza alguna acción con el archivo seleccionado.
+                If openFileDialog1.FileName <> "" Then
+
+                    Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
+
+
+
+                    MientraS = (openFileDialog1.FileName.Substring(0, tope))
+
+                    ChDir(MientraS)
+
+                    FileClose(numeroGConta)
+
+                    ' abrirRandomNominaCaptura()
+                    SCont.guarda = MientraS
+                    FilePut(numeroGConta, MientraS, 1)
+
+                    FileClose(numeroGConta)
+
+                    cm = 0
+                    inicio()
+                    sigpaso()
+                    ''MeEne_Click 1
+                End If
+            End If
+
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(Err.Description)
+        End Try
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+
+        If ultimo.renglon > 1 And ultimo.poliza = 0 Then
+            mensaje = "Va a salir sin archivar la póliza"
+            respuesta = MsgBox(mensaje, vbYesNo + vbCritical + vbDefaultButton2, "Captura de datos ")
+
+        End If
+
+        If respuesta = vbYesNo Then
+            Close()
+
+        End If
+
+        MENÚ.Show()
+        Me.Hide()
+
+    End Sub
+
+    Sub verificar(sumaDebe, sumaHaber, Ok_che)
+        Dim i As Integer
+
+        'Inician variables en 0
+        sumaDebe = 0
+        sumaHaber = 0
+        Ok_che = 0
+
+        If ultimo.TipoCap = 1 Then
+            Ok_che = 1
+
+        End If
+
+        For i = 1 To ultimo.renglon
+            If DataGridView1.Rows(i).Cells(4).Value <> "" Then
+                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(4).Value
+            End If
+            If DataGridView1.Rows(i).Cells(5).Value <> "" Then
+                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(5).Value
+
+                If TextBox7.Text <> "" Then
+                    If TextBox7.Text = (DataGridView1.Rows(i).Cells(5).Value * -1) Then
+                        Ok_che = 1
+                    End If
+                End If
+            End If
+        Next i
+        ' Establece las sumas dentro de la Grid
+        'DataGridView1.Rows(ultimo.renglon + 1, 2).Value = " sumas"
+        'DataGridView1.Rows(ultimo.renglon + 1, 4).Value = (sumaDebe, z1)
+        'DataGridView1.Rows(ultimo.renglon + 1, 5).Value = (sumaHaber, z1)
+
+
+
+    End Sub
+    Sub verifica_edicion()
+
+        no_Se_Mofifica = 1
+        If DataGridView1.Rows(DataGridView1.Rows.Count).Cells(7).Value <> 0 Then
+            no_Se_Mofifica = 1
+        Else
+            no_Se_Mofifica = 0
+
+        End If
+
+    End Sub
+    Private Sub VerificarActualizacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerificarActualizacionesToolStripMenuItem.Click
+        CAP_ArchivosActualizados.Show()
+
+    End Sub
+
+    Private Sub AjustarChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjustarChequeToolStripMenuItem.Click
+        CAP_AjusteImpresionCheques.Show()
+
+    End Sub
+
+
     'Sub recorrerGrid(inicio, fin) 'lin_che
     '    Dim antes As Integer
     '    Dim largoPapel As Integer
@@ -715,6 +967,8 @@ Public Class CAP_Cheques
     Private Sub DatosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DatosToolStripMenuItem.Click
         CAP_DatosEmpresa.Show()
 
+
+
     End Sub
 
     Private Sub OtrosProgramasCtrlOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OtrosProgramasCtrlOToolStripMenuItem.Click
@@ -727,46 +981,19 @@ Public Class CAP_Cheques
 
     End Sub
 
-    Private Sub VerificarActualizacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerificarActualizacionesToolStripMenuItem.Click
-        CAP_ArchivosActualizados.Show()
-
-    End Sub
-
-    Private Sub ActualizarSaldosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActualizarSaldosToolStripMenuItem.Click
-        If (Mes_Act > 0) And (Mes_Act < 14) Then
-            FileGet(1, DATOS, Mes_Act)
-            rgtro = Val(DATOS.ultimaOperacionReg)
-
-            'abrirRandomNominaCaptura()
-
-
-            tope = Val(DATOS.ultimaOperacionReg)
-            If rgtro >= Dm Then
-                MsgBox(RTrim(Arch_act) + " No es posible DesActualizar ", vbCritical, "Actualizacion de Saldos")
-                FileClose(1, 12)
-            Else
-                ultimo.num = 2
-                ultimo.Ubi = tope + 1
-                CAP_Actualizacion.Show()
-                'Me.Show()
-                ultimo.num = 0
-                ultimo.Ubi = 0
-                Mes_Act = 0
-            End If
-        End If
-
-    End Sub
-
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-        MENÚ.Show()
-        Me.Hide()
-
-    End Sub
     Private Sub CAP_Cheques_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         MENÚ.Show()
     End Sub
     Private Sub ChequeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ChequeToolStripMenuItem1.Click
-        Me.Show()
+        change = False
+        contadorXml = 0
+        validateXMLArchives = 0
+        validatePdfArchives = 0
+        Erase archivos1
+        Erase archivos1Pdf
+        Erase routes
+        Erase routesPdf
+
         Label4.Visible = False
         Label5.Visible = False
         TextBox3.Visible = False
@@ -777,6 +1004,17 @@ Public Class CAP_Cheques
         Label13.Visible = False
         Label3.Text = ""
         DataGridView1.Size = New Size(900, 271)
+
+        ultimo.TipoCap = 0
+        DataGridView1.ClearSelection()
+
+
+        TextBox1.Focus()
+
+
+
+
+
     End Sub
     Private Sub PólizaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PólizaToolStripMenuItem.Click
         DataGridView1.Size = New Size(1350, 800)
@@ -917,7 +1155,6 @@ Public Class CAP_Cheques
 
             If diferenciaHaber >= 0 Then
                 TextBox2.Text = (ToString(diferenciaHaber))
-
                 DataGridView1.Focus()
 
             End If
@@ -1065,168 +1302,6 @@ Public Class CAP_Cheques
             Case "12"
                 DiciembreToolStripMenuItem_Click(sender, e)
         End Select
-
-    End Sub
-    Sub verificar(sumaDebe, sumaHaber, Ok_che)
-        Dim i As Integer
-
-        'Inician variables en 0
-        sumaDebe = 0
-        sumaHaber = 0
-        Ok_che = 0
-
-        If ultimo.TipoCap = 1 Then
-            Ok_che = 1
-
-        End If
-
-        For i = 1 To ultimo.renglon
-            If DataGridView1.Rows(i).Cells(4).Value <> "" Then
-                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(4).Value
-            End If
-            If DataGridView1.Rows(i).Cells(5).Value <> "" Then
-                sumaDebe = sumaDebe + DataGridView1.Rows(i).Cells(5).Value
-
-                If TextBox7.Text <> "" Then
-                    If TextBox7.Text = (DataGridView1.Rows(i).Cells(5).Value * -1) Then
-                        Ok_che = 1
-                    End If
-                End If
-            End If
-        Next i
-        ' Establece las sumas dentro de la Grid
-        'DataGridView1.Rows(ultimo.renglon + 1, 2).Value = " sumas"
-        'DataGridView1.Rows(ultimo.renglon + 1, 4).Value = (sumaDebe, z1)
-        'DataGridView1.Rows(ultimo.renglon + 1, 5).Value = (sumaHaber, z1)
-
-
-
-    End Sub
-    Sub archivooper()
-        If RTrim(ultimo.texto) <= "" Then
-            CAP_Entrada.Text = ""
-            CAP_Entrada.Text = "Captura de cheques"
-            CAP_Entrada.Text = "No existe nombre de archivo de operaciones" & Environment.NewLine & "Use máximo 6 caracteres"
-            CAP_Entrada.Width = 180 * 6
-            CAP_Entrada.Show()
-            DATOS.No_arch = ultimo.texto
-
-            If RTrim(ultimo.texto) = "" Then
-                Exit Sub
-            End If
-            FilePut(1, DATOS, 1)
-        End If
-        If mespoliza = 10 Then
-            nom_arch = UCase(RTrim(ultimo.texto)) + "0" + LTrim(Str(mespoliza))
-        Else
-            nom_arch = UCase(RTrim(ultimo.texto)) + LTrim(Str(mespoliza))
-        End If
-
-    End Sub
-
-
-
-    Private Sub GuardarAplicaciónCtrlGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarAplicaciónCtrlGToolStripMenuItem.Click
-        Dim i As Integer
-        If (validatePdfArchives < 1 And change = False) Then
-            MessageBox.Show("No se puede guardar cheque sin archivo PDF", "Error")
-            Exit Sub
-        End If
-
-        For i = 0 To DataGridView1.Rows(0).Cells(0).Value = -1
-            If DataGridView1.Rows(0).Cells(0).Value <> "" Then
-                ultimo.renglon = i + 1
-            End If
-        Next i
-
-        mesXml = Mid(Label2.Text, 4, 3)
-        Dim beneficiario As String = TextBox6.Text.Substring(0, 20)
-        currentdir = Trim(Modulo_EstructurasDeDatos.SCont.guarda)
-        currentdir = Mid(currentdir, 1, 2)
-        concepto = TextBox8.Text.Trim().Substring(0, 8) & TextBox4.Text.Trim().Substring(0, 30)
-        numcheque = LTrim(RTrim(TextBox8.Text))
-
-        If ultimo.renglon <= 3 Then
-            MsgBox("No se puede guardar la aplicación", vbCritical, "Captura de cheques")
-            Exit Sub
-        End If
-
-        If ultimo.TipoCap = 0 Then
-            If (ultimo.Impresion = 0) And (ultimo.TipoCap = 0) Then
-                MsgBox("El cheque no se ha impreso.")
-                Exit Sub
-            End If
-            inicio()
-            archivooper()
-            Dim nom_arch As Integer = FreeFile()
-            Close()
-            'abrirRandomNominaCaptura()
-            fin_oper = LOF(3) / Len(OPER)
-            ultimo.poliza = 0
-
-            If fin_oper <= 0 Then
-                ultimo.poliza = 1
-            Else
-                For i = fin_oper To 1 Step -1
-                    FileGet(3, OPER, i)
-                    If OPER.indenti = "A" Then
-                        ultimo.poliza = Val(OPER.CTA) + 1
-                        Label3.Text = "Poliza No. " + Str(ultimo.poliza)
-                        numpoliza = Trim(Str(ultimo.poliza))
-                        Exit For
-                    End If
-                Next
-            End If
-
-
-            'chkux()
-
-            If ultimo.renglon <= 3 Then
-                MsgBox("No se puede archivar la aplicación", vbCritical, "Captura de cheques.")
-                Exit Sub
-            End If
-            aplicacion()
-            ultimo.poliza = 0
-        End If
-
-        If ultimo.TipoCap = 1 Then
-            FileClose(3)
-            'abrirRandomNominaCaptura()
-            fin_oper = LOF(3) / Len(OPER)
-            Ok_che = 0
-            verificar(0, 0, Ok_che)
-
-            If Ok_che = 1 Then
-                ultimo.poliza = 0
-
-                If fin_oper <= 0 Then
-                    ultimo.poliza = 1
-                Else
-                    For i = fin_oper To 1 Step -1
-                        FileGet(3, OPER, i)
-                        If OPER.indenti = "A" Then
-                            ultimo.poliza = Val(OPER.CTA) + 1
-                            Label3.Text = "Poliza No. " + Str(ultimo.poliza)
-                            numpoliza = Trim(Str(ultimo.poliza))
-                            Exit For
-                        End If
-                    Next i
-                End If
-                'chkaux
-                If ultimo.renglon <= 3 Then
-                    MsgBox("No se puede archivar la aplicación", vbCritical, "Captura de cheques")
-                    Exit Sub
-                End If
-                aplicacion()
-
-                ultimo.poliza = ultimo.poliza + 1
-                Label3.Text = "Poliza No. " + Str(ultimo.poliza)
-            End If
-            FileClose(3)
-
-        End If
-        dir1 = Trim(SCont.guarda)
-
 
     End Sub
 
@@ -1569,7 +1644,11 @@ Public Class CAP_Cheques
 
     End Sub
 
-    Private Sub CAP_Cheques_ClientSizeChanged(sender As Object, e As EventArgs) Handles Me.ClientSizeChanged
+    Private Sub CAP_Cheques_ClientSizeChanged(sender As Object, e As EventArgs) Handles MyBase.ClientSizeChanged
+
+    End Sub
+
+    Private Sub SumasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumasToolStripMenuItem.Click
 
     End Sub
 End Class
