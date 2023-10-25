@@ -3,8 +3,6 @@
 Public Class CAP_PolizasDiario
 
 
-    'FileOpen(3, Ruta_Acceso_Contr & "\Gcont.Arr", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.LockReadWrite, Len(SCont))
-
 
 
 
