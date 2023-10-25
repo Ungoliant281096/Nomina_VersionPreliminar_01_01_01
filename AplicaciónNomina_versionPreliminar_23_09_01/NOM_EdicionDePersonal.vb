@@ -28,7 +28,9 @@ Public Class NOM_EdicionDePersonal
         DataGridView1.Height = Me.Height * 0.85
 
         ' establece el ancho de las columnas
-        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells 'Index was out of range. Must be non-negative and less than the size of the collection. Arg_ParamName_Name'
+
+        'Index was out of range. Must be non-negative and less than the size of the collection. Arg_ParamName_Name'
 
     End Sub
 

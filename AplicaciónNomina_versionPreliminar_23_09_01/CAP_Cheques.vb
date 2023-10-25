@@ -1513,11 +1513,12 @@ Public Class CAP_Cheques
         BorrarCuentaToolStripMenuItem_Click(sender, e)
 
     End Sub
-    Sub mostrarCta()
-        If trcta.num > 0 Then
-            If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
+    'Sub mostrarCta()
+    '    If trcta.num > 0 Then
+    '        If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
 
-        End If
+    '    End If
+    'End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         Dim primeraColum As Integer

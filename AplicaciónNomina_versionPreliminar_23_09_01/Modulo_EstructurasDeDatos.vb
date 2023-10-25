@@ -309,7 +309,7 @@ Module Modulo_EstructurasDeDatos
 
 	Structure empresa
 		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
-		Public añoEmpresa As Integer
+		Public añoEmpresa As Long
 		Public sm As Long
 		Public psub As Long
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
@@ -403,6 +403,12 @@ Module Modulo_EstructurasDeDatos
 		FileOpen(numeroAuxiliar, rutaDelEjecutable + "\CATAUX", OpenMode.Random,,, Len(CATAUX))
 		largoCatalogoAuxiliar = LOF(numeroAuxiliar) \ Len(CATAUX)
 
+		FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
+		largoGconta = LOF(numeroGConta) \ Len(SCont)
+
+		FileOpen(numeroDatos, rutaDelEjecutable + "\DATOS", OpenMode.Random,,, Len(DATOS))
+		largoDatos = LOF(numeroDatos) \ Len(DATOS)
+
 		FileOpen(numeroPersonal, rutaDelEjecutable + "\personal.dno", OpenMode.Random,,, Len(personal))
 		largoPersonal = LOF(numeroPersonal) \ Len(personal)
 
@@ -417,12 +423,6 @@ Module Modulo_EstructurasDeDatos
 
 		FileOpen(numeroEmprsa, rutaDelEjecutable + "\EMPRESA.dno", OpenMode.Random,,, Len(datosEmpresa))
 		largoEmpresa = LOF(numeroEmprsa) \ Len(datosEmpresa)
-
-		FileOpen(numeroGConta, "C:\GconTA\Gcont.Arr", OpenMode.Random,,, Len(SCont))
-		largoGconta = LOF(numeroGConta) \ Len(SCont)
-
-		FileOpen(numeroDatos, rutaDelEjecutable + "\DATOS", OpenMode.Random,,, Len(DATOS))
-		largoDatos = LOF(numeroDatos) \ Len(DATOS)
 
 	End Sub
 

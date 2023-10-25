@@ -9,12 +9,12 @@ Public Class Form1
 
         LlenarTreeView("C:\NOMINAS")
 
-        FileGet(numeroEmprsa, datosEmpresa, largoEmpresa)
+        'FileGet(numeroEmprsa, datosEmpresa, largoEmpresa)
 
-        Label1.Text = datosEmpresa.name.Trim()
-        Label2.Text = datosEmpresa.añoEmpresa
-        Label3.Text = datosEmpresa.psub
-        Label4.Text = datosEmpresa.sm
+        'Label1.Text = datosEmpresa.name.Trim()
+        'Label2.Text = datosEmpresa.añoEmpresa
+        'Label3.Text = datosEmpresa.psub
+        'Label4.Text = datosEmpresa.sm
 
     End Sub
     Private Sub CapturaPersonalToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CapturaPersonalToolStripMenuItem.Click
@@ -126,7 +126,6 @@ Public Class Form1
         Try
             ' Obtener la ruta del directorio o archivo asociado con este nodo
             Dim ruta As String = DirectCast(nodoPadre.Tag, String)
-
             ' Obtener la lista de subdirectorios
             Dim subdirectorios As String() = Directory.GetDirectories(ruta)
             For Each subdirectorio As String In subdirectorios
@@ -136,7 +135,6 @@ Public Class Form1
                 ' Llamar recursivamente para llenar los subnodos
                 LlenarNodo(nodo)
             Next
-
             ' Obtener la lista de archivos
             Dim archivos As String() = Directory.GetFiles(ruta)
             For Each archivo As String In archivos
@@ -152,5 +150,10 @@ Public Class Form1
 
     Private Sub CambioDeNominaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioDeNominaToolStripMenuItem.Click
         cambioDirectorioNomina()
+    End Sub
+
+    Public Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
+        Dim ruta As String = e.Node.FullPath
+        MsgBox("La ruta seleccionada es: " & ruta)
     End Sub
 End Class
