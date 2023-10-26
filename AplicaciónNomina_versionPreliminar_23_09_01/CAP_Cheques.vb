@@ -1621,7 +1621,7 @@ Public Class CAP_Cheques
     '    If trcta.num > 0 Then
     '        If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
 
-    End If
+    'End If
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         Dim verCol As Integer
@@ -1637,7 +1637,7 @@ Public Class CAP_Cheques
             ultimo.Ubi = 0
             CAP_CatCuentasMayor.Show()
             If ultimo.Ubi = 1 Then
-                mostrarCta()
+                'mostrarCta()
             End If
         End If
         Clipboard.Clear()

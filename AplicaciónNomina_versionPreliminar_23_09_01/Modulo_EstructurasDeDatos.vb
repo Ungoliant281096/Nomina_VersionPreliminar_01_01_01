@@ -1,6 +1,25 @@
 ﻿Imports System.Globalization
 Imports System.Security.Cryptography.X509Certificates
 
+Public Structure Currency
+	Private _value As Decimal
+
+	Public Sub New(value As Decimal)
+		_value = value
+	End Sub
+
+	Public ReadOnly Property Value As Decimal
+		Get
+			Return _value
+		End Get
+	End Property
+
+	Public Overrides Function ToString() As String
+		Return String.Format("{0:C}", _value)
+	End Function
+End Structure
+
+
 Module Modulo_EstructurasDeDatos
 	Structure CAT_MA
 		<VBFixedString(6), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=6)> Public B1 As String
@@ -309,9 +328,9 @@ Module Modulo_EstructurasDeDatos
 
 	Structure empresa
 		<VBFixedString(60), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=60)> Public name As String
-		Public añoEmpresa As Long
-		Public sm As Long
-		Public psub As Long
+		Public añoEmpresa As Integer
+		Public sm As Integer
+		Public psub As Integer
 		<VBFixedString(14), System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst:=14)> Public fecha As String
 	End Structure
 

@@ -38,7 +38,7 @@ Partial Class NOM_DatosEmpresa
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 63)
+        Me.TextBox1.Location = New System.Drawing.Point(19, 44)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.PlaceholderText = "Nombre de la empresa"
         Me.TextBox1.Size = New System.Drawing.Size(415, 27)
@@ -46,7 +46,7 @@ Partial Class NOM_DatosEmpresa
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(12, 119)
+        Me.TextBox2.Location = New System.Drawing.Point(19, 100)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PlaceholderText = "Año"
         Me.TextBox2.Size = New System.Drawing.Size(415, 27)
@@ -54,7 +54,7 @@ Partial Class NOM_DatosEmpresa
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(12, 175)
+        Me.TextBox3.Location = New System.Drawing.Point(19, 156)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.PlaceholderText = "Salario mínimo vigente"
         Me.TextBox3.Size = New System.Drawing.Size(415, 27)
@@ -62,7 +62,7 @@ Partial Class NOM_DatosEmpresa
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(12, 231)
+        Me.TextBox4.Location = New System.Drawing.Point(19, 212)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.PlaceholderText = "Porcentaje de subsidio vigente"
         Me.TextBox4.Size = New System.Drawing.Size(415, 27)
@@ -72,7 +72,7 @@ Partial Class NOM_DatosEmpresa
         '
         Me.TextBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.TextBox5.Location = New System.Drawing.Point(12, 287)
+        Me.TextBox5.Location = New System.Drawing.Point(19, 268)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.PlaceholderText = "Fecha del último cambio de operación"
         Me.TextBox5.Size = New System.Drawing.Size(415, 27)
@@ -82,7 +82,7 @@ Partial Class NOM_DatosEmpresa
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(12, 409)
+        Me.Button1.Location = New System.Drawing.Point(31, 335)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(156, 49)
         Me.Button1.TabIndex = 11
@@ -93,7 +93,7 @@ Partial Class NOM_DatosEmpresa
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(280, 409)
+        Me.Button2.Location = New System.Drawing.Point(278, 335)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(156, 49)
         Me.Button2.TabIndex = 12
@@ -102,7 +102,7 @@ Partial Class NOM_DatosEmpresa
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(12, 37)
+        Me.Label1.Location = New System.Drawing.Point(19, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(415, 23)
         Me.Label1.TabIndex = 13
@@ -110,7 +110,7 @@ Partial Class NOM_DatosEmpresa
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(12, 93)
+        Me.Label2.Location = New System.Drawing.Point(19, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(415, 23)
         Me.Label2.TabIndex = 14
@@ -118,7 +118,7 @@ Partial Class NOM_DatosEmpresa
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(12, 149)
+        Me.Label3.Location = New System.Drawing.Point(19, 130)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(415, 23)
         Me.Label3.TabIndex = 15
@@ -126,7 +126,7 @@ Partial Class NOM_DatosEmpresa
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(12, 205)
+        Me.Label4.Location = New System.Drawing.Point(19, 186)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(415, 23)
         Me.Label4.TabIndex = 16
@@ -134,7 +134,7 @@ Partial Class NOM_DatosEmpresa
         '
         'Label5
         '
-        Me.Label5.Location = New System.Drawing.Point(12, 261)
+        Me.Label5.Location = New System.Drawing.Point(19, 242)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(424, 23)
         Me.Label5.TabIndex = 17
@@ -144,7 +144,7 @@ Partial Class NOM_DatosEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(441, 470)
+        Me.ClientSize = New System.Drawing.Size(450, 407)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)

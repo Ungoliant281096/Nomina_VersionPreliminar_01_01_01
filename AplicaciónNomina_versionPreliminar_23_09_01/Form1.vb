@@ -10,7 +10,6 @@ Public Class Form1
         LlenarTreeView("C:\NOMINAS")
 
         'FileGet(numeroEmprsa, datosEmpresa, largoEmpresa)
-
         'Label1.Text = datosEmpresa.name.Trim()
         'Label2.Text = datosEmpresa.añoEmpresa
         'Label3.Text = datosEmpresa.psub
@@ -154,6 +153,6 @@ Public Class Form1
 
     Public Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
         Dim ruta As String = e.Node.FullPath
-        MsgBox("La ruta seleccionada es: " & ruta)
+        'MsgBox("La ruta seleccionada es: " & ruta)
     End Sub
 End Class

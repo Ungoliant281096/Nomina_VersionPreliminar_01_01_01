@@ -59,12 +59,13 @@ Partial Class Form1
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PersonalToolStripMenuItem, Me.NominaToolStripMenuItem, Me.EmpresaToolStripMenuItem, Me.CrearSubdirectorioToolStripMenuItem, Me.TarifasImpuestosToolStripMenuItem, Me.VersiónToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(6, 3, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(529, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(870, 30)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -115,19 +116,19 @@ Partial Class Form1
         'CapturaToolStripMenuItem
         '
         Me.CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
-        Me.CapturaToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.CapturaToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
         Me.CapturaToolStripMenuItem.Text = "Captura"
         '
         'ImpresiónToolStripMenuItem1
         '
         Me.ImpresiónToolStripMenuItem1.Name = "ImpresiónToolStripMenuItem1"
-        Me.ImpresiónToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.ImpresiónToolStripMenuItem1.Size = New System.Drawing.Size(219, 26)
         Me.ImpresiónToolStripMenuItem1.Text = "Impresión"
         '
         'CambioDeNominaToolStripMenuItem
         '
         Me.CambioDeNominaToolStripMenuItem.Name = "CambioDeNominaToolStripMenuItem"
-        Me.CambioDeNominaToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.CambioDeNominaToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
         Me.CambioDeNominaToolStripMenuItem.Text = "Cambio de nomina"
         '
         'EmpresaToolStripMenuItem
@@ -226,44 +227,44 @@ Partial Class Form1
         '
         'TreeView1
         '
-        Me.TreeView1.Location = New System.Drawing.Point(12, 41)
+        Me.TreeView1.Location = New System.Drawing.Point(12, 46)
         Me.TreeView1.Name = "TreeView1"
-        Me.TreeView1.Size = New System.Drawing.Size(211, 401)
+        Me.TreeView1.Size = New System.Drawing.Size(258, 386)
         Me.TreeView1.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Khaki
-        Me.Label1.Location = New System.Drawing.Point(230, 41)
+        Me.Label1.Location = New System.Drawing.Point(276, 46)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(287, 88)
+        Me.Label1.Size = New System.Drawing.Size(287, 170)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Empresa"
         '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.Khaki
-        Me.Label2.Location = New System.Drawing.Point(231, 146)
+        Me.Label2.Location = New System.Drawing.Point(569, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(287, 80)
+        Me.Label2.Size = New System.Drawing.Size(289, 170)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Año"
         '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.Khaki
-        Me.Label3.Location = New System.Drawing.Point(231, 240)
+        Me.Label3.Location = New System.Drawing.Point(276, 238)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(287, 87)
+        Me.Label3.Size = New System.Drawing.Size(287, 194)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Subsidio"
         '
         'Label4
         '
         Me.Label4.BackColor = System.Drawing.Color.Khaki
-        Me.Label4.Location = New System.Drawing.Point(231, 346)
+        Me.Label4.Location = New System.Drawing.Point(572, 238)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(286, 96)
+        Me.Label4.Size = New System.Drawing.Size(286, 194)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Salario minimo"
         '
@@ -271,7 +272,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(529, 451)
+        Me.ClientSize = New System.Drawing.Size(870, 444)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
