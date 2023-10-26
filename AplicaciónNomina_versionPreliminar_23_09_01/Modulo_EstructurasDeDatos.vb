@@ -497,8 +497,10 @@ Module Modulo_EstructurasDeDatos
 
 		grillaDat.ColumnCount = 5
 
+		'FileOpen(numeroMayor, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
+		'largoCatalogoMayor =
+
 		For i As Integer = 1 To largoDelRandom
-			abrirRandomNominaCaptura()
 			FileGet(numeroMayor, CATMAY, i)
 			grillaDat.Rows.Add(CATMAY.B1, CATMAY.B2, CATMAY.B3, CATMAY.B4, CATMAY.B5)
 		Next i
