@@ -3,7 +3,14 @@
 
     Private Sub CAP_CatCuentasMayor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        imprimirMayor(DataGridView1, largoCatalogoMayor)
+        DataGridView1.ColumnCount = 5
+
+        For i As Integer = 1 To largoCatalogoMayor
+            FileGet(numeroMayor, CATMAY, i)
+            DataGridView1.Rows.Add(CATMAY.B1, CATMAY.B2, CATMAY.B3, CATMAY.B4, CATMAY.B5)
+        Next i
+
+        DataGridView1.Focus()
 
         DataGridView1.Width = Me.Width * 0.9
         DataGridView1.Height = Me.Height * 0.85

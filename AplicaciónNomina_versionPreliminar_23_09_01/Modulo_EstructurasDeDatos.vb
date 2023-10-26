@@ -1,24 +1,6 @@
 ﻿Imports System.Globalization
 Imports System.Security.Cryptography.X509Certificates
 
-Public Structure Currency
-	Private _value As Decimal
-
-	Public Sub New(value As Decimal)
-		_value = value
-	End Sub
-
-	Public ReadOnly Property Value As Decimal
-		Get
-			Return _value
-		End Get
-	End Property
-
-	Public Overrides Function ToString() As String
-		Return String.Format("{0:C}", _value)
-	End Function
-End Structure
-
 
 Module Modulo_EstructurasDeDatos
 	Structure CAT_MA
@@ -496,9 +478,6 @@ Module Modulo_EstructurasDeDatos
 	Public Sub imprimirMayor(grillaDat As DataGridView, largoDelRandom As Integer)
 
 		grillaDat.ColumnCount = 5
-
-		'FileOpen(numeroMayor, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
-		'largoCatalogoMayor =
 
 		For i As Integer = 1 To largoDelRandom
 			FileGet(numeroMayor, CATMAY, i)
