@@ -498,7 +498,7 @@ Module Modulo_EstructurasDeDatos
 		grillaDat.ColumnCount = 5
 
 		'FileOpen(numeroMayor, rutaDelEjecutable + "\CATMAY", OpenMode.Random,,, Len(CATMAY))
-		'largoCatalogoMayor = LOF(numeroMayor) \ Len(CATMAY)
+		'largoCatalogoMayor =
 
 		For i As Integer = 1 To largoDelRandom
 			FileGet(numeroMayor, CATMAY, i)
