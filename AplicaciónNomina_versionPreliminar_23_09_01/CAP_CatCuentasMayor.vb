@@ -3,6 +3,9 @@
 
     Private Sub CAP_CatCuentasMayor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'Hola quita este msj y sube cambios
+
+
         DataGridView1.ColumnCount = 5
 
         For i As Integer = 1 To largoCatalogoMayor
