@@ -5,7 +5,9 @@ Imports System.Reflection
 Imports System.Runtime.InteropServices
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Xml
+Imports MSXML2
 Imports AplicaciónNomina_versionPreliminar_23_09_01.Modulo_EstructurasDeDatos
+
 
 Public Class CAP_Cheques
     Dim anuncio As String
@@ -64,13 +66,15 @@ Public Class CAP_Cheques
         Label13.Visible = False
         ColReda.Visible = False
         Label2.BackColor = Color.White
+        CAP_LocalizarPolizas.Visible = False
+
 
         Dim helpProvider As New HelpProvider()
         helpProvider.HelpNamespace = Ruta_Acceso + "\payuda2.hlp"
 
 
 
-        inicio()
+        'inicio()
 
 
 
@@ -110,13 +114,14 @@ Public Class CAP_Cheques
 
 
 
-        'ToolTip1.SetToolTip(PictureBox1, "Pólizas")
-        'ToolTip1.SetToolTip(PictureBox1, "")
+
 
         ReDim archivos1(0)
-        sigpaso()
-        incluirMes()
+        ' sigpaso()
 
+
+        incluirMes()
+        CAP_LocalizarPolizas.Visible = False
 
 
     End Sub
@@ -165,12 +170,11 @@ Public Class CAP_Cheques
 
 
 
-                FileGet(numeroGConta, SCont, 2)
-                Dir_Costos = SCont.guarda.Trim()
+                FileGet(numeroGConta, SCont, 2) : Dir_Costos = SCont.guarda.Trim()
 
                 FileGet(numeroGConta, SCont, 1)
 
-                FileClose(numeroGConta)
+                'FileClose(numeroGConta)
 
 
                 Archivo = "DATOS"
@@ -194,7 +198,7 @@ Public Class CAP_Cheques
                 End If
             End If
             ' Cerrar el archivo
-            FileClose(numeroGConta)
+            ' FileClose(numeroGConta)
 
         Catch
             MsgBox(Err.Description)
@@ -753,7 +757,7 @@ Public Class CAP_Cheques
                     SCont.guarda = MientraS
                     FilePut(numeroGConta, MientraS, 1)
 
-                    FileClose(numeroGConta)
+                    'FileClose(numeroGConta)
 
                     cm = 0
                     inicio()
@@ -935,14 +939,16 @@ Public Class CAP_Cheques
 
     Private Sub SubcuentasCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubcuentasCtrlToolStripMenuItem.Click
         Close()
-        If trcta.incia <= 0 Then
-            MsgBox("Verifique la cuenta")
-        Else
-            ultimo.Ubi = 0
+        'If trcta.incia <= 0 Then
+        '    MsgBox("Verifique la cuenta")
+        'Else
+        '    ultimo.Ubi = 0
 
-            CAP_SubCuentas.Show()
-        End If
-        If ultimo.Ubi > 0 Then mostrarSubcta()
+        CAP_SubCuentas.Show()
+
+
+        'End If
+        'If ultimo.Ubi > 0 Then mostrarSubcta()
 
         Clipboard.Clear()
 
@@ -1366,7 +1372,8 @@ Public Class CAP_Cheques
         'Dim respuesta As String
 
 
-        valcelant = DataGridView1.Rows(0).Cells(0).Value
+        ' Dim valcelant As String = DataGridView1.CurrentCell().Tag.ToString()
+
 
 
         If DataGridView1.Rows(0).Cells(0).Value > 0 Then
@@ -1378,12 +1385,12 @@ Public Class CAP_Cheques
 
     Private Sub AgregarSubctaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarSubctaToolStripMenuItem.Click
         Dim cambiar As String
-        'Dim r As String
-        'Dim com As String
+        Dim r As Integer
+        Dim com As String
 
-        If DataGridView1.Rows(0).Cells(9).Value = "C" Then  'problema
+        If DataGridView1.Rows(DataGridView1.Rows.Count).Cells(9).Value = "C" Then  'problema
 
-            If DataGridView1.Rows(7).Cells(0).Value <> "" Then
+            If DataGridView1.Rows(DataGridView1.Rows.Count).Cells(7).Value <> "" Then
 
                 'RaiseEvent.DataGridView1_CellLeave()
                 trscta.refer = DataGridView1.Rows(7).Cells(0).Value
@@ -1392,6 +1399,15 @@ Public Class CAP_Cheques
                 'DataGridView1.Rows.Add, DataGridView1.Rows : ultimo.renglon + 1
                 'RaiseEvent.DataGridView1_CellLeave()
                 'RaiseEvent.DataGridView1_CellEnter()
+                cambiar = 0
+
+                For r = DataGridView1.Rows.Count + 1 To DataGridView1.Rows.Count - 1
+                    If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1
+                    If DataGridView1.Rows(r).Cells(9).Value = "C" And cambiar = 1 Then
+                        com = DataGridView1.Rows(r).Cells(7).Value + 1
+                        DataGridView1.Rows(r).Cells(7).Value = com
+                    End If
+                Next r
                 cambiar = 0
                 'RaiseEvent.DataGridView1_CellLeave()
                 'RaiseEvent.DataGridView1_CellEnter()
@@ -1405,17 +1421,18 @@ Public Class CAP_Cheques
     Private Sub EliminarSubctaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarSubctaToolStripMenuItem.Click
         Dim cambiar As String
         Dim r As Integer
+        Dim comodin As String
 
         'If (DataGridView1.CurrentRow.Index) = "C" Then
 
         'End If
 
-        If DataGridView1.Rows(0).Cells(9).Value = "C" Then ''
-            impor_te = DataGridView1.Rows(0).Cells(3).Value
-            trscta.refer = DataGridView1.Rows(0).Cells(7).Value
+        If DataGridView1.Rows(DataGridView1.Rows.Count).Cells(9).Value = "C" Then ''
+            impor_te = DataGridView1.Rows(DataGridView1.Rows.Count).Cells(3).Value
+            trscta.refer = DataGridView1.Rows(DataGridView1.Rows.Count).Cells(7).Value
             'Index was out of range. Must be non-negative and less than the size of the collection. Arg_ParamName_Name'
 
-            If (DataGridView1.Rows(-1).Cells(9).Value) = "B" And DataGridView1.Rows(+1).Cells(9).Value <> "C" Then
+            If (DataGridView1.Rows(DataGridView1.Rows.Count - 1).Cells(9).Value) = "B" And DataGridView1.Rows(DataGridView1.Rows.Count + 1).Cells(9).Value <> "C" Then
                 MsgBox("Es necesario borrar la cuenta") : Exit Sub
 
             End If
@@ -1433,19 +1450,20 @@ Public Class CAP_Cheques
             End If
 
             DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
-            ultimo.renglon = ultimo.renglon + 1
+            ultimo.renglon = ultimo.renglon - 1
 
-            'RaiseEvent.DataGridView1_CellLeave()
+            'DataGridView1_CellLeave()
+
             'RaiseEvent.DataGridView1_CellEnter()
+
             cambiar = 0
 
-            For r = DataGridView1.Rows(0).Cells(+1).Value To DataGridView1.Rows(0).Cells(-1).Value
-                If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1
+            For r = DataGridView1.Rows.Count + 1 To DataGridView1.Rows.Count - 1
+                If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1 : comodin = r
                 If DataGridView1.Rows(r).Cells(9).Value = "C" And cambiar = 1 Then
-                    DataGridView1.Rows(r).Cells(7).Value = "COMODIN"
+                    DataGridView1.Rows(r).Cells(7).Value = comodin
 
                 End If
-
             Next r
             cambiar = 0
 
@@ -1466,26 +1484,31 @@ Public Class CAP_Cheques
         Dim col As Integer = currentCell.ColumnIndex
 
 
-        'cambio = DataGridView1.Rows(0).Cells(0).Value
+        cambio = DataGridView1.Rows.Count
 
-        If DataGridView1.Rows(DataGridView1.Rows(0).Cells(0).Value).Cells(9).Value = "B" Then  'error'
+        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then  '
             DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
             ultimo.renglon = ultimo.renglon - 1
 
-
-            If col = 7 AndAlso cambio <> DataGridView1.Item(col, row).Value Then
-                ' Código para el caso en que cambio no sea igual al valor de la celda en la columna 7
-            End If
-
-            If col = 9 AndAlso DataGridView1.Item(col, row).Value <> "C" Then
-                ' Código para el caso en que el valor de la celda en la columna 9 no sea igual a "C"
+            Do Until cambio <> DataGridView1.Rows(DataGridView1.Rows.Count).Cells(7).Value Or DataGridView1.Rows(DataGridView1.Rows.Count).Cells(9).Value <> "C"
                 ultimo.renglon = ultimo.renglon - 1
                 DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
 
-            End If
+            Loop
 
-            For r = DataGridView1.Rows(0).Cells(0).Value To DataGridView1.Rows(0).Cells(-1).Value
-                If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1 : comodin = DataGridView1.Rows(0).Cells(0).Value
+            'If col = 7 AndAlso cambio <> DataGridView1.Item(col, row).Value Then
+            '    ' Código para el caso en que cambio no sea igual al valor de la celda en la columna 7
+            'End If
+
+            'If col = 9 AndAlso DataGridView1.Item(col, row).Value <> "C" Then
+            '    ' Código para el caso en que el valor de la celda en la columna 9 no sea igual a "C"
+            '    ultimo.renglon = ultimo.renglon - 1
+            '    DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+
+            'End If
+
+            For r = DataGridView1.Rows.Count To DataGridView1.Rows.Count - 1
+                If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1 : comodin = DataGridView1.Rows.Count
                 If DataGridView1.Rows(r).Cells(9).Value = "C" And (cambiar = 1) Then
                     DataGridView1.Rows(r).Cells(7).Value = comodin
                 End If
@@ -1493,9 +1516,8 @@ Public Class CAP_Cheques
 
             cambiar = 0
             trcta.incia = 0
-            If ultimo.renglon < 1 Then
-                ultimo.renglon = 1
-            End If
+            If ultimo.renglon < 1 Then ultimo.renglon = 1
+
 
         End If
 
@@ -1644,11 +1666,36 @@ Public Class CAP_Cheques
 
     End Sub
 
-    Private Sub CAP_Cheques_ClientSizeChanged(sender As Object, e As EventArgs) Handles MyBase.ClientSizeChanged
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
+        ' CÓDIGO PARA CARMAR XML EN LA COLUMNA DE FOLIOS Y ABRIR VISOR PDF'
+        Dim i As Integer
+        Dim archivoXml As New MSXML2.DOMDocument60
+        Dim nodelist As MSXML2.IXMLDOMNodeList
+        Dim nodo As MSXML2.IXMLDOMNode
+        Dim nodo1 As MSXML2.IXMLDOMNode
+        Dim nodelist2 As MSXML2.IXMLDOMNodeList
+        Dim strLinea As String
+        Dim rutaPdf : rutaPdf = ""
+        Dim rfc, rs, folio, mensaje, rutaXm, rutaPdf1, acortar As Integer
+        ReDim Preserve archivos1(contadorXml)
+        ReDim Preserve archivos1Pdf(contadorXml)
+
+
+
+        If DataGridView1.Columns.Count = 10 And change = False Then
+            OpenFileDialog1.FileName = ""
+            With OpenFileDialog1
+                .Filter = "Archivos XML | *.xml"
+                .Title = "Select File"
+
+            End With
+        End If
+        If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            OpenFileDialog1.ShowDialog()
+
+        End If
 
     End Sub
 
-    Private Sub SumasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SumasToolStripMenuItem.Click
 
-    End Sub
 End Class

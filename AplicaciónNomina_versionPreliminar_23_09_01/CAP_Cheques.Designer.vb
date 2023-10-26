@@ -134,6 +134,16 @@ Partial Class CAP_Cheques
         PictureBox11 = New PictureBox()
         Label13 = New Label()
         ToolTip1 = New ToolTip(components)
+        ToolTip2 = New ToolTip(components)
+        ToolTip3 = New ToolTip(components)
+        ToolTip4 = New ToolTip(components)
+        ToolTip5 = New ToolTip(components)
+        ToolTip6 = New ToolTip(components)
+        ToolTip7 = New ToolTip(components)
+        ToolTip8 = New ToolTip(components)
+        ToolTip9 = New ToolTip(components)
+        ToolTip10 = New ToolTip(components)
+        ToolTip11 = New ToolTip(components)
         MenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -392,91 +402,91 @@ Partial Class CAP_Cheques
         ' IncorporaciónToolStripMenuItem
         ' 
         IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
+        IncorporaciónToolStripMenuItem.Size = New Size(184, 26)
         IncorporaciónToolStripMenuItem.Tag = "13"
         IncorporaciónToolStripMenuItem.Text = "Incorporación"
         ' 
         ' EneroToolStripMenuItem
         ' 
         EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(224, 26)
+        EneroToolStripMenuItem.Size = New Size(184, 26)
         EneroToolStripMenuItem.Tag = "1"
         EneroToolStripMenuItem.Text = "Enero"
         ' 
         ' FebreroToolStripMenuItem
         ' 
         FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
-        FebreroToolStripMenuItem.Size = New Size(224, 26)
+        FebreroToolStripMenuItem.Size = New Size(184, 26)
         FebreroToolStripMenuItem.Tag = "2"
         FebreroToolStripMenuItem.Text = "Febrero "
         ' 
         ' MarzoToolStripMenuItem
         ' 
         MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
-        MarzoToolStripMenuItem.Size = New Size(224, 26)
+        MarzoToolStripMenuItem.Size = New Size(184, 26)
         MarzoToolStripMenuItem.Tag = "3"
         MarzoToolStripMenuItem.Text = "Marzo"
         ' 
         ' AbrilToolStripMenuItem
         ' 
         AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
-        AbrilToolStripMenuItem.Size = New Size(224, 26)
+        AbrilToolStripMenuItem.Size = New Size(184, 26)
         AbrilToolStripMenuItem.Tag = "4"
         AbrilToolStripMenuItem.Text = "Abril"
         ' 
         ' MayoToolStripMenuItem
         ' 
         MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
-        MayoToolStripMenuItem.Size = New Size(224, 26)
+        MayoToolStripMenuItem.Size = New Size(184, 26)
         MayoToolStripMenuItem.Tag = "5"
         MayoToolStripMenuItem.Text = "Mayo"
         ' 
         ' JunioToolStripMenuItem
         ' 
         JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
-        JunioToolStripMenuItem.Size = New Size(224, 26)
+        JunioToolStripMenuItem.Size = New Size(184, 26)
         JunioToolStripMenuItem.Tag = "6"
         JunioToolStripMenuItem.Text = "Junio"
         ' 
         ' JulioToolStripMenuItem
         ' 
         JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
-        JulioToolStripMenuItem.Size = New Size(224, 26)
+        JulioToolStripMenuItem.Size = New Size(184, 26)
         JulioToolStripMenuItem.Tag = "7"
         JulioToolStripMenuItem.Text = "Julio"
         ' 
         ' AgostoToolStripMenuItem
         ' 
         AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
-        AgostoToolStripMenuItem.Size = New Size(224, 26)
+        AgostoToolStripMenuItem.Size = New Size(184, 26)
         AgostoToolStripMenuItem.Tag = "8"
         AgostoToolStripMenuItem.Text = "Agosto"
         ' 
         ' SeptiembreToolStripMenuItem
         ' 
         SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
-        SeptiembreToolStripMenuItem.Size = New Size(224, 26)
+        SeptiembreToolStripMenuItem.Size = New Size(184, 26)
         SeptiembreToolStripMenuItem.Tag = "9"
         SeptiembreToolStripMenuItem.Text = "Septiembre"
         ' 
         ' OctubreToolStripMenuItem
         ' 
         OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
-        OctubreToolStripMenuItem.Size = New Size(224, 26)
+        OctubreToolStripMenuItem.Size = New Size(184, 26)
         OctubreToolStripMenuItem.Tag = "10"
         OctubreToolStripMenuItem.Text = "Octubre"
         ' 
         ' NoviembreToolStripMenuItem
         ' 
         NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
-        NoviembreToolStripMenuItem.Size = New Size(224, 26)
+        NoviembreToolStripMenuItem.Size = New Size(184, 26)
         NoviembreToolStripMenuItem.Tag = "11"
         NoviembreToolStripMenuItem.Text = "Noviembre"
         ' 
         ' DiciembreToolStripMenuItem
         ' 
         DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
-        DiciembreToolStripMenuItem.Size = New Size(224, 26)
+        DiciembreToolStripMenuItem.Size = New Size(184, 26)
         DiciembreToolStripMenuItem.Tag = "12"
         DiciembreToolStripMenuItem.Text = "Diciembre"
         ' 
@@ -626,7 +636,7 @@ Partial Class CAP_Cheques
         DataGridViewCellStyle3.BackColor = SystemColors.Window
         DataGridViewCellStyle3.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionBackColor = Color.Yellow
         DataGridViewCellStyle3.SelectionForeColor = Color.Snow
         DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
         DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
@@ -858,7 +868,7 @@ Partial Class CAP_Cheques
         PictureBox1.TabIndex = 28
         PictureBox1.TabStop = False
         PictureBox1.Tag = ""
-        ToolTip1.SetToolTip(PictureBox1, "Póliza")
+        ToolTip1.SetToolTip(PictureBox1, "Pólizas")
         ' 
         ' PictureBox2
         ' 
@@ -869,6 +879,7 @@ Partial Class CAP_Cheques
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 29
         PictureBox2.TabStop = False
+        ToolTip2.SetToolTip(PictureBox2, "Cambiar Subdirectorio")
         ' 
         ' PictureBox3
         ' 
@@ -879,6 +890,7 @@ Partial Class CAP_Cheques
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox3.TabIndex = 30
         PictureBox3.TabStop = False
+        ToolTip4.SetToolTip(PictureBox3, "Imprimir cheque")
         ' 
         ' PictureBox4
         ' 
@@ -889,6 +901,7 @@ Partial Class CAP_Cheques
         PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox4.TabIndex = 31
         PictureBox4.TabStop = False
+        ToolTip5.SetToolTip(PictureBox4, "Borrar cuenta")
         ' 
         ' PictureBox5
         ' 
@@ -899,6 +912,7 @@ Partial Class CAP_Cheques
         PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox5.TabIndex = 32
         PictureBox5.TabStop = False
+        ToolTip6.SetToolTip(PictureBox5, "Borrar SubCta")
         ' 
         ' PictureBox6
         ' 
@@ -909,6 +923,7 @@ Partial Class CAP_Cheques
         PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox6.TabIndex = 33
         PictureBox6.TabStop = False
+        ToolTip7.SetToolTip(PictureBox6, "Insertar SubCta")
         ' 
         ' PictureBox7
         ' 
@@ -919,6 +934,7 @@ Partial Class CAP_Cheques
         PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox7.TabIndex = 34
         PictureBox7.TabStop = False
+        ToolTip8.SetToolTip(PictureBox7, "Consultar Catálogo de Cuentas")
         ' 
         ' PictureBox8
         ' 
@@ -929,6 +945,7 @@ Partial Class CAP_Cheques
         PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox8.TabIndex = 35
         PictureBox8.TabStop = False
+        ToolTip8.SetToolTip(PictureBox8, "Localizar SubCtas")
         ' 
         ' PictureBox9
         ' 
@@ -939,6 +956,7 @@ Partial Class CAP_Cheques
         PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox9.TabIndex = 36
         PictureBox9.TabStop = False
+        ToolTip10.SetToolTip(PictureBox9, "Cargar XML")
         ' 
         ' PictureBox10
         ' 
@@ -949,6 +967,7 @@ Partial Class CAP_Cheques
         PictureBox10.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox10.TabIndex = 37
         PictureBox10.TabStop = False
+        ToolTip11.SetToolTip(PictureBox10, "Cargar PDF")
         ' 
         ' PictureBox11
         ' 
@@ -959,6 +978,7 @@ Partial Class CAP_Cheques
         PictureBox11.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox11.TabIndex = 38
         PictureBox11.TabStop = False
+        ToolTip3.SetToolTip(PictureBox11, "Guardar Aplicación")
         ' 
         ' Label13
         ' 
@@ -1137,4 +1157,14 @@ Partial Class CAP_Cheques
     Friend WithEvents ColFolioFis As DataGridViewTextBoxColumn
     Friend WithEvents Label13 As Label
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents ToolTip3 As ToolTip
+    Friend WithEvents ToolTip4 As ToolTip
+    Friend WithEvents ToolTip5 As ToolTip
+    Friend WithEvents ToolTip6 As ToolTip
+    Friend WithEvents ToolTip7 As ToolTip
+    Friend WithEvents ToolTip8 As ToolTip
+    Friend WithEvents ToolTip9 As ToolTip
+    Friend WithEvents ToolTip10 As ToolTip
+    Friend WithEvents ToolTip11 As ToolTip
 End Class

@@ -22,8 +22,10 @@ Partial Class CAP_PolizasDiario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_PolizasDiario))
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         MenuStrip1 = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
         CambioDirectorioToolStripMenuItem = New ToolStripMenuItem()
@@ -54,6 +56,9 @@ Partial Class CAP_PolizasDiario
         VScrollBar1 = New VScrollBar()
         OpenFileDialog1 = New OpenFileDialog()
         OpenFileDialog2 = New OpenFileDialog()
+        ToolTip1 = New ToolTip(components)
+        ToolTip2 = New ToolTip(components)
+        ToolTip3 = New ToolTip(components)
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -162,6 +167,7 @@ Partial Class CAP_PolizasDiario
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 38
         PictureBox2.TabStop = False
+        ToolTip3.SetToolTip(PictureBox2, "Volver a la lista de Pólizas en el Archivo.")
         ' 
         ' PictureBox1
         ' 
@@ -172,6 +178,7 @@ Partial Class CAP_PolizasDiario
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 37
         PictureBox1.TabStop = False
+        ToolTip2.SetToolTip(PictureBox1, "Enviar Póliza a impresora.")
         ' 
         ' PictureBox8
         ' 
@@ -182,6 +189,7 @@ Partial Class CAP_PolizasDiario
         PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox8.TabIndex = 36
         PictureBox8.TabStop = False
+        ToolTip1.SetToolTip(PictureBox8, "Abrir Archivo de Operaciones.")
         ' 
         ' ComboBox1
         ' 
@@ -212,6 +220,14 @@ Partial Class CAP_PolizasDiario
         DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColRedac, ColFolioFis})
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = Color.Yellow
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         DataGridView1.Location = New Point(12, 85)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
@@ -345,4 +361,7 @@ Partial Class CAP_PolizasDiario
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ToolTip3 As ToolTip
 End Class
