@@ -72,8 +72,6 @@ Public Class CAP_Cheques
         Dim helpProvider As New HelpProvider()
         helpProvider.HelpNamespace = Ruta_Acceso + "\payuda2.hlp"
 
-
-
         'inicio()
 
         z1 = "##,###,##0.00"
@@ -98,7 +96,7 @@ Public Class CAP_Cheques
         dd(9) = 30 : dd(10) = 31 : dd(11) = 30 : dd(12) = 31
         dd(13) = 3
 
-        DataGridView1.ColumnCount = 9
+        DataGridView1.ColumnCount = 8
         DataGridView1.RowCount = 250
 
         DataGridView1.Columns(0).Width = 75 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
@@ -165,15 +163,11 @@ Public Class CAP_Cheques
 
                 ChDir(SCont.guarda.Trim())
 
-
-
-
                 FileGet(numeroGConta, SCont, 2) : Dir_Costos = SCont.guarda.Trim()
 
                 FileGet(numeroGConta, SCont, 1)
 
                 'FileClose(numeroGConta)
-
 
                 Archivo = "DATOS"
 
@@ -936,7 +930,6 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub SubcuentasCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubcuentasCtrlToolStripMenuItem.Click
-        Close()
         'If trcta.incia <= 0 Then
         '    MsgBox("Verifique la cuenta")
         'Else
@@ -944,14 +937,8 @@ Public Class CAP_Cheques
 
         CAP_SubCuentas.Show()
 
-
         'End If
         'If ultimo.Ubi > 0 Then mostrarSubcta()
-
-        Clipboard.Clear()
-
-
-
     End Sub
 
     Private Sub CuentasCtrlMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentasCtrlMToolStripMenuItem.Click
@@ -1367,17 +1354,22 @@ Public Class CAP_Cheques
 
     End Sub
     Public Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
-        'Dim respuesta As String
+        On Error GoTo HandleRef
 
+        For Each row As DataGridViewRow In DataGridView1.Rows
 
-        ' Dim valcelant As String = DataGridView1.CurrentCell().Tag.ToString()
+            If row.Cells(3).Value > 0 Then
+                row.Cells(4).Value = row.Cells(3).Value
+            Else
+                row.Cells(5).Value = row.Cells(3).Value
+            End If
 
+        Next
 
+        Exit Sub
+HandleRef:
+        MessageBox.Show("Solo se aceptan valores numéricos")
 
-        If DataGridView1.Rows(0).Cells(0).Value > 0 Then
-            DataGridView1.DefaultCellStyle.BackColor = Color.LimeGreen
-
-        End If
     End Sub
 
 
@@ -1494,17 +1486,6 @@ Public Class CAP_Cheques
 
             Loop
 
-            'If col = 7 AndAlso cambio <> DataGridView1.Item(col, row).Value Then
-            '    ' Código para el caso en que cambio no sea igual al valor de la celda en la columna 7
-            'End If
-
-            'If col = 9 AndAlso DataGridView1.Item(col, row).Value <> "C" Then
-            '    ' Código para el caso en que el valor de la celda en la columna 9 no sea igual a "C"
-            '    ultimo.renglon = ultimo.renglon - 1
-            '    DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
-
-            'End If
-
             For r = DataGridView1.Rows.Count To DataGridView1.Rows.Count - 1
                 If DataGridView1.Rows(r).Cells(9).Value = "B" Then cambiar = 1 : comodin = DataGridView1.Rows.Count
                 If DataGridView1.Rows(r).Cells(9).Value = "C" And (cambiar = 1) Then
@@ -1609,8 +1590,6 @@ Public Class CAP_Cheques
             End With
         End If
 
-
-
     End Sub
 
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
@@ -1637,11 +1616,6 @@ Public Class CAP_Cheques
         BorrarCuentaToolStripMenuItem_Click(sender, e)
 
     End Sub
-    'Sub mostrarCta()
-    '    If trcta.num > 0 Then
-    '        If DataGridView1.Rows.Count < 1 Then DataGridView1.RowCount = 1
-
-    'End If
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         Dim verCol As Integer
@@ -1653,45 +1627,43 @@ Public Class CAP_Cheques
             MsgBox("La anterior es una cuenta")
             DataGridView1.ColumnCount = 1
         Else
-            Close()
+
             ultimo.Ubi = 0
             CAP_CatCuentasMayor.Show()
             If ultimo.Ubi = 1 Then
                 'mostrarCta()
             End If
         End If
-        Clipboard.Clear()
+
 
     End Sub
 
     Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
-        ' CÓDIGO PARA CARMAR XML EN LA COLUMNA DE FOLIOS Y ABRIR VISOR PDF'
-        Dim i As Integer
-        Dim archivoXml As New MSXML2.DOMDocument60
-        Dim nodelist As MSXML2.IXMLDOMNodeList
-        Dim nodo As MSXML2.IXMLDOMNode
-        Dim nodo1 As MSXML2.IXMLDOMNode
-        Dim nodelist2 As MSXML2.IXMLDOMNodeList
-        Dim strLinea As String
-        Dim rutaPdf : rutaPdf = ""
-        Dim rfc, rs, folio, mensaje, rutaXm, rutaPdf1, acortar As Integer
-        ReDim Preserve archivos1(contadorXml)
-        ReDim Preserve archivos1Pdf(contadorXml)
+        '' CÓDIGO PARA CARMAR XML EN LA COLUMNA DE FOLIOS Y ABRIR VISOR PDF'
+        'Dim i As Integer
+        'Dim archivoXml As New MSXML2.DOMDocument60
+        'Dim nodelist As MSXML2.IXMLDOMNodeList
+        'Dim nodo As MSXML2.IXMLDOMNode
+        'Dim nodo1 As MSXML2.IXMLDOMNode
+        'Dim nodelist2 As MSXML2.IXMLDOMNodeList
+        'Dim strLinea As String
+        'Dim rutaPdf : rutaPdf = ""
+        'Dim rfc, rs, folio, mensaje, rutaXm, rutaPdf1, acortar As Integer
+        'ReDim Preserve archivos1(contadorXml)
+        'ReDim Preserve archivos1Pdf(contadorXml)
 
+        'If DataGridView1.Columns.Count = 10 And change = False Then
+        '    OpenFileDialog1.FileName = ""
+        '    With OpenFileDialog1
+        '        .Filter = "Archivos XML | *.xml"
+        '        .Title = "Select File"
 
+        '    End With
+        'End If
+        'If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+        '    OpenFileDialog1.ShowDialog()
 
-        If DataGridView1.Columns.Count = 10 And change = False Then
-            OpenFileDialog1.FileName = ""
-            With OpenFileDialog1
-                .Filter = "Archivos XML | *.xml"
-                .Title = "Select File"
-
-            End With
-        End If
-        If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            OpenFileDialog1.ShowDialog()
-
-        End If
+        'End If
 
     End Sub
 

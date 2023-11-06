@@ -608,11 +608,8 @@ Public Class CAP_CapturaPorOtrosMedios
     End Sub
 
 
-
     Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
-        DataGridView1.DefaultCellStyle.BackColor = Color.Yellow
 
-        TextBox2.Text = valcelant
     End Sub
 
     Private Sub DataGridView1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DataGridView1.KeyPress
@@ -621,7 +618,6 @@ Public Class CAP_CapturaPorOtrosMedios
     End Sub
 
     Private Sub DataGridView1_Leave(sender As Object, e As EventArgs) Handles DataGridView1.Leave
-        DataGridView1.DefaultCellStyle.BackColor = Color.White
 
     End Sub
 
@@ -633,14 +629,9 @@ Public Class CAP_CapturaPorOtrosMedios
         FileGet(1, DATOS, 1)
         Arch_Oper = Trim(DATOS.No_arch)
 
-
-
-
         Mess = Index
         Label2.Text = "de" + Trim(MesCheque(1)) + "de" + Trim(DATOS.a_o)
         Arch_Oper = Trim(DATOS.No_arch) + "0" + Trim(Str(1))
-
-
 
 
     End Sub

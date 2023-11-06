@@ -22,134 +22,136 @@ Partial Class CAP_CatCuentasMayor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_CatCuentasMayor))
-        MenuStrip1 = New MenuStrip()
-        VerToolStripMenuItem = New ToolStripMenuItem()
-        AlfabéticamenteToolStripMenuItem = New ToolStripMenuItem()
-        NuméricamenteToolStripMenuItem = New ToolStripMenuItem()
-        SalirToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        CopiarSelecciónToolStripMenuItem = New ToolStripMenuItem()
-        CopiarTodoToolStripMenuItem = New ToolStripMenuItem()
-        EditarCuentasToolStripMenuItem = New ToolStripMenuItem()
-        DataGridView1 = New DataGridView()
-        ColCta = New DataGridViewTextBoxColumn()
-        ColNom = New DataGridViewTextBoxColumn()
-        HScrollBar1 = New HScrollBar()
-        MenuStrip1.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        SuspendLayout()
-        ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {VerToolStripMenuItem, EdiciónToolStripMenuItem})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(688, 28)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
-        ' 
-        ' VerToolStripMenuItem
-        ' 
-        VerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlfabéticamenteToolStripMenuItem, NuméricamenteToolStripMenuItem, SalirToolStripMenuItem})
-        VerToolStripMenuItem.Name = "VerToolStripMenuItem"
-        VerToolStripMenuItem.Size = New Size(44, 24)
-        VerToolStripMenuItem.Text = "Ver"
-        ' 
-        ' AlfabéticamenteToolStripMenuItem
-        ' 
-        AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
-        AlfabéticamenteToolStripMenuItem.Size = New Size(224, 26)
-        AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
-        ' 
-        ' NuméricamenteToolStripMenuItem
-        ' 
-        NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
-        NuméricamenteToolStripMenuItem.Size = New Size(224, 26)
-        NuméricamenteToolStripMenuItem.Text = "Numéricamente"
-        ' 
-        ' SalirToolStripMenuItem
-        ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(224, 26)
-        SalirToolStripMenuItem.Text = "Salir"
-        ' 
-        ' EdiciónToolStripMenuItem
-        ' 
-        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CopiarSelecciónToolStripMenuItem, CopiarTodoToolStripMenuItem, EditarCuentasToolStripMenuItem})
-        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        EdiciónToolStripMenuItem.Size = New Size(72, 24)
-        EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' CopiarSelecciónToolStripMenuItem
-        ' 
-        CopiarSelecciónToolStripMenuItem.Name = "CopiarSelecciónToolStripMenuItem"
-        CopiarSelecciónToolStripMenuItem.Size = New Size(201, 26)
-        CopiarSelecciónToolStripMenuItem.Text = "Copiar selección"
-        ' 
-        ' CopiarTodoToolStripMenuItem
-        ' 
-        CopiarTodoToolStripMenuItem.Name = "CopiarTodoToolStripMenuItem"
-        CopiarTodoToolStripMenuItem.Size = New Size(201, 26)
-        CopiarTodoToolStripMenuItem.Text = "Copiar todo "
-        ' 
-        ' EditarCuentasToolStripMenuItem
-        ' 
-        EditarCuentasToolStripMenuItem.Name = "EditarCuentasToolStripMenuItem"
-        EditarCuentasToolStripMenuItem.Size = New Size(201, 26)
-        EditarCuentasToolStripMenuItem.Text = "Editar cuentas"
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCta, ColNom})
-        DataGridView1.Location = New Point(25, 58)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(618, 343)
-        DataGridView1.TabIndex = 1
-        ' 
-        ' ColCta
-        ' 
-        ColCta.HeaderText = "Cuenta"
-        ColCta.MinimumWidth = 6
-        ColCta.Name = "ColCta"
-        ColCta.Width = 125
-        ' 
-        ' ColNom
-        ' 
-        ColNom.HeaderText = "Nombre"
-        ColNom.MinimumWidth = 6
-        ColNom.Name = "ColNom"
-        ColNom.Width = 125
-        ' 
-        ' HScrollBar1
-        ' 
-        HScrollBar1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        HScrollBar1.Location = New Point(0, 427)
-        HScrollBar1.Name = "HScrollBar1"
-        HScrollBar1.Size = New Size(688, 15)
-        HScrollBar1.TabIndex = 2
-        ' 
-        ' CAP_CatCuentasMayor
-        ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(688, 438)
-        Controls.Add(HScrollBar1)
-        Controls.Add(DataGridView1)
-        Controls.Add(MenuStrip1)
-        Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        MainMenuStrip = MenuStrip1
-        Name = "CAP_CatCuentasMayor"
-        Text = "CAP_CatCuentasMayor"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        ResumeLayout(False)
-        PerformLayout()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CAP_CatCuentasMayor))
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.VerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlfabéticamenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuméricamenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EdiciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopiarSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopiarTodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ColCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColNom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HScrollBar1 = New System.Windows.Forms.HScrollBar()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerToolStripMenuItem, Me.EdiciónToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(529, 28)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'VerToolStripMenuItem
+        '
+        Me.VerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlfabéticamenteToolStripMenuItem, Me.NuméricamenteToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.VerToolStripMenuItem.Name = "VerToolStripMenuItem"
+        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.VerToolStripMenuItem.Text = "Ver"
+        '
+        'AlfabéticamenteToolStripMenuItem
+        '
+        Me.AlfabéticamenteToolStripMenuItem.Name = "AlfabéticamenteToolStripMenuItem"
+        Me.AlfabéticamenteToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.AlfabéticamenteToolStripMenuItem.Text = "Alfabéticamente"
+        '
+        'NuméricamenteToolStripMenuItem
+        '
+        Me.NuméricamenteToolStripMenuItem.Name = "NuméricamenteToolStripMenuItem"
+        Me.NuméricamenteToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.NuméricamenteToolStripMenuItem.Text = "Numéricamente"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'EdiciónToolStripMenuItem
+        '
+        Me.EdiciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopiarSelecciónToolStripMenuItem, Me.CopiarTodoToolStripMenuItem, Me.EditarCuentasToolStripMenuItem})
+        Me.EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
+        Me.EdiciónToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.EdiciónToolStripMenuItem.Text = "Edición"
+        '
+        'CopiarSelecciónToolStripMenuItem
+        '
+        Me.CopiarSelecciónToolStripMenuItem.Name = "CopiarSelecciónToolStripMenuItem"
+        Me.CopiarSelecciónToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.CopiarSelecciónToolStripMenuItem.Text = "Copiar selección"
+        '
+        'CopiarTodoToolStripMenuItem
+        '
+        Me.CopiarTodoToolStripMenuItem.Name = "CopiarTodoToolStripMenuItem"
+        Me.CopiarTodoToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.CopiarTodoToolStripMenuItem.Text = "Copiar todo "
+        '
+        'EditarCuentasToolStripMenuItem
+        '
+        Me.EditarCuentasToolStripMenuItem.Name = "EditarCuentasToolStripMenuItem"
+        Me.EditarCuentasToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.EditarCuentasToolStripMenuItem.Text = "Editar cuentas"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColCta, Me.ColNom})
+        Me.DataGridView1.Location = New System.Drawing.Point(25, 58)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 29
+        Me.DataGridView1.Size = New System.Drawing.Size(483, 343)
+        Me.DataGridView1.TabIndex = 1
+        '
+        'ColCta
+        '
+        Me.ColCta.HeaderText = "Cuenta"
+        Me.ColCta.MinimumWidth = 6
+        Me.ColCta.Name = "ColCta"
+        Me.ColCta.Width = 125
+        '
+        'ColNom
+        '
+        Me.ColNom.HeaderText = "Nombre"
+        Me.ColNom.MinimumWidth = 6
+        Me.ColNom.Name = "ColNom"
+        Me.ColNom.Width = 125
+        '
+        'HScrollBar1
+        '
+        Me.HScrollBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.HScrollBar1.Location = New System.Drawing.Point(0, 427)
+        Me.HScrollBar1.Name = "HScrollBar1"
+        Me.HScrollBar1.Size = New System.Drawing.Size(529, 15)
+        Me.HScrollBar1.TabIndex = 2
+        '
+        'CAP_CatCuentasMayor
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(529, 438)
+        Me.Controls.Add(Me.HScrollBar1)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Name = "CAP_CatCuentasMayor"
+        Me.Text = "CAP_CatCuentasMayor"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
