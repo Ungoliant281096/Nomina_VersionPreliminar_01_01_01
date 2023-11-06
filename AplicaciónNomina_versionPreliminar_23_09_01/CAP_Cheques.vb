@@ -668,9 +668,6 @@ Public Class CAP_Cheques
         archivooper()
         Dim nom_arch As Integer = FreeFile()
 
-        'abrirRandomNominaCaptura()
-        'FileOpen(nom_arch, "ruta_del_archivo", OpenMode.Random, OpenAccess.ReadWrite, OpenShare.Shared, Len(OPER))
-        'fin_oper = LOF(nom_arch) / Len(OPER)
         ultimo.poliza = 0
         If fin_oper <= 0 Then
             ultimo.poliza = 1
@@ -693,13 +690,6 @@ Public Class CAP_Cheques
     End Sub
 
     Private Sub CambioSubdirectorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioSubdirectorioToolStripMenuItem.Click
-
-
-        'FileClose(1)
-
-        'MientraS = ""
-        'Ruta_Acceso_Contr = ""
-
 
         Try
 
@@ -725,8 +715,6 @@ Public Class CAP_Cheques
                 If openFileDialog1.FileName <> "" Then
 
                     Dim tope As Integer = openFileDialog1.FileName.LastIndexOf("\")
-
-
 
                     MientraS = (openFileDialog1.FileName.Substring(0, tope))
 
@@ -798,12 +786,6 @@ Public Class CAP_Cheques
                 End If
             End If
         Next i
-        ' Establece las sumas dentro de la Grid
-        'DataGridView1.Rows(ultimo.renglon + 1, 2).Value = " sumas"
-        'DataGridView1.Rows(ultimo.renglon + 1, 4).Value = (sumaDebe, z1)
-        'DataGridView1.Rows(ultimo.renglon + 1, 5).Value = (sumaHaber, z1)
-
-
 
     End Sub
     Sub verifica_edicion()
@@ -827,17 +809,6 @@ Public Class CAP_Cheques
 
     End Sub
 
-
-    'Sub recorrerGrid(inicio, fin) 'lin_che
-    '    Dim antes As Integer
-    '    Dim largoPapel As Integer
-    '    Dim anchoPapel As Integer
-    '    Dim numCheque As Integer
-    '    Dim operacion As Integer
-    '    Dim ancho2 As Integer
-
-
-    'End Sub
     Sub mostrar_Cta()
 
 
@@ -884,9 +855,6 @@ Public Class CAP_Cheques
 
     End Sub
     Private Sub ChequeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequeToolStripMenuItem.Click
-        'Dim anterior As Integer
-        'Dim actual As Integer
-
         If ultimo.TipoCap <= 1 Then
             MsgBox("No existe el cheque", vbCritical, "Captura de cheques")
         Else
@@ -902,32 +870,18 @@ Public Class CAP_Cheques
                         printerSettings.DefaultPageSettings.Landscape = True
                         Dim font As New Font("Arial", 10)
                         Dim printDocument As New PrintDocument()
-                        'AddHandler printDocument.PrintPage, Sub(sender, e)
-                        '                                        e.Graphics.DrawString("Hello, world!", font, Brushes.Black, 0, 0)
-                        '                                    End Sub
+
                         printDocument.PrinterSettings = printerSettings
                         printDocument.Print()
                     End If
-
-
                 End If
-
             End If
-
-
         End If
     End Sub
 
     Private Sub SubcuentasCtrlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubcuentasCtrlToolStripMenuItem.Click
-        'If trcta.incia <= 0 Then
-        '    MsgBox("Verifique la cuenta")
-        'Else
-        '    ultimo.Ubi = 0
-
         CAP_SubCuentas.Show()
 
-        'End If
-        'If ultimo.Ubi > 0 Then mostrarSubcta()
     End Sub
 
     Private Sub CuentasCtrlMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentasCtrlMToolStripMenuItem.Click
@@ -1110,12 +1064,7 @@ Public Class CAP_Cheques
 
         Next r
 
-
-
-
-
     End Sub
-
 
 
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown
@@ -1314,13 +1263,9 @@ Public Class CAP_Cheques
         DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
         DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
 
-
-
         If change = True Then
             DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
             DataGridView1.Columns(8).Width = 200 : DataGridView1.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(8).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-
-
 
             DataGridView1.Rows(0).Cells(0).Value = 1
             DataGridView1.Rows(0).Cells(0).Value = "" : trcta.clave = "" : trcta.donde = "" : trcta.incia = ""
@@ -1436,12 +1381,7 @@ HandleRef:
                 End If
             Next r
             cambiar = 0
-
-
         End If
-
-
-
     End Sub
 
     Private Sub BorrarCuentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarCuentaToolStripMenuItem.Click
@@ -1456,7 +1396,7 @@ HandleRef:
 
         cambio = DataGridView1.Rows.Count
 
-        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then  '
+        If DataGridView1.Rows(cambio).Cells(9).Value = "B" Then
             DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
             ultimo.renglon = ultimo.renglon - 1
 
@@ -1476,21 +1416,12 @@ HandleRef:
             cambiar = 0
             trcta.incia = 0
             If ultimo.renglon < 1 Then ultimo.renglon = 1
-
-
         End If
 
     End Sub
 
-    Private Sub VerificarSumasF6ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerificarSumasF6ToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
         PólizasCtrlFToolStripMenuItem_Click(sender, e)
-
-
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
