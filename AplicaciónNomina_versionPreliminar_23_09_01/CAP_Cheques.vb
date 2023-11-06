@@ -69,10 +69,7 @@ Public Class CAP_Cheques
         helpProvider.HelpNamespace = Ruta_Acceso + "\payuda2.hlp"
 
 
-
         inicio()
-
-
 
         z1 = "##,###,##0.00"
 
@@ -134,7 +131,7 @@ Public Class CAP_Cheques
 
             FileClose(1)
         Else
-            FileGet(1, DATOS, 1)
+            FileGet(numeroDatos, DATOS, 1)
             Label2.BackColor = Color.Yellow
 
             mespoliza = 1
@@ -1164,7 +1161,7 @@ Public Class CAP_Cheques
 
     End Sub
     Public Sub EneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EneroToolStripMenuItem.Click
-        Label2.Text = "de" + RTrim(MesCheque(1)) + " de" + DATOS.a_o
+        Label2.Text = "de" + RTrim(MesCheque(1)) + " de " + DATOS.a_o
         mespoliza = 1
         Label2.BackColor = Color.Red
         CAP_LocalizarPolizas.Show()
@@ -1232,7 +1229,7 @@ Public Class CAP_Cheques
         Label2.Text = "de" + RTrim(MesCheque(10)) + " de" + DATOS.a_o
         mespoliza = 10
         Label2.BackColor = Color.Red
-        CAP_LocalizarPolizas.Show()
+        'CAP_LocalizarPolizas.Show()
     End Sub
 
     Public Sub NoviembreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NoviembreToolStripMenuItem.Click

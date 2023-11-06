@@ -7,6 +7,7 @@
 
         For i As Integer = 1 To largoCatalogoMayor
             FileGet(numeroMayor, CATMAY, i)
+
             DataGridView1.Rows.Add(CATMAY.B1, CATMAY.B2, CATMAY.B3, CATMAY.B4, CATMAY.B5)
         Next i
 
@@ -22,11 +23,14 @@
     End Sub
 
     Private Sub CAP_CatCuentasMayor_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+
         DataGridView1.Width = Me.Width * 0.9
         DataGridView1.Height = Me.Height * 0.85
+
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+
         Me.Close()
 
     End Sub

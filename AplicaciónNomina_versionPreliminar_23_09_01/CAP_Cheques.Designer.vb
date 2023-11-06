@@ -22,1012 +22,1013 @@ Partial Class CAP_Cheques
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(CAP_Cheques))
-        MenuStrip1 = New MenuStrip()
-        ArchivoToolStripMenuItem = New ToolStripMenuItem()
-        CambioSubdirectorioToolStripMenuItem = New ToolStripMenuItem()
-        GuardarAplicaciónCtrlGToolStripMenuItem = New ToolStripMenuItem()
-        DirectorioDeCostosToolStripMenuItem = New ToolStripMenuItem()
-        ImpresiónToolStripMenuItem = New ToolStripMenuItem()
-        ChequeToolStripMenuItem = New ToolStripMenuItem()
-        AjustarChequeToolStripMenuItem = New ToolStripMenuItem()
-        VerificarActualizacionesToolStripMenuItem = New ToolStripMenuItem()
-        ActualizarSaldosToolStripMenuItem = New ToolStripMenuItem()
-        DesactualizarToolStripMenuItem = New ToolStripMenuItem()
-        ReiniciarToolStripMenuItem = New ToolStripMenuItem()
-        SalirToolStripMenuItem = New ToolStripMenuItem()
-        CapturaToolStripMenuItem = New ToolStripMenuItem()
-        DatosToolStripMenuItem = New ToolStripMenuItem()
-        PólizaToolStripMenuItem = New ToolStripMenuItem()
-        ChequeToolStripMenuItem1 = New ToolStripMenuItem()
-        OtrosProgramasCtrlOToolStripMenuItem = New ToolStripMenuItem()
-        EdiciónToolStripMenuItem = New ToolStripMenuItem()
-        PegarCtrlVToolStripMenuItem = New ToolStripMenuItem()
-        CopiarCtrlCToolStripMenuItem = New ToolStripMenuItem()
-        CopiarTodoCtrlSToolStripMenuItem = New ToolStripMenuItem()
-        AgregarSubctaToolStripMenuItem = New ToolStripMenuItem()
-        EliminarSubctaToolStripMenuItem = New ToolStripMenuItem()
-        BorrarCuentaToolStripMenuItem = New ToolStripMenuItem()
-        ValidarMovimientoCtrlGToolStripMenuItem = New ToolStripMenuItem()
-        VerificarSumasF6ToolStripMenuItem = New ToolStripMenuItem()
-        BorrarAplicaciónCtrlBToolStripMenuItem = New ToolStripMenuItem()
-        BorrarChequeToolStripMenuItem = New ToolStripMenuItem()
-        SumaDebeYHaberCtrlLToolStripMenuItem = New ToolStripMenuItem()
-        MesToolStripMenuItem = New ToolStripMenuItem()
-        CuentasCtrlMToolStripMenuItem = New ToolStripMenuItem()
-        SubcuentasCtrlToolStripMenuItem = New ToolStripMenuItem()
-        SumasToolStripMenuItem = New ToolStripMenuItem()
-        PólizasCtrlFToolStripMenuItem = New ToolStripMenuItem()
-        AuxiliarDeMayorCtrlAToolStripMenuItem = New ToolStripMenuItem()
-        EstadosFinancierosCtrlToolStripMenuItem = New ToolStripMenuItem()
-        AyudaToolStripMenuItem = New ToolStripMenuItem()
-        IncorporaciónToolStripMenuItem = New ToolStripMenuItem()
-        EneroToolStripMenuItem = New ToolStripMenuItem()
-        FebreroToolStripMenuItem = New ToolStripMenuItem()
-        MarzoToolStripMenuItem = New ToolStripMenuItem()
-        AbrilToolStripMenuItem = New ToolStripMenuItem()
-        MayoToolStripMenuItem = New ToolStripMenuItem()
-        JunioToolStripMenuItem = New ToolStripMenuItem()
-        JulioToolStripMenuItem = New ToolStripMenuItem()
-        AgostoToolStripMenuItem = New ToolStripMenuItem()
-        SeptiembreToolStripMenuItem = New ToolStripMenuItem()
-        OctubreToolStripMenuItem = New ToolStripMenuItem()
-        NoviembreToolStripMenuItem = New ToolStripMenuItem()
-        DiciembreToolStripMenuItem = New ToolStripMenuItem()
-        AyudaToolStripMenuItem1 = New ToolStripMenuItem()
-        ÍndiceToolStripMenuItem = New ToolStripMenuItem()
-        VersiónToolStripMenuItem = New ToolStripMenuItem()
-        Label1 = New Label()
-        TextBox1 = New TextBox()
-        Label2 = New Label()
-        Label3 = New Label()
-        CheckBox1 = New CheckBox()
-        TextBox2 = New TextBox()
-        Label4 = New Label()
-        TextBox3 = New TextBox()
-        Label5 = New Label()
-        TextBox4 = New TextBox()
-        TextBox5 = New TextBox()
-        OpenFileDialog1 = New OpenFileDialog()
-        OpenFileDialog2 = New OpenFileDialog()
-        Label6 = New Label()
-        DataGridView1 = New DataGridView()
-        ColCuenta = New DataGridViewTextBoxColumn()
-        ColSubCta = New DataGridViewTextBoxColumn()
-        ColNom = New DataGridViewTextBoxColumn()
-        ColParcial = New DataGridViewTextBoxColumn()
-        ColDebe = New DataGridViewTextBoxColumn()
-        ColHaber = New DataGridViewTextBoxColumn()
-        ColReda = New DataGridViewTextBoxColumn()
-        ColFolioFis = New DataGridViewTextBoxColumn()
-        Label7 = New Label()
-        TextBox6 = New TextBox()
-        Label8 = New Label()
-        TextBox7 = New TextBox()
-        Label9 = New Label()
-        TextBox8 = New TextBox()
-        Label10 = New Label()
-        TextBox9 = New TextBox()
-        Label11 = New Label()
-        Label12 = New Label()
-        TextBox10 = New TextBox()
-        TextBox11 = New TextBox()
-        GroupBox1 = New GroupBox()
-        GroupBox2 = New GroupBox()
-        CheckBox2 = New CheckBox()
-        OpenFileDialog3 = New OpenFileDialog()
-        OpenFileDialog4 = New OpenFileDialog()
-        PictureBox1 = New PictureBox()
-        PictureBox2 = New PictureBox()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox5 = New PictureBox()
-        PictureBox6 = New PictureBox()
-        PictureBox7 = New PictureBox()
-        PictureBox8 = New PictureBox()
-        PictureBox9 = New PictureBox()
-        PictureBox10 = New PictureBox()
-        PictureBox11 = New PictureBox()
-        Label13 = New Label()
-        ToolTip1 = New ToolTip(components)
-        MenuStrip1.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        GroupBox1.SuspendLayout()
-        GroupBox2.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
-        SuspendLayout()
-        ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {ArchivoToolStripMenuItem, CapturaToolStripMenuItem, EdiciónToolStripMenuItem, MesToolStripMenuItem, AyudaToolStripMenuItem, AyudaToolStripMenuItem1})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1307, 28)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
-        ' 
-        ' ArchivoToolStripMenuItem
-        ' 
-        ArchivoToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CambioSubdirectorioToolStripMenuItem, GuardarAplicaciónCtrlGToolStripMenuItem, DirectorioDeCostosToolStripMenuItem, ImpresiónToolStripMenuItem, VerificarActualizacionesToolStripMenuItem, ActualizarSaldosToolStripMenuItem, DesactualizarToolStripMenuItem, ReiniciarToolStripMenuItem, SalirToolStripMenuItem})
-        ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        ArchivoToolStripMenuItem.Size = New Size(73, 24)
-        ArchivoToolStripMenuItem.Text = "Archivo"
-        ' 
-        ' CambioSubdirectorioToolStripMenuItem
-        ' 
-        CambioSubdirectorioToolStripMenuItem.Name = "CambioSubdirectorioToolStripMenuItem"
-        CambioSubdirectorioToolStripMenuItem.Size = New Size(292, 26)
-        CambioSubdirectorioToolStripMenuItem.Text = "Cambio subdirectorio"
-        ' 
-        ' GuardarAplicaciónCtrlGToolStripMenuItem
-        ' 
-        GuardarAplicaciónCtrlGToolStripMenuItem.Name = "GuardarAplicaciónCtrlGToolStripMenuItem"
-        GuardarAplicaciónCtrlGToolStripMenuItem.Size = New Size(292, 26)
-        GuardarAplicaciónCtrlGToolStripMenuItem.Text = "Guardar aplicación      Ctrl + G"
-        ' 
-        ' DirectorioDeCostosToolStripMenuItem
-        ' 
-        DirectorioDeCostosToolStripMenuItem.Name = "DirectorioDeCostosToolStripMenuItem"
-        DirectorioDeCostosToolStripMenuItem.Size = New Size(292, 26)
-        DirectorioDeCostosToolStripMenuItem.Text = "Directorio de costos"
-        ' 
-        ' ImpresiónToolStripMenuItem
-        ' 
-        ImpresiónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ChequeToolStripMenuItem, AjustarChequeToolStripMenuItem})
-        ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
-        ImpresiónToolStripMenuItem.Size = New Size(292, 26)
-        ImpresiónToolStripMenuItem.Text = "Impresión"
-        ' 
-        ' ChequeToolStripMenuItem
-        ' 
-        ChequeToolStripMenuItem.Name = "ChequeToolStripMenuItem"
-        ChequeToolStripMenuItem.Size = New Size(190, 26)
-        ChequeToolStripMenuItem.Text = "Cheque"
-        ' 
-        ' AjustarChequeToolStripMenuItem
-        ' 
-        AjustarChequeToolStripMenuItem.Name = "AjustarChequeToolStripMenuItem"
-        AjustarChequeToolStripMenuItem.Size = New Size(190, 26)
-        AjustarChequeToolStripMenuItem.Text = "Ajustar cheque"
-        ' 
-        ' VerificarActualizacionesToolStripMenuItem
-        ' 
-        VerificarActualizacionesToolStripMenuItem.Name = "VerificarActualizacionesToolStripMenuItem"
-        VerificarActualizacionesToolStripMenuItem.Size = New Size(292, 26)
-        VerificarActualizacionesToolStripMenuItem.Text = "Verificar actualizaciones"
-        ' 
-        ' ActualizarSaldosToolStripMenuItem
-        ' 
-        ActualizarSaldosToolStripMenuItem.Name = "ActualizarSaldosToolStripMenuItem"
-        ActualizarSaldosToolStripMenuItem.Size = New Size(292, 26)
-        ActualizarSaldosToolStripMenuItem.Text = "Actualizar saldos"
-        ' 
-        ' DesactualizarToolStripMenuItem
-        ' 
-        DesactualizarToolStripMenuItem.Name = "DesactualizarToolStripMenuItem"
-        DesactualizarToolStripMenuItem.Size = New Size(292, 26)
-        DesactualizarToolStripMenuItem.Text = "Desactualizar"
-        ' 
-        ' ReiniciarToolStripMenuItem
-        ' 
-        ReiniciarToolStripMenuItem.Name = "ReiniciarToolStripMenuItem"
-        ReiniciarToolStripMenuItem.Size = New Size(292, 26)
-        ReiniciarToolStripMenuItem.Text = "Reiniciar"
-        ' 
-        ' SalirToolStripMenuItem
-        ' 
-        SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        SalirToolStripMenuItem.Size = New Size(292, 26)
-        SalirToolStripMenuItem.Text = "Salir"
-        ' 
-        ' CapturaToolStripMenuItem
-        ' 
-        CapturaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DatosToolStripMenuItem, PólizaToolStripMenuItem, ChequeToolStripMenuItem1, OtrosProgramasCtrlOToolStripMenuItem})
-        CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
-        CapturaToolStripMenuItem.Size = New Size(75, 24)
-        CapturaToolStripMenuItem.Text = "Captura"
-        ' 
-        ' DatosToolStripMenuItem
-        ' 
-        DatosToolStripMenuItem.Name = "DatosToolStripMenuItem"
-        DatosToolStripMenuItem.Size = New Size(287, 26)
-        DatosToolStripMenuItem.Text = "Datos"
-        ' 
-        ' PólizaToolStripMenuItem
-        ' 
-        PólizaToolStripMenuItem.Name = "PólizaToolStripMenuItem"
-        PólizaToolStripMenuItem.Size = New Size(287, 26)
-        PólizaToolStripMenuItem.Text = "Pólizas                         Ctrl + R"
-        ' 
-        ' ChequeToolStripMenuItem1
-        ' 
-        ChequeToolStripMenuItem1.Name = "ChequeToolStripMenuItem1"
-        ChequeToolStripMenuItem1.Size = New Size(287, 26)
-        ChequeToolStripMenuItem1.Text = "Cheque"
-        ' 
-        ' OtrosProgramasCtrlOToolStripMenuItem
-        ' 
-        OtrosProgramasCtrlOToolStripMenuItem.Name = "OtrosProgramasCtrlOToolStripMenuItem"
-        OtrosProgramasCtrlOToolStripMenuItem.Size = New Size(287, 26)
-        OtrosProgramasCtrlOToolStripMenuItem.Text = "Otros programas       Ctrl + O"
-        ' 
-        ' EdiciónToolStripMenuItem
-        ' 
-        EdiciónToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {PegarCtrlVToolStripMenuItem, CopiarCtrlCToolStripMenuItem, CopiarTodoCtrlSToolStripMenuItem, AgregarSubctaToolStripMenuItem, EliminarSubctaToolStripMenuItem, BorrarCuentaToolStripMenuItem, ValidarMovimientoCtrlGToolStripMenuItem, VerificarSumasF6ToolStripMenuItem, BorrarAplicaciónCtrlBToolStripMenuItem, BorrarChequeToolStripMenuItem, SumaDebeYHaberCtrlLToolStripMenuItem})
-        EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
-        EdiciónToolStripMenuItem.Size = New Size(72, 24)
-        EdiciónToolStripMenuItem.Text = "Edición"
-        ' 
-        ' PegarCtrlVToolStripMenuItem
-        ' 
-        PegarCtrlVToolStripMenuItem.Name = "PegarCtrlVToolStripMenuItem"
-        PegarCtrlVToolStripMenuItem.Size = New Size(320, 26)
-        PegarCtrlVToolStripMenuItem.Text = "Pegar                                   Ctrl + V"
-        ' 
-        ' CopiarCtrlCToolStripMenuItem
-        ' 
-        CopiarCtrlCToolStripMenuItem.Name = "CopiarCtrlCToolStripMenuItem"
-        CopiarCtrlCToolStripMenuItem.Size = New Size(320, 26)
-        CopiarCtrlCToolStripMenuItem.Text = "Copiar selección                 Ctrl + C"
-        ' 
-        ' CopiarTodoCtrlSToolStripMenuItem
-        ' 
-        CopiarTodoCtrlSToolStripMenuItem.Name = "CopiarTodoCtrlSToolStripMenuItem"
-        CopiarTodoCtrlSToolStripMenuItem.Size = New Size(320, 26)
-        CopiarTodoCtrlSToolStripMenuItem.Text = "Copiar todo                        Ctrl + S"
-        ' 
-        ' AgregarSubctaToolStripMenuItem
-        ' 
-        AgregarSubctaToolStripMenuItem.Name = "AgregarSubctaToolStripMenuItem"
-        AgregarSubctaToolStripMenuItem.Size = New Size(320, 26)
-        AgregarSubctaToolStripMenuItem.Text = "Agregar Subcta"
-        ' 
-        ' EliminarSubctaToolStripMenuItem
-        ' 
-        EliminarSubctaToolStripMenuItem.Name = "EliminarSubctaToolStripMenuItem"
-        EliminarSubctaToolStripMenuItem.Size = New Size(320, 26)
-        EliminarSubctaToolStripMenuItem.Text = "Eliminar Subcta"
-        ' 
-        ' BorrarCuentaToolStripMenuItem
-        ' 
-        BorrarCuentaToolStripMenuItem.Name = "BorrarCuentaToolStripMenuItem"
-        BorrarCuentaToolStripMenuItem.Size = New Size(320, 26)
-        BorrarCuentaToolStripMenuItem.Text = "Borrar cuenta"
-        ' 
-        ' ValidarMovimientoCtrlGToolStripMenuItem
-        ' 
-        ValidarMovimientoCtrlGToolStripMenuItem.Name = "ValidarMovimientoCtrlGToolStripMenuItem"
-        ValidarMovimientoCtrlGToolStripMenuItem.Size = New Size(320, 26)
-        ValidarMovimientoCtrlGToolStripMenuItem.Text = "Validar movimiento                F5"
-        ' 
-        ' VerificarSumasF6ToolStripMenuItem
-        ' 
-        VerificarSumasF6ToolStripMenuItem.Name = "VerificarSumasF6ToolStripMenuItem"
-        VerificarSumasF6ToolStripMenuItem.Size = New Size(320, 26)
-        VerificarSumasF6ToolStripMenuItem.Text = "Verificar sumas                       F6"
-        ' 
-        ' BorrarAplicaciónCtrlBToolStripMenuItem
-        ' 
-        BorrarAplicaciónCtrlBToolStripMenuItem.Name = "BorrarAplicaciónCtrlBToolStripMenuItem"
-        BorrarAplicaciónCtrlBToolStripMenuItem.Size = New Size(320, 26)
-        BorrarAplicaciónCtrlBToolStripMenuItem.Text = "Borrar aplicación                Ctrl + B"
-        ' 
-        ' BorrarChequeToolStripMenuItem
-        ' 
-        BorrarChequeToolStripMenuItem.Name = "BorrarChequeToolStripMenuItem"
-        BorrarChequeToolStripMenuItem.Size = New Size(320, 26)
-        BorrarChequeToolStripMenuItem.Text = "Borrar cheque"
-        ' 
-        ' SumaDebeYHaberCtrlLToolStripMenuItem
-        ' 
-        SumaDebeYHaberCtrlLToolStripMenuItem.Name = "SumaDebeYHaberCtrlLToolStripMenuItem"
-        SumaDebeYHaberCtrlLToolStripMenuItem.Size = New Size(320, 26)
-        SumaDebeYHaberCtrlLToolStripMenuItem.Text = "Suma debe y haber             Ctrl + L"
-        ' 
-        ' MesToolStripMenuItem
-        ' 
-        MesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {CuentasCtrlMToolStripMenuItem, SubcuentasCtrlToolStripMenuItem, SumasToolStripMenuItem, PólizasCtrlFToolStripMenuItem, AuxiliarDeMayorCtrlAToolStripMenuItem, EstadosFinancierosCtrlToolStripMenuItem})
-        MesToolStripMenuItem.Name = "MesToolStripMenuItem"
-        MesToolStripMenuItem.Size = New Size(44, 24)
-        MesToolStripMenuItem.Text = "Ver"
-        ' 
-        ' CuentasCtrlMToolStripMenuItem
-        ' 
-        CuentasCtrlMToolStripMenuItem.Name = "CuentasCtrlMToolStripMenuItem"
-        CuentasCtrlMToolStripMenuItem.Size = New Size(314, 26)
-        CuentasCtrlMToolStripMenuItem.Text = "Cuentas                             Ctrl + M"
-        ' 
-        ' SubcuentasCtrlToolStripMenuItem
-        ' 
-        SubcuentasCtrlToolStripMenuItem.Name = "SubcuentasCtrlToolStripMenuItem"
-        SubcuentasCtrlToolStripMenuItem.Size = New Size(314, 26)
-        SubcuentasCtrlToolStripMenuItem.Text = "Subcuentas                       Ctrl + N"
-        ' 
-        ' SumasToolStripMenuItem
-        ' 
-        SumasToolStripMenuItem.Name = "SumasToolStripMenuItem"
-        SumasToolStripMenuItem.Size = New Size(314, 26)
-        SumasToolStripMenuItem.Text = "Sumas"
-        ' 
-        ' PólizasCtrlFToolStripMenuItem
-        ' 
-        PólizasCtrlFToolStripMenuItem.Name = "PólizasCtrlFToolStripMenuItem"
-        PólizasCtrlFToolStripMenuItem.Size = New Size(314, 26)
-        PólizasCtrlFToolStripMenuItem.Text = "Pólizas                              Ctrl + D"
-        ' 
-        ' AuxiliarDeMayorCtrlAToolStripMenuItem
-        ' 
-        AuxiliarDeMayorCtrlAToolStripMenuItem.Name = "AuxiliarDeMayorCtrlAToolStripMenuItem"
-        AuxiliarDeMayorCtrlAToolStripMenuItem.Size = New Size(314, 26)
-        AuxiliarDeMayorCtrlAToolStripMenuItem.Text = "Auxiliar de mayor            Ctrl + A"
-        ' 
-        ' EstadosFinancierosCtrlToolStripMenuItem
-        ' 
-        EstadosFinancierosCtrlToolStripMenuItem.Name = "EstadosFinancierosCtrlToolStripMenuItem"
-        EstadosFinancierosCtrlToolStripMenuItem.Size = New Size(314, 26)
-        EstadosFinancierosCtrlToolStripMenuItem.Text = "Estados financieros          Ctrl + E"
-        ' 
-        ' AyudaToolStripMenuItem
-        ' 
-        AyudaToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {IncorporaciónToolStripMenuItem, EneroToolStripMenuItem, FebreroToolStripMenuItem, MarzoToolStripMenuItem, AbrilToolStripMenuItem, MayoToolStripMenuItem, JunioToolStripMenuItem, JulioToolStripMenuItem, AgostoToolStripMenuItem, SeptiembreToolStripMenuItem, OctubreToolStripMenuItem, NoviembreToolStripMenuItem, DiciembreToolStripMenuItem})
-        AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        AyudaToolStripMenuItem.Size = New Size(50, 24)
-        AyudaToolStripMenuItem.Text = "Mes"
-        ' 
-        ' IncorporaciónToolStripMenuItem
-        ' 
-        IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
-        IncorporaciónToolStripMenuItem.Size = New Size(224, 26)
-        IncorporaciónToolStripMenuItem.Tag = "13"
-        IncorporaciónToolStripMenuItem.Text = "Incorporación"
-        ' 
-        ' EneroToolStripMenuItem
-        ' 
-        EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
-        EneroToolStripMenuItem.Size = New Size(224, 26)
-        EneroToolStripMenuItem.Tag = "1"
-        EneroToolStripMenuItem.Text = "Enero"
-        ' 
-        ' FebreroToolStripMenuItem
-        ' 
-        FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
-        FebreroToolStripMenuItem.Size = New Size(224, 26)
-        FebreroToolStripMenuItem.Tag = "2"
-        FebreroToolStripMenuItem.Text = "Febrero "
-        ' 
-        ' MarzoToolStripMenuItem
-        ' 
-        MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
-        MarzoToolStripMenuItem.Size = New Size(224, 26)
-        MarzoToolStripMenuItem.Tag = "3"
-        MarzoToolStripMenuItem.Text = "Marzo"
-        ' 
-        ' AbrilToolStripMenuItem
-        ' 
-        AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
-        AbrilToolStripMenuItem.Size = New Size(224, 26)
-        AbrilToolStripMenuItem.Tag = "4"
-        AbrilToolStripMenuItem.Text = "Abril"
-        ' 
-        ' MayoToolStripMenuItem
-        ' 
-        MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
-        MayoToolStripMenuItem.Size = New Size(224, 26)
-        MayoToolStripMenuItem.Tag = "5"
-        MayoToolStripMenuItem.Text = "Mayo"
-        ' 
-        ' JunioToolStripMenuItem
-        ' 
-        JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
-        JunioToolStripMenuItem.Size = New Size(224, 26)
-        JunioToolStripMenuItem.Tag = "6"
-        JunioToolStripMenuItem.Text = "Junio"
-        ' 
-        ' JulioToolStripMenuItem
-        ' 
-        JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
-        JulioToolStripMenuItem.Size = New Size(224, 26)
-        JulioToolStripMenuItem.Tag = "7"
-        JulioToolStripMenuItem.Text = "Julio"
-        ' 
-        ' AgostoToolStripMenuItem
-        ' 
-        AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
-        AgostoToolStripMenuItem.Size = New Size(224, 26)
-        AgostoToolStripMenuItem.Tag = "8"
-        AgostoToolStripMenuItem.Text = "Agosto"
-        ' 
-        ' SeptiembreToolStripMenuItem
-        ' 
-        SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
-        SeptiembreToolStripMenuItem.Size = New Size(224, 26)
-        SeptiembreToolStripMenuItem.Tag = "9"
-        SeptiembreToolStripMenuItem.Text = "Septiembre"
-        ' 
-        ' OctubreToolStripMenuItem
-        ' 
-        OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
-        OctubreToolStripMenuItem.Size = New Size(224, 26)
-        OctubreToolStripMenuItem.Tag = "10"
-        OctubreToolStripMenuItem.Text = "Octubre"
-        ' 
-        ' NoviembreToolStripMenuItem
-        ' 
-        NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
-        NoviembreToolStripMenuItem.Size = New Size(224, 26)
-        NoviembreToolStripMenuItem.Tag = "11"
-        NoviembreToolStripMenuItem.Text = "Noviembre"
-        ' 
-        ' DiciembreToolStripMenuItem
-        ' 
-        DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
-        DiciembreToolStripMenuItem.Size = New Size(224, 26)
-        DiciembreToolStripMenuItem.Tag = "12"
-        DiciembreToolStripMenuItem.Text = "Diciembre"
-        ' 
-        ' AyudaToolStripMenuItem1
-        ' 
-        AyudaToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {ÍndiceToolStripMenuItem, VersiónToolStripMenuItem})
-        AyudaToolStripMenuItem1.Name = "AyudaToolStripMenuItem1"
-        AyudaToolStripMenuItem1.Size = New Size(65, 24)
-        AyudaToolStripMenuItem1.Text = "Ayuda"
-        ' 
-        ' ÍndiceToolStripMenuItem
-        ' 
-        ÍndiceToolStripMenuItem.Name = "ÍndiceToolStripMenuItem"
-        ÍndiceToolStripMenuItem.Size = New Size(140, 26)
-        ÍndiceToolStripMenuItem.Text = "Índice"
-        ' 
-        ' VersiónToolStripMenuItem
-        ' 
-        VersiónToolStripMenuItem.Name = "VersiónToolStripMenuItem"
-        VersiónToolStripMenuItem.Size = New Size(140, 26)
-        VersiónToolStripMenuItem.Text = "Versión"
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(24, 77)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(44, 23)
-        Label1.TabIndex = 1
-        Label1.Text = "Día: "
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(74, 75)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(65, 27)
-        TextBox1.TabIndex = 2
-        ' 
-        ' Label2
-        ' 
-        Label2.BackColor = SystemColors.ActiveBorder
-        Label2.Location = New Point(156, 75)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(281, 25)
-        Label2.TabIndex = 3
-        ' 
-        ' Label3
-        ' 
-        Label3.BackColor = Color.LemonChiffon
-        Label3.Location = New Point(467, 75)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(155, 25)
-        Label3.TabIndex = 4
-        ' 
-        ' CheckBox1
-        ' 
-        CheckBox1.AutoSize = True
-        CheckBox1.Location = New Point(642, 76)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(75, 24)
-        CheckBox1.TabIndex = 5
-        CheckBox1.Text = "Costos"
-        CheckBox1.UseVisualStyleBackColor = True
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(74, 108)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(171, 27)
-        TextBox2.TabIndex = 6
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(24, 158)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(45, 23)
-        Label4.TabIndex = 7
-        Label4.Text = "RFC:"
-        ' 
-        ' TextBox3
-        ' 
-        TextBox3.Location = New Point(75, 158)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(319, 27)
-        TextBox3.TabIndex = 8
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label5.Location = New Point(412, 159)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(93, 23)
-        Label5.TabIndex = 9
-        Label5.Text = "Folio Fiscal"
-        ' 
-        ' TextBox4
-        ' 
-        TextBox4.Location = New Point(511, 122)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(251, 27)
-        TextBox4.TabIndex = 10
-        ' 
-        ' TextBox5
-        ' 
-        TextBox5.Location = New Point(511, 155)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(251, 27)
-        TextBox5.TabIndex = 11
-        ' 
-        ' OpenFileDialog1
-        ' 
-        OpenFileDialog1.FileName = "OpenFileDialog1"
-        ' 
-        ' OpenFileDialog2
-        ' 
-        OpenFileDialog2.FileName = "OpenFileDialog2"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = SystemColors.AppWorkspace
-        Label6.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point)
-        Label6.Location = New Point(237, 201)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(385, 23)
-        Label6.TabIndex = 12
-        Label6.Text = "Recuerda Cargar el Pdf y Xml antes de Capturar"
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.BackgroundColor = SystemColors.ActiveBorder
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {ColCuenta, ColSubCta, ColNom, ColParcial, ColDebe, ColHaber, ColReda, ColFolioFis})
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = SystemColors.Window
-        DataGridViewCellStyle3.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = Color.Snow
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
-        DataGridView1.GridColor = SystemColors.ActiveBorder
-        DataGridView1.Location = New Point(24, 250)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(1177, 271)
-        DataGridView1.TabIndex = 13
-        ' 
-        ' ColCuenta
-        ' 
-        DataGridViewCellStyle2.BackColor = Color.White
-        DataGridViewCellStyle2.SelectionBackColor = Color.White
-        DataGridViewCellStyle2.SelectionForeColor = Color.White
-        ColCuenta.DefaultCellStyle = DataGridViewCellStyle2
-        ColCuenta.HeaderText = "Cuenta"
-        ColCuenta.MinimumWidth = 6
-        ColCuenta.Name = "ColCuenta"
-        ColCuenta.Width = 125
-        ' 
-        ' ColSubCta
-        ' 
-        ColSubCta.HeaderText = "SubCta"
-        ColSubCta.MinimumWidth = 6
-        ColSubCta.Name = "ColSubCta"
-        ColSubCta.Width = 125
-        ' 
-        ' ColNom
-        ' 
-        ColNom.HeaderText = "Nombre"
-        ColNom.MinimumWidth = 6
-        ColNom.Name = "ColNom"
-        ColNom.Width = 125
-        ' 
-        ' ColParcial
-        ' 
-        ColParcial.HeaderText = "Parcial"
-        ColParcial.MinimumWidth = 6
-        ColParcial.Name = "ColParcial"
-        ColParcial.Width = 125
-        ' 
-        ' ColDebe
-        ' 
-        ColDebe.HeaderText = "Debe"
-        ColDebe.MinimumWidth = 6
-        ColDebe.Name = "ColDebe"
-        ColDebe.Width = 125
-        ' 
-        ' ColHaber
-        ' 
-        ColHaber.HeaderText = "Haber"
-        ColHaber.MinimumWidth = 6
-        ColHaber.Name = "ColHaber"
-        ColHaber.Width = 125
-        ' 
-        ' ColReda
-        ' 
-        ColReda.HeaderText = "Redacción"
-        ColReda.MinimumWidth = 6
-        ColReda.Name = "ColReda"
-        ColReda.Width = 125
-        ' 
-        ' ColFolioFis
-        ' 
-        ColFolioFis.HeaderText = "Folio Fiscal"
-        ColFolioFis.MinimumWidth = 6
-        ColFolioFis.Name = "ColFolioFis"
-        ColFolioFis.Width = 125
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label7.Location = New Point(15, 19)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(103, 23)
-        Label7.TabIndex = 14
-        Label7.Text = "Beneficiario:"
-        ' 
-        ' TextBox6
-        ' 
-        TextBox6.Location = New Point(136, 16)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(194, 27)
-        TextBox6.TabIndex = 15
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label8.Location = New Point(356, 19)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(19, 23)
-        Label8.TabIndex = 16
-        Label8.Text = "$"
-        ' 
-        ' TextBox7
-        ' 
-        TextBox7.Location = New Point(393, 19)
-        TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(97, 27)
-        TextBox7.TabIndex = 17
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label9.Location = New Point(15, 64)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(88, 23)
-        Label9.TabIndex = 18
-        Label9.Text = "Concepto:"
-        ' 
-        ' TextBox8
-        ' 
-        TextBox8.Location = New Point(15, 106)
-        TextBox8.Name = "TextBox8"
-        TextBox8.Size = New Size(334, 27)
-        TextBox8.TabIndex = 19
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label10.Location = New Point(393, 64)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(77, 23)
-        Label10.TabIndex = 20
-        Label10.Text = "Número:"
-        ' 
-        ' TextBox9
-        ' 
-        TextBox9.Location = New Point(393, 106)
-        TextBox9.Name = "TextBox9"
-        TextBox9.Size = New Size(184, 27)
-        TextBox9.TabIndex = 21
-        ' 
-        ' Label11
-        ' 
-        Label11.AutoSize = True
-        Label11.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label11.Location = New Point(15, 158)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(46, 23)
-        Label11.TabIndex = 22
-        Label11.Text = "RFC:"
-        ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label12.Location = New Point(244, 158)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(166, 23)
-        Label12.TabIndex = 23
-        Label12.Text = "FOLIO(S) FISCALES:"
-        ' 
-        ' TextBox10
-        ' 
-        TextBox10.Location = New Point(15, 194)
-        TextBox10.Name = "TextBox10"
-        TextBox10.Size = New Size(185, 27)
-        TextBox10.TabIndex = 24
-        ' 
-        ' TextBox11
-        ' 
-        TextBox11.Location = New Point(244, 194)
-        TextBox11.Name = "TextBox11"
-        TextBox11.Size = New Size(327, 27)
-        TextBox11.TabIndex = 25
-        ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Controls.Add(TextBox11)
-        GroupBox1.Controls.Add(TextBox10)
-        GroupBox1.Controls.Add(Label12)
-        GroupBox1.Controls.Add(Label11)
-        GroupBox1.Controls.Add(TextBox9)
-        GroupBox1.Controls.Add(Label10)
-        GroupBox1.Controls.Add(TextBox8)
-        GroupBox1.Controls.Add(Label9)
-        GroupBox1.Controls.Add(TextBox7)
-        GroupBox1.Controls.Add(Label8)
-        GroupBox1.Controls.Add(TextBox6)
-        GroupBox1.Controls.Add(Label7)
-        GroupBox1.Location = New Point(91, 634)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(610, 251)
-        GroupBox1.TabIndex = 26
-        GroupBox1.TabStop = False
-        ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Controls.Add(CheckBox2)
-        GroupBox2.Location = New Point(720, 650)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(120, 101)
-        GroupBox2.TabIndex = 27
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "No. Cheque"
-        ' 
-        ' CheckBox2
-        ' 
-        CheckBox2.AutoSize = True
-        CheckBox2.Location = New Point(17, 47)
-        CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(88, 24)
-        CheckBox2.TabIndex = 0
-        CheckBox2.Text = "Imprimir"
-        CheckBox2.UseVisualStyleBackColor = True
-        ' 
-        ' OpenFileDialog3
-        ' 
-        OpenFileDialog3.FileName = "OpenFileDialog3"
-        ' 
-        ' OpenFileDialog4
-        ' 
-        OpenFileDialog4.FileName = "OpenFileDialog4"
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(43, 31)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(25, 24)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 28
-        PictureBox1.TabStop = False
-        PictureBox1.Tag = ""
-        ToolTip1.SetToolTip(PictureBox1, "Póliza")
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(91, 31)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(25, 24)
-        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox2.TabIndex = 29
-        PictureBox2.TabStop = False
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(184, 31)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(25, 24)
-        PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox3.TabIndex = 30
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(236, 31)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(25, 24)
-        PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox4.TabIndex = 31
-        PictureBox4.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(284, 31)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(25, 24)
-        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox5.TabIndex = 32
-        PictureBox5.TabStop = False
-        ' 
-        ' PictureBox6
-        ' 
-        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(333, 31)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(25, 24)
-        PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox6.TabIndex = 33
-        PictureBox6.TabStop = False
-        ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(377, 31)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(25, 24)
-        PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox7.TabIndex = 34
-        PictureBox7.TabStop = False
-        ' 
-        ' PictureBox8
-        ' 
-        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(422, 31)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(25, 24)
-        PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox8.TabIndex = 35
-        PictureBox8.TabStop = False
-        ' 
-        ' PictureBox9
-        ' 
-        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(465, 31)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(25, 24)
-        PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox9.TabIndex = 36
-        PictureBox9.TabStop = False
-        ' 
-        ' PictureBox10
-        ' 
-        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(511, 31)
-        PictureBox10.Name = "PictureBox10"
-        PictureBox10.Size = New Size(25, 24)
-        PictureBox10.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox10.TabIndex = 37
-        PictureBox10.TabStop = False
-        ' 
-        ' PictureBox11
-        ' 
-        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
-        PictureBox11.Location = New Point(136, 31)
-        PictureBox11.Name = "PictureBox11"
-        PictureBox11.Size = New Size(25, 24)
-        PictureBox11.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox11.TabIndex = 38
-        PictureBox11.TabStop = False
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point)
-        Label13.Location = New Point(413, 126)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(88, 23)
-        Label13.TabIndex = 39
-        Label13.Text = "Concepto:"
-        ' 
-        ' CAP_Cheques
-        ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1307, 1034)
-        Controls.Add(Label13)
-        Controls.Add(PictureBox11)
-        Controls.Add(PictureBox10)
-        Controls.Add(PictureBox9)
-        Controls.Add(PictureBox8)
-        Controls.Add(PictureBox7)
-        Controls.Add(PictureBox6)
-        Controls.Add(PictureBox5)
-        Controls.Add(PictureBox4)
-        Controls.Add(PictureBox3)
-        Controls.Add(PictureBox2)
-        Controls.Add(PictureBox1)
-        Controls.Add(GroupBox2)
-        Controls.Add(GroupBox1)
-        Controls.Add(DataGridView1)
-        Controls.Add(Label6)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox4)
-        Controls.Add(Label5)
-        Controls.Add(TextBox3)
-        Controls.Add(Label4)
-        Controls.Add(TextBox2)
-        Controls.Add(CheckBox1)
-        Controls.Add(Label3)
-        Controls.Add(Label2)
-        Controls.Add(TextBox1)
-        Controls.Add(Label1)
-        Controls.Add(MenuStrip1)
-        Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        MainMenuStrip = MenuStrip1
-        Name = "CAP_Cheques"
-        StartPosition = FormStartPosition.CenterScreen
-        Text = "CAP_Cheques"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
-        GroupBox2.ResumeLayout(False)
-        GroupBox2.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
-        ResumeLayout(False)
-        PerformLayout()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CAP_Cheques))
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CambioSubdirectorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GuardarAplicaciónCtrlGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DirectorioDeCostosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImpresiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChequeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AjustarChequeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerificarActualizacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActualizarSaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DesactualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReiniciarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CapturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PólizaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChequeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OtrosProgramasCtrlOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EdiciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PegarCtrlVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopiarCtrlCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopiarTodoCtrlSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarSubctaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarSubctaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrarCuentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ValidarMovimientoCtrlGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerificarSumasF6ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrarAplicaciónCtrlBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BorrarChequeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SumaDebeYHaberCtrlLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CuentasCtrlMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SubcuentasCtrlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SumasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PólizasCtrlFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AuxiliarDeMayorCtrlAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadosFinancierosCtrlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IncorporaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EneroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FebreroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MarzoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AbrilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MayoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JunioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JulioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgostoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SeptiembreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OctubreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoviembreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DiciembreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ÍndiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VersiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ColCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColSubCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColNom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColParcial = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColDebe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColHaber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColReda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColFolioFis = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
+        Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.CapturaToolStripMenuItem, Me.EdiciónToolStripMenuItem, Me.MesToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.AyudaToolStripMenuItem1})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1307, 28)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ArchivoToolStripMenuItem
+        '
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CambioSubdirectorioToolStripMenuItem, Me.GuardarAplicaciónCtrlGToolStripMenuItem, Me.DirectorioDeCostosToolStripMenuItem, Me.ImpresiónToolStripMenuItem, Me.VerificarActualizacionesToolStripMenuItem, Me.ActualizarSaldosToolStripMenuItem, Me.DesactualizarToolStripMenuItem, Me.ReiniciarToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(73, 24)
+        Me.ArchivoToolStripMenuItem.Text = "Archivo"
+        '
+        'CambioSubdirectorioToolStripMenuItem
+        '
+        Me.CambioSubdirectorioToolStripMenuItem.Name = "CambioSubdirectorioToolStripMenuItem"
+        Me.CambioSubdirectorioToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.CambioSubdirectorioToolStripMenuItem.Text = "Cambio subdirectorio"
+        '
+        'GuardarAplicaciónCtrlGToolStripMenuItem
+        '
+        Me.GuardarAplicaciónCtrlGToolStripMenuItem.Name = "GuardarAplicaciónCtrlGToolStripMenuItem"
+        Me.GuardarAplicaciónCtrlGToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.GuardarAplicaciónCtrlGToolStripMenuItem.Text = "Guardar aplicación      Ctrl + G"
+        '
+        'DirectorioDeCostosToolStripMenuItem
+        '
+        Me.DirectorioDeCostosToolStripMenuItem.Name = "DirectorioDeCostosToolStripMenuItem"
+        Me.DirectorioDeCostosToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.DirectorioDeCostosToolStripMenuItem.Text = "Directorio de costos"
+        '
+        'ImpresiónToolStripMenuItem
+        '
+        Me.ImpresiónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChequeToolStripMenuItem, Me.AjustarChequeToolStripMenuItem})
+        Me.ImpresiónToolStripMenuItem.Name = "ImpresiónToolStripMenuItem"
+        Me.ImpresiónToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.ImpresiónToolStripMenuItem.Text = "Impresión"
+        '
+        'ChequeToolStripMenuItem
+        '
+        Me.ChequeToolStripMenuItem.Name = "ChequeToolStripMenuItem"
+        Me.ChequeToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.ChequeToolStripMenuItem.Text = "Cheque"
+        '
+        'AjustarChequeToolStripMenuItem
+        '
+        Me.AjustarChequeToolStripMenuItem.Name = "AjustarChequeToolStripMenuItem"
+        Me.AjustarChequeToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
+        Me.AjustarChequeToolStripMenuItem.Text = "Ajustar cheque"
+        '
+        'VerificarActualizacionesToolStripMenuItem
+        '
+        Me.VerificarActualizacionesToolStripMenuItem.Name = "VerificarActualizacionesToolStripMenuItem"
+        Me.VerificarActualizacionesToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.VerificarActualizacionesToolStripMenuItem.Text = "Verificar actualizaciones"
+        '
+        'ActualizarSaldosToolStripMenuItem
+        '
+        Me.ActualizarSaldosToolStripMenuItem.Name = "ActualizarSaldosToolStripMenuItem"
+        Me.ActualizarSaldosToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.ActualizarSaldosToolStripMenuItem.Text = "Actualizar saldos"
+        '
+        'DesactualizarToolStripMenuItem
+        '
+        Me.DesactualizarToolStripMenuItem.Name = "DesactualizarToolStripMenuItem"
+        Me.DesactualizarToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.DesactualizarToolStripMenuItem.Text = "Desactualizar"
+        '
+        'ReiniciarToolStripMenuItem
+        '
+        Me.ReiniciarToolStripMenuItem.Name = "ReiniciarToolStripMenuItem"
+        Me.ReiniciarToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.ReiniciarToolStripMenuItem.Text = "Reiniciar"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(292, 26)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'CapturaToolStripMenuItem
+        '
+        Me.CapturaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatosToolStripMenuItem, Me.PólizaToolStripMenuItem, Me.ChequeToolStripMenuItem1, Me.OtrosProgramasCtrlOToolStripMenuItem})
+        Me.CapturaToolStripMenuItem.Name = "CapturaToolStripMenuItem"
+        Me.CapturaToolStripMenuItem.Size = New System.Drawing.Size(75, 24)
+        Me.CapturaToolStripMenuItem.Text = "Captura"
+        '
+        'DatosToolStripMenuItem
+        '
+        Me.DatosToolStripMenuItem.Name = "DatosToolStripMenuItem"
+        Me.DatosToolStripMenuItem.Size = New System.Drawing.Size(287, 26)
+        Me.DatosToolStripMenuItem.Text = "Datos"
+        '
+        'PólizaToolStripMenuItem
+        '
+        Me.PólizaToolStripMenuItem.Name = "PólizaToolStripMenuItem"
+        Me.PólizaToolStripMenuItem.Size = New System.Drawing.Size(287, 26)
+        Me.PólizaToolStripMenuItem.Text = "Pólizas                         Ctrl + R"
+        '
+        'ChequeToolStripMenuItem1
+        '
+        Me.ChequeToolStripMenuItem1.Name = "ChequeToolStripMenuItem1"
+        Me.ChequeToolStripMenuItem1.Size = New System.Drawing.Size(287, 26)
+        Me.ChequeToolStripMenuItem1.Text = "Cheque"
+        '
+        'OtrosProgramasCtrlOToolStripMenuItem
+        '
+        Me.OtrosProgramasCtrlOToolStripMenuItem.Name = "OtrosProgramasCtrlOToolStripMenuItem"
+        Me.OtrosProgramasCtrlOToolStripMenuItem.Size = New System.Drawing.Size(287, 26)
+        Me.OtrosProgramasCtrlOToolStripMenuItem.Text = "Otros programas       Ctrl + O"
+        '
+        'EdiciónToolStripMenuItem
+        '
+        Me.EdiciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PegarCtrlVToolStripMenuItem, Me.CopiarCtrlCToolStripMenuItem, Me.CopiarTodoCtrlSToolStripMenuItem, Me.AgregarSubctaToolStripMenuItem, Me.EliminarSubctaToolStripMenuItem, Me.BorrarCuentaToolStripMenuItem, Me.ValidarMovimientoCtrlGToolStripMenuItem, Me.VerificarSumasF6ToolStripMenuItem, Me.BorrarAplicaciónCtrlBToolStripMenuItem, Me.BorrarChequeToolStripMenuItem, Me.SumaDebeYHaberCtrlLToolStripMenuItem})
+        Me.EdiciónToolStripMenuItem.Name = "EdiciónToolStripMenuItem"
+        Me.EdiciónToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.EdiciónToolStripMenuItem.Text = "Edición"
+        '
+        'PegarCtrlVToolStripMenuItem
+        '
+        Me.PegarCtrlVToolStripMenuItem.Name = "PegarCtrlVToolStripMenuItem"
+        Me.PegarCtrlVToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.PegarCtrlVToolStripMenuItem.Text = "Pegar                                   Ctrl + V"
+        '
+        'CopiarCtrlCToolStripMenuItem
+        '
+        Me.CopiarCtrlCToolStripMenuItem.Name = "CopiarCtrlCToolStripMenuItem"
+        Me.CopiarCtrlCToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.CopiarCtrlCToolStripMenuItem.Text = "Copiar selección                 Ctrl + C"
+        '
+        'CopiarTodoCtrlSToolStripMenuItem
+        '
+        Me.CopiarTodoCtrlSToolStripMenuItem.Name = "CopiarTodoCtrlSToolStripMenuItem"
+        Me.CopiarTodoCtrlSToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.CopiarTodoCtrlSToolStripMenuItem.Text = "Copiar todo                        Ctrl + S"
+        '
+        'AgregarSubctaToolStripMenuItem
+        '
+        Me.AgregarSubctaToolStripMenuItem.Name = "AgregarSubctaToolStripMenuItem"
+        Me.AgregarSubctaToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.AgregarSubctaToolStripMenuItem.Text = "Agregar Subcta"
+        '
+        'EliminarSubctaToolStripMenuItem
+        '
+        Me.EliminarSubctaToolStripMenuItem.Name = "EliminarSubctaToolStripMenuItem"
+        Me.EliminarSubctaToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.EliminarSubctaToolStripMenuItem.Text = "Eliminar Subcta"
+        '
+        'BorrarCuentaToolStripMenuItem
+        '
+        Me.BorrarCuentaToolStripMenuItem.Name = "BorrarCuentaToolStripMenuItem"
+        Me.BorrarCuentaToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.BorrarCuentaToolStripMenuItem.Text = "Borrar cuenta"
+        '
+        'ValidarMovimientoCtrlGToolStripMenuItem
+        '
+        Me.ValidarMovimientoCtrlGToolStripMenuItem.Name = "ValidarMovimientoCtrlGToolStripMenuItem"
+        Me.ValidarMovimientoCtrlGToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.ValidarMovimientoCtrlGToolStripMenuItem.Text = "Validar movimiento                F5"
+        '
+        'VerificarSumasF6ToolStripMenuItem
+        '
+        Me.VerificarSumasF6ToolStripMenuItem.Name = "VerificarSumasF6ToolStripMenuItem"
+        Me.VerificarSumasF6ToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.VerificarSumasF6ToolStripMenuItem.Text = "Verificar sumas                       F6"
+        '
+        'BorrarAplicaciónCtrlBToolStripMenuItem
+        '
+        Me.BorrarAplicaciónCtrlBToolStripMenuItem.Name = "BorrarAplicaciónCtrlBToolStripMenuItem"
+        Me.BorrarAplicaciónCtrlBToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.BorrarAplicaciónCtrlBToolStripMenuItem.Text = "Borrar aplicación                Ctrl + B"
+        '
+        'BorrarChequeToolStripMenuItem
+        '
+        Me.BorrarChequeToolStripMenuItem.Name = "BorrarChequeToolStripMenuItem"
+        Me.BorrarChequeToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.BorrarChequeToolStripMenuItem.Text = "Borrar cheque"
+        '
+        'SumaDebeYHaberCtrlLToolStripMenuItem
+        '
+        Me.SumaDebeYHaberCtrlLToolStripMenuItem.Name = "SumaDebeYHaberCtrlLToolStripMenuItem"
+        Me.SumaDebeYHaberCtrlLToolStripMenuItem.Size = New System.Drawing.Size(320, 26)
+        Me.SumaDebeYHaberCtrlLToolStripMenuItem.Text = "Suma debe y haber             Ctrl + L"
+        '
+        'MesToolStripMenuItem
+        '
+        Me.MesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuentasCtrlMToolStripMenuItem, Me.SubcuentasCtrlToolStripMenuItem, Me.SumasToolStripMenuItem, Me.PólizasCtrlFToolStripMenuItem, Me.AuxiliarDeMayorCtrlAToolStripMenuItem, Me.EstadosFinancierosCtrlToolStripMenuItem})
+        Me.MesToolStripMenuItem.Name = "MesToolStripMenuItem"
+        Me.MesToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.MesToolStripMenuItem.Text = "Ver"
+        '
+        'CuentasCtrlMToolStripMenuItem
+        '
+        Me.CuentasCtrlMToolStripMenuItem.Name = "CuentasCtrlMToolStripMenuItem"
+        Me.CuentasCtrlMToolStripMenuItem.Size = New System.Drawing.Size(314, 26)
+        Me.CuentasCtrlMToolStripMenuItem.Text = "Cuentas                             Ctrl + M"
+        '
+        'SubcuentasCtrlToolStripMenuItem
+        '
+        Me.SubcuentasCtrlToolStripMenuItem.Name = "SubcuentasCtrlToolStripMenuItem"
+        Me.SubcuentasCtrlToolStripMenuItem.Size = New System.Drawing.Size(314, 26)
+        Me.SubcuentasCtrlToolStripMenuItem.Text = "Subcuentas                       Ctrl + N"
+        '
+        'SumasToolStripMenuItem
+        '
+        Me.SumasToolStripMenuItem.Name = "SumasToolStripMenuItem"
+        Me.SumasToolStripMenuItem.Size = New System.Drawing.Size(314, 26)
+        Me.SumasToolStripMenuItem.Text = "Sumas"
+        '
+        'PólizasCtrlFToolStripMenuItem
+        '
+        Me.PólizasCtrlFToolStripMenuItem.Name = "PólizasCtrlFToolStripMenuItem"
+        Me.PólizasCtrlFToolStripMenuItem.Size = New System.Drawing.Size(314, 26)
+        Me.PólizasCtrlFToolStripMenuItem.Text = "Pólizas                              Ctrl + D"
+        '
+        'AuxiliarDeMayorCtrlAToolStripMenuItem
+        '
+        Me.AuxiliarDeMayorCtrlAToolStripMenuItem.Name = "AuxiliarDeMayorCtrlAToolStripMenuItem"
+        Me.AuxiliarDeMayorCtrlAToolStripMenuItem.Size = New System.Drawing.Size(314, 26)
+        Me.AuxiliarDeMayorCtrlAToolStripMenuItem.Text = "Auxiliar de mayor            Ctrl + A"
+        '
+        'EstadosFinancierosCtrlToolStripMenuItem
+        '
+        Me.EstadosFinancierosCtrlToolStripMenuItem.Name = "EstadosFinancierosCtrlToolStripMenuItem"
+        Me.EstadosFinancierosCtrlToolStripMenuItem.Size = New System.Drawing.Size(314, 26)
+        Me.EstadosFinancierosCtrlToolStripMenuItem.Text = "Estados financieros          Ctrl + E"
+        '
+        'AyudaToolStripMenuItem
+        '
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IncorporaciónToolStripMenuItem, Me.EneroToolStripMenuItem, Me.FebreroToolStripMenuItem, Me.MarzoToolStripMenuItem, Me.AbrilToolStripMenuItem, Me.MayoToolStripMenuItem, Me.JunioToolStripMenuItem, Me.JulioToolStripMenuItem, Me.AgostoToolStripMenuItem, Me.SeptiembreToolStripMenuItem, Me.OctubreToolStripMenuItem, Me.NoviembreToolStripMenuItem, Me.DiciembreToolStripMenuItem})
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(50, 24)
+        Me.AyudaToolStripMenuItem.Text = "Mes"
+        '
+        'IncorporaciónToolStripMenuItem
+        '
+        Me.IncorporaciónToolStripMenuItem.Name = "IncorporaciónToolStripMenuItem"
+        Me.IncorporaciónToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.IncorporaciónToolStripMenuItem.Tag = "13"
+        Me.IncorporaciónToolStripMenuItem.Text = "Incorporación"
+        '
+        'EneroToolStripMenuItem
+        '
+        Me.EneroToolStripMenuItem.Name = "EneroToolStripMenuItem"
+        Me.EneroToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.EneroToolStripMenuItem.Tag = "1"
+        Me.EneroToolStripMenuItem.Text = "Enero"
+        '
+        'FebreroToolStripMenuItem
+        '
+        Me.FebreroToolStripMenuItem.Name = "FebreroToolStripMenuItem"
+        Me.FebreroToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.FebreroToolStripMenuItem.Tag = "2"
+        Me.FebreroToolStripMenuItem.Text = "Febrero "
+        '
+        'MarzoToolStripMenuItem
+        '
+        Me.MarzoToolStripMenuItem.Name = "MarzoToolStripMenuItem"
+        Me.MarzoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.MarzoToolStripMenuItem.Tag = "3"
+        Me.MarzoToolStripMenuItem.Text = "Marzo"
+        '
+        'AbrilToolStripMenuItem
+        '
+        Me.AbrilToolStripMenuItem.Name = "AbrilToolStripMenuItem"
+        Me.AbrilToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AbrilToolStripMenuItem.Tag = "4"
+        Me.AbrilToolStripMenuItem.Text = "Abril"
+        '
+        'MayoToolStripMenuItem
+        '
+        Me.MayoToolStripMenuItem.Name = "MayoToolStripMenuItem"
+        Me.MayoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.MayoToolStripMenuItem.Tag = "5"
+        Me.MayoToolStripMenuItem.Text = "Mayo"
+        '
+        'JunioToolStripMenuItem
+        '
+        Me.JunioToolStripMenuItem.Name = "JunioToolStripMenuItem"
+        Me.JunioToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.JunioToolStripMenuItem.Tag = "6"
+        Me.JunioToolStripMenuItem.Text = "Junio"
+        '
+        'JulioToolStripMenuItem
+        '
+        Me.JulioToolStripMenuItem.Name = "JulioToolStripMenuItem"
+        Me.JulioToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.JulioToolStripMenuItem.Tag = "7"
+        Me.JulioToolStripMenuItem.Text = "Julio"
+        '
+        'AgostoToolStripMenuItem
+        '
+        Me.AgostoToolStripMenuItem.Name = "AgostoToolStripMenuItem"
+        Me.AgostoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AgostoToolStripMenuItem.Tag = "8"
+        Me.AgostoToolStripMenuItem.Text = "Agosto"
+        '
+        'SeptiembreToolStripMenuItem
+        '
+        Me.SeptiembreToolStripMenuItem.Name = "SeptiembreToolStripMenuItem"
+        Me.SeptiembreToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SeptiembreToolStripMenuItem.Tag = "9"
+        Me.SeptiembreToolStripMenuItem.Text = "Septiembre"
+        '
+        'OctubreToolStripMenuItem
+        '
+        Me.OctubreToolStripMenuItem.Name = "OctubreToolStripMenuItem"
+        Me.OctubreToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.OctubreToolStripMenuItem.Tag = "10"
+        Me.OctubreToolStripMenuItem.Text = "Octubre"
+        '
+        'NoviembreToolStripMenuItem
+        '
+        Me.NoviembreToolStripMenuItem.Name = "NoviembreToolStripMenuItem"
+        Me.NoviembreToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.NoviembreToolStripMenuItem.Tag = "11"
+        Me.NoviembreToolStripMenuItem.Text = "Noviembre"
+        '
+        'DiciembreToolStripMenuItem
+        '
+        Me.DiciembreToolStripMenuItem.Name = "DiciembreToolStripMenuItem"
+        Me.DiciembreToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.DiciembreToolStripMenuItem.Tag = "12"
+        Me.DiciembreToolStripMenuItem.Text = "Diciembre"
+        '
+        'AyudaToolStripMenuItem1
+        '
+        Me.AyudaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ÍndiceToolStripMenuItem, Me.VersiónToolStripMenuItem})
+        Me.AyudaToolStripMenuItem1.Name = "AyudaToolStripMenuItem1"
+        Me.AyudaToolStripMenuItem1.Size = New System.Drawing.Size(65, 24)
+        Me.AyudaToolStripMenuItem1.Text = "Ayuda"
+        '
+        'ÍndiceToolStripMenuItem
+        '
+        Me.ÍndiceToolStripMenuItem.Name = "ÍndiceToolStripMenuItem"
+        Me.ÍndiceToolStripMenuItem.Size = New System.Drawing.Size(140, 26)
+        Me.ÍndiceToolStripMenuItem.Text = "Índice"
+        '
+        'VersiónToolStripMenuItem
+        '
+        Me.VersiónToolStripMenuItem.Name = "VersiónToolStripMenuItem"
+        Me.VersiónToolStripMenuItem.Size = New System.Drawing.Size(140, 26)
+        Me.VersiónToolStripMenuItem.Text = "Versión"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(24, 77)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 23)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Día: "
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(74, 75)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(65, 27)
+        Me.TextBox1.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Label2.Location = New System.Drawing.Point(156, 75)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(281, 25)
+        Me.Label2.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.LemonChiffon
+        Me.Label3.Location = New System.Drawing.Point(467, 75)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(155, 25)
+        Me.Label3.TabIndex = 4
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(642, 76)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(75, 24)
+        Me.CheckBox1.TabIndex = 5
+        Me.CheckBox1.Text = "Costos"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(74, 108)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(171, 27)
+        Me.TextBox2.TabIndex = 6
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(24, 158)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 23)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "RFC:"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(75, 158)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox3.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.Location = New System.Drawing.Point(412, 159)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 23)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Folio Fiscal"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(511, 122)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(251, 27)
+        Me.TextBox4.TabIndex = 10
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(511, 155)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(251, 27)
+        Me.TextBox5.TabIndex = 11
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'OpenFileDialog2
+        '
+        Me.OpenFileDialog2.FileName = "OpenFileDialog2"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label6.Location = New System.Drawing.Point(237, 201)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(385, 23)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Recuerda Cargar el Pdf y Xml antes de Capturar"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColCuenta, Me.ColSubCta, Me.ColNom, Me.ColParcial, Me.ColDebe, Me.ColHaber, Me.ColReda, Me.ColFolioFis})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder
+        Me.DataGridView1.Location = New System.Drawing.Point(24, 250)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 29
+        Me.DataGridView1.Size = New System.Drawing.Size(1177, 271)
+        Me.DataGridView1.TabIndex = 13
+        '
+        'ColCuenta
+        '
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.ColCuenta.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ColCuenta.HeaderText = "Cuenta"
+        Me.ColCuenta.MinimumWidth = 6
+        Me.ColCuenta.Name = "ColCuenta"
+        Me.ColCuenta.Width = 125
+        '
+        'ColSubCta
+        '
+        Me.ColSubCta.HeaderText = "SubCta"
+        Me.ColSubCta.MinimumWidth = 6
+        Me.ColSubCta.Name = "ColSubCta"
+        Me.ColSubCta.Width = 125
+        '
+        'ColNom
+        '
+        Me.ColNom.HeaderText = "Nombre"
+        Me.ColNom.MinimumWidth = 6
+        Me.ColNom.Name = "ColNom"
+        Me.ColNom.Width = 125
+        '
+        'ColParcial
+        '
+        Me.ColParcial.HeaderText = "Parcial"
+        Me.ColParcial.MinimumWidth = 6
+        Me.ColParcial.Name = "ColParcial"
+        Me.ColParcial.Width = 125
+        '
+        'ColDebe
+        '
+        Me.ColDebe.HeaderText = "Debe"
+        Me.ColDebe.MinimumWidth = 6
+        Me.ColDebe.Name = "ColDebe"
+        Me.ColDebe.Width = 125
+        '
+        'ColHaber
+        '
+        Me.ColHaber.HeaderText = "Haber"
+        Me.ColHaber.MinimumWidth = 6
+        Me.ColHaber.Name = "ColHaber"
+        Me.ColHaber.Width = 125
+        '
+        'ColReda
+        '
+        Me.ColReda.HeaderText = "Redacción"
+        Me.ColReda.MinimumWidth = 6
+        Me.ColReda.Name = "ColReda"
+        Me.ColReda.Width = 125
+        '
+        'ColFolioFis
+        '
+        Me.ColFolioFis.HeaderText = "Folio Fiscal"
+        Me.ColFolioFis.MinimumWidth = 6
+        Me.ColFolioFis.Name = "ColFolioFis"
+        Me.ColFolioFis.Width = 125
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Location = New System.Drawing.Point(15, 19)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(103, 23)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Beneficiario:"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(136, 16)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(194, 27)
+        Me.TextBox6.TabIndex = 15
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.Location = New System.Drawing.Point(356, 19)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 23)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "$"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(393, 19)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(97, 27)
+        Me.TextBox7.TabIndex = 17
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label9.Location = New System.Drawing.Point(15, 64)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(88, 23)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Concepto:"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(15, 106)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(334, 27)
+        Me.TextBox8.TabIndex = 19
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label10.Location = New System.Drawing.Point(393, 64)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(77, 23)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "Número:"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(393, 106)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(184, 27)
+        Me.TextBox9.TabIndex = 21
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label11.Location = New System.Drawing.Point(15, 158)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(46, 23)
+        Me.Label11.TabIndex = 22
+        Me.Label11.Text = "RFC:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label12.Location = New System.Drawing.Point(244, 158)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(166, 23)
+        Me.Label12.TabIndex = 23
+        Me.Label12.Text = "FOLIO(S) FISCALES:"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(15, 194)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(185, 27)
+        Me.TextBox10.TabIndex = 24
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(244, 194)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(327, 27)
+        Me.TextBox11.TabIndex = 25
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBox11)
+        Me.GroupBox1.Controls.Add(Me.TextBox10)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.TextBox9)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBox8)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.TextBox7)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Location = New System.Drawing.Point(91, 634)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(610, 251)
+        Me.GroupBox1.TabIndex = 26
+        Me.GroupBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.CheckBox2)
+        Me.GroupBox2.Location = New System.Drawing.Point(720, 650)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(120, 101)
+        Me.GroupBox2.TabIndex = 27
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "No. Cheque"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(17, 47)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(88, 24)
+        Me.CheckBox2.TabIndex = 0
+        Me.CheckBox2.Text = "Imprimir"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog3
+        '
+        Me.OpenFileDialog3.FileName = "OpenFileDialog3"
+        '
+        'OpenFileDialog4
+        '
+        Me.OpenFileDialog4.FileName = "OpenFileDialog4"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(43, 31)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 28
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Tag = ""
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Póliza")
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(91, 31)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 29
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(184, 31)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 30
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(236, 31)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 31
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(284, 31)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 32
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+        Me.PictureBox6.Location = New System.Drawing.Point(333, 31)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 33
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(377, 31)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 34
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(422, 31)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 35
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(465, 31)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 36
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
+        Me.PictureBox10.Location = New System.Drawing.Point(511, 31)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 37
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(136, 31)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 38
+        Me.PictureBox11.TabStop = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label13.Location = New System.Drawing.Point(413, 126)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(88, 23)
+        Me.Label13.TabIndex = 39
+        Me.Label13.Text = "Concepto:"
+        '
+        'CAP_Cheques
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1307, 1034)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.PictureBox11)
+        Me.Controls.Add(Me.PictureBox10)
+        Me.Controls.Add(Me.PictureBox9)
+        Me.Controls.Add(Me.PictureBox8)
+        Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.PictureBox6)
+        Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Name = "CAP_Cheques"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "CAP_Cheques"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
