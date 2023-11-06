@@ -68,7 +68,6 @@ Public Class CAP_Cheques
         Label2.BackColor = Color.White
         CAP_LocalizarPolizas.Visible = False
 
-
         Dim helpProvider As New HelpProvider()
         helpProvider.HelpNamespace = Ruta_Acceso + "\payuda2.hlp"
 
@@ -88,7 +87,6 @@ Public Class CAP_Cheques
         MesCheque(10) = " OCTUBRE"
         MesCheque(11) = " NOVIEMBRE"
         MesCheque(12) = " DICIEMBRE"
-
         MesCheque(13) = " INCORPORACIÓN"
 
         dd(1) = 31 : dd(2) = 28 : dd(3) = 31 : dd(4) = 30
@@ -108,13 +106,7 @@ Public Class CAP_Cheques
         DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
         DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
 
-
-
-
-
         ReDim archivos1(0)
-        ' sigpaso()
-
 
         incluirMes()
         CAP_LocalizarPolizas.Visible = False
@@ -132,12 +124,10 @@ Public Class CAP_Cheques
 
         If cm < 1 Then
             MsgBox("No Existe Datos de Contabilidad Cambie subdirectorio ")
-
             FileClose(1)
         Else
             FileGet(numeroDatos, DATOS, 1)
             Label2.BackColor = Color.Yellow
-
             mespoliza = 1
             Label2.Text = "de" + RTrim(MesCheque(mespoliza)) + "de" + DATOS.a_o
             Me.Text = Mid(DATOS.D1, 1, 32) & "  Captura de cheques"
@@ -392,11 +382,10 @@ Public Class CAP_Cheques
     Sub depura(elemento As Integer)
 
         If elemento > 57 Then
-            MsgBox("Solo se aceptan valores númericos")
+            MsgBox("Solo se aceptan valores numéricos")
             valida = 1
 
         End If
-
 
     End Sub
 
@@ -1316,14 +1305,14 @@ Public Class CAP_Cheques
         DataGridView1.ClearSelection()
 
         DataGridView1.RowCount = 100
-        DataGridView1.Columns(0).Width = 75 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(1).Width = 75 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "Subcta" : DataGridView1.Columns(1).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(1).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(2).Width = 400 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" : DataGridView1.Columns(2).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(2).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(3).Width = 100 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" : DataGridView1.Columns(3).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(3).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(4).Width = 100 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe " : DataGridView1.Columns(4).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(4).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(5).Width = 100 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" : DataGridView1.Columns(5).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(5).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-        DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.BackColor = Color.Yellow : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(0).Width = 75 : DataGridView1.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(0).HeaderText = "Cuenta" : DataGridView1.Columns(0).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(1).Width = 75 : DataGridView1.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(1).HeaderText = "Subcta" : DataGridView1.Columns(1).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(2).Width = 400 : DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(2).HeaderText = "Nombre" : DataGridView1.Columns(2).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(3).Width = 100 : DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(3).HeaderText = "Parcial" : DataGridView1.Columns(3).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(4).Width = 100 : DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(4).HeaderText = "Debe " : DataGridView1.Columns(4).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(5).Width = 100 : DataGridView1.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(5).HeaderText = "Haber" : DataGridView1.Columns(5).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(6).Width = 200 : DataGridView1.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(6).HeaderText = "Redacción" : DataGridView1.Columns(6).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+        DataGridView1.Columns(7).Width = 200 : DataGridView1.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter : DataGridView1.Columns(7).HeaderText = "Folio Fiscal" : DataGridView1.Columns(7).HeaderCell.Style.Font = New Font(DataGridView1.Font, FontStyle.Bold)
 
 
 
@@ -1343,16 +1332,7 @@ Public Class CAP_Cheques
 
         End If
     End Sub
-    Public Sub DataGridView1_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellLeave
 
-
-
-        If DataGridView1.Rows(0).Cells(0).Value > 0 Then
-            DataGridView1.DefaultCellStyle.BackColor = Color.White
-
-        End If
-
-    End Sub
     Public Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
         On Error GoTo HandleRef
 

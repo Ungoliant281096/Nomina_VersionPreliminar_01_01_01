@@ -651,7 +651,6 @@ Partial Class CAP_Cheques
         'ColCuenta
         '
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
         Me.ColCuenta.DefaultCellStyle = DataGridViewCellStyle2
         Me.ColCuenta.HeaderText = "Cuenta"
