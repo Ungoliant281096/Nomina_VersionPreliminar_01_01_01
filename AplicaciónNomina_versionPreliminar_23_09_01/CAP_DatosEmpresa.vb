@@ -68,6 +68,7 @@ Public Class CAP_DatosEmpresa
                 FilePut(1, DATOS, 1)
                 Modif_General = 0
 
+
             End If
         End If
     End Sub
